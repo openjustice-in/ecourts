@@ -1,0 +1,11 @@
+[project]
+name = "ecourt-scraper"
+version = "0.0.1"
+dependencies = [
+    "PyYAML~=6.0",
+    "requests~=2.31",
+]
+[tool.pytest.ini_options]
+pythonpath = [
+  "src"
+]

@@ -1,0 +1,40 @@
+state_cd,dist_cd,court_code,stateNm,name
+1,1,,Bombay,"Appellate Side,Bombay"
+1,1,2,Bombay,"Original Side, Bombay"
+1,1,3,Bombay,Bench At Aurangabad
+1,1,4,Bombay,Bench At Nagpur
+1,1,5,Bombay,High Court of Bombay at Goa
+1,1,6,Bombay,Special Court (TORTS) Bombay High Court
+10,1,,Madras,Madras High Court - Principal Bench
+10,1,2,Madras,Madras High Court - Madurai Bench
+11,1,,Odisha,High Court of Orissa
+12,1,,Jammu and Kashmir,High Court of Jammu and Kashmir - Jammu Wing
+12,1,2,Jammu and Kashmir,High Court of Jammu and Kashmir - Srinagar Wing
+13,1,,Uttar Pradesh,High Court of Judicature at Allahabad
+13,1,2,Uttar Pradesh,Allahabad High Court Lucknow Bench
+15,1,,Uttarakhand,High Court of Uttarakhand
+16,1,,Calcutta,Calcutta High Court - Original Side
+16,1,2,Calcutta,Calcutta High Court - Circuit Bench At Jalpaiguri
+16,1,3,Calcutta,Calcutta High Court - Appellate side
+16,1,4,Calcutta,Calcutta High Court - Circuit Bench At Port Blair
+17,1,,Gujarat,High Court of Gujarat
+18,1,,Chhattisgarh,High Court of Chhattisgarh
+2,1,,Andhra Pradesh,High Court of Andhra Pradesh
+20,1,,Tripura,High Court of Tripura
+21,1,,Meghalaya,High Court of Meghalaya
+24,1,,Sikkim,High Court of Sikkim
+25,1,,Manipur,High Court of Manipur
+29,1,,Telangana,High Court for the State of Telangana
+3,1,,Karnataka,High Court of Karnataka - Principal Bench at Bengaluru
+3,1,2,Karnataka,High Court of Karnataka - Dharwad Bench At Karnataka
+3,1,3,Karnataka,High Court of Karnataka - Kalburagi Bench At Karnataka
+4,1,,Kerala,High Court of Kerala
+5,1,,Himachal Pradesh,High Court of Himachal Pradesh
+6,1,,Assam,Gawahati High Court - Principal Seat at Guwahati
+6,1,2,Assam,Gawahati High Court - Kohima Bench
+6,1,3,Assam,Gawahati High Court - Aizawl Bench
+6,1,4,Assam,Gawahati High Court - Itanagar Bench
+7,1,,Jharkhand,High Court of Jharkhand
+8,1,,Patna,The High Court of Judicature at Patna
+9,1,,Rajasthan,Rajasthan High Court Bench at Jaipur
+9,1,2,Rajasthan,"Rajasthan High Court Principal Seat, Jodhpur"
