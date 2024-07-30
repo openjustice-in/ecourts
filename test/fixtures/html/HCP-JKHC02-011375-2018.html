@@ -1,0 +1,337 @@
+<script type="text/javascript">
+function clearCaptchaText()
+{
+
+var ty=document.getElementsByClassName('captchaClass');
+ty[0].value='';
+}
+function funConnError()
+{
+	document.getElementById('showList').innerHTML="";
+	document.getElementById('showList').style.display='none';
+	document.getElementById('errSpan').style.display="";
+	var val='CONNECTION FAILED';
+	document.getElementById('txtmsg').value=val;
+	document.getElementById("txtmsg").title =val;
+	document.getElementById('txtmsg').focus();
+}
+
+
+function funUsrError()
+{
+	document.getElementById('showList').innerHTML="";
+	document.getElementById('showList').style.display='none';
+	document.getElementById('errSpan').style.display="";	
+	var val='THERE IS AN ERROR';
+
+	document.getElementById('txtmsg').value=val;
+	document.getElementById("txtmsg").title =val;
+	document.getElementById('txtmsg').focus();
+}
+
+function funUsrErrorParam(input)
+{
+
+	document.getElementById('showList').innerHTML="";
+	document.getElementById('showList').style.display='none';
+	document.getElementById('errSpan').style.display="";	
+	var val='THERE IS AN '+input;
+	document.getElementById('txtmsg').value=val;
+
+	document.getElementById("txtmsg").title =val;
+	document.getElementById('txtmsg').focus();
+}
+
+function funServerSideValidateErr()
+{
+	document.getElementById('showList').innerHTML="";
+	document.getElementById('showList').style.display='none';
+	document.getElementById('errSpan').style.display="";	
+	var val='Invalid Input';
+	document.getElementById('txtmsg').value=val;
+	document.getElementById("txtmsg").title =val;
+	document.getElementById('txtmsg').focus();
+}
+
+function escapeHtml(str)
+{
+str=str.replace(/&|<script|script>/g,'');
+return str;
+}
+
+
+
+
+function trim(inputString) {
+	if (typeof inputString != "string") { return inputString; }
+	var retValue = inputString;
+	var ch = retValue.substring(0, 1);
+	while (ch == " ")
+	{
+		retValue = retValue.substring(1, retValue.length);
+		ch = retValue.substring(0, 1);
+	}
+	ch = retValue.substring(retValue.length-1, retValue.length);
+	while (ch == " ")
+	{
+		retValue = retValue.substring(0, retValue.length-1);
+		ch = retValue.substring(retValue.length-1, retValue.length);
+	}
+	while (retValue.indexOf("  ") != -1)
+	{
+		retValue = retValue.substring(0, retValue.indexOf("  ")) +
+		retValue.substring(retValue.indexOf("  ")+1, retValue.length);
+	}
+	return retValue;
+}
+
+
+
+function checkInteger(str)
+{
+	var len = str.length;
+	for(var i=0; i < len; i++)
+	{
+		if(str.charAt(i) == ".")
+		{
+			return false;
+		}
+	}
+}
+function applycsswhite1()
+	{
+	 $("body").css("color", "black");
+	$("h4").css("color", "#4B8BCD");
+    $(".headingtxt").css("color", " #4B8BCD");
+	$("tr").css("background", "#fff");
+	$(".button").css("background", "#1A5984");
+	$(".title").css("color", "#4B8BCD");
+	$("a").css("color", "#4B8BCD");
+	$(".Lower_court_table").css("background", "#fdf7f4");
+	$(".Acts_table").css("background", "#fdf6e9");
+	$(".Respondent_Advocate_table").css("background", "#f5f1fc");
+	$(".Petitioner_Advocate_table").css("background", "#f3fafe");
+	$(".case_details_table").css("background", "#f9fdf1");
+	$(".FIR_details_table").css("background", "#fae3df");
+	$(".order_table").css("background", "#f5f1fc");
+	$(".Lower_court_table").css("border", "1px solid #000");
+	$(".Acts_table").css("border", "1px solid #000");
+	$(".Respondent_Advocate_table").css("border", "1px solid #000");
+	$(".Petitioner_Advocate_table").css("border", "1px solid #000");
+	$(".case_details_table").css("border-bottom", "1px solid #000");
+	$(".FIR_details_table").css("border", "1px solid #000");
+	}
+function applycssblack1()
+	{
+	$("body").css("color", "white ");	
+	$("body").css("background", "#3D3A3A ");
+	$("h4").css("color", "white");	
+    $(".headingtxt").css("color", "white");
+	$("a:hover").css("color", "white");
+	$("tr").css("background", "#3D3A3A");
+    $(".button").css("background", "black");
+	$(".title").css("color", "white");
+	$("a").css("color", "yellow");
+	$("table.bordered th").css("color", "#000");
+	$(".Lower_court_table").css("background", "#3D3A3A");
+	$(".Acts_table").css("background", "#3D3A3A");
+	$(".Respondent_Advocate_table").css("background", "#3D3A3A");
+	$(".Petitioner_Advocate_table").css("background", "#3D3A3A");
+	$(".case_details_table").css("background", "#3D3A3A");
+	$(".FIR_details_table").css("background", "#3D3A3A");
+	$(".Lower_court_table").css("border", "1px solid #fff");
+	$(".Acts_table").css("border", "1px solid #fff");
+	$(".Respondent_Advocate_table").css("border", "1px solid #fff");
+	$(".Petitioner_Advocate_table").css("border", "1px solid #fff");
+	$(".case_details_table").css("border-bottom", "1px solid #fff");
+	$(".FIR_details_table").css("border", "1px solid #fff");
+	$(".order_table").css("background", "#3D3A3A");
+	}
+
+
+
+
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Case History</title>
+
+<style type="text/css">
+a {
+	color: #5399E1;
+	text-decoration:none;
+}
+a:hover {
+	color: #366494;
+	text-decoration:underline;
+}
+a:focus {
+	color: #366494;
+	text-decoration:underline;
+}
+body
+{	font-size:12px;
+}
+tbody
+{	font-size:12px;
+}
+.title
+{
+	display:none;
+}
+#nextDate {   
+  animation-duration: 700ms;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes blink {
+  from {
+	opacity: 1;
+  }
+
+  to {
+	opacity: 0;
+  }
+}
+.h3class{
+font-size:1em;
+padding-top:-10px;
+
+font-weight:normal;
+margin-bottom:5px;
+
+}
+
+.h2class{
+font-size:1.1em;
+font-weight:normal;
+padding-top:-10px;
+margin-bottom:5px;
+}
+.h1class{
+font-size:1.2em;
+font-weight:normal;
+}
+.controlstyle
+{ display:none;}
+
+.blinking{
+	animation:blinkingText 2.3s infinite;
+  font-size: initial;
+}
+@keyframes blinkingText{
+	0%{		color: red;	}
+	49%{	color: red;font-weight: 600;	}
+	50%{	color: red;font-weight: 700;	}
+	99%{	color:red;font-weight: 600;	}
+	100%{	color: red;	}
+}
+</style>
+<link rel="stylesheet" href="../css/history.css" type="text/css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/fluidtextresizer.js"></script>
+<script type="text/javascript" language="javascript">
+//<![CDATA[
+
+
+function newcss()
+{
+	var sess_color_value="W";
+			
+				if(sess_color_value=='B' )
+	{
+				applycssblack1();
+	}
+	else if(sess_color_value=='W' )
+	{
+				applycsswhite1();
+	}
+	else if (parent.document.getElementById("txt_css").value=='black')
+	{
+	parent.applycssblack();
+	}
+	else if (parent.document.getElementById("txt_css").value=='white')
+	{
+	parent.applycsswhite();
+	}
+}
+function openpopup(popurl)
+{
+	var winpops=window.open(popurl,"","width=400,height=400,scrollbars,menubar,resizable")
+}
+
+
+//]]>
+</script>
+<script type="text/javascript" language="javascript">
+ //<![CDATA[
+var mytextsizer=new fluidtextresizer({
+	controlsdiv: "sizecontroldiv", //id of special div containing your resize controls. Enter "" if not defined
+	targets: ["body"], //target elements to resize text within: ["selector1", "selector2", etc]
+	levels: 1, //number of levels users can magnify (or shrink) text
+	persist: "session", //enter "session" or "none"
+	animate: 200 //animation duration of text resize. Enter 0 to disable
+})
+
+ //]]>
+</script>
+<script language="JavaScript" src="../includes/javascript/xmlhttp.js" type="text/javascript"></script>
+
+
+
+</head>
+<form  name="frm" method="post" action="">
+<body onload="funchkErr();" >
+
+<div id="sizecontroldiv" class="controlstyle">
+<a href="#smaller" ></a><a href="#fontsize0"></a><a href="#bigger"></a>
+</div>
+
+
+<div  align="center" style='margin-top:-5px;'>
+
+<span id='errSpan' style='font-color:red;'></span>
+<span style='margin-top:-20px;'>
+
+
+
+</span>
+<br />
+
+
+<h2 class='h1class'><span style="font-weight:bold;">Jammu Wing</span></h2>
+	
+<div  style=' height:80px; width:700px; '><span class="heading" style=' text-align:center;'><label><h2 class='h2class' style='font-weight:bold;'>Case Details</h2></label></span><span class='case_details_table' style='padding-left:-5px;float:left;border-top:1px solid #000;border-left:1px solid #000;border-right:1px solid #000;border-bottom:1px solid #000; width:100%; text-align:left;'><span  style='-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width:225px;float:left;padding-left:5px;'><label>Case Type </label></span>:&nbsp;HCP</span><br /><span class='case_details_table' style='float:left;border-top:0px solid #000;border-bottom:1px solid #000;border-left:1px solid #000;border-right:1px solid #000;width:100%;text-align:left;'><span style='-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width:225px;float:left;padding-left:5px; '><label>Filing Number</label></span>:&nbsp;9702/2018<span style='text-align:left;padding-left:100px;'><label>Filing Date</label>: 28-12-2018</span></span><br /><span class='case_details_table' style='float:left;border-top:0px solid #000;border-left:1px solid #000;border-right:1px solid #000;border-bottom:1px solid #000; width:100%;text-align:left;'><span style='-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width:225px; float:left;padding-left:5px;'><label>Registration Number</label></span><label>:&nbsp;58/2018</label><span style='text-align:left;padding-left:100px;'><label>Registration Date</label><label>:&nbsp;29-12-2018</label></span></span><br /><b><span class='case_details_table' style='float:left; width:100%;text-align:left;border-top:1px solid #000;border-left:1px solid #000;border-right:1px solid #000;border-top:0px;border-bottom:1px solid #000;'><span style='-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width:225px;float:left;padding-left:5px;'><label>CNR Number</label></span>:&nbsp;JKHC02-011375-2018</span></b></div><br /><h2 class='h2class' style=' clear:both;color:red;font-weight:bold;display: block;'>Case Status</h2><div  style='width:700px;margin-top:0px;background-color:#FBF6D9;font-size:1em ;font-weight:200;color:red;text-align:center;    display: inline-block;'><span >
+	<label style='float:left;border-top:1px solid red; border-bottom:1px solid red; width:100%;border-left:1px solid red ;border-right:1px solid red;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>First Hearing Date </strong><strong style='float:left;'>:&nbsp;31st December 2018</strong></label></span><br style='clear:left;'/><span><label style='float:left; border-bottom:1px solid red; width:100%;border-left:1px solid red ;border-right:1px solid red ;'><strong style='float:left; width:150px; padding-right:74px; text-align:left; padding-left:5px;'>Decision Date</strong><strong style='float:left;'>:&nbsp;24th December 2020</strong></label></span><br style='clear:left;'/><span><label style='float:left;border-bottom:1px solid red; width:100%;border-left:1px solid red ;border-right:1px solid red ;'><strong style='float:left; width:150px; padding-right:74px; text-align:left; padding-left:5px;'>Case Status </strong><strong style='float:left;'>:&nbsp;CASE DISPOSED</strong></label></span><br style='clear:left;'/><span ><label  style='float:left;border-bottom:1px solid red; width:100%;border-left:1px solid red ;border-right:1px solid red ;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>Nature of Disposal</strong><strong style='float:left;font-size:1em'>:&nbsp;Uncontested--Dismissed</strong></label></span><br style='clear:left;'/><span><label  style='float:left;border-left:1px solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>Coram</strong> <strong style='float:left;width:470px; text-align:left;'> :&nbsp;1712HON'BLE MR.  JUSTICE SANJAY DHAR</strong></label></span><span style='background-color:#FBF6D9 !important;'><label  style='float:left;border-left:1px solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>Bench</strong> <strong style='float:left;width:470px; text-align:left;'> :&nbsp;Single Bench</strong></label></span><span style='background-color:#FBF6D9 !important;'><label  style='float:left;border-left:1px solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>State</strong> <strong style='float:left;width:470px; text-align:left;'> :&nbsp;JAMMUKASHMIR</strong></label></span><span style='background-color:#FBF6D9 !important;'><label  style='float:left;border-left:1px solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>District</strong> <strong style='float:left;width:470px; text-align:left;'> :&nbsp;SRINAGAR</strong></label></span><span style='background-color:#FBF6D9 !important;'><label  style='float:left;border-left:1px solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>Judicial</strong> <strong style='float:left;width:470px; text-align:left;'> :&nbsp;HABEUS CORPUS PETITION (HCP)</strong></label></span><span     style='background-color:#FBF6D9 !important;'><label  style='float:left;border-left:1px solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>Causelist Name</strong> <strong style='float:left;width:470px; text-align:left;'> :&nbsp;After Notice                                                                                       </strong></label></span><span     style='background-color:#FBF6D9 !important;'><label  style='float:left;border-left:1px solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>Short Order</strong> <strong style='float:left;width:470px; text-align:left;'> :&nbsp;DATE FIXED</strong></label></span><span     style='background-color:#FBF6D9 !important;'><label  style='float:left;border-left:1px solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>Not Before Me</strong> <strong style='float:left;width:470px; text-align:left;'> :&nbsp;</strong></label></span></div><br/><div  style='width:700px;margin-top:10px;'><h2 class='h2class' style='font-weight:bold;'>Petitioner and Advocate</h2><span class='Petitioner_Advocate_table' style='float:left;border:1px solid #000; width:100%;text-align:left; margin-bottom:10px; padding-left:5px;'>1) ASHRAM HUSSAIN<br /> <br /><br /></span><br /><h2 class='h2class' style='font-weight:bold;'>Respondent  and Advocate</h2><span class='Respondent_Advocate_table' style='float:left;border:1px solid #000; width:100%;text-align:left;margin-bottom:10px;padding-left:5px;'>1) STATE TH.HOME DEPTT.AND ORS.<br /> <br /><br /></span><br /></table></div><br/><div  style=' width:700px;'><h2 class='h2class' style='font-weight:bold;'>Subordinate Court Information</h2><span class='Lower_court_table' style='float:left;border:1px solid #000; width:100%;text-align:left; margin-bottom:10px; padding-left:5px; '><span  style='width:150px;display:inline-block;'>Court Number and Name</span><label style='text-align:left'>:&nbsp;---</label><br /><span  style='width:150px;display:inline-block;'>Case Number and Year</span><label style='text-align:left'>:&nbsp;0</label><br /><span  style='width:150px;display:inline-block;'>Case Decision Date : </span><label style='text-align:left'>:&nbsp;--</br><span  style='width:150px;display:inline-block;'>state</span><label style='text-align:left;'>:&nbsp;</label><br /><span  style='width:150px;display:inline-block;'>District</span><label style='text-align:left;'>:&nbsp;</label><br /></label></span></div><h2 class='h2class' style='font-weight:bold;display:block;clear:both;'>IA Details</h2><table class='IAheading'  border='1' style=' width:700px;'><tr><th><b>IA Number </b></th><th><b>Party </b></th><th><b>Date of  Filing  </b></th><th><b>Next Date   </b></th><th><b>IA Status </b></th></tr><tr><td align='left' width='30%'>IA/1/2018   </br> <b>Classification :</b> </td><td>ASHRAM HUSSAIN<br/>STATE TH.HOME DEPTT.AND ORS.<br/></td><td>29-12-2018 </td><td>24-12-2020 </td><td>Disposed</td></tr></table><table id='historyheading'><tr><td><h2 class='h2class' style='clear:both;font-weight:bold;text-align:center;margin-top:10px;'>History of Case Hearing</h2></td></tr></table><table width="700px" cellspacing="0" cellpadding="1" align="center" border="1" style="box-sizing:border-box; -moz-box-sizing:border-box; " class="history_table"><tr><th scope="col" align='left' style=''>Cause List Type </th><th scope="col" style=''>Judge</th><th scope="col" style=''>Business On Date</th><th scope="col" style=''>Hearing Date</th><th scope="col" style=''>Purpose of hearing</th></tr><tr><td align='left' style=''></td><td align='left' style=''>HON&#039;BLE MR.  JUSTICE SANJAY DHAR</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','','201700000582018','12','Disposed','24-12-2020','1712','0','JKHC020113752018')>24-12-2020 </a></td><td></td><td style=''> Disposed</td></tr><tr><td align='left' style=''></td><td align='left' style=''></td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20181231','201700000582018','12','DisposedP','','0','1','JKHC020113752018')> </a></td><td>31-12-2018</td><td style=''> FOR ADMISSION After Notice</td></tr><tr><td align='left' style=''>Supplementary-1                                                                                    </td><td align='left' style=''>HON&#039;BLE MR. JUSTICE DHIRAJ SINGH THAKUR</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20190117','201700000582018','12','DisposedP','31-12-2018','1480','2','JKHC020113752018')>31-12-2018 </a></td><td>17-01-2019</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>Regular                                                                                            </td><td align='left' style=''>HON&#039;BLE MRS. JUSTICE SINDHU SHARMA</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20190129','201700000582018','12','DisposedP','17-01-2019','1487','3','JKHC020113752018')>17-01-2019 </a></td><td>29-01-2019</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>Regular                                                                                            </td><td align='left' style=''>HON&#039;BLE MR. JUSTICE DHIRAJ SINGH THAKUR</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20190226','201700000582018','12','DisposedP','29-01-2019','1490','4','JKHC020113752018')>29-01-2019 </a></td><td>26-02-2019</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>Regular                                                                                            </td><td align='left' style=''>HON&#039;BLE MR. JUSTICE DHIRAJ SINGH THAKUR</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20190403','201700000582018','12','DisposedP','26-02-2019','1515','5','JKHC020113752018')>26-02-2019 </a></td><td>03-04-2019</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>Regular                                                                                            </td><td align='left' style=''>HON&#039;BLE MR. JUSTICE DHIRAJ SINGH THAKUR</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20190426','201700000582018','12','DisposedP','03-04-2019','1553','6','JKHC020113752018')>03-04-2019 </a></td><td>26-04-2019</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>Regular                                                                                            </td><td align='left' style=''>HON&#039;BLE MR. JUSTICE DHIRAJ SINGH THAKUR</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20190506','201700000582018','12','DisposedP','26-04-2019','1576','7','JKHC020113752018')>26-04-2019 </a></td><td>06-05-2019</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>Regular                                                                                            </td><td align='left' style=''>HON&#039;BLE MR. JUSTICE DHIRAJ SINGH THAKUR</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20190708','201700000582018','12','DisposedP','06-05-2019','1704','8','JKHC020113752018')>06-05-2019 </a></td><td>08-07-2019</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>Regular                                                                                            </td><td align='left' style=''>HON&#039;BLE MR. JUSTICE ALI MOHAMMAD MAGREY</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20190805','201700000582018','12','DisposedP','08-07-2019','1703','9','JKHC020113752018')>08-07-2019 </a></td><td>05-08-2019</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>Regular                                                                                            </td><td align='left' style=''>HON&#039;BLE MR. JUSTICE DHIRAJ SINGH THAKUR</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20190911','201700000582018','12','DisposedP','05-08-2019','1704','10','JKHC020113752018')>05-08-2019 </a></td><td>11-09-2019</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>Regular                                                                                            </td><td align='left' style=''>HON&#039;BLE  MR. JUSTICE RAJESH BINDAL</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20191014','201700000582018','12','DisposedP','11-09-2019','1702','11','JKHC020113752018')>11-09-2019 </a></td><td>14-10-2019</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>Regular                                                                                            </td><td align='left' style=''>HON&#039;BLE MR. JUSTICE DHIRAJ SINGH THAKUR</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20191104','201700000582018','12','DisposedP','14-10-2019','1704','12','JKHC020113752018')>14-10-2019 </a></td><td>04-11-2019</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>Regular                                                                                            </td><td align='left' style=''>HON&#039;BLE MR. JUSTICE DHIRAJ SINGH THAKUR</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20191204','201700000582018','12','DisposedP','04-11-2019','1704','13','JKHC020113752018')>04-11-2019 </a></td><td>04-12-2019</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>Regular                                                                                            </td><td align='left' style=''>HON&#039;BLE  MR. JUSTICE RAJESH BINDAL</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20191227','201700000582018','12','DisposedP','04-12-2019','1702','14','JKHC020113752018')>04-12-2019 </a></td><td>27-12-2019</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>Regular                                                                                            </td><td align='left' style=''>HON&#039;BLE MR. JUSTICE ALI MOHAMMAD MAGREY</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20200228','201700000582018','12','DisposedP','27-12-2019','1703','15','JKHC020113752018')>27-12-2019 </a></td><td>28-02-2020</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>Regular                                                                                            </td><td align='left' style=''>HON&#039;BLE MR. JUSTICE SANJEEV KUMAR</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20200421','201700000582018','12','DisposedP','28-02-2020','1706','16','JKHC020113752018')>28-02-2020 </a></td><td>21-04-2020</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>Regular                                                                                            </td><td align='left' style=''>HON&#039;BLE MR.  JUSTICE PUNEET GUPTA</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20200811','201700000582018','12','DisposedP','21-04-2020','1713','17','JKHC020113752018')>21-04-2020 </a></td><td>11-08-2020</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>After Notice                                                                                       </td><td align='left' style=''>HON&#039;BLE MR. JUSTICE RAJNESH OSWAL</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20200911','201700000582018','12','DisposedP','11-08-2020','1710','18','JKHC020113752018')>11-08-2020 </a></td><td>11-09-2020</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>After Notice                                                                                       </td><td align='left' style=''>HON&#039;BLE MR. JUSTICE RAJNESH OSWAL</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20200922','201700000582018','12','DisposedP','11-09-2020','1710','19','JKHC020113752018')>11-09-2020 </a></td><td>22-09-2020</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>After Notice                                                                                       </td><td align='left' style=''>HON&#039;BLE MR. JUSTICE RAJNESH OSWAL</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20201005','201700000582018','12','DisposedP','22-09-2020','1710','20','JKHC020113752018')>22-09-2020 </a></td><td>05-10-2020</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>After Notice                                                                                       </td><td align='left' style=''>HON&#039;BLE MR.  JUSTICE SANJAY DHAR</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20201019','201700000582018','12','DisposedP','05-10-2020','1712','21','JKHC020113752018')>05-10-2020 </a></td><td>19-10-2020</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>After Notice                                                                                       </td><td align='left' style=''>HON&#039;BLE MR.  JUSTICE SANJAY DHAR</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20201207','201700000582018','12','DisposedP','19-10-2020','1712','22','JKHC020113752018')>19-10-2020 </a></td><td>07-12-2020</td><td style=''> SPECIALLY ORDERED CASES</td></tr><tr><td align='left' style=''>After Notice                                                                                       </td><td align='left' style=''>HON&#039;BLE MR.  JUSTICE SANJAY DHAR</td><td align='left' style=''><a href='#' onclick=viewBusiness('1','1','20201224','201700000582018','12','DisposedP','07-12-2020','1712','23','JKHC020113752018')>07-12-2020 </a></td><td>24-12-2020</td><td style=''> SPECIALLY ORDERED CASES</td></tr><table id='orderheading'><tr><td><br/><h2 class='h2class' style='font-weight:bold;'>Orders </h2></td></tr></table><table width="700px" cellspacing="0" cellpadding="1" align="center" border="1" class="order_table" style="border-collapse:collapse;"><tr><td style='width:71px;'> <font size='2'><strong> &nbsp;&nbsp;Order Number</strong></font></td><td style='width:71px;'> <font      size='2'><strong> &nbsp;&nbsp;Order on</strong></font></td> <td style='width:330px;'> <font size='2'><strong> &nbsp;&nbsp;Judge</strong></font></td><td style='width:128px;'> <font size='2'><strong>&nbsp;&nbsp;Order Date </strong></font> </td><td> <font size='2'><strong>&nbsp;&nbsp;Order Details </strong></font></td></tr><tr><td style='border-top:none;'>&nbsp;&nbsp;1</td><td align='left'>&nbsp;HCP/58/2018 </td><td align='left' style='width:330px;border-top:none;'><font size='2'>&nbsp;&nbsp;HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR </font></td><td style='border-top:none;'>&nbsp;&nbsp;26-02-2019</font></td><td style=" border-top:none;" colspan='3'>	<a target='_blank' href ='display_pdf.php?filename=rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx%2FwvYTxzlyF4WZk9SNDiELN0d3zciW0Jd2&caseno=HCP/58/2018&cCode=1&appFlag=&cino=JKHC020113752018&state_code=12' ></font> <font size='2' color='green'> &nbsp;&nbsp;View <span></span></font></a></td></tr><tr><td style='border-top:none;'>&nbsp;&nbsp;2</td><td align='left'>&nbsp;HCP/58/2018 </td><td align='left' style='width:330px;border-top:none;'><font size='2'>&nbsp;&nbsp;HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR </font></td><td style='border-top:none;'>&nbsp;&nbsp;03-04-2019</font></td><td style=" border-top:none;" colspan='3'>	<a target='_blank' href ='display_pdf.php?filename=rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx%2FwvYTxzlyF4VfQwf0orUZaOPgJQdtRngq&caseno=HCP/58/2018&cCode=1&appFlag=&cino=JKHC020113752018&state_code=12' ></font> <font size='2' color='green'> &nbsp;&nbsp;View <span></span></font></a></td></tr><tr><td style='border-top:none;'>&nbsp;&nbsp;3</td><td align='left'>&nbsp;HCP/58/2018 </td><td align='left' style='width:330px;border-top:none;'><font size='2'>&nbsp;&nbsp;HON'BLE MR. JUSTICE ALI MOHAMMAD MAGREY </font></td><td style='border-top:none;'>&nbsp;&nbsp;08-07-2019</font></td><td style=" border-top:none;" colspan='3'>	<a target='_blank' href ='display_pdf.php?filename=rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx%2FwvYTxzlyF4W9zkSacwsce%2F3OpGJvB0lg&caseno=HCP/58/2018&cCode=1&appFlag=&cino=JKHC020113752018&state_code=12' ></font> <font size='2' color='green'> &nbsp;&nbsp;View <span></span></font></a></td></tr><tr><td style='border-top:none;'>&nbsp;&nbsp;4</td><td align='left'>&nbsp;HCP/58/2018 </td><td align='left' style='width:330px;border-top:none;'><font size='2'>&nbsp;&nbsp;HON'BLE MR. JUSTICE ALI MOHAMMAD MAGREY </font></td><td style='border-top:none;'>&nbsp;&nbsp;08-07-2019</font></td><td style=" border-top:none;" colspan='3'>	<a target='_blank' href ='display_pdf.php?filename=rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx%2FwvYTxzlyF4V4B7CAX6YboIYTxzyrEv0a&caseno=HCP/58/2018&cCode=1&appFlag=&cino=JKHC020113752018&state_code=12' ></font> <font size='2' color='green'> &nbsp;&nbsp;View <span></span></font></a></td></tr><tr><td style='border-top:none;'>&nbsp;&nbsp;5</td><td align='left'>&nbsp;HCP/58/2018 </td><td align='left' style='width:330px;border-top:none;'><font size='2'>&nbsp;&nbsp;HON'BLE  MR. JUSTICE RAJESH BINDAL </font></td><td style='border-top:none;'>&nbsp;&nbsp;11-09-2019</font></td><td style=" border-top:none;" colspan='3'>	<a target='_blank' href ='display_pdf.php?filename=rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx%2FwvYTxzlyF4UBDlNqL%2FzLUzTp%2FPjCG3fg&caseno=HCP/58/2018&cCode=1&appFlag=&cino=JKHC020113752018&state_code=12' ></font> <font size='2' color='green'> &nbsp;&nbsp;View <span></span></font></a></td></tr><tr><td style='border-top:none;'>&nbsp;&nbsp;6</td><td align='left'>&nbsp;HCP/58/2018 </td><td align='left' style='width:330px;border-top:none;'><font size='2'>&nbsp;&nbsp;HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR </font></td><td style='border-top:none;'>&nbsp;&nbsp;14-10-2019</font></td><td style=" border-top:none;" colspan='3'>	<a target='_blank' href ='display_pdf.php?filename=rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx%2FwvYTxzlyF4VVwZkC6SFsMLeD82pm02mP&caseno=HCP/58/2018&cCode=1&appFlag=&cino=JKHC020113752018&state_code=12' ></font> <font size='2' color='green'> &nbsp;&nbsp;View <span></span></font></a></td></tr><tr><td style='border-top:none;'>&nbsp;&nbsp;7</td><td align='left'>&nbsp;HCP/58/2018 </td><td align='left' style='width:330px;border-top:none;'><font size='2'>&nbsp;&nbsp;HON'BLE MR. JUSTICE SANJEEV KUMAR </font></td><td style='border-top:none;'>&nbsp;&nbsp;28-02-2020</font></td><td style=" border-top:none;" colspan='3'>	<a target='_blank' href ='display_pdf.php?filename=rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx%2FwvYTxzlyF4VKAoANwWy5ZhRhsffy1Wdy&caseno=HCP/58/2018&cCode=1&appFlag=&cino=JKHC020113752018&state_code=12' ></font> <font size='2' color='green'> &nbsp;&nbsp;View <span></span></font></a></td></tr><tr><td style='border-top:none;'>&nbsp;&nbsp;8</td><td align='left'>&nbsp;HCP/58/2018 </td><td align='left' style='width:330px;border-top:none;'><font size='2'>&nbsp;&nbsp;HON'BLE MR.  JUSTICE SANJAY DHAR </font></td><td style='border-top:none;'>&nbsp;&nbsp;19-10-2020</font></td><td style=" border-top:none;" colspan='3'>	<a target='_blank' href ='display_pdf.php?filename=rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx%2FwvYTxzlyF4WYPfx2WudNMAu4SDcElc%2Bg&caseno=HCP/58/2018&cCode=1&appFlag=&cino=JKHC020113752018&state_code=12' ></font> <font size='2' color='green'> &nbsp;&nbsp;View <span></span></font></a></td></tr><tr><td style='border-top:none;'>&nbsp;&nbsp;9</td><td align='left'>&nbsp;HCP/58/2018 </td><td align='left' style='width:330px;border-top:none;'><font size='2'>&nbsp;&nbsp;HON'BLE MR.  JUSTICE SANJAY DHAR </font></td><td style='border-top:none;'>&nbsp;&nbsp;24-12-2020</font></td><td style=" border-top:none;" colspan='3'>	<a target='_blank' href ='display_pdf.php?filename=rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx%2FwvYTxzlyF4Uu7tOArEmvxZv7juS7VWPW&caseno=HCP/58/2018&cCode=1&appFlag=&cino=JKHC020113752018&state_code=12' ></font> <font size='2' color='green'> &nbsp;&nbsp;View <span></span></font></a></td></tr>
+<br />
+
+</table></table><table id='orderheading'><tr><td><br/><h2 class='h2class' style='font-weight:bold;'>Category Details </h2></td></tr></table><table width="700px" cellspacing="0" cellpadding="1" align="center" border="1" style="box-sizing:border-box; -moz-box-sizing:border-box;border-collapse:collapse " ><tr><td width='50%' style='text-align:left !important;padding-left:5px;' ><b>Category</b>
+							</td><td width='50%'  style='padding-left:5px;text-align:left !important;'>SB HABEAS CORPUS PETITION ( 107 )
+							</td></tr><tr><td width='50%' style='text-align:left !important;padding-left:5px;' ><b>Sub Category</b>
+							</td><td width='50%'  style='padding-left:5px;text-align:left !important;'>OTHER MATTERS ( 99 )
+							</td></tr></table></br><table id='orderheading'><tr><td><br/><h2 class='h2class' style='font-weight:bold;'>OBJECTION</h2></td></tr></table><table width="700px" cellspacing="0" cellpadding="1" align="center" border="1" class="order_table" style="border-collapse:collapse;"><tr><td><b>Sr.No.</b></td><td><b>Scrutiny Date</b></td><td><b>OBJECTION</b><td><b>Compliance Date</b></td><td><b>Receipt Date</b></td></tr><tr><td><label><b>1</b></label></td><td><label>29-12-2018</label></td><td><label style='color:green'><b> <label style='color:green'><b>All Objections are Complied</b></label> </b></label></td><td><label>--</label></td><td><label>--</label></td></tr></table><table id='orderheading'><tr><td><br/><h2 class='h2class' style='font-weight:bold;'>Document Details</h2></td></tr></table><table width="700px" cellspacing="0" cellpadding="1" align="center" border="1" style="box-sizing:border-box; -moz-box-sizing:border-box;border-collapse:collapse " ><tr><th scope="col" style=''><label>Sr. No. </label></th><th scope="col" style=''><label>Document No. </label></th><th scope="col" style=''><label>Date of Receiving </label></th><th scope="col" style=''><label>Filed by</label></th><th scope="col" style=''><label>Name of Advocate </th><th scope="col" style=''><label>Document Filed  </th></tr><tr><td  style='padding-left:5px;text-align:left !important;'>1</td>
+		<td  style='padding-left:5px;text-align:left !important;'>1</td>
+		<td  style='padding-left:5px;text-align:left !important;'>03-05-2019</td>
+		<td  style='padding-left:5px;text-align:left !important;'>STATE TH.HOME DEPTT.AND ORS.</td>
+		<td  style='padding-left:5px;text-align:left !important;'>J A KAZMI</td>
+		<td  style='padding-left:5px;text-align:left !important;'>VAKALATNAMA</td></tr><tr><td  style='padding-left:5px;text-align:left !important;'>2</td>
+		<td  style='padding-left:5px;text-align:left !important;'>2</td>
+		<td  style='padding-left:5px;text-align:left !important;'>14-10-2019</td>
+		<td  style='padding-left:5px;text-align:left !important;'>STATE TH.HOME DEPTT.AND ORS.</td>
+		<td  style='padding-left:5px;text-align:left !important;'>J A KAZMI</td>
+		<td  style='padding-left:5px;text-align:left !important;'>REPLY</td></tr><tr><td  style='padding-left:5px;text-align:left !important;'>3</td>
+		<td  style='padding-left:5px;text-align:left !important;'>3</td>
+		<td  style='padding-left:5px;text-align:left !important;'>11-11-2020</td>
+		<td  style='padding-left:5px;text-align:left !important;'>STATE TH.HOME DEPTT.AND ORS.</td>
+		<td  style='padding-left:5px;text-align:left !important;'>ARSHAD MAJID MALIK DY AG</td>
+		<td  style='padding-left:5px;text-align:left !important;'>STATUS REPORT</td></tr></table></table><br />
+</div>
+</body>
+</form>
+</html>

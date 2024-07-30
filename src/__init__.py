@@ -1,2 +1,1 @@
-from court import Court
-from captcha import Captcha
+from .entities import *

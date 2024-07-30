@@ -1,11 +1,30 @@
 [project]
-name = "ecourt-scraper"
+name = "ecourts"
 version = "0.0.1"
 dependencies = [
     "PyYAML~=6.0",
     "requests~=2.31",
+    "beautifulsoup4~=4.10",
+    "pytest~=6.2",
+    "wat-inspector",
+    "html5lib"
 ]
+requires-python = ">=3.10"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+parse_html = "ecourts.parsers.case_details:main"
+
+[tool.setuptools]
+py-modules = ['hello']
+
 [tool.pytest.ini_options]
 pythonpath = [
   "src"
+]
+testpaths = [
+  "tests"
 ]

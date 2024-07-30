@@ -7,17 +7,23 @@ import sys
 import subprocess
 import tempfile
 
+
 class CaptchaError(Exception):
     pass
 
-class Captcha():
+
+class Captcha:
     THRESHOLD = 0.4
     MAX_PIXEL_VALUE = 255
-    URL = "https://hcservices.ecourts.gov.in/ecourtindiaHC/securimage/securimage_show.php"
+    URL = (
+        "https://hcservices.ecourts.gov.in/ecourtindiaHC/securimage/securimage_show.php"
+    )
     SUFFIX = ".png"
+
     def __init__(self, session):
         self.session = session
-    def solve(self, retry = 3):
+
+    def solve(self, retry=3):
         while retry > 0:
             captcha = self.session.get(self.URL)
 
@@ -40,7 +46,9 @@ class Captcha():
         src = cv2.imread(file)
         threshold = int(self.MAX_PIXEL_VALUE * self.THRESHOLD)
 
-        _, threshold_img = cv2.threshold(src, threshold, self.MAX_PIXEL_VALUE, cv2.THRESH_BINARY)
+        _, threshold_img = cv2.threshold(
+            src, threshold, self.MAX_PIXEL_VALUE, cv2.THRESH_BINARY
+        )
 
         # Create a binary mask for lines
         lines_color = np.array([0x70, 0x70, 0x70], dtype=np.uint8)
