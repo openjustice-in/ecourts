@@ -16,7 +16,7 @@ dynamic = ["version"]
 
 [tool.pytest.ini_options]
 pythonpath = [
-  "src/ecourts"
+  "src"
 ]
 testpaths = [
   "test"
