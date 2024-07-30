@@ -2,13 +2,14 @@
 
 import unittest
 import pytest
-import captcha
 import glob
+from captcha import Captcha
+import os
 
-@pytest.fixture()
-def captcha_image():
-	for f in glob.glob("test/fixtures/*.png"):
-		yield f
+@pytest.fixture(params=glob.glob("test/fixtures/*.png"))
+def captcha_image(request):
+	yield request.param
 
 def test_captcha(captcha_image):
-	assert captcha.decaptcha(captcha_image) == "abcde"
+	filename = os.path.basename(captcha_image)
+	assert Captcha().decaptcha(captcha_image) == filename[:-4]

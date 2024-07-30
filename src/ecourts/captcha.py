@@ -20,10 +20,11 @@ class Captcha:
     )
     SUFFIX = ".png"
 
-    def __init__(self, session):
+    def __init__(self, session = None):
         self.session = session
 
     def solve(self, retry=3):
+        assert self.session is not None
         while retry > 0:
             captcha = self.session.get(self.URL)
 
