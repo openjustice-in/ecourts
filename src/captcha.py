@@ -106,14 +106,7 @@ class Captcha:
         output, _ = process.communicate()
         result = output.decode("utf-8").strip()
         if len(result) == 5:
-            
-            print(f"Invalid captcha: {result}")
-            print(f"Clean Version: {output_path}")
-            print(f"Original Vers: {file}")
-            # import wat
-            # wat / self
-            # wat / output_path
-            # os.remove(output_path)
+            os.remove(output_path)
             return result
         else:
             raise CaptchaError("Couldn't solve captcha")

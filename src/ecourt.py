@@ -6,7 +6,8 @@ from urllib.parse import urlencode
 from entities import Court, CaseType
 import datetime
 import csv
-import parsers
+from parsers.orders import parse_orders
+from parsers.options import parse_options
 
 class ECourt:
     # TODO: Get this dynamically at init
@@ -36,9 +37,6 @@ class ECourt:
                 if csrf:
                     params |= self.CSRF_MAGIC_PARAMS
 
-                import wat
-                wat / params
-
                 response = self.session.post(self.url(path), data=params)
                 response.raise_for_status()
                 return response.text
@@ -55,10 +53,10 @@ class ECourt:
 
     def getOrdersOnDate(self, date: datetime.date):
         d = date.strftime("%d-%m-%Y")
-        return parsers.parse_orders(self.showRecords(from_date=d, to_date=d))
+        return parse_orders(self.showRecords(from_date=d, to_date=d))
 
     def getCaseTypes(self):
-        for option in parsers.parse_options(self.fillCaseType())[1:]:
+        for option in parse_options(self.fillCaseType())[1:]:
             yield CaseType(
                 code=int(option[0]),
                 description=option[1],

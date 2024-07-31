@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-import wat
 from collections import OrderedDict
 from datetime import datetime
 from typing import List, Dict, Optional
