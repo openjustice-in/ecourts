@@ -4,6 +4,7 @@ from collections import OrderedDict
 from datetime import datetime
 from typing import List, Dict, Optional
 from bs4 import BeautifulSoup
+import urllib.parse
 import sys
 import re
 from parsers.utils import parse_js_call, clean_html
@@ -66,6 +67,7 @@ class CaseDetails:
                 type = cells[0].text.strip()
                 if cells[2].select_one("a"):
                     # function viewBusiness(court_code,dist_code,n_dt,case_number,state_code,businessStatus,todays_date1,court_no,srno)
+                    # TODO: perhaps use a Court instance?
                     signature = OrderedDict(
                         [
                             ("court_code", str),
@@ -95,7 +97,6 @@ class CaseDetails:
                         business=Business(**res) if res else None,
                     )
                 )
-                # (court_code,dist_code,n_dt,case_number,state_code,businessStatus,todays_date1,court_no,srno)
         return history
 
     def extract_orders(self, soup: BeautifulSoup) -> List[Order]:
@@ -105,8 +106,7 @@ class CaseDetails:
         ):
             (_, caseno, judge, date, details) = row.find_all("td")
             url = details.select_one("a")["href"]
-            # parse query params from url above
-            import urllib.parse
+            
 
             query = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
             orders.append(

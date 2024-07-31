@@ -1,4 +1,6 @@
 from entities import Court
+
+# This is same as the data in courts.csv
 COURT_DATA =  [
     ["1","1",None],
     ["1","1","2"],
