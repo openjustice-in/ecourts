@@ -1,18 +1,23 @@
 [project]
 name = "ecourts"
 dependencies = [
-    "PyYAML~=6.0",
     "requests~=2.31",
     "beautifulsoup4~=4.10",
-    "pytest~=8.3",
-    "opencv-python~=4.10.0",
-    "wat-inspector",
-    "html5lib",
-    "pytest-recording~=0.13"
+    "opencv-python~=4.10.0",    
+    "click~=8.1"
 ]
 requires-python = ">=3.10"
 description = ""
 dynamic = ["version"]
+[project.optional-dependencies]
+dev = [
+  "wat-inspector",
+  "pytest-recording~=0.13",
+  "pytest-cov"
+]
+test = [
+  "pytest~=8.3",
+]
 
 [tool.pytest.ini_options]
 pythonpath = [
@@ -21,4 +26,8 @@ pythonpath = [
 testpaths = [
   "test"
 ]
-[tool.hatch]
+[project.scripts]
+get-case-types = "cli:get_case_types"
+
+[tool.coverage.run]
+source = ["src"]

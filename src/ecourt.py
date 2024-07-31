@@ -67,13 +67,3 @@ class ECourt:
     @apimethod(path="/cases/s_casetype_qry.php", csrf=False, court=True)
     def fillCaseType(self):
         pass
-
-
-if __name__ == "__main__":
-    session = requests.Session()
-    for court in filter(
-        lambda x: x["state_cd"] == "12", csv.DictReader(open("courts.csv"))
-    ):
-        f = get_orders(session, "02-05-2024", court)
-        for x in f:
-            print(x)

@@ -26,7 +26,6 @@ def parse_orders(raw_data: str):
             or record_fields[5] != "@#"
             or record_fields[6] != ""
         ):
-            print(record_fields)
             raise NotImplementedError()
 
         yield Order(
