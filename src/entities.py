@@ -1,8 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 from typing import List, Dict, Optional
-from ecourts.parsers.utils import parse_date
-
+from parsers.utils import parse_date
 
 @dataclass
 class Party:
@@ -39,9 +38,9 @@ class Business:
     srno: str
 
     def __post_init__(self):
-        if self.nextdate1 instanceof str:
+        if self.nextdate1 is str:
             self.nextdate1 = parse_date(self.nextdate1)
-        if self.businessDate instanceof str:
+        if self.businessDate is str:
             self.businessDate = parse_date(self.businessDate)
 
 
@@ -101,6 +100,6 @@ class Case:
 class Court:
     state_cd: str
     dist_cd: str
-    court_code: str
-    stateNm: str
-    name: str
+    court_code: Optional[str]
+    stateNm: Optional[str]
+    name: Optional[str]

@@ -6,9 +6,8 @@ from typing import List, Dict, Optional
 from bs4 import BeautifulSoup
 import sys
 import re
-from utils import parse_js_call, parse_date, clean_html
-from ..entities import Case, Party, HistoryEntry, Business, Order, Objection
-
+from parsers.utils import parse_js_call, parse_date, clean_html
+from entities import Case, Party, HistoryEntry, Business, Order, Objection
 
 class CaseDetails:
 
