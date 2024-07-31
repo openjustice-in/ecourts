@@ -7,6 +7,7 @@ import sys
 import subprocess
 import tempfile
 
+
 class CaptchaError(Exception):
     pass
 
@@ -19,10 +20,9 @@ class Captcha:
     )
     SUFFIX = ".png"
 
-    def __init__(self, session = None, retry = 3):
+    def __init__(self, session=None, retry=3):
         self.session = session
         self.retry = retry
-
 
     def solve(self):
         if self.session == None:

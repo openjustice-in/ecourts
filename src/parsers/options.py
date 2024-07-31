@@ -13,7 +13,7 @@ def parse_options(raw_input: str):
     options = raw_input.split("#")
     for option in options:
         if option:
-            
+
             try:
                 key, value = option.split("~")
             except ValueError:

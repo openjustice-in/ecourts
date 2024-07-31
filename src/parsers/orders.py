@@ -1,5 +1,7 @@
 from entities import Order
 from entities import Court
+
+
 # TODO: The dict mappings should be dynamic
 # based on the route called.
 def parse_orders(raw_data: str):
@@ -29,10 +31,10 @@ def parse_orders(raw_data: str):
             raise NotImplementedError()
 
         yield Order(
-            court = Court(record_fields[9],record_fields[4]),
-            case_number = record_fields[0],
+            court=Court(record_fields[9], record_fields[4]),
+            case_number=record_fields[0],
             date=record_fields[1],
             filename=record_fields[2],
-            judgement = "JUDGEMENT" in record_fields[3],
-            cino=record_fields[8]
+            judgement="JUDGEMENT" in record_fields[3],
+            cino=record_fields[8],
         )

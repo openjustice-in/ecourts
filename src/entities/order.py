@@ -5,6 +5,7 @@ from parsers.utils import parse_date
 import datetime
 from urllib.parse import urlencode
 
+
 @dataclass
 class Order:
     filename: str
@@ -20,7 +21,7 @@ class Order:
     def pdf_url(self):
         if self.filename:
             return f"https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/display_pdf.php?{urlencode(self.queryParams())}"
-    
+
     def __post_init__(self):
         if isinstance(self.date, str):
             self.date = parse_date(self.date)

@@ -4,6 +4,7 @@ from typing import Optional
 from parsers.utils import parse_date
 from entities.business import Business
 
+
 @dataclass
 class HistoryEntry:
     cause_list_type: str

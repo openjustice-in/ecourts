@@ -3,6 +3,7 @@ from datetime import datetime
 from typing import Optional
 from parsers.utils import parse_date
 
+
 @dataclass
 class Objection:
     scrutiny_date: Optional[datetime.date]

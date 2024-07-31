@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from parsers.utils import parse_date
 
+
 @dataclass
 class Business:
     court_code: str

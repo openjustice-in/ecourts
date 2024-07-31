@@ -8,6 +8,7 @@ from entities.party import Party
 from entities.order import Order
 from entities.objection import Objection
 
+
 @dataclass
 class Case:
     case_type: str
