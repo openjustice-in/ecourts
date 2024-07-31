@@ -6,11 +6,9 @@ from urllib.parse import urlencode
 import csv
 import parser
 
-# TODO: Get this dynamically at init
-CSRF_MAGIC = "sid:10e5a2d1738a8d1d68945ef1e6dcb8bfef62a46a,1721977473"
-
-
 class ECourt:
+    # TODO: Get this dynamically at init
+    CSRF_MAGIC = "sid:10e5a2d1738a8d1d68945ef1e6dcb8bfef62a46a,1721977473"
     def __init__(self, court):
         self.session = requests.Session()
         self.court = court
@@ -31,7 +29,7 @@ class ECourt:
 
     def api(self, path, params, court, csrf=True):
         if csrf:
-            params["__csrf_magic"] = CSRF_MAGIC
+            params["__csrf_magic"] = self.CSRF_MAGIC
         if court:
             params = params | court_params(court)
         response = self.session.post(self.url(path), data=params)
@@ -40,9 +38,9 @@ class ECourt:
 
     def court_params(self, court):
         return {
-            "state_code": court["state_cd"],
-            "dist_code": court["dist_cd"],
-            "court_code": court["court_code"],
+            "state_code": court.state_cd,
+            "dist_code": court.dist_cd,
+            "court_code": court.court_code,
         }
 
     @apimethod(path="/cases/s_casetype_qry.php")

@@ -38,9 +38,9 @@ class Business:
     srno: str
 
     def __post_init__(self):
-        if self.nextdate1 is str:
+        if isinstance(self.nextdate1, str):
             self.nextdate1 = parse_date(self.nextdate1)
-        if self.businessDate is str:
+        if isinstance(self.businessDate, str):
             self.businessDate = parse_date(self.businessDate)
 
 

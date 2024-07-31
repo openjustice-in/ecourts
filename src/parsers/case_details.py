@@ -165,9 +165,7 @@ class CaseDetails:
         soup = BeautifulSoup(html_content, "html.parser")
 
         case_details = self.extract_case_details(soup)
-
         case_status = self.extract_case_status(soup)
-        # wat / case_status
         parties = self.extract_parties(soup)
         history = self.extract_history(soup)
         category_details = self.extract_category_details(soup)

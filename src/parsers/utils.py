@@ -47,15 +47,10 @@ def parse_date(date_str: Optional[str]) -> Optional[datetime]:
 
 
 def _remove_all_attrs_except_saving(soup):
-    whitelist = ["a"]
     for tag in soup.find_all(True):
-        if tag.name not in whitelist:
-            tag.attrs = {}
-        else:
-            attrs = dict(tag.attrs)
-            for attr in attrs:
-                if attr not in ["href", "onclick"]:
-                    del tag.attrs[attr]
+        for attr in dict(tag.attrs):
+            if attr not in ["href", "onclick", "id", "class"]:
+                del tag.attrs[attr]
     return soup
 
 
