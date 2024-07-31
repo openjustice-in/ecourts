@@ -2,30 +2,121 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import List, Dict, Optional
 from parsers.utils import parse_date
+from urllib.parse import urlencode
 
 @dataclass
-class Party:
-    name: str
+class Court:
+    # This is same as the data in courts.csv
+    __ALL_COURTS__ =  [
+        ["1",None],
+        ["1","2"],
+        ["1","3"],
+        ["1","4"],
+        ["1","5"],
+        ["1","6"],
+        ["10",None],
+        ["10","2"],
+        ["11",None],
+        ["12",None],
+        ["12","2"],
+        ["13",None],
+        ["13","2"],
+        ["15",None],
+        ["16",None],
+        ["16","2"],
+        ["16","3"],
+        ["16","4"],
+        ["17",None],
+        ["18",None],
+        ["2",None],
+        ["20",None],
+        ["21",None],
+        ["24",None],
+        ["25",None],
+        ["29",None],
+        ["3",None],
+        ["3","2"],
+        ["3","3"],
+        ["4",None],
+        ["5",None],
+        ["6",None],
+        ["6","2"],
+        ["6","3"],
+        ["6","4"],
+        ["7",None],
+        ["8",None],
+        ["9",None],
+        ["9","2"],
+    ]
+    state_code: str
+    district_code: str = "1"
+    court_code: Optional[str] = None
 
+    # These two are part of presentation links, but unused otherwise
+    state_name: Optional[str] = None
+    name: Optional[str] = None
+
+    def __post_init__(self):
+        """
+        Raise an error if the court is not valid
+        """
+        if [self.state_code, self.court_code] not in Court.__ALL_COURTS__:
+            raise ValueError("Invalid court")
+
+    @classmethod
+    def enumerate(cls):
+        for c in cls.__ALL_COURTS__:
+            yield Court(
+                state_code = c[0],
+                court_code = c[1],
+                state_name = None,
+                name = None
+
+            )
+
+    def queryParams(self):
+        r = {
+            "state_code": self.state_code,
+            "dist_code": self.district_code
+        }
+        if self.court_code:
+            r["court_code"] = self.court_code
+        return r
 
 @dataclass
 class Order:
-    caseno: str
-    judge: str
-    date: datetime.date
-    filename: Optional[str]
-    cCode: Optional[str]
-    cino: Optional[str]
-    state_code: Optional[str]
-    appFlag: Optional[str] = ""
+    filename: str
+    case_number: str
+    cino: str
+    court: Court
 
-    def pdf_url():
+    judge: Optional[str] = ""
+    date: Optional[datetime.date] = None
+    appFlag: Optional[str] = ""
+    judgement = Optional[bool]
+
+    def pdf_url(self):
         if self.filename:
-            return f"https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/display_pdf.php?filename={filename}&caseno={caseno}&cCode={cCode}&appFlag={appFlag}&cino={cino}&state_code={state_code}"
+            return f"https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/display_pdf.php?{urlencode(self.queryParams())}"
+    
     def __post_init__(self):
         if isinstance(self.date, str):
             self.date = parse_date(self.date)
 
+    def queryParams(self):
+        return {
+            "filename": self.filename,
+            "caseno": self.case_number,
+            "cCode": self.court.court_code,
+            "appFlag": self.appFlag,
+            "cino": self.cino,
+            "state_code": self.court.state_code,
+        }
+
+
+@dataclass
+class Party:
+    name: str
 
 @dataclass
 class Business:
@@ -77,7 +168,6 @@ class Objection:
         if isinstance(self.receipt_date, str):
             self.receipt_date = parse_date(self.receipt_date)
 
-
 @dataclass
 class Case:
     case_type: str
@@ -121,81 +211,7 @@ class Case:
             self.filing_date = parse_date(self.filing_date)
 
 @dataclass
-class Court:
-    # This is same as the data in courts.csv
-    __ALL_COURTS__ =  [
-        ["1","1",None],
-        ["1","1","2"],
-        ["1","1","3"],
-        ["1","1","4"],
-        ["1","1","5"],
-        ["1","1","6"],
-        ["10","1",None],
-        ["10","1","2"],
-        ["11","1",None],
-        ["12","1",None],
-        ["12","1","2"],
-        ["13","1",None],
-        ["13","1","2"],
-        ["15","1",None],
-        ["16","1",None],
-        ["16","1","2"],
-        ["16","1","3"],
-        ["16","1","4"],
-        ["17","1",None],
-        ["18","1",None],
-        ["2","1",None],
-        ["20","1",None],
-        ["21","1",None],
-        ["24","1",None],
-        ["25","1",None],
-        ["29","1",None],
-        ["3","1",None],
-        ["3","1","2"],
-        ["3","1","3"],
-        ["4","1",None],
-        ["5","1",None],
-        ["6","1",None],
-        ["6","1","2"],
-        ["6","1","3"],
-        ["6","1","4"],
-        ["7","1",None],
-        ["8","1",None],
-        ["9","1",None],
-        ["9","1","2"],
-    ]
-    state_code: str
-    district_code: str
-    court_code: Optional[str] = None
-
-    # These two are part of presentation links, but unused otherwise
-    state_name: Optional[str] = None
-    name: Optional[str] = None
-
-    def __post_init__(self):
-        """
-        Raise an error if the court is not valid
-        """
-        if [self.state_code, self.district_code, self.court_code] not in Court.__ALL_COURTS__:
-            raise ValueError("Invalid court")
-
-    @classmethod
-    def enumerate(cls):
-        for c in cls.__ALL_COURTS__:
-            yield Court(
-                state_code = c[0],
-                district_code = c[1],
-                court_code = c[2],
-                state_name = None,
-                name = None
-
-            )
-
-    def queryParams(self):
-        r = {
-            "state_code": self.state_code,
-            "dist_code": self.district_code
-        }
-        if self.court_code:
-            r["court_code"] = self.court_code
-        return r
+class CaseType:
+    code: int
+    description: str
+    court: Court

@@ -19,12 +19,15 @@ class Captcha:
     )
     SUFFIX = ".png"
 
-    def __init__(self, session = None):
+    def __init__(self, session = None, retry = 3):
         self.session = session
+        self.retry = retry
 
-    def solve(self, retry=3):
-        assert self.session is not None
-        while retry > 0:
+
+    def solve(self):
+        if self.session == None:
+            raise ValueError("Session object is required")
+        while self.retry > 0:
             captcha = self.session.get(self.URL)
 
             captcha.raise_for_status()
@@ -34,8 +37,8 @@ class Captcha:
                 try:
                     return self.decaptcha(f.name)
                 except CaptchaError:
-                    if retry > 0:
-                        retry -= 1
+                    if self.retry > 0:
+                        self.retry -= 1
                     else:
                         raise CaptchaError("Couldn't solve captcha after retries")
 
@@ -103,7 +106,14 @@ class Captcha:
         output, _ = process.communicate()
         result = output.decode("utf-8").strip()
         if len(result) == 5:
-            os.remove(output_path)
+            
+            print(f"Invalid captcha: {result}")
+            print(f"Clean Version: {output_path}")
+            print(f"Original Vers: {file}")
+            # import wat
+            # wat / self
+            # wat / output_path
+            # os.remove(output_path)
             return result
         else:
             raise CaptchaError("Couldn't solve captcha")

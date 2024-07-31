@@ -27,13 +27,11 @@ def parse_orders(raw_data: str):
             print(record_fields)
             raise NotImplementedError()
 
-        case_data = {
-            "number": record_fields[0],
-            "date": record_fields[1],
-            "fileid": record_fields[2],
-            "judgement": "JUDGEMENT" in record_fields[3],
-            "court_code": record_fields[4],
-            "cino": record_fields[8],
-            "court_code": record_fields[9],
-        }
-        yield case_data
+        yield Order(
+            court = Court(record_fields[9],record_fields[4]),
+            case_number = record_fields[0],
+            date=record_fields[1],
+            filename=record_fields[2],
+            judgement = "JUDGEMENT" in record_fields[3],
+            cino=record_fields[8]
+        )

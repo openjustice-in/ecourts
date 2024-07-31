@@ -1,6 +1,5 @@
 [project]
 name = "ecourts"
-version = "0.0.1"
 dependencies = [
     "PyYAML~=6.0",
     "requests~=2.31",

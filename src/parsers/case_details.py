@@ -8,7 +8,7 @@ import urllib.parse
 import sys
 import re
 from parsers.utils import parse_js_call, clean_html
-from entities import Case, Party, HistoryEntry, Business, Order, Objection
+from entities import Case, Party, HistoryEntry, Business, Order, Objection, Court
 
 
 class CaseDetails:
@@ -111,14 +111,13 @@ class CaseDetails:
             query = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
             orders.append(
                 Order(
-                    caseno=query["caseno"][0].strip(),
+                    case_number=query["caseno"][0].strip(),
                     judge=judge.text.strip(),
                     date=date.text.strip(),
                     filename=query["filename"][0].strip(),
-                    cCode=query["cCode"][0].strip(),
+                    court=Court(query["state_code"][0].strip(), query["cCode"][0].strip()),
                     appFlag=query["appFlag"][0].strip() if "appFlag" in query else None,
                     cino=query["cino"][0].strip(),
-                    state_code=query["state_code"][0].strip(),
                 )
             )
         return orders

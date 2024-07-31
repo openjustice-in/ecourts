@@ -12,8 +12,13 @@ def test_courts_generator():
     assert courts[0].state_code == "1"
     assert courts[0].district_code == "1"
     assert courts[0].court_code == None
-    assert courts[0].queryParams() == { "state_code": "1", "dist_code": "1" }
-    assert courts[5].queryParams() == { "state_code": "1", "dist_code": "1", "court_code": "6" }
+    assert courts[0].queryParams() == {"state_code": "1", "dist_code": "1"}
+    assert courts[5].queryParams() == {
+        "state_code": "1",
+        "dist_code": "1",
+        "court_code": "6",
+    }
+
 
 def test_business():
     b = Business(

@@ -15,4 +15,4 @@ def parse_options(raw_input: str):
         if option:
             key, value = option.split("~")
             result.append((key, value, key == "D"))
-    return result[1:]
+    return result
