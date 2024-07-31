@@ -1,19 +1,19 @@
 import pytest
 import glob
-from courts import Courts
 import datetime
-from entities import Business
+from entities import Business, Court
 import os
 
 
 def test_courts_generator():
-    courts = list(Courts())
+    courts = list(Court.enumerate())
     assert len(courts) == 39
 
-    assert courts[0].state_cd == "1"
-    assert courts[0].dist_cd == "1"
+    assert courts[0].state_code == "1"
+    assert courts[0].district_code == "1"
     assert courts[0].court_code == None
-
+    assert courts[0].queryParams() == { "state_code": "1", "dist_code": "1" }
+    assert courts[5].queryParams() == { "state_code": "1", "dist_code": "1", "court_code": "6" }
 
 def test_business():
     b = Business(

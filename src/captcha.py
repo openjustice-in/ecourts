@@ -7,7 +7,6 @@ import sys
 import subprocess
 import tempfile
 
-
 class CaptchaError(Exception):
     pass
 

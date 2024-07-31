@@ -1,4 +1,4 @@
-def parse_options(raw_input):
+def parse_options(raw_input: str):
     """Options<Select> for HTML
 
     Args:
@@ -9,10 +9,10 @@ def parse_options(raw_input):
       the second part. Values with keys 'D' are marked as disabled.
     """
 
-    result = {}
-    options = n.split("#")
+    result = []
+    options = raw_input.split("#")
     for option in options:
         if option:
             key, value = option.split("~")
-            result[key] = {"value": value, "disabled": key == "D"}
-    return result
+            result.append((key, value, key == "D"))
+    return result[1:]
