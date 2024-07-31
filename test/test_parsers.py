@@ -754,9 +754,12 @@ def test_case_details_parser(case_details_html):
     assert case_details.case == expected
     # We validate that our HTML is minimal and complete
     case_details2 = CaseDetails(case_details.html)
-    assert case_details2.html == case_details.html # Further minification can obviously not happen
-    assert case_details2.case == case_details.case # and the parser output should be equivalent
-    
+    assert (
+        case_details2.html == case_details.html
+    )  # Further minification can obviously not happen
+    assert (
+        case_details2.case == case_details.case
+    )  # and the parser output should be equivalent
+
     # Validate that we have minified the HTML by a factor of 2
     assert len(case_details_html) / len(case_details.html) > 2
-

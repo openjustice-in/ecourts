@@ -6,8 +6,9 @@ from typing import List, Dict, Optional
 from bs4 import BeautifulSoup
 import sys
 import re
-from parsers.utils import parse_js_call, parse_date, clean_html
+from parsers.utils import parse_js_call, clean_html
 from entities import Case, Party, HistoryEntry, Business, Order, Objection
+
 
 class CaseDetails:
 
@@ -84,12 +85,10 @@ class CaseDetails:
                     HistoryEntry(
                         cause_list_type=type == type if type != "" else None,
                         judge=cells[1].text.strip(),
-                        business_on_date=parse_date(
+                        business_on_date=(
                             cells[2].text.strip() if len(cells) > 2 else None
                         ),
-                        hearing_date=parse_date(
-                            cells[3].text.strip() if len(cells) > 3 else None
-                        ),
+                        hearing_date=cells[3].text.strip() if len(cells) > 3 else None,
                         purpose_of_hearing=(
                             cells[4].text.strip() if len(cells) > 4 else None
                         ),
@@ -114,7 +113,7 @@ class CaseDetails:
                 Order(
                     caseno=query["caseno"][0].strip(),
                     judge=judge.text.strip(),
-                    date=parse_date(date.text.strip()),
+                    date=date.text.strip(),
                     filename=query["filename"][0].strip(),
                     cCode=query["cCode"][0].strip(),
                     appFlag=query["appFlag"][0].strip() if "appFlag" in query else None,
@@ -151,12 +150,10 @@ class CaseDetails:
                         ) = row.find_all("td")
                         objections.append(
                             Objection(
-                                scrutiny_date=parse_date(scrutiny_date.text.strip()),
+                                scrutiny_date=scrutiny_date.text.strip(),
                                 objection=objection_text.text.strip(),
-                                compliance_date=parse_date(
-                                    compliance_date.text.strip()
-                                ),
-                                receipt_date=parse_date(receipt_date.text.strip()),
+                                compliance_date=compliance_date.text.strip(),
+                                receipt_date=receipt_date.text.strip(),
                             )
                         )
         return objections
@@ -171,16 +168,16 @@ class CaseDetails:
         category_details = self.extract_category_details(soup)
         objections = self.extract_objection(soup)
         orders = self.extract_orders(soup)
-        
+
         self.case = Case(
             case_type=case_details.get("Case Type"),
             filing_number=case_details.get("Filing Number"),
-            filing_date=parse_date(case_details.get("Filing Date")),
+            filing_date=case_details.get("Filing Date"),
             registration_number=case_details.get("Registration Number"),
-            registration_date=parse_date(case_details.get("Registration Date")),
+            registration_date=case_details.get("Registration Date"),
             cnr_number=case_details.get("CNR Number"),
-            first_hearing_date=parse_date(case_status["First Hearing Date"]),
-            decision_date=parse_date(case_status["Decision Date"]),
+            first_hearing_date=case_status["First Hearing Date"],
+            decision_date=case_status["Decision Date"],
             case_status=case_status.get("Case Status"),
             nature_of_disposal=case_status.get("Nature of Disposal"),
             coram=case_status["Coram"],

@@ -22,7 +22,9 @@ class Order:
     def pdf_url():
         if self.filename:
             return f"https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/display_pdf.php?filename={filename}&caseno={caseno}&cCode={cCode}&appFlag={appFlag}&cino={cino}&state_code={state_code}"
-        return None
+    def __post_init__(self):
+        if isinstance(self.date, str):
+            self.date = parse_date(self.date)
 
 
 @dataclass
@@ -53,6 +55,12 @@ class HistoryEntry:
     purpose_of_hearing: str
     business: Optional[Business]
 
+    def __post_init__(self):
+        if isinstance(self.business_on_date, str):
+            self.business_on_date = parse_date(self.business_on_date)
+        if isinstance(self.hearing_date, str):
+            self.hearing_date = parse_date(self.hearing_date)
+
 
 @dataclass
 class Objection:
@@ -60,6 +68,14 @@ class Objection:
     objection: str
     compliance_date: Optional[datetime.date]
     receipt_date: Optional[datetime.date]
+
+    def __post_init__(self):
+        if isinstance(self.scrutiny_date, str):
+            self.scrutiny_date = parse_date(self.scrutiny_date)
+        if isinstance(self.compliance_date, str):
+            self.compliance_date = parse_date(self.compliance_date)
+        if isinstance(self.receipt_date, str):
+            self.receipt_date = parse_date(self.receipt_date)
 
 
 @dataclass
@@ -95,6 +111,14 @@ class Case:
             self.filing_date = None
         if self.not_before_me == "":
             self.not_before_me = None
+        if isinstance(self.registration_date, str):
+            self.registration_date = parse_date(self.registration_date)
+        if isinstance(self.first_hearing_date, str):
+            self.first_hearing_date = parse_date(self.first_hearing_date)
+        if isinstance(self.decision_date, str):
+            self.decision_date = parse_date(self.decision_date)
+        if isinstance(self.filing_date, str):
+            self.filing_date = parse_date(self.filing_date)
 
 @dataclass
 class Court:
