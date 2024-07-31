@@ -23,17 +23,20 @@ def test_courts_generator():
 
 def test_business():
     b = Business(
-        court_code="1",
-        dist_code="1",
-        nextdate1="",
-        case_number1="201700000582018",
-        state_code="12",
+        court = Court(
+            state_code="12",
+            court_code="2",
+        ),
+        next_date="",
+        case_number="201700000582018",
         disposal_flag="Disposed",
-        businessDate="24-12-2020",
-        court_no="1712",
+        business_date="24-12-2020",
+        court_number="1712",
         srno="0",
     )
-    assert b.businessDate == datetime.date(2020, 12, 24)
+    assert b.business_date == datetime.date(2020, 12, 24)
+    assert b.next_date == None
+    assert b.srno == 0
 
 
 def test_order():

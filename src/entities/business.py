@@ -1,22 +1,34 @@
 from dataclasses import dataclass
 from datetime import datetime
 from parsers.utils import parse_date
-
+from entities import Court
 
 @dataclass
 class Business:
-    court_code: str
-    dist_code: str
-    nextdate1: datetime.date
-    case_number1: str
-    state_code: str
+    court: Court
+    next_date: datetime.date
+    case_number: str
     disposal_flag: str
-    businessDate: datetime.date
-    court_no: str
+    business_date: datetime.date
+    court_number: str
     srno: str
 
     def __post_init__(self):
-        if isinstance(self.nextdate1, str):
-            self.nextdate1 = parse_date(self.nextdate1)
-        if isinstance(self.businessDate, str):
-            self.businessDate = parse_date(self.businessDate)
+        if isinstance(self.next_date, str):
+            self.next_date = parse_date(self.next_date)
+        if isinstance(self.business_date, str):
+            self.business_date = parse_date(self.business_date)
+        if len(self.srno) > 0:
+            self.srno = int(self.srno)
+
+    def expandParams(self):
+        if self.business_date:
+            return {
+                "court_code": self.court.court_code,
+                "dist_code": self.court.district_code,
+                "state_code": self.court.state_code,
+                "case_number1": self.case_number,
+                "businessDate": self.business_date.strftime("%d-%m-%Y"),
+                "srno": self.srno,
+                "court_no": self.court_number,
+            }

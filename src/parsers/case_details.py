@@ -66,21 +66,27 @@ class CaseDetails:
                 type = cells[0].text.strip()
                 if cells[2].select_one("a"):
                     # function viewBusiness(court_code,dist_code,n_dt,case_number,state_code,businessStatus,todays_date1,court_no,srno)
-                    # TODO: perhaps use a Court instance?
+                    
                     signature = OrderedDict(
                         [
                             ("court_code", str),
-                            ("dist_code", str),
-                            ("nextdate1", str),
-                            ("case_number1", str),
+                            ("district_code", str),
+                            ("next_date", str),
+                            ("case_number", str),
                             ("state_code", str),
                             ("disposal_flag", str),
-                            ("businessDate", str),
-                            ("court_no", str),
+                            ("business_date", str),
+                            ("court_number", str),
                             ("srno", str),
                         ]
                     )
                     res = parse_js_call(cells[2].select_one("a")["onclick"], signature)
+                    # breakpoint()
+                    court = Court(
+                        state_code = res.pop("state_code"),
+                        district_code = res.pop("district_code"),
+                        court_code = res.pop("court_code", None),
+                    )
 
                 history.append(
                     HistoryEntry(
@@ -93,7 +99,7 @@ class CaseDetails:
                         purpose_of_hearing=(
                             cells[4].text.strip() if len(cells) > 4 else None
                         ),
-                        business=Business(**res) if res else None,
+                        business=Business(court=court, **res) if res else None,
                     )
                 )
         return history
