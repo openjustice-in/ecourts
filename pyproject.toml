@@ -13,7 +13,8 @@ dynamic = ["version"]
 dev = [
   "wat-inspector",
   "pytest-recording~=0.13",
-  "pytest-cov"
+  "pytest-cov",
+  "PyYAML~=6.0",
 ]
 test = [
   "pytest~=8.3",

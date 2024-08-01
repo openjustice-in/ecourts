@@ -155,3 +155,13 @@ def test_api_calls():
             court=scraper.court,
         ),
     ]
+
+
+@pytest.mark.vcr()
+def test_case_history():
+    scraper = ECourt(Court(state_code="3"))
+    scraper.getCaseHistory(
+        cino="KAHC010337682024",
+        token="14b7927a52c474a5c85379fe180635c8957638b3440506b816c755af53b91990",
+        case_no="211200056582024"
+    )

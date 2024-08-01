@@ -1,0 +1,757 @@
+!!python/object:entities.case.Case
+bench: Single Bench
+case_status: CASE DISPOSED
+case_type: HCP
+category: SB HABEAS CORPUS PETITION ( 107 )
+cnr_number: JKHC02-011375-2018
+coram: 1712HON'BLE MR.  JUSTICE SANJAY DHAR
+decision_date: 2020-12-24
+district: SRINAGAR
+filing_date: 2018-12-28
+filing_number: 9702/2018
+first_hearing_date: 2018-12-31
+history:
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-12-24
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1712'
+    disposal_flag: Disposed
+    next_date: null
+    srno: 0
+  business_on_date: 2020-12-24
+  cause_list_type: null
+  hearing_date: null
+  judge: HON'BLE MR.  JUSTICE SANJAY DHAR
+  purpose_of_hearing: Disposed
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: null
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '0'
+    disposal_flag: DisposedP
+    next_date: 2018-12-31
+    srno: 1
+  business_on_date: null
+  cause_list_type: null
+  hearing_date: 2018-12-31
+  judge: ''
+  purpose_of_hearing: FOR ADMISSION After Notice
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2018-12-31
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1480'
+    disposal_flag: DisposedP
+    next_date: 2019-01-17
+    srno: 2
+  business_on_date: 2018-12-31
+  cause_list_type: true
+  hearing_date: 2019-01-17
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2019-01-17
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1487'
+    disposal_flag: DisposedP
+    next_date: 2019-01-29
+    srno: 3
+  business_on_date: 2019-01-17
+  cause_list_type: true
+  hearing_date: 2019-01-29
+  judge: HON'BLE MRS. JUSTICE SINDHU SHARMA
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2019-01-29
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1490'
+    disposal_flag: DisposedP
+    next_date: 2019-02-26
+    srno: 4
+  business_on_date: 2019-01-29
+  cause_list_type: true
+  hearing_date: 2019-02-26
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2019-02-26
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1515'
+    disposal_flag: DisposedP
+    next_date: 2019-04-03
+    srno: 5
+  business_on_date: 2019-02-26
+  cause_list_type: true
+  hearing_date: 2019-04-03
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2019-04-03
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1553'
+    disposal_flag: DisposedP
+    next_date: 2019-04-26
+    srno: 6
+  business_on_date: 2019-04-03
+  cause_list_type: true
+  hearing_date: 2019-04-26
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2019-04-26
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1576'
+    disposal_flag: DisposedP
+    next_date: 2019-05-06
+    srno: 7
+  business_on_date: 2019-04-26
+  cause_list_type: true
+  hearing_date: 2019-05-06
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2019-05-06
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1704'
+    disposal_flag: DisposedP
+    next_date: 2019-07-08
+    srno: 8
+  business_on_date: 2019-05-06
+  cause_list_type: true
+  hearing_date: 2019-07-08
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2019-07-08
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1703'
+    disposal_flag: DisposedP
+    next_date: 2019-08-05
+    srno: 9
+  business_on_date: 2019-07-08
+  cause_list_type: true
+  hearing_date: 2019-08-05
+  judge: HON'BLE MR. JUSTICE ALI MOHAMMAD MAGREY
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2019-08-05
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1704'
+    disposal_flag: DisposedP
+    next_date: 2019-09-11
+    srno: 10
+  business_on_date: 2019-08-05
+  cause_list_type: true
+  hearing_date: 2019-09-11
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2019-09-11
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1702'
+    disposal_flag: DisposedP
+    next_date: 2019-10-14
+    srno: 11
+  business_on_date: 2019-09-11
+  cause_list_type: true
+  hearing_date: 2019-10-14
+  judge: HON'BLE  MR. JUSTICE RAJESH BINDAL
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2019-10-14
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1704'
+    disposal_flag: DisposedP
+    next_date: 2019-11-04
+    srno: 12
+  business_on_date: 2019-10-14
+  cause_list_type: true
+  hearing_date: 2019-11-04
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2019-11-04
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1704'
+    disposal_flag: DisposedP
+    next_date: 2019-12-04
+    srno: 13
+  business_on_date: 2019-11-04
+  cause_list_type: true
+  hearing_date: 2019-12-04
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2019-12-04
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1702'
+    disposal_flag: DisposedP
+    next_date: 2019-12-27
+    srno: 14
+  business_on_date: 2019-12-04
+  cause_list_type: true
+  hearing_date: 2019-12-27
+  judge: HON'BLE  MR. JUSTICE RAJESH BINDAL
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2019-12-27
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1703'
+    disposal_flag: DisposedP
+    next_date: 2020-02-28
+    srno: 15
+  business_on_date: 2019-12-27
+  cause_list_type: true
+  hearing_date: 2020-02-28
+  judge: HON'BLE MR. JUSTICE ALI MOHAMMAD MAGREY
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-02-28
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1706'
+    disposal_flag: DisposedP
+    next_date: 2020-04-21
+    srno: 16
+  business_on_date: 2020-02-28
+  cause_list_type: true
+  hearing_date: 2020-04-21
+  judge: HON'BLE MR. JUSTICE SANJEEV KUMAR
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-04-21
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1713'
+    disposal_flag: DisposedP
+    next_date: 2020-08-11
+    srno: 17
+  business_on_date: 2020-04-21
+  cause_list_type: true
+  hearing_date: 2020-08-11
+  judge: HON'BLE MR.  JUSTICE PUNEET GUPTA
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-08-11
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1710'
+    disposal_flag: DisposedP
+    next_date: 2020-09-11
+    srno: 18
+  business_on_date: 2020-08-11
+  cause_list_type: true
+  hearing_date: 2020-09-11
+  judge: HON'BLE MR. JUSTICE RAJNESH OSWAL
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-09-11
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1710'
+    disposal_flag: DisposedP
+    next_date: 2020-09-22
+    srno: 19
+  business_on_date: 2020-09-11
+  cause_list_type: true
+  hearing_date: 2020-09-22
+  judge: HON'BLE MR. JUSTICE RAJNESH OSWAL
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-09-22
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1710'
+    disposal_flag: DisposedP
+    next_date: 2020-10-05
+    srno: 20
+  business_on_date: 2020-09-22
+  cause_list_type: true
+  hearing_date: 2020-10-05
+  judge: HON'BLE MR. JUSTICE RAJNESH OSWAL
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-10-05
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1712'
+    disposal_flag: DisposedP
+    next_date: 2020-10-19
+    srno: 21
+  business_on_date: 2020-10-05
+  cause_list_type: true
+  hearing_date: 2020-10-19
+  judge: HON'BLE MR.  JUSTICE SANJAY DHAR
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-10-19
+    case_number: '201700000582018'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1712'
+    disposal_flag: DisposedP
+    next_date: 2020-12-07
+    srno: 22
+  business_on_date: 2020-10-19
+  cause_list_type: true
+  hearing_date: 2020-12-07
+  judge: HON'BLE MR.  JUSTICE SANJAY DHAR
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-12-07
+    case_number: '201700000582018'
+    court: &id001 !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '12'
+      state_name: null
+    court_number: '1712'
+    disposal_flag: DisposedP
+    next_date: 2020-12-24
+    srno: 23
+  business_on_date: 2020-12-07
+  cause_list_type: true
+  hearing_date: 2020-12-24
+  judge: HON'BLE MR.  JUSTICE SANJAY DHAR
+  purpose_of_hearing: SPECIALLY ORDERED CASES
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-12-07
+    case_number: '201700000582018'
+    court: *id001
+    court_number: '1712'
+    disposal_flag: DisposedP
+    next_date: 2020-12-24
+    srno: 23
+  business_on_date: null
+  cause_list_type: true
+  hearing_date: null
+  judge: Order on
+  purpose_of_hearing: Order Details
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-12-07
+    case_number: '201700000582018'
+    court: *id001
+    court_number: '1712'
+    disposal_flag: DisposedP
+    next_date: 2020-12-24
+    srno: 23
+  business_on_date: null
+  cause_list_type: true
+  hearing_date: 2019-02-26
+  judge: HCP/58/2018
+  purpose_of_hearing: View
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-12-07
+    case_number: '201700000582018'
+    court: *id001
+    court_number: '1712'
+    disposal_flag: DisposedP
+    next_date: 2020-12-24
+    srno: 23
+  business_on_date: null
+  cause_list_type: true
+  hearing_date: 2019-04-03
+  judge: HCP/58/2018
+  purpose_of_hearing: View
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-12-07
+    case_number: '201700000582018'
+    court: *id001
+    court_number: '1712'
+    disposal_flag: DisposedP
+    next_date: 2020-12-24
+    srno: 23
+  business_on_date: null
+  cause_list_type: true
+  hearing_date: 2019-07-08
+  judge: HCP/58/2018
+  purpose_of_hearing: View
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-12-07
+    case_number: '201700000582018'
+    court: *id001
+    court_number: '1712'
+    disposal_flag: DisposedP
+    next_date: 2020-12-24
+    srno: 23
+  business_on_date: null
+  cause_list_type: true
+  hearing_date: 2019-07-08
+  judge: HCP/58/2018
+  purpose_of_hearing: View
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-12-07
+    case_number: '201700000582018'
+    court: *id001
+    court_number: '1712'
+    disposal_flag: DisposedP
+    next_date: 2020-12-24
+    srno: 23
+  business_on_date: null
+  cause_list_type: true
+  hearing_date: 2019-09-11
+  judge: HCP/58/2018
+  purpose_of_hearing: View
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-12-07
+    case_number: '201700000582018'
+    court: *id001
+    court_number: '1712'
+    disposal_flag: DisposedP
+    next_date: 2020-12-24
+    srno: 23
+  business_on_date: null
+  cause_list_type: true
+  hearing_date: 2019-10-14
+  judge: HCP/58/2018
+  purpose_of_hearing: View
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-12-07
+    case_number: '201700000582018'
+    court: *id001
+    court_number: '1712'
+    disposal_flag: DisposedP
+    next_date: 2020-12-24
+    srno: 23
+  business_on_date: null
+  cause_list_type: true
+  hearing_date: 2020-02-28
+  judge: HCP/58/2018
+  purpose_of_hearing: View
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-12-07
+    case_number: '201700000582018'
+    court: *id001
+    court_number: '1712'
+    disposal_flag: DisposedP
+    next_date: 2020-12-24
+    srno: 23
+  business_on_date: null
+  cause_list_type: true
+  hearing_date: 2020-10-19
+  judge: HCP/58/2018
+  purpose_of_hearing: View
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2020-12-07
+    case_number: '201700000582018'
+    court: *id001
+    court_number: '1712'
+    disposal_flag: DisposedP
+    next_date: 2020-12-24
+    srno: 23
+  business_on_date: null
+  cause_list_type: true
+  hearing_date: 2020-12-24
+  judge: HCP/58/2018
+  purpose_of_hearing: View
+judicial: HABEUS CORPUS PETITION (HCP)
+nature_of_disposal: Uncontested--Dismissed
+not_before_me: null
+objections:
+- !!python/object:entities.objection.Objection
+  compliance_date: null
+  objection: All Objections are Complied
+  receipt_date: null
+  scrutiny_date: 2018-12-29
+orders:
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2019-02-26
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4WZk9SNDiELN0d3zciW0Jd2
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2019-04-03
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4VfQwf0orUZaOPgJQdtRngq
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2019-07-08
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4W9zkSacwsce/3OpGJvB0lg
+  judge: HON'BLE MR. JUSTICE ALI MOHAMMAD MAGREY
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2019-07-08
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4V4B7CAX6YboIYTxzyrEv0a
+  judge: HON'BLE MR. JUSTICE ALI MOHAMMAD MAGREY
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2019-09-11
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4UBDlNqL/zLUzTp/PjCG3fg
+  judge: HON'BLE  MR. JUSTICE RAJESH BINDAL
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2019-10-14
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4VVwZkC6SFsMLeD82pm02mP
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2020-02-28
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4VKAoANwWy5ZhRhsffy1Wdy
+  judge: HON'BLE MR. JUSTICE SANJEEV KUMAR
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2020-10-19
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4WYPfx2WudNMAu4SDcElc+g
+  judge: HON'BLE MR.  JUSTICE SANJAY DHAR
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2020-12-24
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4Uu7tOArEmvxZv7juS7VWPW
+  judge: HON'BLE MR.  JUSTICE SANJAY DHAR
+  judgement: null
+petitioners:
+- !!python/object:entities.party.Party
+  advocate: null
+  name: ASHRAM HUSSAIN
+registration_date: 2018-12-29
+registration_number: 58/2018
+respondents:
+- !!python/object:entities.party.Party
+  advocate: null
+  name: STATE TH.HOME DEPTT.AND ORS.
+state: JAMMUKASHMIR
+sub_category: OTHER MATTERS ( 99 )

@@ -4,7 +4,7 @@ from captcha import Captcha
 import os
 
 
-@pytest.fixture(params=glob.glob("test/fixtures/*.png"))
+@pytest.fixture(params=glob.glob("test/fixtures/captcha/*.png"))
 def captcha_image(request):
     yield request.param
 

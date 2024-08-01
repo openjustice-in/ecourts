@@ -1,0 +1,318 @@
+<script type="text/javascript">
+function clearCaptchaText()
+{
+
+var ty=document.getElementsByClassName('captchaClass');
+ty[0].value='';
+}
+function funConnError()
+{
+	document.getElementById('showList').innerHTML="";
+	document.getElementById('showList').style.display='none';
+	document.getElementById('errSpan').style.display="";
+	var val='CONNECTION FAILED';
+	document.getElementById('txtmsg').value=val;
+	document.getElementById("txtmsg").title =val;
+	document.getElementById('txtmsg').focus();
+}
+
+
+function funUsrError()
+{
+	document.getElementById('showList').innerHTML="";
+	document.getElementById('showList').style.display='none';
+	document.getElementById('errSpan').style.display="";	
+	var val='THERE IS AN ERROR';
+
+	document.getElementById('txtmsg').value=val;
+	document.getElementById("txtmsg").title =val;
+	document.getElementById('txtmsg').focus();
+}
+
+function funUsrErrorParam(input)
+{
+
+	document.getElementById('showList').innerHTML="";
+	document.getElementById('showList').style.display='none';
+	document.getElementById('errSpan').style.display="";	
+	var val='THERE IS AN '+input;
+	document.getElementById('txtmsg').value=val;
+
+	document.getElementById("txtmsg").title =val;
+	document.getElementById('txtmsg').focus();
+}
+
+function funServerSideValidateErr()
+{
+	document.getElementById('showList').innerHTML="";
+	document.getElementById('showList').style.display='none';
+	document.getElementById('errSpan').style.display="";	
+	var val='Invalid Input';
+	document.getElementById('txtmsg').value=val;
+	document.getElementById("txtmsg").title =val;
+	document.getElementById('txtmsg').focus();
+}
+
+function escapeHtml(str)
+{
+str=str.replace(/&|<script|script>/g,'');
+return str;
+}
+
+
+
+
+function trim(inputString) {
+	if (typeof inputString != "string") { return inputString; }
+	var retValue = inputString;
+	var ch = retValue.substring(0, 1);
+	while (ch == " ")
+	{
+		retValue = retValue.substring(1, retValue.length);
+		ch = retValue.substring(0, 1);
+	}
+	ch = retValue.substring(retValue.length-1, retValue.length);
+	while (ch == " ")
+	{
+		retValue = retValue.substring(0, retValue.length-1);
+		ch = retValue.substring(retValue.length-1, retValue.length);
+	}
+	while (retValue.indexOf("  ") != -1)
+	{
+		retValue = retValue.substring(0, retValue.indexOf("  ")) +
+		retValue.substring(retValue.indexOf("  ")+1, retValue.length);
+	}
+	return retValue;
+}
+
+
+
+function checkInteger(str)
+{
+	var len = str.length;
+	for(var i=0; i < len; i++)
+	{
+		if(str.charAt(i) == ".")
+		{
+			return false;
+		}
+	}
+}
+function applycsswhite1()
+	{
+	 $("body").css("color", "black");
+	$("h4").css("color", "#4B8BCD");
+    $(".headingtxt").css("color", " #4B8BCD");
+	$("tr").css("background", "#fff");
+	$(".button").css("background", "#1A5984");
+	$(".title").css("color", "#4B8BCD");
+	$("a").css("color", "#4B8BCD");
+	$(".Lower_court_table").css("background", "#fdf7f4");
+	$(".Acts_table").css("background", "#fdf6e9");
+	$(".Respondent_Advocate_table").css("background", "#f5f1fc");
+	$(".Petitioner_Advocate_table").css("background", "#f3fafe");
+	$(".case_details_table").css("background", "#f9fdf1");
+	$(".FIR_details_table").css("background", "#fae3df");
+	$(".order_table").css("background", "#f5f1fc");
+	$(".Lower_court_table").css("border", "1px solid #000");
+	$(".Acts_table").css("border", "1px solid #000");
+	$(".Respondent_Advocate_table").css("border", "1px solid #000");
+	$(".Petitioner_Advocate_table").css("border", "1px solid #000");
+	$(".case_details_table").css("border-bottom", "1px solid #000");
+	$(".FIR_details_table").css("border", "1px solid #000");
+	}
+function applycssblack1()
+	{
+	$("body").css("color", "white ");	
+	$("body").css("background", "#3D3A3A ");
+	$("h4").css("color", "white");	
+    $(".headingtxt").css("color", "white");
+	$("a:hover").css("color", "white");
+	$("tr").css("background", "#3D3A3A");
+    $(".button").css("background", "black");
+	$(".title").css("color", "white");
+	$("a").css("color", "yellow");
+	$("table.bordered th").css("color", "#000");
+	$(".Lower_court_table").css("background", "#3D3A3A");
+	$(".Acts_table").css("background", "#3D3A3A");
+	$(".Respondent_Advocate_table").css("background", "#3D3A3A");
+	$(".Petitioner_Advocate_table").css("background", "#3D3A3A");
+	$(".case_details_table").css("background", "#3D3A3A");
+	$(".FIR_details_table").css("background", "#3D3A3A");
+	$(".Lower_court_table").css("border", "1px solid #fff");
+	$(".Acts_table").css("border", "1px solid #fff");
+	$(".Respondent_Advocate_table").css("border", "1px solid #fff");
+	$(".Petitioner_Advocate_table").css("border", "1px solid #fff");
+	$(".case_details_table").css("border-bottom", "1px solid #fff");
+	$(".FIR_details_table").css("border", "1px solid #fff");
+	$(".order_table").css("background", "#3D3A3A");
+	}
+
+
+
+
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Case History</title>
+
+<style type="text/css">
+a {
+	color: #5399E1;
+	text-decoration:none;
+}
+a:hover {
+	color: #366494;
+	text-decoration:underline;
+}
+a:focus {
+	color: #366494;
+	text-decoration:underline;
+}
+body
+{	font-size:12px;
+}
+tbody
+{	font-size:12px;
+}
+.title
+{
+	display:none;
+}
+#nextDate {   
+  animation-duration: 700ms;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes blink {
+  from {
+	opacity: 1;
+  }
+
+  to {
+	opacity: 0;
+  }
+}
+.h3class{
+font-size:1em;
+padding-top:-10px;
+
+font-weight:normal;
+margin-bottom:5px;
+
+}
+
+.h2class{
+font-size:1.1em;
+font-weight:normal;
+padding-top:-10px;
+margin-bottom:5px;
+}
+.h1class{
+font-size:1.2em;
+font-weight:normal;
+}
+.controlstyle
+{ display:none;}
+
+.blinking{
+	animation:blinkingText 2.3s infinite;
+  font-size: initial;
+}
+@keyframes blinkingText{
+	0%{		color: red;	}
+	49%{	color: red;font-weight: 600;	}
+	50%{	color: red;font-weight: 700;	}
+	99%{	color:red;font-weight: 600;	}
+	100%{	color: red;	}
+}
+</style>
+<link rel="stylesheet" href="../css/history.css" type="text/css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/fluidtextresizer.js"></script>
+<script type="text/javascript" language="javascript">
+//<![CDATA[
+
+
+function newcss()
+{
+	var sess_color_value="W";
+			
+				if(sess_color_value=='B' )
+	{
+				applycssblack1();
+	}
+	else if(sess_color_value=='W' )
+	{
+				applycsswhite1();
+	}
+	else if (parent.document.getElementById("txt_css").value=='black')
+	{
+	parent.applycssblack();
+	}
+	else if (parent.document.getElementById("txt_css").value=='white')
+	{
+	parent.applycsswhite();
+	}
+}
+function openpopup(popurl)
+{
+	var winpops=window.open(popurl,"","width=400,height=400,scrollbars,menubar,resizable")
+}
+
+
+//]]>
+</script>
+<script type="text/javascript" language="javascript">
+ //<![CDATA[
+var mytextsizer=new fluidtextresizer({
+	controlsdiv: "sizecontroldiv", //id of special div containing your resize controls. Enter "" if not defined
+	targets: ["body"], //target elements to resize text within: ["selector1", "selector2", etc]
+	levels: 1, //number of levels users can magnify (or shrink) text
+	persist: "session", //enter "session" or "none"
+	animate: 200 //animation duration of text resize. Enter 0 to disable
+})
+
+ //]]>
+</script>
+<script language="JavaScript" src="../includes/javascript/xmlhttp.js" type="text/javascript"></script>
+
+
+
+</head>
+<form  name="frm" method="post" action="">
+<body onload="funchkErr();" >
+
+<div id="sizecontroldiv" class="controlstyle">
+<a href="#smaller" ></a><a href="#fontsize0"></a><a href="#bigger"></a>
+</div>
+
+
+<div  align="center" style='margin-top:-5px;'>
+
+<span id='errSpan' style='font-color:red;'></span>
+<span style='margin-top:-20px;'>
+
+
+
+</span>
+<br />
+
+
+<h2 class='h1class'><span style="font-weight:bold;">Itanagar Bench</span></h2>
+	
+<div  style=' height:80px; width:700px; '><span class="heading" style=' text-align:center;'><label><h2 class='h2class' style='font-weight:bold;'>Case Details</h2></label></span><span class='case_details_table' style='padding-left:-5px;float:left;border-top:1px solid #000;border-left:1px solid #000;border-right:1px solid #000;border-bottom:1px solid #000; width:100%; text-align:left;'><span  style='-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width:225px;float:left;padding-left:5px;'><label>Case Type </label></span>:&nbsp;BA</span><br /><span class='case_details_table' style='float:left;border-top:0px solid #000;border-bottom:1px solid #000;border-left:1px solid #000;border-right:1px solid #000;width:100%;text-align:left;'><span style='-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width:225px;float:left;padding-left:5px; '><label>Filing Number</label></span>:&nbsp;343/2024<span style='text-align:left;padding-left:100px;'><label>Filing Date</label>: 24-06-2024</span></span><br /><span class='case_details_table' style='float:left;border-top:0px solid #000;border-left:1px solid #000;border-right:1px solid #000;border-bottom:1px solid #000; width:100%;text-align:left;'><span style='-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width:225px; float:left;padding-left:5px;'><label>Registration Number</label></span><label>:&nbsp;64/2024</label><span style='text-align:left;padding-left:100px;'><label>Registration Date</label><label>:&nbsp;24-06-2024</label></span></span><br /><b><span class='case_details_table' style='float:left; width:100%;text-align:left;border-top:1px solid #000;border-left:1px solid #000;border-right:1px solid #000;border-top:0px;border-bottom:1px solid #000;'><span style='-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width:225px;float:left;padding-left:5px;'><label>CNR Number</label></span>:&nbsp;GAHC04-000792-2024</span></b></div><br /><h2 class='h2class' style=' clear:both;color:red;font-weight:bold;display: block;'>Case Status</h2><div  style='width:700px;margin-top:0px;background-color:#FBF6D9;font-size:1em ;font-weight:200;color:red;text-align:center;    display: inline-block;'><span >
+	<label style='float:left;border-top:1px solid red; border-bottom:1px solid red; width:100%;border-left:1px solid red ;border-right:1px solid red;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>First Hearing Date </strong><strong style='float:left;'>:&nbsp;  </strong></label></span><br style='clear:left;'/><span><label style='float:left;border-bottom:1px solid red; width:100%;border-left:1px solid red ;border-right:1px solid red ;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>Next Hearing Date</strong><strong style='float:left;'>:&nbsp;Next Date is not given</strong></label></span><br style='clear:left;'/><span ><label  style='float:left; border-bottom:1px solid red; width:100%;border-left:1px solid red ;border-right:1px solid red ;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>Stage of Case</strong><strong style='float:left;'>:&nbsp;MOTION</strong></label></span><br style='clear:left;'/><span><label  style='float:left;border-left:1px solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>Coram</strong> <strong style='float:left;width:470px; text-align:left;'> :&nbsp;1366HONBLE MR. JUSTICE PARTHIVJYOTI SAIKIA</strong></label></span><span style='background-color:#FBF6D9 !important;'><label  style='float:left;border-left:1px solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>Bench</strong> <strong style='float:left;width:470px; text-align:left;'> :&nbsp;Single Bench</strong></label></span><span style='background-color:#FBF6D9 !important;'><label  style='float:left;border-left:1px solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>State</strong> <strong style='float:left;width:470px; text-align:left;'> :&nbsp;Arunachal Pradesh</strong></label></span><span style='background-color:#FBF6D9 !important;'><label  style='float:left;border-left:1px solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>Judicial</strong> <strong style='float:left;width:470px; text-align:left;'> :&nbsp;Criminal Section</strong></label></span><span     style='background-color:#FBF6D9 !important;'><label  style='float:left;border-left:1px solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left; width:225px;text-align:left; padding-left:5px;'>Not Before Me</strong> <strong style='float:left;width:470px; text-align:left;'> :&nbsp;</strong></label></span></div><br/><div  style='width:700px;margin-top:10px;'><h2 class='h2class' style='font-weight:bold;'>Petitioner and Advocate</h2><span class='Petitioner_Advocate_table' style='float:left;border:1px solid #000; width:100%;text-align:left; margin-bottom:10px; padding-left:5px;'>1) Mama Rigam<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;Advocate- Teto Taba,Begi Taba,Begi Taba ,Begi Taba,C Ering,Vijay Duku Raji,Mardo Game,Anong kabak,Nimcha Hondique<br /><br /></span><br /><h2 class='h2class' style='font-weight:bold;'>Respondent  and Advocate</h2><span class='Respondent_Advocate_table' style='float:left;border:1px solid #000; width:100%;text-align:left;margin-bottom:10px;padding-left:5px;'>1) The State of AP and Anr<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;Advocate - P P of AP <br />2)  Miss Tana Moryom<br>&nbsp;&nbsp;&nbsp;&nbsp;<br><br /></span><br /></table></div><br/><div  style=' width:700px;'><h2 class='h2class' style='font-weight:bold;'>Subordinate Court Information</h2><span class='Lower_court_table' style='float:left;border:1px solid #000; width:100%;text-align:left; margin-bottom:10px; padding-left:5px; '><span  style='width:150px;display:inline-block;'>Court Number and Name</span><label style='text-align:left'>:&nbsp;---</label><br /><span  style='width:150px;display:inline-block;'>Case Number and Year</span><label style='text-align:left'>:&nbsp;0</label><br /><span  style='width:150px;display:inline-block;'>Case Decision Date : </span><label style='text-align:left'>:&nbsp;--</br><span  style='width:150px;display:inline-block;'>state</span><label style='text-align:left;'>:&nbsp;</label><br /><span  style='width:150px;display:inline-block;'>District</span><label style='text-align:left;'>:&nbsp;</label><br /></label></span></div><table id='historyheading'><tr><td><h2 class='h2class' style='clear:both;font-weight:bold;text-align:center;margin-top:10px;'>History of Case Hearing</h2></td></tr></table><table width="700px" cellspacing="0" cellpadding="1" align="center" border="1" style="box-sizing:border-box; -moz-box-sizing:border-box; " class="history_table"><tr><th scope="col" align='left' style=''>Cause List Type </th><th scope="col" style=''>Judge</th><th scope="col" style=''>Business On Date</th><th scope="col" style=''>Hearing Date</th><th scope="col" style=''>Purpose of hearing</th></tr><tr><td align='left' style=''>Supplementary                                                                                      </td><td align='left' style=''>HONBLE MR. JUSTICE BUDI HABUNG</td><td align='left' style=''><a href='#' onclick=viewBusiness('4','1','50000101','205700000642024','6','Pending','25-06-2024','1434','1','GAHC040007922024')>25-06-2024 </a></td><td> </td><td style=''> MOTION</td></tr><table id='orderheading'><tr><td><br/><h2 class='h2class' style='font-weight:bold;'>Orders </h2></td></tr></table><table width="700px" cellspacing="0" cellpadding="1" align="center" border="1" class="order_table" style="border-collapse:collapse;"><tr><td style='width:71px;'> <font size='2'><strong> &nbsp;&nbsp;Order Number</strong></font></td><td style='width:71px;'> <font      size='2'><strong> &nbsp;&nbsp;Order on</strong></font></td> <td style='width:330px;'> <font size='2'><strong> &nbsp;&nbsp;Judge</strong></font></td><td style='width:128px;'> <font size='2'><strong>&nbsp;&nbsp;Order Date </strong></font> </td><td> <font size='2'><strong>&nbsp;&nbsp;Order Details </strong></font></td></tr><tr><td style='border-top:none;'>&nbsp;&nbsp;1</td><td align='left'>&nbsp;BA/64/2024 </td><td align='left' style='width:330px;border-top:none;'><font size='2'>&nbsp;&nbsp;HONBLE MR. JUSTICE BUDI HABUNG </font></td><td style='border-top:none;'>&nbsp;&nbsp;25-06-2024</font></td><td style=" border-top:none;" colspan='3'>	<a target='_blank' href ='display_pdf.php?filename=bzPoyUlszYLCUcCpirIpqLPkTLgaTkEH%2Bt8f0EzOfYNA5sdZ6N4WquS8CofJwYCV&caseno=BA/64/2024&cCode=4&appFlag=&cino=GAHC040007922024&state_code=6' ></font> <font size='2' color='green'> &nbsp;&nbsp;View <span></span></font></a></td></tr>
+<br />
+
+</table></table><table id='orderheading'><tr><td><br/><h2 class='h2class' style='font-weight:bold;'>OBJECTION</h2></td></tr></table><table width="700px" cellspacing="0" cellpadding="1" align="center" border="1" class="order_table" style="border-collapse:collapse;"><tr><td><b>Sr.No.</b></td><td><b>Scrutiny Date</b></td><td><b>OBJECTION</b><td><b>Compliance Date</b></td><td><b>Receipt Date</b></td></tr><tr><td><label><b>1</b></label></td><td><label>24-06-2024</label></td><td><label style='color:green'><b> <label style='color:green'><b>All Objections are Complied</b></label> </b></label></td><td><label>--</label></td><td><label>--</label></td></tr></table></table><br />
+</div>
+</body>
+</form>
+</html>

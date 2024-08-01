@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: null
+    body: action_code=pulishedCauselist&causelist_dt=31-12-2034&state_code=12&dist_code=1&__csrf_magic=sid%3A8de4600a644d2c934a43b04947504972f27b91d1%2C1722425086
     headers:
       Accept:
       - '*/*'
@@ -8,105 +8,17 @@ interactions:
       - gzip, deflate
       Connection:
       - keep-alive
+      Content-Length:
+      - '152'
+      Content-Type:
+      - application/x-www-form-urlencoded
       User-Agent:
       - python-requests/2.32.3
-    method: GET
-    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/
+    method: POST
+    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/highcourt_causelist_qry.php
   response:
     body:
-      string: "\n\n<html>\n<head>\n<style>\n*{\npadding:0;margin:0;\nbox-sizing:border-box;\n}\nbody{\npadding:10px;\nfont-family:'trebuchet
-        MS', 'lucida sans';\n    margin: 0;\n}\n.content{\n\twidth:500px;\n\tmargin:0
-        auto;\n\tfont-size:12px;\n}\nul.levelone{\n\tborder-radius:5px;\n\tborder:1px
-        solid #18669c;\n}\n\tul.levelone li {\n\tbackground: #2A7CB4;\n    padding:5px
-        \ 10px;\n    text-decoration: none;\n    width: 100%;\n\tlist-style-type:none;\n\tborder:1px
-        solid #18669c;\n\tborder-bottom:none;\n\tborder-right:none;\n\tborder-left:none;\n\t}\n\tul.levelone
-        li:hover {\n\tbackground: #206ea2;\n\t}\n\tul.levelone > :first-child {\n
-        \ border-top:none;\n  border-radius:5px 5px 0 0;\n}\n\tul.levelone > :last-child
-        {\n  border-top:none;\n  border-radius:0 0 5px 5px;\n}\n\tul.levelone li\ta{\n\t\tcolor:#fff;\n\t\ttext-decoration:none;\n\t\tdisplay:block;\n\t\tfont-weight:bold;\n\t}\n\tul.leveltwo
-        li\ta{\n\t\tcolor:#000;\n\t\ttext-decoration:none;\n\t\tdisplay:block;\n\t}\n\tul.levelone
-        li b{\n\t\tcolor:#fff;\n\t}\n\tul.leveltwo{\n\t\tmargin-top:5px;\n\t}\n\tul.leveltwo
-        li {\n\tbackground: #fff;\n\tborder-left:5px solid  #DF4938;\n    padding:5px
-        10px;\n    text-decoration: none;\n    width: 100%;\n\tlist-style-type:none;\n\tpadding-left:20px;\n\t
-        -moz-box-shadow:    inset 0 0 5px rgba(0,0,0,.1);\n   -webkit-box-shadow:
-        inset 0 0 5px rgba(0,0,0,.1);\n   box-shadow:         inset 0 0 5px rgba(0,0,0,.1);\n\t}\n\tul.leveltwo
-        li:hover {\n\tbackground: #ffe1e1;}\nh2{background: #eee;\n    width: 100%;\n
-        \   padding: 5px 0px;\n    box-shadow: 0px 5px 2px rgba(0,0,0,0.2);\n    margin:0
-        0 10px 0;text-align:center;}\n</style>\n</head>\n<body>\n<div class='content'>\n<ul
-        class='levelone'>\n<li>\n<a href='index_highcourt.php?state_cd=24&dist_cd=1&stateNm=Sikkim'
-        \ target='_blank'> High Court of Sikkim </a>\n</li>\n<li>\n<a href='index_highcourt.php?state_cd=20&dist_cd=1&stateNm=Tripura'
-        target='_blank'> High Court of Tripura </a>\n</li>\n<li>\n<a href='index_highcourt.php?state_cd=21&dist_cd=1&stateNm=Meghalaya'
-        \ target='_blank'> High Court of Meghalaya </a>\n</li>\n<li>\n<a href='index_highcourt.php?state_cd=25&dist_cd=1&stateNm=Manipur'
-        \ target='_blank'> High Court of Manipur </a>\n</li>\n<li>\n<a href='index_highcourt.php?state_cd=5&dist_cd=1&stateNm=Himachal
-        Pradesh'  target='_blank'> High Court of Himachal Pradesh </a>\n</li>\n\n\n\n<li>\n<b>
-        The Gauhati High Court  </b>\n    <ul  class='leveltwo'>\n<li>\n<a href='index_highcourt.php?state_cd=6&dist_cd=1&stateNm=Assam'
-        \ target='_blank'>Principal Seat at Guwahati</a>\n</li>\n<li>\n<a href='index_highcourt.php?state_cd=6&dist_cd=1&court_code=2&stateNm=Assam'
-        \ target='_blank'>Kohima Bench</a>\n</li>\n<li>\n<a href='index_highcourt.php?state_cd=6&dist_cd=1&court_code=3&stateNm=Assam'
-        \ target='_blank'>Aizawl Bench</a>\n</li>\n<li>\n<a href='index_highcourt.php?state_cd=6&dist_cd=1&court_code=4&stateNm=Assam'
-        \ target='_blank'>Itanagar Bench</a>\n</li>\n</ul>\n</li>\n\n\n<li>\n<b> High
-        Court of Jammu & Kashmir </b>\n\t<ul class='leveltwo' >\n\t<li><a href='index_highcourt.php?state_cd=12&dist_cd=1&stateNm=Jammu
-        and Kashmir'  target='_blank'> Jammu Wing </a></li>\n\t<li><a href='index_highcourt.php?state_cd=12&dist_cd=1&court_code=2&stateNm=Jammu
-        and Kashmir'  target='_blank'> Srinagar Wing </a></li>\n\t</ul>\n</li>\n\n<li>\n<b>Rajasthan
-        High Court </b>\n        <ul class='leveltwo' >\n        <li><a href='index_highcourt.php?state_cd=9&dist_cd=1&stateNm=Rajasthan'
-        \ target='_blank'> Rajasthan High Court Bench at Jaipur </a></li>\n       <li><a
-        href='index_highcourt.php?state_cd=9&dist_cd=1&court_code=2&stateNm=Rajasthan'
-        \ target='_blank'> Rajasthan High Court Principal Seat, Jodhpur </a></li>\n
-        \       </ul>\n</li>\n<li>\n<b>Allahabad High Court </b>\n        <ul class='leveltwo'
-        >\n        <li><a href='index_highcourt.php?state_cd=13&dist_cd=1&stateNm=Uttar
-        Pradesh'  target='_blank'> High Court of Judicature at Allahabad </a></li>\n
-        \       <li><a href='index_highcourt.php?state_cd=13&dist_cd=1&court_code=2&stateNm=Uttar
-        Pradesh'  target='_blank'> Allahabad High Court Lucknow Bench</a></li>\n        </ul>\n<!--<a
-        href='index_highcourt.php?state_cd=13&dist_cd=1&stateNm=Uttar Pradesh'  target='_blank'>
-        High Court of Judicature at Allahabad </a>-->\n</li>\n\n\n<li>\n<a href='index_highcourt.php?state_cd=18&dist_cd=1&stateNm=Chhattisgarh'
-        \ target='_blank'> High Court of Chhattisgarh </a>\n</li>\n\n\n<li>\n<a href='index_highcourt.php?state_cd=7&dist_cd=1&stateNm=Jharkhand'
-        \ target='_blank'> High Court of Jharkhand </a>\n</li>\n\n<li>\n<a href='index_highcourt.php?state_cd=11&dist_cd=1&stateNm=Odisha'
-        \ target='_blank'> High Court of Orissa </a>\n</li>\n\n\n\n<li>\n<a href='index_highcourt.php?state_cd=29&dist_cd=1&stateNm=Telangana'
-        \ target='_blank'> High Court for the State of Telangana </a>\n</li>\n\n<li>\n<a
-        href='index_highcourt.php?state_cd=2&dist_cd=1&stateNm=Andhra Pradesh'  target='_blank'>
-        High Court of Andhra Pradesh </a>\n</li>\n\n\n<li>\n<a href='index_highcourt.php?state_cd=17&dist_cd=1&stateNm=Gujarat'
-        \ target='_blank'> High Court of Gujarat </a>\n</li>\n\n\n<li>\n<a href='index_highcourt.php?state_cd=4&dist_cd=1&stateNm=Kerala'
-        \ target='_blank'> High Court of Kerala </a>\n</li>\n\n<li>\n<a href='index_highcourt.php?state_cd=15&dist_cd=1&stateNm=Uttarakhand'
-        \ target='_blank'> High Court of Uttarakhand </a>\n</li>\n\n<!--<li>\n<a href='index_highcourt.php?state_cd=10&dist_cd=1&stateNm=Madras'
-        \ target='_blank'> Madras High Court </a>\n</li>-->\n\n\n<li>\n<b>Madras High
-        Court </b>\n        <ul class='leveltwo' >\n        <li><a href='index_highcourt.php?state_cd=10&dist_cd=1&stateNm=Madras'
-        \ target='_blank'> Principal Bench of Madras High Court </a></li>\n       <li><a
-        href='index_highcourt.php?state_cd=10&dist_cd=1&court_code=2&stateNm=Madras'
-        \ target='_blank'> Madurai Bench of Madras High Court </a></li>\n        </ul>\n</li>\n\n\n<!--<li>\n<a
-        href='index_highcourt.php?state_cd=16&dist_cd=1&stateNm=Calcutta'  target='_blank'>
-        Calcutta High Court </a>\n</li>-->\n\n<li>\n<b>Calcutta High Court </b>\n
-        \       <ul class='leveltwo' >\n\t<li>\n<a href='index_highcourt.php?state_cd=16&dist_cd=1&stateNm=Calcutta'
-        \ target='_blank'> Original Side </a>\n</li>\n<li><a href='index_highcourt.php?state_cd=16&dist_cd=1&court_code=2&stateNm=Calcutta'
-        \ target='_blank'> Circuit Bench At Jalpaiguri  </a></li>\n\n<li><a href='index_highcourt.php?state_cd=16&dist_cd=1&court_code=3&stateNm=Calcutta'
-        \ target='_blank'> Appellate side  </a></li>\n\n<li><a href='index_highcourt.php?state_cd=16&dist_cd=1&court_code=4&stateNm=Calcutta'
-        \ target='_blank'> Circuit Bench At Port Blair  </a></li>\n\n        </ul>\n</li>\n\n<li>\n<a
-        href='index_highcourt.php?state_cd=8&dist_cd=1&stateNm=Patna'  target='_blank'>
-        The High Court of Judicature at Patna </a>\n</li>\n\n\n<!--<li>\n<a href='index_highcourt.php?state_cd=3&dist_cd=1&stateNm=Karnataka'
-        \ target='_blank'> High Court of Karnataka </a>\n</li>\n-->\n\n<li>\n<b> High
-        Court of Karnataka  </b>\n        <ul class='leveltwo' >\n        <li>\n<a
-        href='index_highcourt.php?state_cd=3&dist_cd=1&stateNm=Karnataka'  target='_blank'>
-        Principal Bench at Bengaluru </a>\n</li>\n\n<li><a href='index_highcourt.php?state_cd=3&dist_cd=1&court_code=3&stateNm=Karnataka'
-        \ target='_blank'> Kalburagi Bench At Karnataka</a></li>\n\n<li><a href='index_highcourt.php?state_cd=3&dist_cd=1&court_code=2&stateNm=Karnataka'
-        \ target='_blank'> Dharwad Bench At Karnataka</a></li>\n\n        </ul>\n</li>\n\n<li>\n<b>
-        High Court of Bombay  </b>\n        <ul class='leveltwo' >\n        \n<li>\n\n<a
-        href='index_highcourt.php?state_cd=1&dist_cd=1&stateNm=Bombay'  target='_blank'>
-        Appellate Side,Bombay  </a>\n</li>\n<li><a href='index_highcourt.php?state_cd=1&dist_cd=1&court_code=2&stateNm=Bombay'
-        \ target='_blank'> Original Side, Bombay</a></li>\n\n<li><a href='index_highcourt.php?state_cd=1&dist_cd=1&court_code=3&stateNm=Bombay'
-        \ target='_blank'> Bench At Aurangabad</a></li>\n<li><a href='index_highcourt.php?state_cd=1&dist_cd=1&court_code=4&stateNm=Bombay'
-        \ target='_blank'> Bench At Nagpur</a></li>\n<li><a href='index_highcourt.php?state_cd=1&dist_cd=1&court_code=5&stateNm=Bombay'
-        \ target='_blank'> High Court of Bombay at Goa</a></li>\n<li><a href='index_highcourt.php?state_cd=1&dist_cd=1&court_code=6&stateNm=Bombay'
-        \ target='_blank'> Special Court (TORTS) Bombay High Court</a></li>\n\n        </ul>\n</li>\n\n<footer>\nS5\n</footer>\n\n\n<!--\n<li>\n<a
-        href='index_highcourt.php?state_cd=22&dist_cd=1&stateNm=Punjab'  target='_blank'>
-        High Court of Punjab and Haryana <br>Chandigargh </a>\n</li>\n\n\n\n<li>\n<a
-        href='index_highcourt.php?state_cd=8&dist_cd=1&stateNm=Patana'  target='_blank'>
-        The High Court of Judicature at Patna </a>\n</li>\n\n<li>\n<a href='index_highcourt.php?state_cd=15&dist_cd=1&stateNm=Uttarakhand'
-        \ target='_blank'> High Court of Uttarakhand </a>\n</li>\n\n<li>\n<a href='index_highcourt.php?state_cd=21&dist_cd=1&stateNm=Meghalaya'
-        \ target='_blank'> High Court of Meghalaya </a>\n</li>\n\n<li>\n<a href='index_highcourt.php?state_cd=25&dist_cd=1&stateNm=Manipur'
-        \ target='_blank'> High Court of Manipur </a>\n</li>\n\n<li>\n<a href='index_highcourt.php?state_cd=5&dist_cd=1&stateNm=Himachal
-        Pradesh'  target='_blank'> High Court of Himachal Pradesh </a>\n</li>\n\n<li>\n<a
-        href='index_highcourt.php?state_cd=12&dst_cd=1&stateNm=Jammu and Kashmir'
-        \ target='_blank'> High Court of Jammu and Kashmir </a>\n</li>\n\n<li>\n<a
-        href='index_highcourt.php?state_cd=2&dist_cd=1&stateNm=Andhra Pradesh'  target='_blank'>
-        High Court of Judicature at Hyderabad </a>\n</li>\n\n\n<li>\n<a href='index_highcourt.php?state_cd=13&dist_cd=1&stateNm=Uttar
-        Pradesh'  target='_blank'> High Court of Judicature at Allahabad </a>\n</li>\n\n\n-->\n</script>\n</body>\n</html>\n"
+      string: "\uFEFF"
     headers:
       Cache-Control:
       - no-store, no-cache, must-revalidate
@@ -114,11 +26,11 @@ interactions:
       Connection:
       - Keep-Alive
       Content-Length:
-      - '9369'
+      - '3'
       Content-Type:
       - text/html; charset=UTF-8
       Date:
-      - Wed, 31 Jul 2024 12:15:23 GMT
+      - Thu, 01 Aug 2024 04:50:22 GMT
       Expect-CT:
       - max-age=3600, enforce
       Expires:
@@ -132,10 +44,10 @@ interactions:
       Server:
       - ''
       Set-Cookie:
-      - PHPSESSID=47gbeudckig8fhnv02vddnmthl; expires=Wed, 31-Jul-2024 12:15:24 GMT;
-        Max-Age=1; path=ecourtindiaHC/hcservices; secure; HttpOnly; SameSite=Strict
-      - JSESSION=24273328; Path=/hcservices; SameSite=Strict; HttpOnly; Secure
-      - JSESSION=61823397; Path=/ecourtindiaHC; SameSite=Strict; HttpOnly; Secure
+      - PHPSESSID=fn1mpnic4hntbl19sre993doib; path=/; domain=.hcservices.ecourts.gov.in;
+        secure; HttpOnly; SameSite=Strict
+      - JSESSION=55727468; Path=/hcservices; SameSite=Strict; HttpOnly; Secure
+      - JSESSION=11560791; Path=/ecourtindiaHC; SameSite=Strict; HttpOnly; Secure
       Strict-Transport-Security:
       - '"max-age=15768000; includeSubDomains"'
       X-Content-Type-Options:
@@ -163,7 +75,7 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - JSESSION=61823397
+      - JSESSION=11560791; PHPSESSID=fn1mpnic4hntbl19sre993doib
       User-Agent:
       - python-requests/2.32.3
     method: POST
@@ -286,7 +198,7 @@ interactions:
       Content-Type:
       - text/html; charset=UTF-8
       Date:
-      - Wed, 31 Jul 2024 12:15:23 GMT
+      - Thu, 01 Aug 2024 04:50:22 GMT
       Expect-CT:
       - max-age=3600, enforce
       Expires:
@@ -299,9 +211,6 @@ interactions:
       - strict-origin
       Server:
       - ''
-      Set-Cookie:
-      - PHPSESSID=6ofm8mu0hg24ec4qnh4hpcirpr; path=/; domain=.hcservices.ecourts.gov.in;
-        secure; HttpOnly; SameSite=Strict
       Strict-Transport-Security:
       - '"max-age=15768000; includeSubDomains"'
       X-Content-Type-Options:
@@ -325,7 +234,7 @@ interactions:
       Connection:
       - keep-alive
       Cookie:
-      - JSESSION=61823397; PHPSESSID=6ofm8mu0hg24ec4qnh4hpcirpr
+      - JSESSION=11560791; PHPSESSID=fn1mpnic4hntbl19sre993doib
       User-Agent:
       - python-requests/2.32.3
     method: GET
@@ -334,57 +243,60 @@ interactions:
     body:
       string: !!binary |
         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
-        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
-        REVoJP4HS/LLkapMVowAAAAASUVORK5CYII=
+        70lEQVR4nO1dW2gUvxeen7aKK0pfpNKuIH1RfPGyXmtBECtC8VLwRhURqfrira5dFasvskKXrlW0
+        RakoqBS81VrxAqIo9qLWlYqgiNgHacWl0PogbbFe/g/5G2OSySSZzExmu99DmWaSnDPJNycnJ8ns
+        f79//zbScABlZWWZmZmGYcRiMa910R0jvFZAHvF4HP5l5GFnUAtUVjAYjMVisVgsEomUlZW5poMf
+        8Z9/bSHo8nA47LUiRjweD4fDbH0ikYhhGNnZ2ToorBt8zEIXAOilKhvImUwmjZSjI38LGDTzMbxY
+        KNRY0iKSyaSlLwhMo+GW18gzbrjQOGYYXixkQ9UQL9SdkI5OW0cPSWYJL1moc7soh+XDwsEaILVn
+        1lhrOMJCfeYNbLj5GojKgjYSIoV5OexGZMgGGFVRRURVnDZ7h1FeptjkZviy0PCzS2DpTbo/HPE0
+        pplWpix0rYdcbi//Mo8Ks9APGj/X/3lZLDSUjlYKa/NWiguQeBBIR9R99E2D/PYIVVVVXon2BeTa
+        p6qqqry8vLy8HP4rVI/7nQIkyrPQpsZYcc1JKaqeaPcrR/kfCJUidXbnKYbd7EQOot6kJkNhPB7v
+        6uoKBoOea8KGpiz0vBcVhl2ceArRdVsYD5cLOtrvDnYNGdL1pgD0DGfwQKgSNDMadORnpH2d2TUM
+        67UTDE4Hccg4ubcNhS3PAFLaVEmuDRWz0IVmdY4rmiiP5XGNqZCUQ0NDmZmZEssz0qpq6heawadW
+        VgiaxNXBzMbRQwvwSe2yUAdaaL55znPYf3aHtp/BjvM3Czml6/CqpAaoKzQK4EJM0jloGOuWXvNQ
+        qIALzbJnzx7RkDgVQFUfn8EzdDVvcqf+3DwryAO2PtXV1eB4YSQSoeYUehzKiKzP+NXe3t7U1DQ4
+        OJifn19cXGyztrNnzz569Ki/v3/27NmlpaW5ublKlHQUyvuCv0KbR7qEnFG6Xyjnz6IbSO00XDQa
+        bWhoMLubSCRQiQazTd+9e7dx40aGrLy8vGvXrvHrhkkMhUIM9TSEE7SGtUmfdqWvnchpie5hliNi
+        X1/fkiVL2HlAx2OdTRVHUoREZ2dnKBSSo05PT49EKW/h6BAH496iJwzF5sjUziYT5Si4YMGC79+/
+        8+eH1KG+3zwUpNbGBiqLKkLaFkYiEf+eLLF5SuH/LLRjqJWE4iorK69evcqTE7oghnmXi1IQQIhA
+        ZiKkWSjdBQpDoXK7azndMOyQoYHwUpKFylcbqZ1aUFBQVVWVmZm5c+fO1tZWMsOmTZt2796NJRYW
+        Fvb29sopxsmh6urqy5cv26mBhCZxdTf3sAFeDg0NSUatlTu5GAtHjRrV1taG5SkuLv706ROWSPa6
+        pZXq7u5esWIFO4+QthI1pIFCMl4YDoexjSF2cPjwYSyFpKBhGDdv3iQTBwYG0H+p/KitrUXJkZub
+        m0gksrKyyJykZSUhN9wPB8TjcTky/MNCuSqkrTG8vnv3LnqLMU2eNm0auEgmk8DJWLp0qaWsefPm
+        kYkPHz4kE5ubm9lVvXnzxlKcHIQanxEoluhEVQFz1DYJwbNdrgx1KysrzW5dunQJM0X9/f1sQQxi
+        ZWRk/Pjxg1GWdDw2b97MFicH8FD19fWGYZSUlJCN09PTs2zZMvjvjBkzMCXhNScPYDOCUcKsoDve
+        6j8sdG12giEQCKBkev/+/ZQpU6g5P378CC7AHNkwjMmTJ7MrHzNmjNmtEydO7Nixg10cfUbsBQgG
+        g11dXeziZmWh40uO7/X19fX19agLQebp6OjA4qbhcBhjDFYK5ly4cOHg4CB6i9GP7kyYLPxCM8uP
+        Tblt4unTp+i/JSUlZjmvX7+Opdy4cQNeR6NRs4JUl4XqGqJg9MH8+fNv3brFLs4AiIxCokAHAwLe
+        YruhoVCotLQU6IlqW1dXZ5Yfo6DTgH4CY9z/xxZSd/mSZs+F92PdunVXrlzBEgcGBtgxxbdv3wpJ
+        OX78OH9mjA01NTVCstgVQtPOkGiGxYsX80zMW1padu3axVMheTKBmoeTBuQbQsI6UuPa5gb2mmxN
+        Tc358+exDI8fPx43bhyaUlRU9PXrV3A9ceJE1FLySDRMQi1YzmfPnoFNyPzryCAnGnJXC0xuXV3d
+        mTNnJApCuBm/tJ6duKZKa2trfn4+msI2Bvv27cMoaBjGnTt37Ohw7tw5MhFTIxAIAApC8HOLzNPY
+        2Dhp0iTDMI4ePdrY2EgttXfv3g0bNlCVsYOpU6fCmAMJN0PoTs2RJd6k0aNHz5o169WrVzyZ+YPD
+        Zrac2p0zZ87EUj58+IClYF4sAKd5SyaTaE70KQKBwIsXL+bOnUuWghQERYLBIL9EEjrE1TF6aLTL
+        NRqNclLQMIzCwkJpQW1tbfxj8fr16y3zyBEiEAjAa/CqjBw5kkcr6u9WtLS08Ai1SUGFkUX0X6dY
+        KGoIQ6EQY08hid7eXs6xCQulnjx5khqdGTGC0hSYiFWrVvFrSAXKV9SmYkqSU2a0+8PhMMn7jo4O
+        S+kwNCiotePQwhY+ePCAmp5AQM0g6iSFQqGLFy9Sb7W3t1tWTq401tbWCikgDeytTiaT3d3daEpO
+        To7hPMNsOotm6mVgOTzZ1nHgwAEspampCduRD4hIMoNzj2pRUdGXL1+ot5qbm8nINrlSR5UCN+8A
+        Tqg6RWA5xFMzYH2MzZkKCgrAhQ47dzD8ZaESmit5woyMDLPuTCQSJBGj0eihQ4cYFZJFYA+ZMZhc
+        qXv9+vX06dOxxIqKCoZcl4E2PhmmOXbsmLvqUGBGD2VzZIVv2PPnz4XyNzQ0mLFwYGAA2gAU7E2y
+        VGzZsoVxF742KONFpwJqx1PMXo4dO1Zh5RBKwoqO+IVCrbl//36hyi27Fkpfvnw5SkHU5W9ubtYh
+        YIGB/8yb05rwQ4n18X52YrmYKwS4xh0KhT5//ozeArYhEAgkEgnGFgcM5HRVCY4cOSJdVkPHziYU
+        R60tvUMyw8GDB7E9CosWLXry5ImcAoxzSYZJpI0NJ1bb0sCgmIWWr2n4zy+4MvDt2zfG3QsXLrCL
+        Kz+XpBXMWs/+VwMk1FBllT3Y5cqj+pw5c8gAHsDp06cZBbdu3UpNF6UgZ35y9pOVlUXdxS0N6p4m
+        sB/WQ5B7r+ww0nu/0DCM+/fvo/8mk8lfv35RTRo1Ed0DYbYGeO/ePbYOP3/+7Ovrs9b1X5D+pVoK
+        JpNJbFnFNaeQfw4kvdEfgmIL3Q9fT5gwAUsBq/6cSyOnTp0CFwwDVlFRgcX2sI0FEO4M3CtXruTJ
+        hmqIxURsbhKzjLA4RACqXHlbKB0voG67Rfs+Ozubv3HRgtu2bZPQR+0U2LkTeljnCbWSZW3egsJC
+        TgMr/RhmBRlGyCxcYsdupSe/qiBkj6i9L2kLHQqcgo0L48ePB/9C8pHvfV5eXiKRkFYD5bQndIS7
+        cdmPoGqFUPP4gO5fV9++ffvLly+NP7wJh8OMmJ/ZaIi5UGyPSrTDzI66YVizZk1nZye4Xrt2LVwx
+        wrzwvr6+1atXg0MLOTk5t2/fFlLGITi++1/uE7CeQMPvB6ehpFOER2SesLND4HkdpT9SoTlS9bkA
+        dB+R0wCQHhP1+T40A8K2MIXfSJ2hPCKhFcRYKEpBnvy+pjXPhwekq1UFHxCR0wPlcULlfmmDWkSf
+        iYgnv7etz+O7A5V+IcMFEfJOfOHKaAtNvgkLwNmV6dlJSgFs8lX7a3UugO4X+tpXcwHatg/1qLL+
+        SNtCXsDBBfx6gn9/FcJpSLgEnu0v1NacmAG2bCwW47E3vntAVZBxBtyfEA2TCaCbj+n3JvXAFvLP
+        lH1tTnSeH5ANa/bRXlVdYFGP168BDnfic1QpQnL9a36q/oAnp0KhpA7wX+1Y+Jv74ZXzVXltohW6
+        xmzPXyGscf7OkV2OFfN8PJlRVufxLmXgGiX++oXSJ6nYQz7Dt7AUBwtiNbhJQb+7p76A3XihQ68L
+        sHbYpyPViqAKpQpKm16nkY5acyFNREehxal4OzAbMdWOpL6moJtOhZwgt1nIaBG5B7D/YYCUR/jP
+        r2g7LUhahD9G5PReL3dgJ3DBrtbubz+5qY2/kErvhrfP8j8e4VL8wPzgXwAAAABJRU5ErkJggg==
     headers:
       Cache-Control:
       - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
@@ -394,7 +306,7 @@ interactions:
       Content-Type:
       - image/png
       Date:
-      - Wed, 31 Jul 2024 12:15:24 GMT
+      - Thu, 01 Aug 2024 04:50:23 GMT
       Expect-CT:
       - max-age=3600, enforce
       Expires:
@@ -411,6 +323,8 @@ interactions:
       - ''
       Strict-Transport-Security:
       - '"max-age=15768000; includeSubDomains"'
+      Transfer-Encoding:
+      - chunked
       X-Content-Type-Options:
       - nosniff
       X-XSS-Protection:
@@ -423,7 +337,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: action_code=showRecords&from_date=05-06-2024&to_date=05-06-2024&captcha=3lbr3&state_code=12&dist_code=1&__csrf_magic=sid%3A8de4600a644d2c934a43b04947504972f27b91d1%2C1722425086
+    body: action_code=showRecords&from_date=05-06-2024&to_date=05-06-2024&captcha=824mr&state_code=12&dist_code=1&__csrf_magic=sid%3A8de4600a644d2c934a43b04947504972f27b91d1%2C1722425086
     headers:
       Accept:
       - '*/*'
@@ -436,7 +350,7 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - JSESSION=61823397; PHPSESSID=6ofm8mu0hg24ec4qnh4hpcirpr
+      - JSESSION=11560791; PHPSESSID=fn1mpnic4hntbl19sre993doib
       User-Agent:
       - python-requests/2.32.3
     method: POST
@@ -925,7 +839,7 @@ interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 31 Jul 2024 12:15:24 GMT
+      - Thu, 01 Aug 2024 04:50:23 GMT
       Expect-CT:
       - max-age=3600, enforce
       Expires:
@@ -939,7 +853,7 @@ interactions:
       Server:
       - ''
       Set-Cookie:
-      - PHPSESSID=6ofm8mu0hg24ec4qnh4hpcirpr; path=/; domain=.hcservices.ecourts.gov.in;
+      - PHPSESSID=fn1mpnic4hntbl19sre993doib; path=/; domain=.hcservices.ecourts.gov.in;
         secure; HttpOnly; SameSite=Strict
       Strict-Transport-Security:
       - '"max-age=15768000; includeSubDomains"'
@@ -968,7 +882,7 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - JSESSION=61823397; PHPSESSID=6ofm8mu0hg24ec4qnh4hpcirpr
+      - JSESSION=11560791; PHPSESSID=fn1mpnic4hntbl19sre993doib
       User-Agent:
       - python-requests/2.32.3
     method: POST
@@ -1053,7 +967,7 @@ interactions:
       Content-Type:
       - text/html; charset=UTF-8
       Date:
-      - Wed, 31 Jul 2024 13:19:51 GMT
+      - Thu, 01 Aug 2024 04:50:38 GMT
       Expect-CT:
       - max-age=3600, enforce
       Expires:
@@ -1066,9 +980,6 @@ interactions:
       - strict-origin
       Server:
       - ''
-      Set-Cookie:
-      - JSESSION=58617014; Path=/hcservices; SameSite=Strict; HttpOnly; Secure
-      - JSESSION=76153508; Path=/ecourtindiaHC; SameSite=Strict; HttpOnly; Secure
       Strict-Transport-Security:
       - '"max-age=15768000; includeSubDomains"'
       X-Content-Type-Options:

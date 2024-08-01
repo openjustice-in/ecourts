@@ -1,5 +1,5 @@
 from collections import OrderedDict
-from datetime import datetime
+import datetime
 from typing import List, Dict, Optional
 import re
 
@@ -34,13 +34,15 @@ def parse_js_call(js_call, signature):
     return typed_args
 
 
-def parse_date(date_str: Optional[str]) -> Optional[datetime]:
+def parse_date(date_str: Optional[str]) -> Optional[datetime.date]:
     if not date_str:
         return None
-    date_formats = ["%d-%m-%Y", "%dth %B %Y", "%dst %B %Y", "%dnd %B %Y", "%Y%m%d"]
+    date_formats = ["%Y%m%d", "%d-%m-%Y", "%dth %B %Y", "%dst %B %Y", "%dnd %B %Y", ]
     for fmt in date_formats:
         try:
-            return datetime.strptime(date_str, fmt).date()
+            x = datetime.datetime.strptime(date_str, fmt).date()
+            if x.year < 2050:
+                return x
         except ValueError:
             pass
     return None
@@ -57,4 +59,6 @@ def _remove_all_attrs_except_saving(soup):
 def clean_html(soup) -> str:
     soup = _remove_all_attrs_except_saving(soup)
     soup = soup.select_one("body")
+    # for tag in soup.find_all('br'):
+    #     tag.decompose()
     return str(soup)

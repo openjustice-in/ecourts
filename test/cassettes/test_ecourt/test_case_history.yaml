@@ -1,0 +1,123 @@
+interactions:
+- request:
+    body: action_code=pulishedCauselist&causelist_dt=31-12-2034&state_code=3&dist_code=1&__csrf_magic=sid%3A8de4600a644d2c934a43b04947504972f27b91d1%2C1722425086
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '151'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/highcourt_causelist_qry.php
+  response:
+    body:
+      string: "\uFEFF"
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - max-age=86400
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '3'
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Thu, 01 Aug 2024 05:04:25 GMT
+      Expect-CT:
+      - max-age=3600, enforce
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin
+      Server:
+      - ''
+      Set-Cookie:
+      - PHPSESSID=l263ihi2ad1a27qi71jvr5ihh8; path=/; domain=.hcservices.ecourts.gov.in;
+        secure; HttpOnly; SameSite=Strict
+      - JSESSION=39680652; Path=/hcservices; SameSite=Strict; HttpOnly; Secure
+      - JSESSION=12722294; Path=/ecourtindiaHC; SameSite=Strict; HttpOnly; Secure
+      Strict-Transport-Security:
+      - '"max-age=15768000; includeSubDomains"'
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content_security_policy:
+      - script-src 'self'; object-src 'self'; img-src 'self'
+      x-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: cino=KAHC010337682024&token=14b7927a52c474a5c85379fe180635c8957638b3440506b816c755af53b91990&case_no=211200056582024&state_code=3&dist_code=1&__csrf_magic=sid%3A8de4600a644d2c934a43b04947504972f27b91d1%2C1722425086
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '214'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - JSESSION=12722294; PHPSESSID=l263ihi2ad1a27qi71jvr5ihh8
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/o_civil_case_history.php
+  response:
+    body:
+      string: Invalid Request..!!!
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - max-age=86400
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '20'
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Thu, 01 Aug 2024 05:04:26 GMT
+      Expect-CT:
+      - max-age=3600, enforce
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - '"max-age=15768000; includeSubDomains"'
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content_security_policy:
+      - script-src 'self'; object-src 'self'; img-src 'self'
+      x-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

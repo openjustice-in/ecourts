@@ -1,0 +1,101 @@
+!!python/object:entities.case.Case
+bench: Single Bench
+case_status: ORDERS
+case_type: CRL.P
+category: CRL.P ( 112 )
+cnr_number: KAHC01-033768-2024
+coram: 1492M.NAGAPRASANNA
+decision_date: null
+district: BENGALURU
+filing_date: 2024-06-14
+filing_number: 5792/2024
+first_hearing_date: null
+history:
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: null
+    case_number: '211200056582024'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '3'
+      state_name: null
+    court_number: '1492'
+    disposal_flag: Pending
+    next_date: 2024-06-19
+    srno: 0
+  business_on_date: null
+  cause_list_type: true
+  hearing_date: 2024-06-19
+  judge: M.NAGAPRASANNA
+  purpose_of_hearing: FRESH MATTER/S
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2024-06-19
+    case_number: '211200056582024'
+    court: !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '3'
+      state_name: null
+    court_number: '1492'
+    disposal_flag: Pending
+    next_date: 2024-07-04
+    srno: 1
+  business_on_date: 2024-06-19
+  cause_list_type: true
+  hearing_date: 2024-07-04
+  judge: M.NAGAPRASANNA
+  purpose_of_hearing: FRESH MATTER/S
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2024-07-04
+    case_number: '211200056582024'
+    court: &id001 !!python/object:entities.court.Court
+      court_code: null
+      district_code: '1'
+      name: null
+      state_code: '3'
+      state_name: null
+    court_number: '1492'
+    disposal_flag: Pending
+    next_date: null
+    srno: 2
+  business_on_date: 2024-07-04
+  cause_list_type: true
+  hearing_date: null
+  judge: M.NAGAPRASANNA
+  purpose_of_hearing: ORDERS
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2024-07-04
+    case_number: '211200056582024'
+    court: *id001
+    court_number: '1492'
+    disposal_flag: Pending
+    next_date: null
+    srno: 2
+  business_on_date: null
+  cause_list_type: true
+  hearing_date: null
+  judge: Order on
+  purpose_of_hearing: Order Details
+judicial: Judicial Section
+nature_of_disposal: null
+not_before_me: Unknown
+objections: []
+orders: []
+petitioners:
+- !!python/object:entities.party.Party
+  advocate: null
+  name: ROHIT TIWARI
+- !!python/object:entities.party.Party
+  advocate: null
+  name: ANTONY  VINAY KUMAR B
+registration_date: 2024-06-18
+registration_number: 5658/2024
+respondents: []
+state: KARNATAKA
+sub_category: 482-U/S 482 ( 8 )

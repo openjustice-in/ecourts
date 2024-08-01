@@ -38,20 +38,19 @@ class CaseDetails:
                 case_status[key.text.strip()] = value.text.split(":")[1].strip()
         return case_status
 
-    def extract_parties(self, soup: BeautifulSoup) -> Dict[str, List[str]]:
-        def extract_row(str):
-            return str[3:]
-
-        parties = {"petitioners": [], "respondents": []}
-        for table in soup.find_all(
-            "span",
-            class_=lambda x: x
-            in ["Petitioner_Advocate_table", "Respondent_Advocate_table"],
-        ):
-            party_type = (
-                "petitioners" if "Petitioner" in table["class"][0] else "respondents"
-            )
-            parties[party_type].append(extract_row(table.text.strip()))
+    def extract_parties(self, soup: BeautifulSoup, spanClass:str) -> List[Party]:
+        table = soup.find("span",class_=spanClass)
+        if not table:
+            return []
+        s = table.text.replace('\xa0', "").strip()
+        regex = r"\d\)\s+(?P<party>.*)(\s+Advocate - (?P<advocate>.*))?"
+        matches = re.finditer(regex, s, re.MULTILINE)
+        parties = []
+        for matchNum, match in enumerate(matches, start=1):
+            party = Party(name=match.group("party"))
+            if match.group("advocate"):
+                party.advocate = match.group("advocate")
+            parties.append(party)
         return parties
 
     def extract_history(self, soup: BeautifulSoup) -> List[HistoryEntry]:
@@ -166,9 +165,13 @@ class CaseDetails:
     def __init__(self, html_content: str):
         soup = BeautifulSoup(html_content, "html.parser")
 
+        for br in soup.find_all("br"):
+            br.replace_with("\n")
+
         case_details = self.extract_case_details(soup)
         case_status = self.extract_case_status(soup)
-        parties = self.extract_parties(soup)
+        petitioners = self.extract_parties(soup, "Petitioner_Advocate_table")
+        respondents = self.extract_parties(soup, "Respondent_Advocate_table")
         history = self.extract_history(soup)
         category_details = self.extract_category_details(soup)
         objections = self.extract_objection(soup)
@@ -181,18 +184,20 @@ class CaseDetails:
             registration_number=case_details.get("Registration Number"),
             registration_date=case_details.get("Registration Date"),
             cnr_number=case_details.get("CNR Number"),
-            first_hearing_date=case_status["First Hearing Date"],
-            decision_date=case_status["Decision Date"],
-            case_status=case_status.get("Case Status"),
-            nature_of_disposal=case_status.get("Nature of Disposal"),
+
+            first_hearing_date=case_status.get("First Hearing Date", None),
+            decision_date=case_status.get("Decision Date", None),
+            case_status=case_status.get("Case Status", case_status.get("Stage of Case", None),),
+            nature_of_disposal=case_status.get("Nature of Disposal", None),
             coram=case_status["Coram"],
             bench=case_status["Bench"],
             state=case_status["State"],
-            district=case_status["District"],
+            district=case_status.get("District", None),
             judicial=case_status["Judicial"],
             not_before_me=case_status["Not Before Me"],
-            petitioners=[Party(name=p) for p in parties["petitioners"]],
-            respondents=[Party(name=p) for p in parties["respondents"]],
+
+            petitioners=petitioners,
+            respondents=respondents,
             history=history,
             category=category_details.get("Category"),
             sub_category=category_details.get("Sub Category"),

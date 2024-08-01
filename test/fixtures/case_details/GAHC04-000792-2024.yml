@@ -1,0 +1,99 @@
+!!python/object:entities.case.Case
+bench: Single Bench
+case_status: MOTION
+case_type: BA
+category: null
+cnr_number: GAHC04-000792-2024
+coram: 1366HONBLE MR. JUSTICE PARTHIVJYOTI SAIKIA
+decision_date: null
+district: null
+filing_date: 2024-06-24
+filing_number: 343/2024
+first_hearing_date: null
+history:
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2024-06-25
+    case_number: '205700000642024'
+    court: &id001 !!python/object:entities.court.Court
+      court_code: '4'
+      district_code: '1'
+      name: null
+      state_code: '6'
+      state_name: null
+    court_number: '1434'
+    disposal_flag: Pending
+    next_date: null
+    srno: 1
+  business_on_date: 2024-06-25
+  cause_list_type: true
+  hearing_date: null
+  judge: HONBLE MR. JUSTICE BUDI HABUNG
+  purpose_of_hearing: MOTION
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2024-06-25
+    case_number: '205700000642024'
+    court: *id001
+    court_number: '1434'
+    disposal_flag: Pending
+    next_date: null
+    srno: 1
+  business_on_date: null
+  cause_list_type: true
+  hearing_date: null
+  judge: Order on
+  purpose_of_hearing: Order Details
+- !!python/object:entities.history_entry.HistoryEntry
+  business: !!python/object:entities.business.Business
+    business_date: 2024-06-25
+    case_number: '205700000642024'
+    court: *id001
+    court_number: '1434'
+    disposal_flag: Pending
+    next_date: null
+    srno: 1
+  business_on_date: null
+  cause_list_type: true
+  hearing_date: 2024-06-25
+  judge: BA/64/2024
+  purpose_of_hearing: View
+judicial: Criminal Section
+nature_of_disposal: null
+not_before_me: null
+objections:
+- !!python/object:entities.objection.Objection
+  compliance_date: null
+  objection: All Objections are Complied
+  receipt_date: null
+  scrutiny_date: 2024-06-24
+orders:
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: BA/64/2024
+  cino: GAHC040007922024
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '4'
+    name: null
+    state_code: '6'
+    state_name: null
+  date: 2024-06-25
+  filename: bzPoyUlszYLCUcCpirIpqLPkTLgaTkEH+t8f0EzOfYNA5sdZ6N4WquS8CofJwYCV
+  judge: HONBLE MR. JUSTICE BUDI HABUNG
+  judgement: null
+petitioners:
+- !!python/object:entities.party.Party
+  advocate: null
+  name: Mama Rigam
+registration_date: 2024-06-24
+registration_number: 64/2024
+respondents:
+- !!python/object:entities.party.Party
+  advocate: 'P P of AP '
+  name: The State of AP and Anr
+- !!python/object:entities.party.Party
+  advocate: null
+  name: Miss Tana Moryom
+state: Arunachal Pradesh
+sub_category: null

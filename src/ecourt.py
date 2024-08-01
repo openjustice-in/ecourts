@@ -21,7 +21,9 @@ class ECourt:
         self.session = requests.Session()
         self.court = court
         self.captcha = Captcha(self.session)
-        self.session.get(self.url("/"))
+        # We fetch the causelist for a far future date
+        # to initialize our session
+        self.pulishedCauselist(causelist_dt="31-12-2034")
 
     def enableDebug(self):
         self.captcha.debug = True
@@ -29,11 +31,12 @@ class ECourt:
     def url(self, path):
         return self.BASE_URL + path
 
-    def apimethod(path, court=False, csrf=True):
+    def apimethod(path, court=False, csrf=True, action=True):
         def decorator(func):
             def inner(self, **kwargs):
                 extra_params = func(self, **kwargs) or {}
-                params = {"action_code": func.__name__} | kwargs | extra_params
+                action_params = {"action_code": func.__name__} if action else {}
+                params = action_params | kwargs | extra_params
                 if court:
                     params |= self.court.queryParams()
                 if csrf:
@@ -53,6 +56,14 @@ class ECourt:
             "captcha": self.captcha.solve(),
         }
 
+    @apimethod(path="/cases/o_civil_case_history.php", court=True, action=False)
+    def getCaseHistory(self, cino:str, token:str, case_no:str):
+        return {
+            "cino": cino,
+            "token": token,
+            "case_no": case_no
+        }
+
     def getOrdersOnDate(self, date: datetime.date):
         d = date.strftime("%d-%m-%Y")
         return parse_orders(self.showRecords(from_date=d, to_date=d))
@@ -64,3 +75,10 @@ class ECourt:
     @apimethod(path="/cases/s_casetype_qry.php", csrf=False, court=True)
     def fillCaseType(self):
         pass
+
+
+    @apimethod(path="/cases/highcourt_causelist_qry.php", court=True)
+    def pulishedCauselist(self, causelist_dt: str):
+        return {
+            "causelist_dt": causelist_dt,
+        }
