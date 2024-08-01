@@ -6,3 +6,4 @@ from entities.business import Business
 from entities.order import Order
 from entities.objection import Objection
 from entities.case_type import CaseType
+from entities.fir import FIR

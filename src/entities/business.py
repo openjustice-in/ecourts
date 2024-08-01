@@ -3,6 +3,7 @@ from datetime import datetime
 from parsers.utils import parse_date
 from entities import Court
 
+
 @dataclass
 class Business:
     court: Court
@@ -14,7 +15,7 @@ class Business:
     srno: str
 
     def __post_init__(self):
-        if isinstance(self.next_date, str) and len(self.next_date)<15:
+        if isinstance(self.next_date, str) and len(self.next_date) < 15:
             self.next_date = parse_date(self.next_date)
         if isinstance(self.business_date, str):
             self.business_date = parse_date(self.business_date)

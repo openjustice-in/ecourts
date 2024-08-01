@@ -9,6 +9,7 @@ decision_date: null
 district: null
 filing_date: 2024-06-24
 filing_number: 343/2024
+fir: null
 first_hearing_date: null
 history:
 - !!python/object:entities.history_entry.HistoryEntry
@@ -84,13 +85,14 @@ orders:
   judgement: null
 petitioners:
 - !!python/object:entities.party.Party
-  advocate: null
+  advocate: Teto Taba,Begi Taba,Begi Taba ,Begi Taba,C Ering,Vijay Duku Raji,Mardo
+    Game,Anong kabak,Nimcha Hondique
   name: Mama Rigam
 registration_date: 2024-06-24
 registration_number: 64/2024
 respondents:
 - !!python/object:entities.party.Party
-  advocate: 'P P of AP '
+  advocate: P P of AP
   name: The State of AP and Anr
 - !!python/object:entities.party.Party
   advocate: null

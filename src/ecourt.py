@@ -57,12 +57,8 @@ class ECourt:
         }
 
     @apimethod(path="/cases/o_civil_case_history.php", court=True, action=False)
-    def getCaseHistory(self, cino:str, token:str, case_no:str):
-        return {
-            "cino": cino,
-            "token": token,
-            "case_no": case_no
-        }
+    def getCaseHistory(self, cino: str, token: str, case_no: str):
+        return {"cino": cino, "token": token, "case_no": case_no}
 
     def getOrdersOnDate(self, date: datetime.date):
         d = date.strftime("%d-%m-%Y")
@@ -75,7 +71,6 @@ class ECourt:
     @apimethod(path="/cases/s_casetype_qry.php", csrf=False, court=True)
     def fillCaseType(self):
         pass
-
 
     @apimethod(path="/cases/highcourt_causelist_qry.php", court=True)
     def pulishedCauselist(self, causelist_dt: str):

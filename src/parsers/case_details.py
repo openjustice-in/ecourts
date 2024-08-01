@@ -7,17 +7,31 @@ import urllib.parse
 import sys
 import re
 from parsers.utils import parse_js_call, clean_html
-from entities import Case, Party, HistoryEntry, Business, Order, Objection, Court
+from entities import Case, Party, HistoryEntry, Business, Order, Objection, Court, FIR
 
 
 class CaseDetails:
 
-    def extract_case_details(self, soup: BeautifulSoup) -> Dict:
-        case_details = {}
-        for label in soup.select("span.case_details_table label"):
+    def extract_span_label_dict(self, soup: BeautifulSoup, labelSelector: str) -> Dict:
+        details = {}
+        for label in soup.select(labelSelector):
             key = label.text.strip()
             value = ""
-            if "Number" not in key and "Date" not in key and "Type" not in key:
+            KNOWN_VALID_KEY_CHECKS = [
+                "Number",
+                "Key",
+                "Station",
+                "District",
+                "Year",
+                "State",
+                "Type",
+                "Date",
+            ]
+            validKey = False
+            for k in KNOWN_VALID_KEY_CHECKS:
+                if k in key:
+                    validKey = True
+            if not validKey:
                 continue
             if label.next_sibling and label.next_sibling.name == "label":
                 value = label.next_sibling.text.replace(":", "")
@@ -25,8 +39,22 @@ class CaseDetails:
                 value = label.parent.text.split(":")[1]
             else:
                 value = label.parent.next_sibling.text.split(":")[1]
-            case_details[key] = value.strip().replace("\xa0", "")
-        return case_details
+            details[key] = value.strip().replace("\xa0", "")
+        return details
+
+    def extract_case_details(self, soup: BeautifulSoup) -> Dict:
+        return self.extract_span_label_dict(soup, "span.case_details_table label")
+
+    def extract_fir_details(self, soup: BeautifulSoup) -> Dict:
+        d = soup.select_one("span.FIR_details_table")
+        if d:
+            s = d.text.replace("\xa0", "").strip()
+            regex = r"(?P<k>.*):\s?(?P<v>(\w|\d| )+)\s?"
+            matches = re.finditer(regex, s, re.MULTILINE)
+            fir_details = {}
+            for matchNum, match in enumerate(matches, start=1):
+                fir_details[match.group("k")] = match.group("v").strip()
+            return fir_details
 
     def extract_case_status(self, soup: BeautifulSoup) -> Dict:
         case_status_div = soup.find("h2", string=re.compile("Case Status"))
@@ -38,18 +66,18 @@ class CaseDetails:
                 case_status[key.text.strip()] = value.text.split(":")[1].strip()
         return case_status
 
-    def extract_parties(self, soup: BeautifulSoup, spanClass:str) -> List[Party]:
-        table = soup.find("span",class_=spanClass)
+    def extract_parties(self, soup: BeautifulSoup, spanClass: str) -> List[Party]:
+        table = soup.find("span", class_=spanClass)
         if not table:
             return []
-        s = table.text.replace('\xa0', "").strip()
-        regex = r"\d\)\s+(?P<party>.*)(\s+Advocate - (?P<advocate>.*))?"
+        s = table.text.replace("\xa0", "").strip()
+        regex = r"\d\)\s+(?P<party>.*)(\s+Advocate( )?-( )?(?P<advocate>.*))?"
         matches = re.finditer(regex, s, re.MULTILINE)
         parties = []
         for matchNum, match in enumerate(matches, start=1):
-            party = Party(name=match.group("party"))
+            party = Party(name=match.group("party").strip())
             if match.group("advocate"):
-                party.advocate = match.group("advocate")
+                party.advocate = match.group("advocate").strip()
             parties.append(party)
         return parties
 
@@ -65,7 +93,7 @@ class CaseDetails:
                 type = cells[0].text.strip()
                 if cells[2].select_one("a"):
                     # function viewBusiness(court_code,dist_code,n_dt,case_number,state_code,businessStatus,todays_date1,court_no,srno)
-                    
+
                     signature = OrderedDict(
                         [
                             ("court_code", str),
@@ -82,9 +110,9 @@ class CaseDetails:
                     res = parse_js_call(cells[2].select_one("a")["onclick"], signature)
                     # breakpoint()
                     court = Court(
-                        state_code = res.pop("state_code"),
-                        district_code = res.pop("district_code"),
-                        court_code = res.pop("court_code", None),
+                        state_code=res.pop("state_code"),
+                        district_code=res.pop("district_code"),
+                        court_code=res.pop("court_code", None),
                     )
 
                 history.append(
@@ -169,6 +197,16 @@ class CaseDetails:
             br.replace_with("\n")
 
         case_details = self.extract_case_details(soup)
+        fir_details = self.extract_fir_details(soup)
+        fir = None
+        if fir_details:
+            fir = FIR(
+                state=fir_details.get("State"),
+                district=fir_details.get("District"),
+                police_station=fir_details.get("Police Station"),
+                number=fir_details.get("FIR Number"),
+                year=fir_details.get("Year"),
+            )
         case_status = self.extract_case_status(soup)
         petitioners = self.extract_parties(soup, "Petitioner_Advocate_table")
         respondents = self.extract_parties(soup, "Respondent_Advocate_table")
@@ -184,10 +222,12 @@ class CaseDetails:
             registration_number=case_details.get("Registration Number"),
             registration_date=case_details.get("Registration Date"),
             cnr_number=case_details.get("CNR Number"),
-
             first_hearing_date=case_status.get("First Hearing Date", None),
             decision_date=case_status.get("Decision Date", None),
-            case_status=case_status.get("Case Status", case_status.get("Stage of Case", None),),
+            case_status=case_status.get(
+                "Case Status",
+                case_status.get("Stage of Case", None),
+            ),
             nature_of_disposal=case_status.get("Nature of Disposal", None),
             coram=case_status["Coram"],
             bench=case_status["Bench"],
@@ -195,7 +235,6 @@ class CaseDetails:
             district=case_status.get("District", None),
             judicial=case_status["Judicial"],
             not_before_me=case_status["Not Before Me"],
-
             petitioners=petitioners,
             respondents=respondents,
             history=history,
@@ -203,5 +242,6 @@ class CaseDetails:
             sub_category=category_details.get("Sub Category"),
             objections=objections,
             orders=orders,
+            fir=fir,
         )
         self.html = clean_html(soup)

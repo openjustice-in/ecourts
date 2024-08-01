@@ -6,6 +6,7 @@ from entities.court import Court
 from entities.history_entry import HistoryEntry
 from entities.party import Party
 from entities.order import Order
+from entities.fir import FIR
 from entities.objection import Objection
 
 
@@ -31,11 +32,12 @@ class Case:
     orders: Optional[List[Order]]
 
     history: Optional[List[HistoryEntry]]
-    category: Optional[str]
-    sub_category: Optional[str]
-    objections: Optional[List[Objection]]
-    not_before_me: Optional[str]
+    category: str
+    sub_category: Optional[str] = None
+    objections: Optional[List[Objection]] = None
+    not_before_me: Optional[str] = None
     filing_date: Optional[datetime.date] = None
+    fir: Optional[FIR] = None
 
     def __post_init__(self):
         if not self.filing_date:

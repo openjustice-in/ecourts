@@ -14,11 +14,12 @@ def case_details(request):
     expected = None
     if os.path.exists(f"{cnr}.yml"):
         expected = yaml.unsafe_load(open(f"{cnr}.yml", "r"))
-    yield [open(request.param, 'r').read(), expected]
+    yield [open(request.param, "r").read(), expected]
 
-def test_date_parser():
-    from parsers.utils import parse_date
-    wat / parse_date("Next Date is not given")
+
+# def test_date_parser():
+#     from parsers.utils import parse_date
+#     wat / parse_date("Next Date is not given")
 
 
 def test_case_details_parser(case_details):
@@ -27,24 +28,21 @@ def test_case_details_parser(case_details):
     case_details = CaseDetails(html)
 
     if not expected:
-        with open(f"test/fixtures/case_details/{case_details.case.cnr_number}.yml", 'w') as f:
+        with open(
+            f"test/fixtures/case_details/{case_details.case.cnr_number}.yml", "w"
+        ) as f:
             yaml.dump(case_details.case, f)
 
-    # wat / case_details.case
-    
     assert case_details.case == expected
     # We validate that our HTML is minimal and complete
     case_details2 = CaseDetails(case_details.html)
-    # Further minification can obviously not happen
-    if case_details2.html.replace('\n', "") != case_details.html.replace('\n', ""):
-        # write them to /tmp/1.html  and /tmp/2.html
-        with open("/tmp/1.html", 'w') as f:
-            f.write(case_details.html.replace('\n', ""))
-        with open("/tmp/2.html", 'w') as f:
-            f.write(case_details2.html.replace('\n', ""))
-    assert case_details2.html.replace('\n', "") == case_details.html.replace('\n', "")
 
-    assert case_details2.case == case_details.case  # and the parser output should be equivalent
+    # for some reason, beautifulsoup changes newlines slightly the second time around
+    assert case_details2.html.replace("\n", "") == case_details.html.replace("\n", "")
+
+    assert (
+        case_details2.case == case_details.case
+    )  # and the parser output should be equivalent
     assert (
         case_details2.case == case_details.case
     )  # and the parser output should be equivalent

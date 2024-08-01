@@ -23,7 +23,7 @@ def test_courts_generator():
 
 def test_business():
     b = Business(
-        court = Court(
+        court=Court(
             state_code="12",
             court_code="2",
         ),

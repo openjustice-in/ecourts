@@ -37,7 +37,13 @@ def parse_js_call(js_call, signature):
 def parse_date(date_str: Optional[str]) -> Optional[datetime.date]:
     if not date_str:
         return None
-    date_formats = ["%Y%m%d", "%d-%m-%Y", "%dth %B %Y", "%dst %B %Y", "%dnd %B %Y", ]
+    date_formats = [
+        "%Y%m%d",
+        "%d-%m-%Y",
+        "%dth %B %Y",
+        "%dst %B %Y",
+        "%dnd %B %Y",
+    ]
     for fmt in date_formats:
         try:
             x = datetime.datetime.strptime(date_str, fmt).date()

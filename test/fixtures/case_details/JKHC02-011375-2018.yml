@@ -9,6 +9,7 @@ decision_date: 2020-12-24
 district: SRINAGAR
 filing_date: 2018-12-28
 filing_number: 9702/2018
+fir: null
 first_hearing_date: 2018-12-31
 history:
 - !!python/object:entities.history_entry.HistoryEntry
