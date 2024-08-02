@@ -1,8 +1,7 @@
 def parse_options(raw_input: str):
-    """Options<Select> for HTML
-
+    """
     Args:
-      n: A string response from the API
+      raw_input: A string response from the API, which enumerates various option tags
 
     Returns:
       A dictionary where keys are the first part of each option and values are

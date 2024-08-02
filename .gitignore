@@ -3,6 +3,9 @@ TASK.md
 # initial kitchensink code for captcha experimentation
 captcha/
 *.csv
+!courts.csv
+# We can generate and publish automatically
+doc/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
