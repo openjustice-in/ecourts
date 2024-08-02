@@ -7,9 +7,16 @@ from parsers.utils import parse_date
 @dataclass
 class Objection:
     scrutiny_date: Optional[datetime.date]
+    """The date of scrutiny."""
+
     objection: str
+    """The objection text."""
+
     compliance_date: Optional[datetime.date]
+    """The date of compliance."""
+
     receipt_date: Optional[datetime.date]
+    """The date of receipt."""
 
     def __post_init__(self):
         if isinstance(self.scrutiny_date, str):
