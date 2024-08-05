@@ -1,12 +1,13 @@
 # ecourts-scraper
 
-This is a Python package to help scrape information from the ECourts Service.
+This is a Python package to help scrape information from the ECourts Service. This is primarily
+meant for journalists, and data researchers who need bulk access to the ECourts website to get
+orders, judgements, or lists of cases that match their criteria.
 
 The final goal is to cover all services under the `ecourts.gov.in` domain, but it currently
 supports a few services covered at https://hcservices.ecourts.gov.in/ecourtindiaHC/.
 
 It covers all the High Courts and their various benches.
-
 
 Type of Query | Supported | Inputs
 --------------|-----------|-------
@@ -39,7 +40,7 @@ High Court of Jammu and Kashmir - Srinagar Wing|171
 
 As such, before doing any kind of work that relies on case type (such as fetching case details, or orders by case type) - you must get the relevant case type idenfiers. You can run:
 
-`ecourts get-case-type --state-code [state-code] --court-code [court-code]` to
+`ecourts get-case-type --state-code SC [--court-code CC]` to
 get the case type identifiers for a particular court. If the
 `state-code/court-code` identifiers are not provided, the case types will
 be fetched for all known courts. A list of all known courts is available
@@ -58,8 +59,17 @@ Other entities involved are more legal in nature:
 - FIR
 - HistoryEntry
 - Objection
-- Order
+- Order - An order or judgement in a case.
 - Party - Either a petitioner or a responded to a case.
+
+## Principles
+
+- Make it easy to fetch case information.
+- Store information in accessible formats, for easy retrieval and querying.
+- Migrate to standard identifiers, such as ISO-3166 for state codes.
+- Be nice to the ecourts website. Retry failed requests, but do not hammer the site.
+  In case of 5xx errors, wait for a while before retrying.
+
 
 ## LICENSE
 

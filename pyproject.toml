@@ -7,18 +7,20 @@ dependencies = [
     "click~=8.1"
 ]
 requires-python = ">=3.10"
-description = ""
+description = "ecourts is a information retrieval tool for Indian High Courts."
 dynamic = ["version"]
 [project.optional-dependencies]
 dev = [
   "wat-inspector",
   "pytest-recording~=0.13",
-  "pytest-cov",
-  "PyYAML~=6.0",
+]
+doc = [
   "pdoc3~=0.11"
 ]
 test = [
   "pytest~=8.3",
+  "pytest-cov~=5.0",
+  "PyYAML~=6.0",
 ]
 
 [tool.pytest.ini_options]
@@ -29,7 +31,7 @@ testpaths = [
   "test"
 ]
 [project.scripts]
-get-case-types = "cli:get_case_types"
+ecourts = "cli:ecourts"
 
 [tool.coverage.run]
 source = ["src"]
