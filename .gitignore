@@ -6,6 +6,7 @@ captcha/
 !courts.csv
 # We can generate and publish automatically
 doc/
+docs/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
