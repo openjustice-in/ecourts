@@ -24,7 +24,6 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install .[docs]
-        sudo apt install tesseract-ocr
 
     - name: Build Docs
       run: pdoc --html --output-dir docs src
