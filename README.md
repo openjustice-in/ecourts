@@ -83,3 +83,7 @@ As part of GPL3 obligations:
 >You may copy, distribute and modify the software as long as you track
  changes/dates in source files. Any modifications to this code must also be
  made available under the GPL along with build & install instructions.
+
+## Documentation
+
+The documentation for this project is available at [https://captnemo.in/ecourts](https://captnemo.in/ecourts).

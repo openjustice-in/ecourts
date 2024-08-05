@@ -33,3 +33,6 @@ get-case-types = "cli:get_case_types"
 
 [tool.coverage.run]
 source = ["src"]
+
+[tool.pdoc]
+modules = ["src"]
