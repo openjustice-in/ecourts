@@ -10,17 +10,15 @@ requires-python = ">=3.10"
 description = "ecourts is a information retrieval tool for Indian High Courts."
 dynamic = ["version"]
 [project.optional-dependencies]
-dev = [
-  "wat-inspector",
-  "pytest-recording~=0.13",
-]
-doc = [
+docs = [
   "pdoc3~=0.11"
 ]
 test = [
   "pytest~=8.3",
   "pytest-cov~=5.0",
   "PyYAML~=6.0",
+  "pytest-recording~=0.13",
+  "wat-inspector~=0.3"
 ]
 
 [tool.pytest.ini_options]

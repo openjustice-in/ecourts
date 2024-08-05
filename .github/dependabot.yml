@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: weekly
+      time: "04:00"
+      timezone: Asia/Calcutta
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      time: "04:00"
+      interval: weekly
+      timezone: Asia/Calcutta
