@@ -1,4 +1,4 @@
-name: Generate and Publish Documentation
+name: Publish Documentation
 
 on:
   push:
@@ -22,8 +22,7 @@ jobs:
       uses: actions/setup-python@v5
 
     - name: Install dependencies
-      run: |
-        python -m pip install .[docs]
+      run: python -m pip install .[docs]
 
     - name: Build Docs
       run: pdoc --html --output-dir docs src
@@ -45,8 +44,8 @@ jobs:
         path: docs
   deploy:
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
