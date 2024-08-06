@@ -53,14 +53,16 @@ and an ECourt is the primary class that deals with the website.
 
 Other entities involved are more legal in nature:
 
-- Business
-- Case
-- CaseType
-- FIR
-- HistoryEntry
-- Objection
-- Order - An order or judgement in a case.
-- Party - Either a petitioner or a responded to a case.
+- [Business](https://captnemo.in/ecourts/src/entities/business.html#src.entities.business.Business)
+- [Case](https://captnemo.in/ecourts/src/entities/case.html#src.entities.case.Case)
+- [CaseType](https://captnemo.in/ecourts/src/entities/case_type.html)
+- [FIR](https://captnemo.in/ecourts/src/entities/fir.html)
+- [HistoryEntry](https://captnemo.in/ecourts/src/entities/history_entry.html)
+- [Objection](https://captnemo.in/ecourts/src/entities/objection.html)
+- [Order](https://captnemo.in/ecourts/src/entities/order.html) - An order or judgement in a case.
+- [Party](https://captnemo.in/ecourts/src/entities/party.html) - Either a petitioner or a responded to a case.
+- [Court](https://captnemo.in/ecourts/src/entities/court.html)
+- [ECourt](https://captnemo.in/ecourts/src/ecourt.html) APIs are also documented.
 
 ## Principles
 
@@ -96,4 +98,6 @@ As part of GPL3 obligations:
 
 ## Documentation
 
-The documentation for this project is available at [https://captnemo.in/ecourts](https://captnemo.in/ecourts).
+- Canonical link for the project is <https://captnemo.in/ecourts/>.
+- General guidance is available via `ecourts --help` or `ecourts cmd --help`.
+- Python documentation is available at [captnemo.in/ecourts/src](https://captnemo.in/ecourts/src/).
