@@ -70,7 +70,7 @@ Other entities involved are more legal in nature:
 - Canonical link for the project is <https://captnemo.in/ecourts/>.
 - General guidance is available via `ecourts --help` or `ecourts cmd --help`.
 - Python documentation is available at [captnemo.in/ecourts/src](https://captnemo.in/ecourts/src/).
-- Coverage reports are published at <https://captnemo.in/ecourts/coverage> as well as at [Coveralls](https://coveralls.io/github/captn3m0/ecourts).
+- Coverage reports are published at [Coveralls](https://coveralls.io/github/captn3m0/ecourts).
 
 
 ## Guiding Principles

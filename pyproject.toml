@@ -22,7 +22,7 @@ test = [
 ]
 
 [tool.pytest.ini_options]
-addopts = "--cov=src --cov-report html --cov-report lcov"
+addopts = "--cov=src --cov-report lcov"
 pythonpath = [
   "src"
 ]
