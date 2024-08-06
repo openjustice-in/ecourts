@@ -22,12 +22,14 @@ test = [
 ]
 
 [tool.pytest.ini_options]
+addopts = "--cov=src --cov-report html --cov-report lcov"
 pythonpath = [
   "src"
 ]
 testpaths = [
   "test"
 ]
+
 [project.scripts]
 ecourts = "cli:ecourts"
 
@@ -36,3 +38,7 @@ source = ["src"]
 
 [tool.pdoc]
 modules = ["src"]
+
+
+[tool.coverage.html]
+directory = "docs/coverage"

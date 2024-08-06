@@ -1,4 +1,5 @@
-# ecourts-scraper
+# ecourts-scraper [![Coverage Status](https://coveralls.io/repos/github/captn3m0/ecourts/badge.svg?branch=main)](https://coveralls.io/github/captn3m0/ecourts?branch=main) ![PyPI - Version](https://img.shields.io/pypi/v/ecourts) ![GitHub Tag](https://img.shields.io/github/v/tag/captn3m0/ecourts) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/captn3m0/ecourts/test.yml?branch=main) [![docs](https://img.shields.io/badge/docs-Guide-9b59b6)](https://captnemo.in/ecourts/) [![docs](https://img.shields.io/badge/docs-API_Reference-9b59b6)](https://captnemo.in/ecourts/src/)
+
 
 This is a Python package to help scrape information from the ECourts Service. This is primarily
 meant for journalists, and data researchers who need bulk access to the ECourts website to get
@@ -64,14 +65,21 @@ Other entities involved are more legal in nature:
 - [Court](https://captnemo.in/ecourts/src/entities/court.html)
 - [ECourt](https://captnemo.in/ecourts/src/ecourt.html) APIs are also documented.
 
-## Principles
+## Documentation
+
+- Canonical link for the project is <https://captnemo.in/ecourts/>.
+- General guidance is available via `ecourts --help` or `ecourts cmd --help`.
+- Python documentation is available at [captnemo.in/ecourts/src](https://captnemo.in/ecourts/src/).
+- Coverage reports are published at <https://captnemo.in/ecourts/coverage> as well as at [Coveralls](https://coveralls.io/github/captn3m0/ecourts).
+
+
+## Guiding Principles
 
 - Make it easy to fetch case information.
 - Store information in accessible formats, for easy retrieval and querying.
-- Migrate to standard identifiers, such as ISO-3166 for state codes.
+- Use standard identifiers, such as ISO-3166 for state codes.
 - Be nice to the ecourts website. Retry failed requests, but do not hammer the site.
   In case of 5xx errors, wait for a while before retrying.
-
 
 ## LICENSE
 
@@ -95,9 +103,3 @@ As part of GPL3 obligations:
 >You may copy, distribute and modify the software as long as you track
  changes/dates in source files. Any modifications to this code must also be
  made available under the GPL along with build & install instructions.
-
-## Documentation
-
-- Canonical link for the project is <https://captnemo.in/ecourts/>.
-- General guidance is available via `ecourts --help` or `ecourts cmd --help`.
-- Python documentation is available at [captnemo.in/ecourts/src](https://captnemo.in/ecourts/src/).

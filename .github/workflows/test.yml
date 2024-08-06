@@ -1,7 +1,6 @@
 name: Run Tests
 
-on:
-  push:
+on: ["push", "pull_request"]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -19,3 +18,8 @@ jobs:
         sudo apt install tesseract-ocr
     - name: Run tests
       run: pytest
+    - name: Coveralls
+      uses: coverallsapp/github-action@v2
+      with:
+        file: coverage.lcov
+        github-token: ${{ secrets.GITHUB_TOKEN }}
