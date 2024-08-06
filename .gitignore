@@ -1,5 +1,6 @@
 TASK.md
 coverage.lcov
+src/_version.py
 *.xlsx
 # initial kitchensink code for captcha experimentation
 captcha/

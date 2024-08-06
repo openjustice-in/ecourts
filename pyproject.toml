@@ -6,13 +6,20 @@ dependencies = [
     "opencv-python~=4.10.0",    
     "click~=8.1"
 ]
+
 requires-python = ">=3.10"
 description = "ecourts is a information retrieval tool for Indian High Courts."
-dynamic = ["version"]
+dynamic = ["version", "readme"]
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md"], content-type = "text/markdown"}
+
 [project.optional-dependencies]
+# Building Docs
 docs = [
   "pdoc3~=0.11"
 ]
+# Running Tests
 test = [
   "pytest~=8.3",
   "pytest-cov~=5.0",
@@ -21,7 +28,17 @@ test = [
   "wat-inspector~=0.3"
 ]
 
+[build-system]
+requires = ["setuptools", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+[tool.setuptools_scm]
+# This is automatically generated
+version_file = "src/_version.py"
+
 [tool.pytest.ini_options]
+# Coverage reports
 addopts = "--cov=src --cov-report lcov"
 pythonpath = [
   "src"
@@ -33,12 +50,11 @@ testpaths = [
 [project.scripts]
 ecourts = "cli:ecourts"
 
-[tool.coverage.run]
-source = ["src"]
-
 [tool.pdoc]
 modules = ["src"]
 
+[tool.coverage.run]
+source = ["src"]
 
 [tool.coverage.html]
 directory = "docs/coverage"
