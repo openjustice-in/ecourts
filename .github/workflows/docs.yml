@@ -6,6 +6,7 @@ on:
       - main
   workflow_dispatch:
 
+
 concurrency:
   group: "pages-docs"
   cancel-in-progress: false
@@ -15,33 +16,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@39cd14951b08e74b54015e9e001cdefcf80e669f # v5
 
-    - name: Install dependencies
-      run: python -m pip install .[docs]
+      - name: Install dependencies
+        run: python -m pip install .[docs]
 
-    - name: Build Docs
-      run: pdoc --html --output-dir docs src
+      - name: Build Docs
+        run: pdoc --html --output-dir docs src
 
-    - name: Converts README.md to HTML
-      uses: jaywcjlove/markdown-to-html-cli@main
-      with:
-        source: README.md
-        output: docs/index.html
-        github-corners: https://github.com/captn3m0/ecourts
+      - name: Converts README.md to HTML
+        uses: jaywcjlove/markdown-to-html-cli@395545594ec37e80b121bb838c2b49f93d16373a # main
+        with:
+          source: README.md
+          output: docs/index.html
+          github-corners: https://github.com/captn3m0/ecourts
 
-    - name: Setup Pages
-      id: pages
-      uses: actions/configure-pages@v5
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
 
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
-      with:
-        path: docs
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
+        with:
+          path: docs
   deploy:
     permissions:
       pages: write
