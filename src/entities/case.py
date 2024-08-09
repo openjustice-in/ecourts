@@ -13,26 +13,26 @@ from entities.objection import Objection
 @dataclass
 class Case:
     case_type: str
-    filing_number: str
-
     registration_number: str
-    registration_date: Optional[datetime.date]
     cnr_number: str
-    first_hearing_date: Optional[datetime.date]
-    decision_date: Optional[datetime.date]
-    case_status: str
-    nature_of_disposal: str
-    coram: Optional[str]
-    bench: Optional[str]
-    state: Optional[str]
-    district: Optional[str]
-    judicial: Optional[str]
-    petitioners: Optional[List[Party]]
-    respondents: Optional[List[Party]]
-    orders: Optional[List[Order]]
+    filing_number: Optional[str] = None
 
-    history: Optional[List[HistoryEntry]]
-    category: str
+    registration_date: Optional[datetime.date] = None
+    first_hearing_date: Optional[datetime.date] = None
+    decision_date: Optional[datetime.date] = None
+    case_status: Optional[str] = None
+    nature_of_disposal: Optional[str] = None
+    coram: Optional[str] = None
+    bench: Optional[str] = None
+    state: Optional[str] = None
+    district: Optional[str] = None
+    judicial: Optional[str] = None
+    petitioners: Optional[List[Party]] = None
+    respondents: Optional[List[Party]] = None
+    orders: Optional[List[Order]] = None
+
+    history: Optional[List[HistoryEntry]] = None
+    category: Optional[str] = None
     sub_category: Optional[str] = None
     objections: Optional[List[Objection]] = None
     not_before_me: Optional[str] = None

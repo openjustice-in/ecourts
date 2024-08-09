@@ -1,0 +1,32 @@
+!!python/object:entities.case.Case
+bench: null
+case_status: null
+case_type: HCP
+category: null
+cnr_number: JKHC020036762024
+coram: null
+decision_date: null
+district: null
+filing_date: null
+filing_number: null
+fir: null
+first_hearing_date: null
+history: null
+judicial: null
+nature_of_disposal: null
+not_before_me: null
+objections: null
+orders: null
+petitioners:
+- !!python/object:entities.party.Party
+  advocate: null
+  name: PAWAN KUMAR TH. TOSHI DEVI
+registration_date: null
+registration_number: 104/2024
+respondents:
+- !!python/object:entities.party.Party
+  advocate: null
+  name: UT OF J AND K TH. DISTRICT MAGISTRATE JAMMU AND OTHERS
+state: null
+sub_category: null
+token: 14b730df47b74eb805c08ed47753d39e22ace0707e6229cfa567223d4f07a96f

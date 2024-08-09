@@ -1,0 +1,32 @@
+!!python/object:entities.case.Case
+bench: null
+case_status: null
+case_type: HCP
+category: null
+cnr_number: JKHC020016992024
+coram: null
+decision_date: null
+district: null
+filing_date: null
+filing_number: null
+fir: null
+first_hearing_date: null
+history: null
+judicial: null
+nature_of_disposal: null
+not_before_me: null
+objections: null
+orders: null
+petitioners:
+- !!python/object:entities.party.Party
+  advocate: null
+  name: GHULAM MURTAZA TH RAYAZ AHMED
+registration_date: null
+registration_number: 48/2024
+respondents:
+- !!python/object:entities.party.Party
+  advocate: null
+  name: U T OF J AND K TH COMMISSIONER SECRETARY HOME DEPTT AND OTHERS
+state: null
+sub_category: null
+token: 14b730df47b74eb805c08ed47753d39e22ace0707e6229cfa567223d4f07a96f

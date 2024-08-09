@@ -1,6 +1,7 @@
 import pytest
 import glob
 from parsers.case_details import CaseDetails
+from parsers.cases import parse_cases
 from entities import Case, Party, Business, HistoryEntry, Order, Objection, Court
 import datetime
 import yaml
@@ -16,11 +17,13 @@ def case_details(request):
         expected = yaml.unsafe_load(open(f"{cnr}.yml", "r"))
     yield [open(request.param, "r").read(), expected]
 
-
-# def test_date_parser():
-#     from parsers.utils import parse_date
-#     wat / parse_date("Next Date is not given")
-
+@pytest.fixture(params=glob.glob("test/fixtures/cases/*.txt"))
+def case_row(request):
+    cnr = os.path.splitext(request.param)[0]
+    expected = None
+    if os.path.exists(f"{cnr}.yml"):
+        expected = yaml.unsafe_load(open(f"{cnr}.yml", "r"))
+    yield [open(request.param, "r").read(), expected]
 
 def test_case_details_parser(case_details):
     html = case_details[0]
@@ -49,3 +52,13 @@ def test_case_details_parser(case_details):
 
     # Validate that we have minified the HTML by a factor of 2
     assert len(html) / len(case_details.html) > 2
+
+def test_cases_parser(case_row):
+    txt = case_row[0]
+    expected = case_row[1]
+    for case_obj in parse_cases(txt):
+        if not expected:
+            with open(
+                f"test/fixtures/cases/{case_obj.cnr_number}.yml", "w"
+            ) as f:
+                yaml.dump(case_obj, f)
