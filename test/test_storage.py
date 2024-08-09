@@ -30,10 +30,19 @@ def test_courts_add():
 
 def test_case_types():
     storage = Storage("/tmp/ecourts.db")
-    with open("case-types.csv") as f:
-        reader = csv.reader(f)
-        case_types = [CaseType(code=int(row[0]), description=row[1], court=Court(state_code=row[2], court_code=row[3] or None)) for row in reader][0:100]
-        storage.addCaseTypes(case_types)
+    case_types = [
+        CaseType(code=332,description="ABA - Cr. Anticipatory Bail Appln.",court=Court(state_code="1")),
+        CaseType(code=335,description="ALP - Appln for Leave to Appeal(PVT.)",court=Court(state_code="1")),
+        CaseType(code=334,description="ALS - Appln For Leave to Appeal(STATE)",court=Court(state_code="1")),
+        CaseType(code=3,description="AO - Appeal from Order",court=Court(state_code="1")),
+        CaseType(code=310,description="APEAL - Cr. Appeal",court=Court(state_code="1")),
+        CaseType(code=330,description="APL - Criminal Appln. U/s 482",court=Court(state_code="1")),
+        CaseType(code=321,description="APPA - Cr. Application in Appeal",court=Court(state_code="1")),
+        CaseType(code=327,description="APPCO - Application in Cr. Conf.",court=Court(state_code="1")),
+        CaseType(code=326,description="APPCP - Application in Cr. Cont. Petn.",court=Court(state_code="1")),
+        CaseType(code=324,description="APPCR - Application In Cr. Reference",court=Court(state_code="1")),
+    ]
+    storage.addCaseTypes(case_types)
     for record in storage.getCaseTypes():
         assert record in case_types
     os.unlink("/tmp/ecourts.db")
