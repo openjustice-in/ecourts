@@ -1,11 +1,10 @@
 from entities import Case
 from entities import Court
-from typing import List
 from entities.party import Party
 
 # TODO: The dict mappings should be dynamic
 # based on the route called.
-def parse_cases(raw_data: str) -> List[Case]:
+def parse_cases(raw_data: str) -> list[Case]:
     """Processes raw data and returns a list of case dictionaries.
 
     Args:

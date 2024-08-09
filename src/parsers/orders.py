@@ -1,11 +1,10 @@
 from entities import Order
 from entities import Court
-from typing import List
 
 
 # TODO: The dict mappings should be dynamic
 # based on the route called.
-def parse_orders(raw_data: str) -> List[Order]:
+def parse_orders(raw_data: str) -> list[Order]:
     """Processes raw data and returns a list of case dictionaries.
 
     Args:

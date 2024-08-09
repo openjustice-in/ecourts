@@ -1,4 +1,3 @@
-from typing import List
 from entities import CaseType, Court
 import sqlite3
 import json
@@ -26,7 +25,7 @@ class Storage:
         self.cursor.execute("CREATE TABLE IF NOT EXISTS courts (value JSON)")
         self.conn.commit()
 
-    def addCaseTypes(self, records: List[CaseType]):
+    def addCaseTypes(self, records: list[CaseType]):
         for record in records:
             self.cursor.execute(
                 "INSERT OR IGNORE INTO case_types VALUES (?)",
@@ -43,7 +42,7 @@ class Storage:
             )
             yield CaseType(code=j["code"], description=j["description"], court=court)
 
-    def addCourts(self, records: List[Court]):
+    def addCourts(self, records: list[Court]):
         for record in records:
             self.cursor.execute(
                 "INSERT OR IGNORE INTO courts VALUES (?)", (json.dumps(record.json()),)

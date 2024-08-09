@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from datetime import datetime
-from typing import List, Dict, Optional
+from typing import Optional
 from parsers.utils import parse_date
 from entities.court import Court
 from entities.hearing import Hearing
@@ -27,14 +27,14 @@ class Case:
     state: Optional[str] = None
     district: Optional[str] = None
     judicial: Optional[str] = None
-    petitioners: Optional[List[Party]] = None
-    respondents: Optional[List[Party]] = None
-    orders: Optional[List[Order]] = None
+    petitioners: Optional[list[Party]] = None
+    respondents: Optional[list[Party]] = None
+    orders: Optional[list[Order]] = None
     case_no: Optional[str] = None
-    hearings: Optional[List[Hearing]] = None
+    hearings: Optional[list[Hearing]] = None
     category: Optional[str] = None
     sub_category: Optional[str] = None
-    objections: Optional[List[Objection]] = None
+    objections: Optional[list[Objection]] = None
     not_before_me: Optional[str] = None
     filing_date: Optional[datetime.date] = None
     fir: Optional[FIR] = None

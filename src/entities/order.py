@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from entities.court import Court
-from typing import List, Dict, Optional
+from typing import Optional
 from parsers.utils import parse_date
 import datetime
 from urllib.parse import urlencode

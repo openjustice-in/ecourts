@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from collections import OrderedDict
 from datetime import datetime
-from typing import List, Dict, Optional
+from typing import Optional
 from bs4 import BeautifulSoup
 import urllib.parse
 import sys
@@ -12,7 +12,7 @@ from entities import Case, Party, Hearing, Business, Order, Objection, Court, FI
 
 class CaseDetails:
 
-    def extract_span_label_dict(self, soup: BeautifulSoup, labelSelector: str) -> Dict:
+    def extract_span_label_dict(self, soup: BeautifulSoup, labelSelector: str) -> dict:
         details = {}
         for label in soup.select(labelSelector):
             key = label.text.strip()
@@ -42,10 +42,10 @@ class CaseDetails:
             details[key] = value.strip().replace("\xa0", "")
         return details
 
-    def extract_case_details(self, soup: BeautifulSoup) -> Dict:
+    def extract_case_details(self, soup: BeautifulSoup) -> dict:
         return self.extract_span_label_dict(soup, "span.case_details_table label")
 
-    def extract_fir_details(self, soup: BeautifulSoup) -> Dict:
+    def extract_fir_details(self, soup: BeautifulSoup) -> dict:
         d = soup.select_one("span.FIR_details_table")
         if d:
             s = d.text.replace("\xa0", "").strip()
@@ -56,7 +56,7 @@ class CaseDetails:
                 fir_details[match.group("k")] = match.group("v").strip()
             return fir_details
 
-    def extract_case_status(self, soup: BeautifulSoup) -> Dict:
+    def extract_case_status(self, soup: BeautifulSoup) -> dict:
         case_status_div = soup.find("h2", string=re.compile("Case Status"))
         case_status = {}
 
@@ -66,7 +66,7 @@ class CaseDetails:
                 case_status[key.text.strip()] = value.text.split(":")[1].strip()
         return case_status
 
-    def extract_parties(self, soup: BeautifulSoup, spanClass: str) -> List[Party]:
+    def extract_parties(self, soup: BeautifulSoup, spanClass: str) -> list[Party]:
         table = soup.find("span", class_=spanClass)
         if not table:
             return []
@@ -81,7 +81,7 @@ class CaseDetails:
             parties.append(party)
         return parties
 
-    def extract_hearing(self, soup: BeautifulSoup) -> List[Hearing]:
+    def extract_hearing(self, soup: BeautifulSoup) -> list[Hearing]:
         history_table = soup.find("table", id="historyheading").find_next("table")
         history = []
         if history_table:
@@ -135,7 +135,7 @@ class CaseDetails:
                 )
         return history
 
-    def extract_orders(self, soup: BeautifulSoup) -> List[Order]:
+    def extract_orders(self, soup: BeautifulSoup) -> list[Order]:
         orders = []
         for row in (
             soup.find("table", id="orderheading").find_next("table").find_all("tr")[1:]
@@ -159,7 +159,7 @@ class CaseDetails:
             )
         return orders
 
-    def extract_category_details(self, soup: BeautifulSoup) -> Dict:
+    def extract_category_details(self, soup: BeautifulSoup) -> dict:
         category_details = {}
         for t in soup.find_all("table"):
             if "Category Details" in t.text:
@@ -170,7 +170,7 @@ class CaseDetails:
                         category_details[key.text.strip()] = value.text.strip()
         return category_details
 
-    def extract_objection(self, soup: BeautifulSoup) -> List[Objection]:
+    def extract_objection(self, soup: BeautifulSoup) -> list[Objection]:
         objections = []
         for t in soup.find_all("table"):
             if "OBJECTION" in t.text:
