@@ -2,7 +2,17 @@ name: Tests
 
 on: ["push", "pull_request"]
 jobs:
+
   test:
+    strategy:
+      fail-fast: true
+      matrix:
+        python-version:
+          - "3.12"
+          - "3.11"
+          - "3.10"
+          - "3.9"
+          - "3.8"
     runs-on: ubuntu-latest
 
     steps:
@@ -11,6 +21,8 @@ jobs:
 
     - name: Set up Python
       uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
 
     - name: Install dependencies
       run: |
@@ -20,6 +32,7 @@ jobs:
       run: pytest
     - name: Coveralls
       uses: coverallsapp/github-action@v2
+      if: matrix.python-version == "3.12"
       with:
         file: coverage.lcov
         github-token: ${{ secrets.GITHUB_TOKEN }}
