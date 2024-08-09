@@ -13,7 +13,7 @@ from parsers.options import parse_options
 class ECourt:
     # TODO: Get this dynamically at init
     CSRF_MAGIC_PARAMS = {
-        "__csrf_magic": "sid:8de4600a644d2c934a43b04947504972f27b91d1,1722425086"
+        "__csrf_magic": "sid:c3dfc4837255ac20c67ef57089d64ecd2a636f92,1723203168"
     }
     BASE_URL = "https://hcservices.ecourts.gov.in/ecourtindiaHC"
 
@@ -68,7 +68,7 @@ class ECourt:
         for option in parse_options(self.fillCaseType())[1:]:
             yield CaseType(code=int(option[0]), description=option[1], court=self.court)
 
-    @apimethod(path="/cases/s_casetype_qry.php", csrf=False, court=True)
+    @apimethod(path="/cases/s_casetype_qry.php", csrf=True, court=True)
     def fillCaseType(self):
         pass
 

@@ -1,6 +1,6 @@
 from entities.court import Court
 from dataclasses import dataclass
-
+import json
 
 @dataclass
 class CaseType:
@@ -12,3 +12,11 @@ class CaseType:
 
     court: Court
     """The court associated with the case type."""
+
+    def json(self):
+        return {
+            "code": self.code,
+            "description": self.description,
+            "court_state_code": self.court.state_code,
+            "court_court_code": self.court.court_code,
+        }

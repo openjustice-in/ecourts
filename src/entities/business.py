@@ -10,6 +10,7 @@ class Business:
     A business entity is a dated interaction
     between the court and a given case
     """
+
     court: Court
     """The court where the business happened"""
 

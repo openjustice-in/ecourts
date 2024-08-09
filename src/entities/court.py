@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from typing import List, Dict, Optional
+import json
 
 
 @dataclass
@@ -7,6 +8,7 @@ class Court:
     """
     Represents a court entity with state, district, and court codes.
     """
+
     # This is same as the data in courts.csv
     __ALL_COURTS__ = [
         ("1", None),
@@ -76,9 +78,14 @@ class Court:
         """
         if (self.state_code, self.court_code) not in Court.__ALL_COURTS__:
             if self.court_code:
-                raise ValueError(f"Invalid court: state_code={self.state_code}, court_code={self.court_code}")
+                raise ValueError(
+                    f"Invalid court: state_code={self.state_code}, court_code={self.court_code}"
+                )
             else:
                 raise ValueError(f"Invalid court: state_code={self.state_code}")
+
+        if self.district_code == None:
+            self.district_code = "1"
 
     @classmethod
     def enumerate(cls):
@@ -102,3 +109,16 @@ class Court:
         if self.court_code:
             r["court_code"] = self.court_code
         return r
+
+    def json(self):
+        """
+        Generate a JSON representation of the court.
+
+        Returns:
+            dict: A dictionary containing the JSON representation.
+        """
+        return {
+            "state_code": self.state_code,
+            "district_code": self.district_code,
+            "court_code": self.court_code,
+        }

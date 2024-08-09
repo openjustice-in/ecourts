@@ -9,6 +9,8 @@ def parse_options(raw_input: str):
     """
 
     result = []
+    if "error" in raw_input:
+        raise ValueError("Error in parsing options")
     options = raw_input.split("#")
     for option in options:
         if option:

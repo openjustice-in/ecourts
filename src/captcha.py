@@ -110,8 +110,3 @@ class Captcha:
             return result
         else:
             raise CaptchaError("Couldn't solve captcha")
-
-
-if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        decaptcha(sys.argv[1])
