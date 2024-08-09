@@ -21,7 +21,7 @@ class Storage:
         self.cursor = self.conn.cursor()
         self.cursor.execute("CREATE TABLE IF NOT EXISTS case_types (value JSON)")
         self.cursor.execute(
-            "CREATE UNIQUE INDEX IF NOT EXISTS idx_case_types ON case_types((value->'code'), (value->'court_state_code'), (value->'court_court_code'))"
+            "CREATE UNIQUE INDEX IF NOT EXISTS idx_case_types ON case_types(json_extract(value, '$.code'), json_extract(value, '$.court_state_code'), json_extract(value, '$.court_court_code'))"
         )
         self.cursor.execute("CREATE TABLE IF NOT EXISTS courts (value JSON)")
         self.conn.commit()
