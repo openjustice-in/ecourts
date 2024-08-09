@@ -1,10 +1,11 @@
 from entities import Order
 from entities import Court
+from typing import List
 
 
 # TODO: The dict mappings should be dynamic
 # based on the route called.
-def parse_orders(raw_data: str):
+def parse_orders(raw_data: str) -> List[Order]:
     """Processes raw data and returns a list of case dictionaries.
 
     Args:
@@ -17,6 +18,8 @@ def parse_orders(raw_data: str):
     data_parts = raw_data.split("^^")
     if "ERROR" in data_parts[0].upper() or "INVALID CAPTCHA" in data_parts[0].upper():
         raise ValueError("Got invalid result")
+    if len(raw_data) == 0:
+        return []
     for record_block in data_parts[0].split("##"):
         record_fields = record_block.split("~")
         if len(record_fields) < 10:

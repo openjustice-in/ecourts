@@ -2,6 +2,7 @@ from entities.court import Court
 from dataclasses import dataclass
 import json
 
+
 @dataclass
 class CaseType:
     code: int
