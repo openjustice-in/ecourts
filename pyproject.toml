@@ -7,7 +7,7 @@ dependencies = [
     "click~=8.1"
 ]
 
-requires-python = ">=3.10"
+requires-python = ">=3.8"
 description = "ecourts is a information retrieval tool for Indian High Courts."
 dynamic = ["version", "readme"]
 
