@@ -1,9 +1,10 @@
 !!python/object:entities.case.Case
 bench: Single Bench
+case_no: null
 case_status: MOTION
 case_type: BA
 category: null
-cnr_number: GAHC04-000792-2024
+cnr_number: GAHC040007922024
 coram: 1366HONBLE MR. JUSTICE PARTHIVJYOTI SAIKIA
 decision_date: null
 district: null
@@ -11,54 +12,34 @@ filing_date: 2024-06-24
 filing_number: 343/2024
 fir: null
 first_hearing_date: null
-history:
-- !!python/object:entities.history_entry.HistoryEntry
-  business: !!python/object:entities.business.Business
-    business_date: 2024-06-25
-    case_number: '205700000642024'
-    court: &id001 !!python/object:entities.court.Court
-      court_code: '4'
-      district_code: '1'
-      name: null
-      state_code: '6'
-      state_name: null
-    court_number: '1434'
-    disposal_flag: Pending
-    next_date: null
-    srno: 1
-  business_on_date: 2024-06-25
-  cause_list_type: true
-  hearing_date: null
+hearings:
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Supplementary
+  court_no: '1434'
+  date: 2024-06-25
+  details: null
   judge: HONBLE MR. JUSTICE BUDI HABUNG
-  purpose_of_hearing: MOTION
-- !!python/object:entities.history_entry.HistoryEntry
-  business: !!python/object:entities.business.Business
-    business_date: 2024-06-25
-    case_number: '205700000642024'
-    court: *id001
-    court_number: '1434'
-    disposal_flag: Pending
-    next_date: null
-    srno: 1
-  business_on_date: null
-  cause_list_type: true
-  hearing_date: null
+  next_date: null
+  purpose: MOTION
+  srno: 1
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Order Number
+  court_no: '1434'
+  date: null
+  details: null
   judge: Order on
-  purpose_of_hearing: Order Details
-- !!python/object:entities.history_entry.HistoryEntry
-  business: !!python/object:entities.business.Business
-    business_date: 2024-06-25
-    case_number: '205700000642024'
-    court: *id001
-    court_number: '1434'
-    disposal_flag: Pending
-    next_date: null
-    srno: 1
-  business_on_date: null
-  cause_list_type: true
-  hearing_date: 2024-06-25
+  next_date: null
+  purpose: Order Details
+  srno: 1
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1434'
+  date: null
+  details: null
   judge: BA/64/2024
-  purpose_of_hearing: View
+  next_date: 2024-06-25
+  purpose: View
+  srno: 1
 judicial: Criminal Section
 nature_of_disposal: null
 not_before_me: null

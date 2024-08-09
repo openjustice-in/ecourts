@@ -1,1 +1,2 @@
 from parsers.options import parse_options
+from parsers.hearing_details import parse_hearing_details

@@ -1,4 +1,4 @@
-# ecourts-scraper [![Coverage Status](https://coveralls.io/repos/github/captn3m0/ecourts/badge.svg?branch=main)](https://coveralls.io/github/captn3m0/ecourts?branch=main) ![PyPI - Version](https://img.shields.io/pypi/v/ecourts) ![GitHub Tag](https://img.shields.io/github/v/tag/captn3m0/ecourts) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/captn3m0/ecourts/test.yml?branch=main) [![docs](https://img.shields.io/badge/docs-Guide-9b59b6)](https://captnemo.in/ecourts/) [![docs](https://img.shields.io/badge/docs-API_Reference-9b59b6)](https://captnemo.in/ecourts/src/)
+# ecourts-scraper [![Coverage Status](https://coveralls.io/repos/github/captn3m0/ecourts/badge.svg?branch=main)](https://coveralls.io/github/captn3m0/ecourts?branch=main) ![PyPI - Version](https://img.shields.io/pypi/v/ecourts) ![GitHub Tag](https://img.shields.io/github/v/tag/captn3m0/ecourts?filter=v*) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/captn3m0/ecourts/test.yml?branch=main) [![docs](https://img.shields.io/badge/docs-Guide-9b59b6)](https://captnemo.in/ecourts/) [![docs](https://img.shields.io/badge/docs-API_Reference-9b59b6)](https://captnemo.in/ecourts/src/)
 
 
 This is a Python package to help scrape information from the ECourts Service. This is primarily
@@ -58,7 +58,7 @@ Other entities involved are more legal in nature:
 - [Case](https://captnemo.in/ecourts/src/entities/case.html#src.entities.case.Case)
 - [CaseType](https://captnemo.in/ecourts/src/entities/case_type.html)
 - [FIR](https://captnemo.in/ecourts/src/entities/fir.html)
-- [HistoryEntry](https://captnemo.in/ecourts/src/entities/history_entry.html)
+- [Hearing](https://captnemo.in/ecourts/src/entities/hearing.html)
 - [Objection](https://captnemo.in/ecourts/src/entities/objection.html)
 - [Order](https://captnemo.in/ecourts/src/entities/order.html) - An order or judgement in a case.
 - [Party](https://captnemo.in/ecourts/src/entities/party.html) - Either a petitioner or a responded to a case.

@@ -3,7 +3,7 @@ import requests
 from captcha import Captcha
 from tempfile import mkstemp
 from urllib.parse import urlencode
-from entities import Court, CaseType
+from entities import Court, CaseType,Case
 import datetime
 import csv
 from parsers.orders import parse_orders
@@ -71,8 +71,13 @@ class ECourt:
         return r
 
     @apimethod(path="/cases/o_civil_case_history.php", court=True, action=None)
-    def getCaseHistory(self, cino: str, token: str, case_no: str):
-        return {"cino": cino, "token": token, "case_no": case_no}
+    def getCaseHistory(self, case: Case):
+        return case.expandParams()
+
+    def expand_case(self, case: Case):
+        from parsers.case_details import CaseDetails
+        html = self.getCaseHistory(case)
+        case_ = CaseDetails(html).case
 
     def getOrdersOnDate(self, date: datetime.date):
         d = date.strftime("%d-%m-%Y")

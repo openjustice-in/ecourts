@@ -1,5 +1,7 @@
 !!python/object:entities.case.Case
 bench: null
+case_no: null
+case_number: '201700000152024'
 case_status: null
 case_type: HCP
 category: null
@@ -11,7 +13,7 @@ filing_date: null
 filing_number: null
 fir: null
 first_hearing_date: null
-history: null
+hearings: null
 judicial: null
 nature_of_disposal: null
 not_before_me: null

@@ -3,7 +3,7 @@ from datetime import datetime
 from typing import List, Dict, Optional
 from parsers.utils import parse_date
 from entities.court import Court
-from entities.history_entry import HistoryEntry
+from entities.hearing import Hearing
 from entities.party import Party
 from entities.order import Order
 from entities.fir import FIR
@@ -30,14 +30,15 @@ class Case:
     petitioners: Optional[List[Party]] = None
     respondents: Optional[List[Party]] = None
     orders: Optional[List[Order]] = None
-
-    history: Optional[List[HistoryEntry]] = None
+    case_no: Optional[str] = None
+    hearings: Optional[List[Hearing]] = None
     category: Optional[str] = None
     sub_category: Optional[str] = None
     objections: Optional[List[Objection]] = None
     not_before_me: Optional[str] = None
     filing_date: Optional[datetime.date] = None
     fir: Optional[FIR] = None
+    token: Optional[str] = None
 
     def __post_init__(self):
         if not self.filing_date:
@@ -52,3 +53,17 @@ class Case:
             self.decision_date = parse_date(self.decision_date)
         if isinstance(self.filing_date, str):
             self.filing_date = parse_date(self.filing_date)
+        # The canonical representation of a CNR is without hyphens
+        self.cnr_number = self.cnr_number.replace("-", "")
+        if len(self.cnr_number) !=16:
+            raise ValueError("Invalid CNR Number")
+
+
+    def expandParams(self):
+        if not (self.token and self.case_no):
+            raise ValueError("Token/case_no not set in Case entity")
+        params = {
+            "cino": self.cnr_number,
+            "token": self.token,
+            "case_no": self.case_no
+        }

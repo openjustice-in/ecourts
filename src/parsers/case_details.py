@@ -7,7 +7,7 @@ import urllib.parse
 import sys
 import re
 from parsers.utils import parse_js_call, clean_html
-from entities import Case, Party, HistoryEntry, Business, Order, Objection, Court, FIR
+from entities import Case, Party, Hearing, Business, Order, Objection, Court, FIR
 
 
 class CaseDetails:
@@ -81,7 +81,7 @@ class CaseDetails:
             parties.append(party)
         return parties
 
-    def extract_history(self, soup: BeautifulSoup) -> List[HistoryEntry]:
+    def extract_hearing(self, soup: BeautifulSoup) -> List[Hearing]:
         history_table = soup.find("table", id="historyheading").find_next("table")
         history = []
         if history_table:
@@ -90,7 +90,9 @@ class CaseDetails:
                 # Handle cases where there are less than 5 cells
                 if len(cells) < 5:
                     continue  # Skip rows with missing data
-                type = cells[0].text.strip()
+                cause_list_type = cells[0].text.strip()
+                if len(cause_list_type) < 4 :
+                    cause_list_type = None
                 if cells[2].select_one("a"):
                     # function viewBusiness(court_code,dist_code,n_dt,case_number,state_code,businessStatus,todays_date1,court_no,srno)
 
@@ -103,30 +105,32 @@ class CaseDetails:
                             ("state_code", str),
                             ("disposal_flag", str),
                             ("business_date", str),
-                            ("court_number", str),
+                            ("court_no", str),
                             ("srno", str),
                         ]
                     )
                     res = parse_js_call(cells[2].select_one("a")["onclick"], signature)
-                    # breakpoint()
-                    court = Court(
-                        state_code=res.pop("state_code"),
-                        district_code=res.pop("district_code"),
-                        court_code=res.pop("court_code", None),
-                    )
+                    # We don't need court details since they should be in the parent entity
+                    # # breakpoint()
+                    # court = Court(
+                    #     state_code=res.pop("state_code"),
+                    #     district_code=res.pop("district_code"),
+                    #     court_code=res.pop("court_code", None),
+                    # )
 
                 history.append(
-                    HistoryEntry(
-                        cause_list_type=type == type if type != "" else None,
+                    Hearing(
+                        cause_list_type = cause_list_type,
                         judge=cells[1].text.strip(),
-                        business_on_date=(
+                        date=(
                             cells[2].text.strip() if len(cells) > 2 else None
                         ),
-                        hearing_date=cells[3].text.strip() if len(cells) > 3 else None,
-                        purpose_of_hearing=(
+                        next_date=cells[3].text.strip() if len(cells) > 3 else None,
+                        purpose=(
                             cells[4].text.strip() if len(cells) > 4 else None
                         ),
-                        business=Business(court=court, **res) if res else None,
+                        court_no=res.get("court_no"),
+                        srno=res.get("srno"),
                     )
                 )
         return history
@@ -210,7 +214,7 @@ class CaseDetails:
         case_status = self.extract_case_status(soup)
         petitioners = self.extract_parties(soup, "Petitioner_Advocate_table")
         respondents = self.extract_parties(soup, "Respondent_Advocate_table")
-        history = self.extract_history(soup)
+        hearings = self.extract_hearing(soup)
         category_details = self.extract_category_details(soup)
         objections = self.extract_objection(soup)
         orders = self.extract_orders(soup)
@@ -237,7 +241,7 @@ class CaseDetails:
             not_before_me=case_status["Not Before Me"],
             petitioners=petitioners,
             respondents=respondents,
-            history=history,
+            hearings=hearings,
             category=category_details.get("Category"),
             sub_category=category_details.get("Sub Category"),
             objections=objections,

@@ -42,7 +42,9 @@ def parse_cases(raw_data: str) -> List[Case]:
             registration_number = f"{r_year}/{r_no}",
             petitioners = [Party(name=petitioner)],
             respondents = [Party(name=respondent)],
-            cnr_number = cnr
+            cnr_number = cnr,
+
         )
         case_obj.token = record_fields[7]
+        case_obj.case_number = record_fields[0]
         yield case_obj

@@ -1,0 +1,469 @@
+!!python/object:entities.case.Case
+bench: Single Bench
+case_no: null
+case_status: CASE DISPOSED
+case_type: HCP
+category: SB HABEAS CORPUS PETITION ( 107 )
+cnr_number: JKHC020113752018
+coram: 1712HON'BLE MR.  JUSTICE SANJAY DHAR
+decision_date: 2020-12-24
+district: SRINAGAR
+filing_date: 2018-12-28
+filing_number: 9702/2018
+fir: null
+first_hearing_date: 2018-12-31
+hearings:
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1712'
+  date: 2020-12-24
+  details: null
+  judge: HON'BLE MR.  JUSTICE SANJAY DHAR
+  next_date: null
+  purpose: Disposed
+  srno: 0
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '0'
+  date: null
+  details: null
+  judge: ''
+  next_date: 2018-12-31
+  purpose: FOR ADMISSION After Notice
+  srno: 1
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Supplementary-1
+  court_no: '1480'
+  date: 2018-12-31
+  details: null
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  next_date: 2019-01-17
+  purpose: SPECIALLY ORDERED CASES
+  srno: 2
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Regular
+  court_no: '1487'
+  date: 2019-01-17
+  details: null
+  judge: HON'BLE MRS. JUSTICE SINDHU SHARMA
+  next_date: 2019-01-29
+  purpose: SPECIALLY ORDERED CASES
+  srno: 3
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Regular
+  court_no: '1490'
+  date: 2019-01-29
+  details: null
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  next_date: 2019-02-26
+  purpose: SPECIALLY ORDERED CASES
+  srno: 4
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Regular
+  court_no: '1515'
+  date: 2019-02-26
+  details: null
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  next_date: 2019-04-03
+  purpose: SPECIALLY ORDERED CASES
+  srno: 5
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Regular
+  court_no: '1553'
+  date: 2019-04-03
+  details: null
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  next_date: 2019-04-26
+  purpose: SPECIALLY ORDERED CASES
+  srno: 6
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Regular
+  court_no: '1576'
+  date: 2019-04-26
+  details: null
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  next_date: 2019-05-06
+  purpose: SPECIALLY ORDERED CASES
+  srno: 7
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Regular
+  court_no: '1704'
+  date: 2019-05-06
+  details: null
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  next_date: 2019-07-08
+  purpose: SPECIALLY ORDERED CASES
+  srno: 8
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Regular
+  court_no: '1703'
+  date: 2019-07-08
+  details: null
+  judge: HON'BLE MR. JUSTICE ALI MOHAMMAD MAGREY
+  next_date: 2019-08-05
+  purpose: SPECIALLY ORDERED CASES
+  srno: 9
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Regular
+  court_no: '1704'
+  date: 2019-08-05
+  details: null
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  next_date: 2019-09-11
+  purpose: SPECIALLY ORDERED CASES
+  srno: 10
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Regular
+  court_no: '1702'
+  date: 2019-09-11
+  details: null
+  judge: HON'BLE  MR. JUSTICE RAJESH BINDAL
+  next_date: 2019-10-14
+  purpose: SPECIALLY ORDERED CASES
+  srno: 11
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Regular
+  court_no: '1704'
+  date: 2019-10-14
+  details: null
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  next_date: 2019-11-04
+  purpose: SPECIALLY ORDERED CASES
+  srno: 12
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Regular
+  court_no: '1704'
+  date: 2019-11-04
+  details: null
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  next_date: 2019-12-04
+  purpose: SPECIALLY ORDERED CASES
+  srno: 13
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Regular
+  court_no: '1702'
+  date: 2019-12-04
+  details: null
+  judge: HON'BLE  MR. JUSTICE RAJESH BINDAL
+  next_date: 2019-12-27
+  purpose: SPECIALLY ORDERED CASES
+  srno: 14
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Regular
+  court_no: '1703'
+  date: 2019-12-27
+  details: null
+  judge: HON'BLE MR. JUSTICE ALI MOHAMMAD MAGREY
+  next_date: 2020-02-28
+  purpose: SPECIALLY ORDERED CASES
+  srno: 15
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Regular
+  court_no: '1706'
+  date: 2020-02-28
+  details: null
+  judge: HON'BLE MR. JUSTICE SANJEEV KUMAR
+  next_date: 2020-04-21
+  purpose: SPECIALLY ORDERED CASES
+  srno: 16
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Regular
+  court_no: '1713'
+  date: 2020-04-21
+  details: null
+  judge: HON'BLE MR.  JUSTICE PUNEET GUPTA
+  next_date: 2020-08-11
+  purpose: SPECIALLY ORDERED CASES
+  srno: 17
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: After Notice
+  court_no: '1710'
+  date: 2020-08-11
+  details: null
+  judge: HON'BLE MR. JUSTICE RAJNESH OSWAL
+  next_date: 2020-09-11
+  purpose: SPECIALLY ORDERED CASES
+  srno: 18
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: After Notice
+  court_no: '1710'
+  date: 2020-09-11
+  details: null
+  judge: HON'BLE MR. JUSTICE RAJNESH OSWAL
+  next_date: 2020-09-22
+  purpose: SPECIALLY ORDERED CASES
+  srno: 19
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: After Notice
+  court_no: '1710'
+  date: 2020-09-22
+  details: null
+  judge: HON'BLE MR. JUSTICE RAJNESH OSWAL
+  next_date: 2020-10-05
+  purpose: SPECIALLY ORDERED CASES
+  srno: 20
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: After Notice
+  court_no: '1712'
+  date: 2020-10-05
+  details: null
+  judge: HON'BLE MR.  JUSTICE SANJAY DHAR
+  next_date: 2020-10-19
+  purpose: SPECIALLY ORDERED CASES
+  srno: 21
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: After Notice
+  court_no: '1712'
+  date: 2020-10-19
+  details: null
+  judge: HON'BLE MR.  JUSTICE SANJAY DHAR
+  next_date: 2020-12-07
+  purpose: SPECIALLY ORDERED CASES
+  srno: 22
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: After Notice
+  court_no: '1712'
+  date: 2020-12-07
+  details: null
+  judge: HON'BLE MR.  JUSTICE SANJAY DHAR
+  next_date: 2020-12-24
+  purpose: SPECIALLY ORDERED CASES
+  srno: 23
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Order Number
+  court_no: '1712'
+  date: null
+  details: null
+  judge: Order on
+  next_date: null
+  purpose: Order Details
+  srno: 23
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1712'
+  date: null
+  details: null
+  judge: HCP/58/2018
+  next_date: 2019-02-26
+  purpose: View
+  srno: 23
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1712'
+  date: null
+  details: null
+  judge: HCP/58/2018
+  next_date: 2019-04-03
+  purpose: View
+  srno: 23
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1712'
+  date: null
+  details: null
+  judge: HCP/58/2018
+  next_date: 2019-07-08
+  purpose: View
+  srno: 23
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1712'
+  date: null
+  details: null
+  judge: HCP/58/2018
+  next_date: 2019-07-08
+  purpose: View
+  srno: 23
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1712'
+  date: null
+  details: null
+  judge: HCP/58/2018
+  next_date: 2019-09-11
+  purpose: View
+  srno: 23
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1712'
+  date: null
+  details: null
+  judge: HCP/58/2018
+  next_date: 2019-10-14
+  purpose: View
+  srno: 23
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1712'
+  date: null
+  details: null
+  judge: HCP/58/2018
+  next_date: 2020-02-28
+  purpose: View
+  srno: 23
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1712'
+  date: null
+  details: null
+  judge: HCP/58/2018
+  next_date: 2020-10-19
+  purpose: View
+  srno: 23
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1712'
+  date: null
+  details: null
+  judge: HCP/58/2018
+  next_date: 2020-12-24
+  purpose: View
+  srno: 23
+judicial: HABEUS CORPUS PETITION (HCP)
+nature_of_disposal: Uncontested--Dismissed
+not_before_me: null
+objections:
+- !!python/object:entities.objection.Objection
+  compliance_date: null
+  objection: All Objections are Complied
+  receipt_date: null
+  scrutiny_date: 2018-12-29
+orders:
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2019-02-26
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4WZk9SNDiELN0d3zciW0Jd2
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2019-04-03
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4VfQwf0orUZaOPgJQdtRngq
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2019-07-08
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4W9zkSacwsce/3OpGJvB0lg
+  judge: HON'BLE MR. JUSTICE ALI MOHAMMAD MAGREY
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2019-07-08
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4V4B7CAX6YboIYTxzyrEv0a
+  judge: HON'BLE MR. JUSTICE ALI MOHAMMAD MAGREY
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2019-09-11
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4UBDlNqL/zLUzTp/PjCG3fg
+  judge: HON'BLE  MR. JUSTICE RAJESH BINDAL
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2019-10-14
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4VVwZkC6SFsMLeD82pm02mP
+  judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2020-02-28
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4VKAoANwWy5ZhRhsffy1Wdy
+  judge: HON'BLE MR. JUSTICE SANJEEV KUMAR
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2020-10-19
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4WYPfx2WudNMAu4SDcElc+g
+  judge: HON'BLE MR.  JUSTICE SANJAY DHAR
+  judgement: null
+- !!python/object:entities.order.Order
+  appFlag: null
+  case_number: HCP/58/2018
+  cino: JKHC020113752018
+  court: !!python/object:entities.court.Court
+    court_code: null
+    district_code: '1'
+    name: null
+    state_code: '12'
+    state_name: null
+  date: 2020-12-24
+  filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4Uu7tOArEmvxZv7juS7VWPW
+  judge: HON'BLE MR.  JUSTICE SANJAY DHAR
+  judgement: null
+petitioners:
+- !!python/object:entities.party.Party
+  advocate: null
+  name: ASHRAM HUSSAIN
+registration_date: 2018-12-29
+registration_number: 58/2018
+respondents:
+- !!python/object:entities.party.Party
+  advocate: null
+  name: STATE TH.HOME DEPTT.AND ORS.
+state: JAMMUKASHMIR
+sub_category: OTHER MATTERS ( 99 )

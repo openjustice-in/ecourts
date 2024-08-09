@@ -1,0 +1,73 @@
+!!python/object:entities.case.Case
+bench: Single Bench
+case_no: null
+case_status: ORDERS
+case_type: CRL.P
+category: CRL.P ( 112 )
+cnr_number: KAHC010337682024
+coram: 1492M.NAGAPRASANNA
+decision_date: null
+district: BENGALURU
+filing_date: 2024-06-14
+filing_number: 5792/2024
+fir: !!python/object:entities.fir.FIR
+  district: BENGALURU
+  number: '155'
+  police_station: INDIRANAGAR PS
+  state: KARNATAKA
+  year: 2024
+first_hearing_date: null
+hearings:
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Cause List No. 1
+  court_no: '1492'
+  date: null
+  details: null
+  judge: M.NAGAPRASANNA
+  next_date: 2024-06-19
+  purpose: FRESH MATTER/S
+  srno: 0
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Cause List No. 1
+  court_no: '1492'
+  date: 2024-06-19
+  details: null
+  judge: M.NAGAPRASANNA
+  next_date: 2024-07-04
+  purpose: FRESH MATTER/S
+  srno: 1
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Cause List No. 1
+  court_no: '1492'
+  date: 2024-07-04
+  details: null
+  judge: M.NAGAPRASANNA
+  next_date: null
+  purpose: ORDERS
+  srno: 2
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Order Number
+  court_no: '1492'
+  date: null
+  details: null
+  judge: Order on
+  next_date: null
+  purpose: Order Details
+  srno: 2
+judicial: Judicial Section
+nature_of_disposal: null
+not_before_me: Unknown
+objections: []
+orders: []
+petitioners:
+- !!python/object:entities.party.Party
+  advocate: DHANUSH MENON
+  name: ROHIT TIWARI
+- !!python/object:entities.party.Party
+  advocate: null
+  name: ANTONY  VINAY KUMAR B
+registration_date: 2024-06-18
+registration_number: 5658/2024
+respondents: []
+state: KARNATAKA
+sub_category: 482-U/S 482 ( 8 )
