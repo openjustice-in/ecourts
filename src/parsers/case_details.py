@@ -146,15 +146,9 @@ class CaseDetails:
             query = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
             orders.append(
                 Order(
-                    case_number=query["caseno"][0].strip(),
                     judge=judge.text.strip(),
                     date=date.text.strip(),
                     filename=query["filename"][0].strip(),
-                    court=Court(
-                        query["state_code"][0].strip(), query["cCode"][0].strip()
-                    ),
-                    appFlag=query["appFlag"][0].strip() if "appFlag" in query else None,
-                    cino=query["cino"][0].strip(),
                 )
             )
         return orders

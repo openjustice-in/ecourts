@@ -41,20 +41,6 @@ def test_order():
     )
     order = Order(
         filename="bzPoyUlszYLCUcCpirIpqD4zP7uYkWTX8C00g6kf5Iussic1N%2FNtcHJ6pTca1m7D",
-        case_number="\ufeffLPA/16/2024",
-        cino="JKHC020004102024",
-        court=c,
-        judge="",
         date=d,
-        appFlag="",
         judgement=False,
     )
-    assert order.case_number == "LPA/16/2024"
-    assert order.queryParams() == {
-        "filename": "bzPoyUlszYLCUcCpirIpqD4zP7uYkWTX8C00g6kf5Iussic1N%2FNtcHJ6pTca1m7D",
-        "caseno": "LPA/16/2024",
-        "cCode": None,
-        "appFlag": "",
-        "cino": "JKHC020004102024",
-        "state_code": "12",
-    }

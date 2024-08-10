@@ -123,71 +123,26 @@ objections:
   scrutiny_date: 2018-10-04
 orders:
 - !!python/object:entities.order.Order
-  appFlag: null
-  case_number: AB/3142/2018
-  cino: GAHC010225502018
-  court: !!python/object:entities.court.Court
-    court_code: null
-    district_code: '1'
-    name: null
-    state_code: '6'
-    state_name: null
   date: 2018-10-05
   filename: rC8SUFuyEFsvB5V61cXUrJAi4VCwiMRtS3QGdB2jJyw9vVVNzlB62GdjNMQbI0bz
   judge: HONOURABLE MR. JUSTICE MIR ALFAZ ALI
   judgement: null
 - !!python/object:entities.order.Order
-  appFlag: null
-  case_number: AB/3142/2018
-  cino: GAHC010225502018
-  court: !!python/object:entities.court.Court
-    court_code: null
-    district_code: '1'
-    name: null
-    state_code: '6'
-    state_name: null
   date: 2018-11-22
   filename: rC8SUFuyEFsvB5V61cXUrJAi4VCwiMRtS3QGdB2jJyzU+nPrP8rCiQ4/UqtQBfpw
   judge: HONOURABLE MR. JUSTICE MANASH RANJAN PATHAK
   judgement: null
 - !!python/object:entities.order.Order
-  appFlag: null
-  case_number: AB/3142/2018
-  cino: GAHC010225502018
-  court: !!python/object:entities.court.Court
-    court_code: null
-    district_code: '1'
-    name: null
-    state_code: '6'
-    state_name: null
   date: 2018-12-04
   filename: rC8SUFuyEFsvB5V61cXUrJAi4VCwiMRtS3QGdB2jJywcqyCUmmNgpSmesWmoNYe6
   judge: ''
   judgement: null
 - !!python/object:entities.order.Order
-  appFlag: null
-  case_number: AB/3142/2018
-  cino: GAHC010225502018
-  court: !!python/object:entities.court.Court
-    court_code: null
-    district_code: '1'
-    name: null
-    state_code: '6'
-    state_name: null
   date: 2018-12-21
   filename: rC8SUFuyEFsvB5V61cXUrJAi4VCwiMRtS3QGdB2jJyx8ncrvohxzLIF6E1zxEKVF
   judge: HONOURABLE MR. JUSTICE HITESH KUMAR SARMA
   judgement: null
 - !!python/object:entities.order.Order
-  appFlag: null
-  case_number: AB/3142/2018
-  cino: GAHC010225502018
-  court: !!python/object:entities.court.Court
-    court_code: null
-    district_code: '1'
-    name: null
-    state_code: '6'
-    state_name: null
   date: 2019-01-23
   filename: rC8SUFuyEFsvB5V61cXUrJAi4VCwiMRtS3QGdB2jJyzNay6UKBPXyEcCjY5B6buL
   judge: ''
