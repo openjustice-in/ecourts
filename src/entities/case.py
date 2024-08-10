@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 from datetime import datetime
 from typing import Optional
 from parsers.utils import parse_date
@@ -69,4 +69,39 @@ class Case:
             "cino": self.cnr_number,
             "token": self.token,
             "case_no": self.case_number
+        }
+
+    def json(self):
+        """
+        Generate a JSON representation of the court.
+
+        Returns:
+            dict: A dictionary containing the JSON representation.
+        """
+        return {
+            "case_type": self.case_type,
+            "registration_number": self.registration_number,
+            "cnr_number": self.cnr_number,
+            "filing_number": self.filing_number,
+            "registration_date": self.registration_date,
+            "first_hearing_date": self.first_hearing_date,
+            "decision_date": self.decision_date,
+            "case_status": self.case_status,
+            "nature_of_disposal": self.nature_of_disposal,
+            "coram": self.coram,
+            "bench": self.bench,
+            "state": self.state,
+            "district": self.district,
+            "judicial": self.judicial,
+            "petitioners": [asdict(p) for p in self.petitioners],
+            "respondents": [asdict(r) for r in self.respondents],
+            "orders": [asdict(o) for o in self.orders],
+            "case_number": self.case_number,
+            "hearings": [asdict(h) for h in self.hearings],
+            "category": self.category,
+            "sub_category": self.sub_category,
+            "objections": [asdict(o) for o in self.objections],
+            "not_before_me": self.not_before_me,
+            "filing_date": self.filing_date,
+            "fir": asdict(self.fir) if self.fir else None
         }

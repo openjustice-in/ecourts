@@ -29,7 +29,7 @@ class Storage:
         for record in records:
             self.cursor.execute(
                 "INSERT OR IGNORE INTO case_types VALUES (?)",
-                (json.dumps(record.json()),),
+                (json.dumps(dict(record)),),
             )
         self.conn.commit()
 
@@ -45,6 +45,6 @@ class Storage:
     def addCourts(self, records: list[Court]):
         for record in records:
             self.cursor.execute(
-                "INSERT OR IGNORE INTO courts VALUES (?)", (json.dumps(record.json()),)
+                "INSERT OR IGNORE INTO courts VALUES (?)", (json.dumps(dict(record)),)
             )
         self.conn.commit()

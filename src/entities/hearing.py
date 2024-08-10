@@ -28,6 +28,7 @@ class Hearing:
 
     court_no: Optional[str] = None
     """4 digit court number,which can differ between hearings"""
+    
     srno: Optional[int] = None
     """2-3 digit serial number for this hearing within the case"""
 

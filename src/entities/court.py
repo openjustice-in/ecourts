@@ -120,3 +120,7 @@ class Court:
             "district_code": self.district_code,
             "court_code": self.court_code,
         }
+
+    def __iter__(self):
+        for key in ["state_code", "district_code", "court_code"]:
+            yield key, getattr(self, key)

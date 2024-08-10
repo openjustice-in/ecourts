@@ -39,7 +39,7 @@ version_file = "src/_version.py"
 
 [tool.pytest.ini_options]
 # Coverage reports
-addopts = "--cov=src --cov-report lcov"
+addopts = "--cov=src --cov-report lcov --cov-report html"
 pythonpath = [
   "src"
 ]
