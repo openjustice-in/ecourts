@@ -1,6 +1,6 @@
 !!python/object:entities.case.Case
 bench: Single Bench
-case_no: null
+case_number: null
 case_status: MOTION
 case_type: BA
 category: null

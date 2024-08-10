@@ -1,0 +1,1048 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/securimage/securimage_show.php
+  response:
+    body:
+      string: !!binary |
+        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
+        AElFTkSuQmCC
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      - max-age=86400
+      Connection:
+      - Keep-Alive
+      Content-Type:
+      - image/png
+      Date:
+      - Sat, 10 Aug 2024 07:31:50 GMT
+      Expect-CT:
+      - max-age=3600, enforce
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Last-Modified:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin
+      Server:
+      - ''
+      Set-Cookie:
+      - PHPSESSID=i15l7he1rqkrev0knh94o8sdd8; path=/; domain=.hcservices.ecourts.gov.in;
+        secure; HttpOnly; SameSite=Strict
+      - JSESSION=6314203; Path=/hcservices; SameSite=Strict; HttpOnly; Secure
+      - JSESSION=22809145; Path=/ecourtindiaHC; SameSite=Strict; HttpOnly; Secure
+      Strict-Transport-Security:
+      - '"max-age=15768000; includeSubDomains"'
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content_security_policy:
+      - script-src 'self'; object-src 'self'; img-src 'self'
+      x-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: action_code=showRecords&state_code=6&dist_code=1&court_code=1&__csrf_magic=sid%3Ae2b2b2ae5e125f3174066a01e182acd472a256ea%2C1723269931&captcha=vfclw&f=Pending&case_type=49&search_year=2018
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '188'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - JSESSION=22809145; PHPSESSID=i15l7he1rqkrev0knh94o8sdd8
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_casetype_qry.php
+  response:
+    body:
+      string: "\uFEFF204900031422018~AB/3142/2018~ANURAG TANKHA<br/>Versus<br/>THE
+        STATE OF ASSAM~GAHC010225502018~1~5~Principal Seat at Guwahati~5b9902198ec382bc129d29c3978aa2345dae9a45f6cca670c56b9f25c7ea1e36##204900027272018~AB/2727/2018~BANWARI
+        LAL PAREEK<br/>Versus<br/>THE STATE OF ASSAM~GAHC010195742018~1~5~Principal
+        Seat at Guwahati~5b9902198ec382bc129d29c3978aa2345dae9a45f6cca670c56b9f25c7ea1e36##204900024182018~AB/2418/2018~SHRI
+        AMARDEEP PAUL<br/>Versus<br/>THE STATE OF ASSAM~GAHC010172842018~1~5~Principal
+        Seat at Guwahati~5b9902198ec382bc129d29c3978aa2345dae9a45f6cca670c56b9f25c7ea1e36##204900010242018~AB/1024/2018~NARAYAN
+        PATANGIA<br/>Versus<br/>THE STATE OF ASSAM~GAHC010074112018~1~5~Principal
+        Seat at Guwahati~5b9902198ec382bc129d29c3978aa2345dae9a45f6cca670c56b9f25c7ea1e36##204900009102018~AB/910/2018~SANTOSH
+        KR. CHOUDHURY<br/>Versus<br/>THE STATE OF ASSAM~GAHC010066092018~1~5~Principal
+        Seat at Guwahati~5b9902198ec382bc129d29c3978aa2345dae9a45f6cca670c56b9f25c7ea1e36##"
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - max-age=86400
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '978'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Sat, 10 Aug 2024 07:31:51 GMT
+      Expect-CT:
+      - max-age=3600, enforce
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin
+      Server:
+      - ''
+      Set-Cookie:
+      - PHPSESSID=i15l7he1rqkrev0knh94o8sdd8; path=/; domain=.hcservices.ecourts.gov.in;
+        secure; HttpOnly; SameSite=Strict
+      Strict-Transport-Security:
+      - '"max-age=15768000; includeSubDomains"'
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content_security_policy:
+      - script-src 'self'; object-src 'self'; img-src 'self'
+      x-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: state_code=6&dist_code=1&court_code=1&cino=GAHC010225502018&token=5b9902198ec382bc129d29c3978aa2345dae9a45f6cca670c56b9f25c7ea1e36&case_no=204900031422018
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '154'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - JSESSION=22809145; PHPSESSID=i15l7he1rqkrev0knh94o8sdd8
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/o_civil_case_history.php
+  response:
+    body:
+      string: "\uFEFF<script type=\"text/javascript\">\r\nfunction clearCaptchaText()\r\n{\r\n\r\nvar
+        ty=document.getElementsByClassName('captchaClass');\r\nty[0].value='';\r\n}\r\nfunction
+        funConnError()\r\n{\r\n\tdocument.getElementById('showList').innerHTML=\"\";\r\n\tdocument.getElementById('showList').style.display='none';\r\n\tdocument.getElementById('errSpan').style.display=\"\";\r\n\tvar
+        val='CONNECTION FAILED';\r\n\tdocument.getElementById('txtmsg').value=val;\r\n\tdocument.getElementById(\"txtmsg\").title
+        =val;\r\n\tdocument.getElementById('txtmsg').focus();\r\n}\r\n\r\n\r\nfunction
+        funUsrError()\r\n{\r\n\tdocument.getElementById('showList').innerHTML=\"\";\r\n\tdocument.getElementById('showList').style.display='none';\r\n\tdocument.getElementById('errSpan').style.display=\"\";\t\r\n\tvar
+        val='THERE IS AN ERROR';\r\n\r\n\tdocument.getElementById('txtmsg').value=val;\r\n\tdocument.getElementById(\"txtmsg\").title
+        =val;\r\n\tdocument.getElementById('txtmsg').focus();\r\n}\r\n\r\nfunction
+        funUsrErrorParam(input)\r\n{\r\n\r\n\tdocument.getElementById('showList').innerHTML=\"\";\r\n\tdocument.getElementById('showList').style.display='none';\r\n\tdocument.getElementById('errSpan').style.display=\"\";\t\r\n\tvar
+        val='THERE IS AN '+input;\r\n\tdocument.getElementById('txtmsg').value=val;\r\n\r\n\tdocument.getElementById(\"txtmsg\").title
+        =val;\r\n\tdocument.getElementById('txtmsg').focus();\r\n}\r\n\r\nfunction
+        funServerSideValidateErr()\r\n{\r\n\tdocument.getElementById('showList').innerHTML=\"\";\r\n\tdocument.getElementById('showList').style.display='none';\r\n\tdocument.getElementById('errSpan').style.display=\"\";\t\r\n\tvar
+        val='Invalid Input';\r\n\tdocument.getElementById('txtmsg').value=val;\r\n\tdocument.getElementById(\"txtmsg\").title
+        =val;\r\n\tdocument.getElementById('txtmsg').focus();\r\n}\r\n\r\nfunction
+        escapeHtml(str)\r\n{\r\nstr=str.replace(/&|<script|script>/g,'');\r\nreturn
+        str;\r\n}\r\n\r\n\r\n\r\n\r\nfunction trim(inputString) {\r\n\tif (typeof
+        inputString != \"string\") { return inputString; }\r\n\tvar retValue = inputString;\r\n\tvar
+        ch = retValue.substring(0, 1);\r\n\twhile (ch == \" \")\r\n\t{\r\n\t\tretValue
+        = retValue.substring(1, retValue.length);\r\n\t\tch = retValue.substring(0,
+        1);\r\n\t}\r\n\tch = retValue.substring(retValue.length-1, retValue.length);\r\n\twhile
+        (ch == \" \")\r\n\t{\r\n\t\tretValue = retValue.substring(0, retValue.length-1);\r\n\t\tch
+        = retValue.substring(retValue.length-1, retValue.length);\r\n\t}\r\n\twhile
+        (retValue.indexOf(\"  \") != -1)\r\n\t{\r\n\t\tretValue = retValue.substring(0,
+        retValue.indexOf(\"  \")) +\r\n\t\tretValue.substring(retValue.indexOf(\"
+        \ \")+1, retValue.length);\r\n\t}\r\n\treturn retValue;\r\n}\r\n\r\n\r\n\r\nfunction
+        checkInteger(str)\r\n{\r\n\tvar len = str.length;\r\n\tfor(var i=0; i < len;
+        i++)\r\n\t{\r\n\t\tif(str.charAt(i) == \".\")\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t}\r\n}\r\nfunction
+        applycsswhite1()\r\n\t{\r\n\t $(\"body\").css(\"color\", \"black\");\r\n\t$(\"h4\").css(\"color\",
+        \"#4B8BCD\");\r\n    $(\".headingtxt\").css(\"color\", \" #4B8BCD\");\r\n\t$(\"tr\").css(\"background\",
+        \"#fff\");\r\n\t$(\".button\").css(\"background\", \"#1A5984\");\r\n\t$(\".title\").css(\"color\",
+        \"#4B8BCD\");\r\n\t$(\"a\").css(\"color\", \"#4B8BCD\");\r\n\t$(\".Lower_court_table\").css(\"background\",
+        \"#fdf7f4\");\r\n\t$(\".Acts_table\").css(\"background\", \"#fdf6e9\");\r\n\t$(\".Respondent_Advocate_table\").css(\"background\",
+        \"#f5f1fc\");\r\n\t$(\".Petitioner_Advocate_table\").css(\"background\", \"#f3fafe\");\r\n\t$(\".case_details_table\").css(\"background\",
+        \"#f9fdf1\");\r\n\t$(\".FIR_details_table\").css(\"background\", \"#fae3df\");\r\n\t$(\".order_table\").css(\"background\",
+        \"#f5f1fc\");\r\n\t$(\".Lower_court_table\").css(\"border\", \"1px solid #000\");\r\n\t$(\".Acts_table\").css(\"border\",
+        \"1px solid #000\");\r\n\t$(\".Respondent_Advocate_table\").css(\"border\",
+        \"1px solid #000\");\r\n\t$(\".Petitioner_Advocate_table\").css(\"border\",
+        \"1px solid #000\");\r\n\t$(\".case_details_table\").css(\"border-bottom\",
+        \"1px solid #000\");\r\n\t$(\".FIR_details_table\").css(\"border\", \"1px
+        solid #000\");\r\n\t}\r\nfunction applycssblack1()\r\n\t{\r\n\t$(\"body\").css(\"color\",
+        \"white \");\t\r\n\t$(\"body\").css(\"background\", \"#3D3A3A \");\r\n\t$(\"h4\").css(\"color\",
+        \"white\");\t\r\n    $(\".headingtxt\").css(\"color\", \"white\");\r\n\t$(\"a:hover\").css(\"color\",
+        \"white\");\r\n\t$(\"tr\").css(\"background\", \"#3D3A3A\");\r\n    $(\".button\").css(\"background\",
+        \"black\");\r\n\t$(\".title\").css(\"color\", \"white\");\r\n\t$(\"a\").css(\"color\",
+        \"yellow\");\r\n\t$(\"table.bordered th\").css(\"color\", \"#000\");\r\n\t$(\".Lower_court_table\").css(\"background\",
+        \"#3D3A3A\");\r\n\t$(\".Acts_table\").css(\"background\", \"#3D3A3A\");\r\n\t$(\".Respondent_Advocate_table\").css(\"background\",
+        \"#3D3A3A\");\r\n\t$(\".Petitioner_Advocate_table\").css(\"background\", \"#3D3A3A\");\r\n\t$(\".case_details_table\").css(\"background\",
+        \"#3D3A3A\");\r\n\t$(\".FIR_details_table\").css(\"background\", \"#3D3A3A\");\r\n\t$(\".Lower_court_table\").css(\"border\",
+        \"1px solid #fff\");\r\n\t$(\".Acts_table\").css(\"border\", \"1px solid #fff\");\r\n\t$(\".Respondent_Advocate_table\").css(\"border\",
+        \"1px solid #fff\");\r\n\t$(\".Petitioner_Advocate_table\").css(\"border\",
+        \"1px solid #fff\");\r\n\t$(\".case_details_table\").css(\"border-bottom\",
+        \"1px solid #fff\");\r\n\t$(\".FIR_details_table\").css(\"border\", \"1px
+        solid #fff\");\r\n\t$(\".order_table\").css(\"background\", \"#3D3A3A\");\r\n\t}\r\n\r\n\r\n\r\n\r\n</script>\r\n\r\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\r\n\r\n<head>\r\n<meta
+        charset=\"UTF-8\">\r\n<meta http-equiv=\"Content-Type\" content=\"text/html;
+        charset=utf-8\" />\r\n\r\n<title>Case History</title>\r\n\r\n<style type=\"text/css\">\r\na
+        {\r\n\tcolor: #5399E1;\r\n\ttext-decoration:none;\r\n}\r\na:hover {\r\n\tcolor:
+        #366494;\r\n\ttext-decoration:underline;\r\n}\r\na:focus {\r\n\tcolor: #366494;\r\n\ttext-decoration:underline;\r\n}\r\nbody\r\n{\tfont-size:12px;\r\n}\r\ntbody\r\n{\tfont-size:12px;\r\n}\r\n.title\r\n{\r\n\tdisplay:none;\r\n}\r\n#nextDate
+        {   \r\n  animation-duration: 700ms;\r\n  animation-name: blink;\r\n  animation-iteration-count:
+        infinite;\r\n  animation-direction: alternate;\r\n}\r\n@keyframes blink {\r\n
+        \ from {\r\n\topacity: 1;\r\n  }\r\n\r\n  to {\r\n\topacity: 0;\r\n  }\r\n}\r\n.h3class{\r\nfont-size:1em;\r\npadding-top:-10px;\r\n\r\nfont-weight:normal;\r\nmargin-bottom:5px;\r\n\r\n}\r\n\r\n.h2class{\r\nfont-size:1.1em;\r\nfont-weight:normal;\r\npadding-top:-10px;\r\nmargin-bottom:5px;\r\n}\r\n.h1class{\r\nfont-size:1.2em;\r\nfont-weight:normal;\r\n}\r\n.controlstyle\r\n{
+        display:none;}\r\n\r\n.blinking{\r\n\tanimation:blinkingText 2.3s infinite;\r\n
+        \ font-size: initial;\r\n}\r\n@keyframes blinkingText{\r\n\t0%{\t\tcolor:
+        red;\t}\r\n\t49%{\tcolor: red;font-weight: 600;\t}\r\n\t50%{\tcolor: red;font-weight:
+        700;\t}\r\n\t99%{\tcolor:red;font-weight: 600;\t}\r\n\t100%{\tcolor: red;\t}\r\n}\r\n</style>\r\n<link
+        rel=\"stylesheet\" href=\"../css/history.css\" type=\"text/css\">\r\n<script
+        type=\"text/javascript\" src=\"../js/jquery.js\"></script>\r\n<script type=\"text/javascript\"
+        src=\"../js/fluidtextresizer.js\"></script>\r\n<script type=\"text/javascript\"
+        language=\"javascript\">\r\n//<![CDATA[\r\n\r\n\r\nfunction newcss()\r\n{\r\n\tvar
+        sess_color_value=\"W\";\r\n\t\t\t\r\n\t\t\t\tif(sess_color_value=='B' )\r\n\t{\r\n\t\t\t\tapplycssblack1();\r\n\t}\r\n\telse
+        if(sess_color_value=='W' )\r\n\t{\r\n\t\t\t\tapplycsswhite1();\r\n\t}\r\n\telse
+        if (parent.document.getElementById(\"txt_css\").value=='black')\r\n\t{\r\n\tparent.applycssblack();\r\n\t}\r\n\telse
+        if (parent.document.getElementById(\"txt_css\").value=='white')\r\n\t{\r\n\tparent.applycsswhite();\r\n\t}\r\n}\r\nfunction
+        openpopup(popurl)\r\n{\r\n\tvar winpops=window.open(popurl,\"\",\"width=400,height=400,scrollbars,menubar,resizable\")\r\n}\r\n\r\n\r\n//]]>\r\n</script>\r\n<script
+        type=\"text/javascript\" language=\"javascript\">\r\n //<![CDATA[\r\nvar mytextsizer=new
+        fluidtextresizer({\r\n\tcontrolsdiv: \"sizecontroldiv\", //id of special div
+        containing your resize controls. Enter \"\" if not defined\r\n\ttargets: [\"body\"],
+        //target elements to resize text within: [\"selector1\", \"selector2\", etc]\r\n\tlevels:
+        1, //number of levels users can magnify (or shrink) text\r\n\tpersist: \"session\",
+        //enter \"session\" or \"none\"\r\n\tanimate: 200 //animation duration of
+        text resize. Enter 0 to disable\r\n})\r\n\r\n //]]>\r\n</script>\r\n<script
+        language=\"JavaScript\" src=\"../includes/javascript/xmlhttp.js\" type=\"text/javascript\"></script>\r\n\r\n\r\n\r\n</head>\r\n<form
+        \ name=\"frm\" method=\"post\" action=\"\">\r\n<body onload=\"funchkErr();\"
+        >\r\n\r\n<div id=\"sizecontroldiv\" class=\"controlstyle\">\r\n<a href=\"#smaller\"
+        ></a><a href=\"#fontsize0\"></a><a href=\"#bigger\"></a>\r\n</div>\r\n\r\n\r\n<div
+        \ align=\"center\" style='margin-top:-5px;'>\r\n\r\n<span id='errSpan' style='font-color:red;'></span>\r\n<span
+        style='margin-top:-20px;'>\r\n\r\n\r\n\r\n</span>\r\n<br />\r\n\r\n\r\n<h2
+        class='h1class'><span style=\"font-weight:bold;\">Principal Seat at Guwahati</span></h2>\r\n\t\r\n<div
+        \ style=' height:80px; width:700px; '><span class=\"heading\" style=' text-align:center;'><label><h2
+        class='h2class' style='font-weight:bold;'>Case Details</h2></label></span><span
+        class='case_details_table' style='padding-left:-5px;float:left;border-top:1px
+        solid #000;border-left:1px solid #000;border-right:1px solid #000;border-bottom:1px
+        solid #000; width:100%; text-align:left;'><span  style='-webkit-box-sizing:
+        border-box; -moz-box-sizing: border-box; box-sizing: border-box; width:225px;float:left;padding-left:5px;'><label>Case
+        Type </label></span>:&nbsp;AB</span><br /><span class='case_details_table'
+        style='float:left;border-top:0px solid #000;border-bottom:1px solid #000;border-left:1px
+        solid #000;border-right:1px solid #000;width:100%;text-align:left;'><span
+        style='-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing:
+        border-box; width:225px;float:left;padding-left:5px; '><label>Filing Number</label></span>:&nbsp;8394/2018<span
+        style='text-align:left;padding-left:100px;'><label>Filing Date</label>: 03-10-2018</span></span><br
+        /><span class='case_details_table' style='float:left;border-top:0px solid
+        #000;border-left:1px solid #000;border-right:1px solid #000;border-bottom:1px
+        solid #000; width:100%;text-align:left;'><span style='-webkit-box-sizing:
+        border-box; -moz-box-sizing: border-box; box-sizing: border-box; width:225px;
+        float:left;padding-left:5px;'><label>Registration Number</label></span><label>:&nbsp;3142/2018</label><span
+        style='text-align:left;padding-left:100px;'><label>Registration Date</label><label>:&nbsp;04-10-2018</label></span></span><br
+        /><b><span class='case_details_table' style='float:left; width:100%;text-align:left;border-top:1px
+        solid #000;border-left:1px solid #000;border-right:1px solid #000;border-top:0px;border-bottom:1px
+        solid #000;'><span style='-webkit-box-sizing: border-box; -moz-box-sizing:
+        border-box; box-sizing: border-box; width:225px;float:left;padding-left:5px;'><label>CNR
+        Number</label></span>:&nbsp;GAHC01-022550-2018</span></b></div><br /><h2 class='h2class'
+        style=' clear:both;color:red;font-weight:bold;display: block;'>Case Status</h2><div
+        \ style='width:700px;margin-top:0px;background-color:#FBF6D9;font-size:1em
+        ;font-weight:200;color:red;text-align:center;    display: inline-block;'><span
+        >\r\n\t<label style='float:left;border-top:1px solid red; border-bottom:1px
+        solid red; width:100%;border-left:1px solid red ;border-right:1px solid red;'><strong
+        style='float:left; width:225px;text-align:left; padding-left:5px;'>First Hearing
+        Date </strong><strong style='float:left;'>:&nbsp;  </strong></label></span><br
+        style='clear:left;'/><span><label style='float:left;border-bottom:1px solid
+        red; width:100%;border-left:1px solid red ;border-right:1px solid red ;'><strong
+        style='float:left; width:225px;text-align:left; padding-left:5px;'>Next Hearing
+        Date</strong><strong style='float:left;'>:&nbsp;Next Date is not given</strong></label></span><br
+        style='clear:left;'/><span ><label  style='float:left; border-bottom:1px solid
+        red; width:100%;border-left:1px solid red ;border-right:1px solid red ;'><strong
+        style='float:left; width:225px;text-align:left; padding-left:5px;'>Stage of
+        Case</strong><strong style='float:left;'>:&nbsp;BAIL HEARING</strong></label></span><br
+        style='clear:left;'/><span><label  style='float:left;border-left:1px solid
+        red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px
+        solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left;
+        width:225px;text-align:left; padding-left:5px;'>Coram</strong> <strong style='float:left;width:470px;
+        text-align:left;'> :&nbsp;1762HONOURABLE MR. JUSTICE HITESH KUMAR SARMA</strong></label></span><span
+        style='background-color:#FBF6D9 !important;'><label  style='float:left;border-left:1px
+        solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px
+        solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left;
+        width:225px;text-align:left; padding-left:5px;'>State</strong> <strong style='float:left;width:470px;
+        text-align:left;'> :&nbsp;Assam</strong></label></span><span style='background-color:#FBF6D9
+        !important;'><label  style='float:left;border-left:1px solid red ;border-right:1px
+        solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px solid
+        red ;border-right:1px solid red ;height:auto;'><strong style='float:left;
+        width:225px;text-align:left; padding-left:5px;'>District</strong> <strong
+        style='float:left;width:470px; text-align:left;'> :&nbsp;Kokrajhar</strong></label></span><span
+        style='background-color:#FBF6D9 !important;'><label  style='float:left;border-left:1px
+        solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px
+        solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left;
+        width:225px;text-align:left; padding-left:5px;'>Judicial</strong> <strong
+        style='float:left;width:470px; text-align:left;'> :&nbsp;Criminal Section</strong></label></span><span
+        \    style='background-color:#FBF6D9 !important;'><label  style='float:left;border-left:1px
+        solid red ;border-right:1px solid red ; border-bottom:1px solid red ;  width:100%;border-left:1px
+        solid red ;border-right:1px solid red ;height:auto;'><strong style='float:left;
+        width:225px;text-align:left; padding-left:5px;'>Not Before Me</strong> <strong
+        style='float:left;width:470px; text-align:left;'> :&nbsp;</strong></label></span></div><br/><div
+        \ style='width:700px;margin-top:10px;'><h2 class='h2class' style='font-weight:bold;'>Petitioner
+        and Advocate</h2><span class='Petitioner_Advocate_table' style='float:left;border:1px
+        solid #000; width:100%;text-align:left; margin-bottom:10px; padding-left:5px;'>1)
+        ANURAG TANKHA<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;Advocate- MR. A M BORA,MS.
+        C CHOUDHURY,MS. C CHOUDHURY ,MR. D GOGOI,MR. D K BAIDYA,MS. C CHOUDHURY<br
+        /><br /></span><br /><h2 class='h2class' style='font-weight:bold;'>Respondent
+        \ and Advocate</h2><span class='Respondent_Advocate_table' style='float:left;border:1px
+        solid #000; width:100%;text-align:left;margin-bottom:10px;padding-left:5px;'>1)
+        THE STATE OF ASSAM<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;Advocate - PP, ASSAM
+        <br /><br /></span><br /></table></div><br/><div  style=' width:700px;'><h2
+        class='h2class' style='font-weight:bold;'>Subordinate Court Information</h2><span
+        class='Lower_court_table' style='float:left;border:1px solid #000; width:100%;text-align:left;
+        margin-bottom:10px; padding-left:5px; '><span  style='width:150px;display:inline-block;'>Court
+        Number and Name</span><label style='text-align:left'>:&nbsp;---</label><br
+        /><span  style='width:150px;display:inline-block;'>Case Number and Year</span><label
+        style='text-align:left'>:&nbsp;0</label><br /><span  style='width:150px;display:inline-block;'>Case
+        Decision Date : </span><label style='text-align:left'>:&nbsp;--</br><span
+        \ style='width:150px;display:inline-block;'>state</span><label style='text-align:left;'>:&nbsp;</label><br
+        /><span  style='width:150px;display:inline-block;'>District</span><label style='text-align:left;'>:&nbsp;</label><br
+        /></label></span></div><table id='historyheading'><tr><td><h2 class='h2class'
+        style='clear:both;font-weight:bold;text-align:center;margin-top:10px;'>History
+        of Case Hearing</h2></td></tr></table><table width=\"700px\" cellspacing=\"0\"
+        cellpadding=\"1\" align=\"center\" border=\"1\" style=\"box-sizing:border-box;
+        -moz-box-sizing:border-box; \" class=\"history_table\"><tr><th scope=\"col\"
+        align='left' style=''>Cause List Type </th><th scope=\"col\" style=''>Judge</th><th
+        scope=\"col\" style=''>Business On Date</th><th scope=\"col\" style=''>Hearing
+        Date</th><th scope=\"col\" style=''>Purpose of hearing</th></tr><tr><td align='left'
+        style=''>Supplementary                                                                                      </td><td
+        align='left' style=''>HONOURABLE MR. JUSTICE MIR ALFAZ ALI</td><td align='left'
+        style=''><a href='#' onclick=viewBusiness('1','1','20181122','204900031422018','6','Pending','05-10-2018','1763','1','GAHC010225502018')>05-10-2018
+        </a></td><td>22-11-2018</td><td style=''> MOTION</td></tr><tr><td align='left'
+        style=''>Daily                                                                                              </td><td
+        align='left' style=''>HONOURABLE MR. JUSTICE MANASH RANJAN PATHAK</td><td
+        align='left' style=''><a href='#' onclick=viewBusiness('1','1','20181204','204900031422018','6','Pending','22-11-2018','1755','2','GAHC010225502018')>22-11-2018
+        </a></td><td>04-12-2018</td><td style=''> BAIL HEARING</td></tr><tr><td align='left'
+        style=''>Daily                                                                                              </td><td
+        align='left' style=''>HONOURABLE MR. JUSTICE AJIT BORTHAKUR</td><td align='left'
+        style=''><a href='#' onclick=viewBusiness('1','1','20181221','204900031422018','6','Pending','04-12-2018','1785','3','GAHC010225502018')>04-12-2018
+        </a></td><td>21-12-2018</td><td style=''> BAIL HEARING</td></tr><tr><td align='left'
+        style=''>Daily                                                                                              </td><td
+        align='left' style=''>HONOURABLE MR. JUSTICE HITESH KUMAR SARMA</td><td align='left'
+        style=''><a href='#' onclick=viewBusiness('1','1','20190123','204900031422018','6','Pending','21-12-2018','1762','4','GAHC010225502018')>21-12-2018
+        </a></td><td>23-01-2019</td><td style=''> BAIL HEARING</td></tr><tr><td align='left'
+        style=''>Daily                                                                                              </td><td
+        align='left' style=''>HONOURABLE MR. JUSTICE HITESH KUMAR SARMA</td><td align='left'
+        style=''><a href='#' onclick=viewBusiness('1','1','50000101','204900031422018','6','Pending','23-01-2019','1762','5','GAHC010225502018')>23-01-2019
+        </a></td><td> </td><td style=''> BAIL HEARING</td></tr><table id='orderheading'><tr><td><br/><h2
+        class='h2class' style='font-weight:bold;'>Orders </h2></td></tr></table><table
+        width=\"700px\" cellspacing=\"0\" cellpadding=\"1\" align=\"center\" border=\"1\"
+        class=\"order_table\" style=\"border-collapse:collapse;\"><tr><td style='width:71px;'>
+        <font size='2'><strong> &nbsp;&nbsp;Order Number</strong></font></td><td style='width:71px;'>
+        <font      size='2'><strong> &nbsp;&nbsp;Order on</strong></font></td> <td
+        style='width:330px;'> <font size='2'><strong> &nbsp;&nbsp;Judge</strong></font></td><td
+        style='width:128px;'> <font size='2'><strong>&nbsp;&nbsp;Order Date </strong></font>
+        </td><td> <font size='2'><strong>&nbsp;&nbsp;Order Details </strong></font></td></tr><tr><td
+        style='border-top:none;'>&nbsp;&nbsp;1</td><td align='left'>&nbsp;AB/3142/2018
+        </td><td align='left' style='width:330px;border-top:none;'><font size='2'>&nbsp;&nbsp;HONOURABLE
+        MR. JUSTICE MIR ALFAZ ALI </font></td><td style='border-top:none;'>&nbsp;&nbsp;05-10-2018</font></td><td
+        style=\" border-top:none;\" colspan='3'>\t<a target='_blank' href ='display_pdf.php?filename=rC8SUFuyEFsvB5V61cXUrJAi4VCwiMRtS3QGdB2jJyw9vVVNzlB62GdjNMQbI0bz&caseno=AB/3142/2018&cCode=1&appFlag=&cino=GAHC010225502018&state_code=6'
+        ></font> <font size='2' color='green'> &nbsp;&nbsp;View <span></span></font></a></td></tr><tr><td
+        style='border-top:none;'>&nbsp;&nbsp;2</td><td align='left'>&nbsp;AB/3142/2018
+        </td><td align='left' style='width:330px;border-top:none;'><font size='2'>&nbsp;&nbsp;HONOURABLE
+        MR. JUSTICE MANASH RANJAN PATHAK </font></td><td style='border-top:none;'>&nbsp;&nbsp;22-11-2018</font></td><td
+        style=\" border-top:none;\" colspan='3'>\t<a target='_blank' href ='display_pdf.php?filename=rC8SUFuyEFsvB5V61cXUrJAi4VCwiMRtS3QGdB2jJyzU%2BnPrP8rCiQ4%2FUqtQBfpw&caseno=AB/3142/2018&cCode=1&appFlag=&cino=GAHC010225502018&state_code=6'
+        ></font> <font size='2' color='green'> &nbsp;&nbsp;View <span></span></font></a></td></tr><tr><td
+        style='border-top:none;'>&nbsp;&nbsp;3</td><td align='left'>&nbsp;AB/3142/2018
+        </td><td align='left' style='width:330px;border-top:none;'><font size='2'>&nbsp;&nbsp;
+        </font></td><td style='border-top:none;'>&nbsp;&nbsp;04-12-2018</font></td><td
+        style=\" border-top:none;\" colspan='3'>\t<a target='_blank' href ='display_pdf.php?filename=rC8SUFuyEFsvB5V61cXUrJAi4VCwiMRtS3QGdB2jJywcqyCUmmNgpSmesWmoNYe6&caseno=AB/3142/2018&cCode=1&appFlag=&cino=GAHC010225502018&state_code=6'
+        ></font> <font size='2' color='green'> &nbsp;&nbsp;View <span></span></font></a></td></tr><tr><td
+        style='border-top:none;'>&nbsp;&nbsp;4</td><td align='left'>&nbsp;AB/3142/2018
+        </td><td align='left' style='width:330px;border-top:none;'><font size='2'>&nbsp;&nbsp;HONOURABLE
+        MR. JUSTICE HITESH KUMAR SARMA </font></td><td style='border-top:none;'>&nbsp;&nbsp;21-12-2018</font></td><td
+        style=\" border-top:none;\" colspan='3'>\t<a target='_blank' href ='display_pdf.php?filename=rC8SUFuyEFsvB5V61cXUrJAi4VCwiMRtS3QGdB2jJyx8ncrvohxzLIF6E1zxEKVF&caseno=AB/3142/2018&cCode=1&appFlag=&cino=GAHC010225502018&state_code=6'
+        ></font> <font size='2' color='green'> &nbsp;&nbsp;View <span></span></font></a></td></tr><tr><td
+        style='border-top:none;'>&nbsp;&nbsp;5</td><td align='left'>&nbsp;AB/3142/2018
+        </td><td align='left' style='width:330px;border-top:none;'><font size='2'>&nbsp;&nbsp;
+        </font></td><td style='border-top:none;'>&nbsp;&nbsp;23-01-2019</font></td><td
+        style=\" border-top:none;\" colspan='3'>\t<a target='_blank' href ='display_pdf.php?filename=rC8SUFuyEFsvB5V61cXUrJAi4VCwiMRtS3QGdB2jJyzNay6UKBPXyEcCjY5B6buL&caseno=AB/3142/2018&cCode=1&appFlag=&cino=GAHC010225502018&state_code=6'
+        ></font> <font size='2' color='green'> &nbsp;&nbsp;View <span></span></font></a></td></tr>\r\n<br
+        />\r\n\r\n</table></table><table id='orderheading'><tr><td><br/><h2 class='h2class'
+        style='font-weight:bold;'>Category Details </h2></td></tr></table><table width=\"700px\"
+        cellspacing=\"0\" cellpadding=\"1\" align=\"center\" border=\"1\" style=\"box-sizing:border-box;
+        -moz-box-sizing:border-box;border-collapse:collapse \" ><tr><td width='50%'
+        style='text-align:left !important;padding-left:5px;' ><b>Category</b>\r\n\t\t\t\t\t\t\t</td><td
+        width='50%'  style='padding-left:5px;text-align:left !important;'>10267  Anticipatory
+        bail Application ( 309 )\r\n\t\t\t\t\t\t\t</td></tr></table></br><table id='orderheading'><tr><td><br/><h2
+        class='h2class' style='font-weight:bold;'>OBJECTION</h2></td></tr></table><table
+        width=\"700px\" cellspacing=\"0\" cellpadding=\"1\" align=\"center\" border=\"1\"
+        class=\"order_table\" style=\"border-collapse:collapse;\"><tr><td><b>Sr.No.</b></td><td><b>Scrutiny
+        Date</b></td><td><b>OBJECTION</b><td><b>Compliance Date</b></td><td><b>Receipt
+        Date</b></td></tr><tr><td><label><b>1</b></label></td><td><label>04-10-2018</label></td><td><label
+        style='color:green'><b> <label style='color:green'><b>All Objections are Complied</b></label>
+        </b></label></td><td><label>--</label></td><td><label>--</label></td></tr></table></table><br
+        />\r\n</div>\r\n</body>\r\n</form>\r\n</html>\r\n"
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - max-age=86400
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '22898'
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 10 Aug 2024 07:35:49 GMT
+      Expect-CT:
+      - max-age=3600, enforce
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin
+      Server:
+      - ''
+      Set-Cookie:
+      - PHPSESSID=i15l7he1rqkrev0knh94o8sdd8; path=/; domain=.hcservices.ecourts.gov.in;
+        secure; HttpOnly; SameSite=Strict
+      Strict-Transport-Security:
+      - '"max-age=15768000; includeSubDomains"'
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content_security_policy:
+      - script-src 'self'; object-src 'self'; img-src 'self'
+      x-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: state_code=6&dist_code=1&court_code=1
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '37'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - JSESSION=22809145; PHPSESSID=i15l7he1rqkrev0knh94o8sdd8
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_show_business.php
+  response:
+    body:
+      string: "\uFEFF\nSQL_ERROR_2"
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - max-age=86400
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '15'
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 10 Aug 2024 07:35:52 GMT
+      Expect-CT:
+      - max-age=3600, enforce
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - '"max-age=15768000; includeSubDomains"'
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content_security_policy:
+      - script-src 'self'; object-src 'self'; img-src 'self'
+      x-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: state_code=6&dist_code=1&court_code=1
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '37'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - JSESSION=22809145; PHPSESSID=i15l7he1rqkrev0knh94o8sdd8
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_show_business.php
+  response:
+    body:
+      string: "\uFEFF\nSQL_ERROR_2"
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - max-age=86400
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '15'
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 10 Aug 2024 07:35:52 GMT
+      Expect-CT:
+      - max-age=3600, enforce
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - '"max-age=15768000; includeSubDomains"'
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content_security_policy:
+      - script-src 'self'; object-src 'self'; img-src 'self'
+      x-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: state_code=6&dist_code=1&court_code=1
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '37'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - JSESSION=22809145; PHPSESSID=i15l7he1rqkrev0knh94o8sdd8
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_show_business.php
+  response:
+    body:
+      string: "\uFEFF\nSQL_ERROR_2"
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - max-age=86400
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '15'
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 10 Aug 2024 07:35:52 GMT
+      Expect-CT:
+      - max-age=3600, enforce
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - '"max-age=15768000; includeSubDomains"'
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content_security_policy:
+      - script-src 'self'; object-src 'self'; img-src 'self'
+      x-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: state_code=6&dist_code=1&court_code=1&case_number1=204900031422018&court_no=1763&businessDate=05-10-2018&srno=1
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '111'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - JSESSION=22809145; PHPSESSID=i15l7he1rqkrev0knh94o8sdd8
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_show_business.php
+  response:
+    body:
+      string: "\uFEFF\n\r\n<style type='text/css'>\r\na \r\n{\r\n\tcolor:red;\r\n\ttext-decoration:none;\r\n}\r\na:hover
+        \r\n{\r\ncolor: #ff0000;\r\ntext-decoration:underline;\r\n}\r\na:focus \r\n{\r\ncolor:
+        #ff0000;\r\ntext-decoration:underline;\r\n}\r\n</style>\r\n\r\n<style type='text/css'>\r\n@media
+        print {\r\n    #printbtn {\r\n        display :  none;\r\n\t\t\r\n    }\r\n\t#backlink
+        {\r\n        display :  none;\t\t\r\n    }\r\n}\r\n</style><div align='center'>\r\n<span
+        \ style=''><b>Daily Status</b></span>\r\n</br>\r\n<center>\r\n<span class='error'></span>\r\n\r\n\r\n\r\n<center><span>Principal
+        Seat at Guwahati </span></center>\r\n<center><span><b>In The Court Of&nbsp;</b>:</span></center>\r\n\r\n<center><span><b>
+        Case Number&nbsp;</b>:AB/0003142/2018</span></center>\r\n<center><span>  <b>
+        &nbsp;Versus&nbsp; </b>  </span></center>\r\n<center><span><b> Date&nbsp;</b>
+        : 05-10-2018</span></center>\r\n\r\n<center>\r\n<table border='0' width='87%'
+        >\r\n<tr>\r\n\t<td colspan='3'><hr></td>\r\n</tr>\r\n    <tr>\r\n\t\t<td width='25%'
+        valign='top' align='left' style='font-size:1em; font-weight:strong;'>\r\n\t\t<b>Business</b>\r\n\t\t</td>\r\n\t\t<td
+        \ width='1%' valign='top' >:</td>\r\n\t\t<td width='69%' valign='top' align='left'
+        style='font-size:1em;'>--<br />\r\n\t\t</td>\r\n\t</tr>\r\n<tr><td colspan='3'
+        align='right'></td></tr><tr id='tr_print'>\r\n<td colspan='3' width='40%'
+        valign='top' align='center' style='font-size:1em; font-weight:strong;'>\r\n<input
+        id='printbtn' class='button' type='button' value='Print' onclick='window.print();'
+        >\r\n</td>\r\n</tr>\r\n</table>\r\n</center>\r\n</center>\r\n\r\n<p>&nbsp;\r\n<p>&nbsp;</td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n\r\n<tr><td></td></tr>\r\n<tr><td></td></tr>\r\n<tr><td></td></tr>\r\n<tr><td></td></tr>\r\n</table>\r\n</center>\r\n</div>"
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - max-age=86400
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1666'
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 10 Aug 2024 07:36:29 GMT
+      Expect-CT:
+      - max-age=3600, enforce
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - '"max-age=15768000; includeSubDomains"'
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content_security_policy:
+      - script-src 'self'; object-src 'self'; img-src 'self'
+      x-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: state_code=6&dist_code=1&court_code=1&case_number1=204900031422018&court_no=1785&businessDate=04-12-2018&srno=3
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '111'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - JSESSION=22809145; PHPSESSID=i15l7he1rqkrev0knh94o8sdd8
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_show_business.php
+  response:
+    body:
+      string: "\uFEFF\n\r\n<style type='text/css'>\r\na \r\n{\r\n\tcolor:red;\r\n\ttext-decoration:none;\r\n}\r\na:hover
+        \r\n{\r\ncolor: #ff0000;\r\ntext-decoration:underline;\r\n}\r\na:focus \r\n{\r\ncolor:
+        #ff0000;\r\ntext-decoration:underline;\r\n}\r\n</style>\r\n\r\n<style type='text/css'>\r\n@media
+        print {\r\n    #printbtn {\r\n        display :  none;\r\n\t\t\r\n    }\r\n\t#backlink
+        {\r\n        display :  none;\t\t\r\n    }\r\n}\r\n</style><div align='center'>\r\n<span
+        \ style=''><b>Daily Status</b></span>\r\n</br>\r\n<center>\r\n<span class='error'></span>\r\n\r\n\r\n\r\n<center><span>Principal
+        Seat at Guwahati </span></center>\r\n<center><span><b>In The Court Of&nbsp;</b>:</span></center>\r\n\r\n<center><span><b>
+        Case Number&nbsp;</b>:AB/0003142/2018</span></center>\r\n<center><span>  <b>
+        &nbsp;Versus&nbsp; </b>  </span></center>\r\n<center><span><b> Date&nbsp;</b>
+        : 04-12-2018</span></center>\r\n\r\n<center>\r\n<table border='0' width='87%'
+        >\r\n<tr>\r\n\t<td colspan='3'><hr></td>\r\n</tr>\r\n    <tr>\r\n\t\t<td width='25%'
+        valign='top' align='left' style='font-size:1em; font-weight:strong;'>\r\n\t\t<b>Business</b>\r\n\t\t</td>\r\n\t\t<td
+        \ width='1%' valign='top' >:</td>\r\n\t\t<td width='69%' valign='top' align='left'
+        style='font-size:1em;'>--<br />\r\n\t\t</td>\r\n\t</tr>\r\n<tr><td colspan='3'
+        align='right'></td></tr><tr id='tr_print'>\r\n<td colspan='3' width='40%'
+        valign='top' align='center' style='font-size:1em; font-weight:strong;'>\r\n<input
+        id='printbtn' class='button' type='button' value='Print' onclick='window.print();'
+        >\r\n</td>\r\n</tr>\r\n</table>\r\n</center>\r\n</center>\r\n\r\n<p>&nbsp;\r\n<p>&nbsp;</td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n\r\n<tr><td></td></tr>\r\n<tr><td></td></tr>\r\n<tr><td></td></tr>\r\n<tr><td></td></tr>\r\n</table>\r\n</center>\r\n</div>"
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - max-age=86400
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1666'
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 10 Aug 2024 07:36:29 GMT
+      Expect-CT:
+      - max-age=3600, enforce
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - '"max-age=15768000; includeSubDomains"'
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content_security_policy:
+      - script-src 'self'; object-src 'self'; img-src 'self'
+      x-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: state_code=6&dist_code=1&court_code=1&case_number1=204900031422018&court_no=1762&businessDate=23-01-2019&srno=5
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '111'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - JSESSION=22809145; PHPSESSID=i15l7he1rqkrev0knh94o8sdd8
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_show_business.php
+  response:
+    body:
+      string: "\uFEFF\n\r\n<style type='text/css'>\r\na \r\n{\r\n\tcolor:red;\r\n\ttext-decoration:none;\r\n}\r\na:hover
+        \r\n{\r\ncolor: #ff0000;\r\ntext-decoration:underline;\r\n}\r\na:focus \r\n{\r\ncolor:
+        #ff0000;\r\ntext-decoration:underline;\r\n}\r\n</style>\r\n\r\n<style type='text/css'>\r\n@media
+        print {\r\n    #printbtn {\r\n        display :  none;\r\n\t\t\r\n    }\r\n\t#backlink
+        {\r\n        display :  none;\t\t\r\n    }\r\n}\r\n</style><div align='center'>\r\n<span
+        \ style=''><b>Daily Status</b></span>\r\n</br>\r\n<center>\r\n<span class='error'></span>\r\n\r\n\r\n\r\n<center><span>Principal
+        Seat at Guwahati </span></center>\r\n<center><span><b>In The Court Of&nbsp;</b>:</span></center>\r\n\r\n<center><span><b>
+        Case Number&nbsp;</b>:AB/0003142/2018</span></center>\r\n<center><span>  <b>
+        &nbsp;Versus&nbsp; </b>  </span></center>\r\n<center><span><b> Date&nbsp;</b>
+        : 23-01-2019</span></center>\r\n\r\n<center>\r\n<table border='0' width='87%'
+        >\r\n<tr>\r\n\t<td colspan='3'><hr></td>\r\n</tr>\r\n    <tr>\r\n\t\t<td width='25%'
+        valign='top' align='left' style='font-size:1em; font-weight:strong;'>\r\n\t\t<b>Business</b>\r\n\t\t</td>\r\n\t\t<td
+        \ width='1%' valign='top' >:</td>\r\n\t\t<td width='69%' valign='top' align='left'
+        style='font-size:1em;'>--<br />\r\n\t\t</td>\r\n\t</tr>\r\n<tr><td colspan='3'
+        align='right'></td></tr><tr id='tr_print'>\r\n<td colspan='3' width='40%'
+        valign='top' align='center' style='font-size:1em; font-weight:strong;'>\r\n<input
+        id='printbtn' class='button' type='button' value='Print' onclick='window.print();'
+        >\r\n</td>\r\n</tr>\r\n</table>\r\n</center>\r\n</center>\r\n\r\n<p>&nbsp;\r\n<p>&nbsp;</td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n\r\n<tr><td></td></tr>\r\n<tr><td></td></tr>\r\n<tr><td></td></tr>\r\n<tr><td></td></tr>\r\n</table>\r\n</center>\r\n</div>"
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - max-age=86400
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1666'
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 10 Aug 2024 07:36:30 GMT
+      Expect-CT:
+      - max-age=3600, enforce
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - '"max-age=15768000; includeSubDomains"'
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content_security_policy:
+      - script-src 'self'; object-src 'self'; img-src 'self'
+      x-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: state_code=6&dist_code=1&court_code=1&case_number1=204900031422018&court_no=1762&businessDate=21-12-2018&srno=4
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '111'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - JSESSION=22809145; PHPSESSID=i15l7he1rqkrev0knh94o8sdd8
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_show_business.php
+  response:
+    body:
+      string: "\uFEFF\n\r\n<style type='text/css'>\r\na \r\n{\r\n\tcolor:red;\r\n\ttext-decoration:none;\r\n}\r\na:hover
+        \r\n{\r\ncolor: #ff0000;\r\ntext-decoration:underline;\r\n}\r\na:focus \r\n{\r\ncolor:
+        #ff0000;\r\ntext-decoration:underline;\r\n}\r\n</style>\r\n\r\n<style type='text/css'>\r\n@media
+        print {\r\n    #printbtn {\r\n        display :  none;\r\n\t\t\r\n    }\r\n\t#backlink
+        {\r\n        display :  none;\t\t\r\n    }\r\n}\r\n</style><div align='center'>\r\n<span
+        \ style=''><b>Daily Status</b></span>\r\n</br>\r\n<center>\r\n<span class='error'></span>\r\n\r\n\r\n\r\n<center><span>Principal
+        Seat at Guwahati </span></center>\r\n<center><span><b>In The Court Of&nbsp;</b>:</span></center>\r\n\r\n<center><span><b>
+        Case Number&nbsp;</b>:AB/0003142/2018</span></center>\r\n<center><span>  <b>
+        &nbsp;Versus&nbsp; </b>  </span></center>\r\n<center><span><b> Date&nbsp;</b>
+        : 21-12-2018</span></center>\r\n\r\n<center>\r\n<table border='0' width='87%'
+        >\r\n<tr>\r\n\t<td colspan='3'><hr></td>\r\n</tr>\r\n    <tr>\r\n\t\t<td width='25%'
+        valign='top' align='left' style='font-size:1em; font-weight:strong;'>\r\n\t\t<b>Business</b>\r\n\t\t</td>\r\n\t\t<td
+        \ width='1%' valign='top' >:</td>\r\n\t\t<td width='69%' valign='top' align='left'
+        style='font-size:1em;'>--<br />\r\n\t\t</td>\r\n\t</tr>\r\n<tr><td colspan='3'
+        align='right'></td></tr><tr id='tr_print'>\r\n<td colspan='3' width='40%'
+        valign='top' align='center' style='font-size:1em; font-weight:strong;'>\r\n<input
+        id='printbtn' class='button' type='button' value='Print' onclick='window.print();'
+        >\r\n</td>\r\n</tr>\r\n</table>\r\n</center>\r\n</center>\r\n\r\n<p>&nbsp;\r\n<p>&nbsp;</td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n\r\n<tr><td></td></tr>\r\n<tr><td></td></tr>\r\n<tr><td></td></tr>\r\n<tr><td></td></tr>\r\n</table>\r\n</center>\r\n</div>"
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - max-age=86400
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1666'
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 10 Aug 2024 07:40:42 GMT
+      Expect-CT:
+      - max-age=3600, enforce
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - '"max-age=15768000; includeSubDomains"'
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content_security_policy:
+      - script-src 'self'; object-src 'self'; img-src 'self'
+      x-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: state_code=6&dist_code=1&court_code=1&case_number1=204900031422018&court_no=1762&businessDate=23-01-2019&srno=5
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '111'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - JSESSION=22809145; PHPSESSID=i15l7he1rqkrev0knh94o8sdd8
+      User-Agent:
+      - python-requests/2.32.3
+    method: POST
+    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_show_business.php
+  response:
+    body:
+      string: "\uFEFF\n\r\n<style type='text/css'>\r\na \r\n{\r\n\tcolor:red;\r\n\ttext-decoration:none;\r\n}\r\na:hover
+        \r\n{\r\ncolor: #ff0000;\r\ntext-decoration:underline;\r\n}\r\na:focus \r\n{\r\ncolor:
+        #ff0000;\r\ntext-decoration:underline;\r\n}\r\n</style>\r\n\r\n<style type='text/css'>\r\n@media
+        print {\r\n    #printbtn {\r\n        display :  none;\r\n\t\t\r\n    }\r\n\t#backlink
+        {\r\n        display :  none;\t\t\r\n    }\r\n}\r\n</style><div align='center'>\r\n<span
+        \ style=''><b>Daily Status</b></span>\r\n</br>\r\n<center>\r\n<span class='error'></span>\r\n\r\n\r\n\r\n<center><span>Principal
+        Seat at Guwahati </span></center>\r\n<center><span><b>In The Court Of&nbsp;</b>:</span></center>\r\n\r\n<center><span><b>
+        Case Number&nbsp;</b>:AB/0003142/2018</span></center>\r\n<center><span>  <b>
+        &nbsp;Versus&nbsp; </b>  </span></center>\r\n<center><span><b> Date&nbsp;</b>
+        : 23-01-2019</span></center>\r\n\r\n<center>\r\n<table border='0' width='87%'
+        >\r\n<tr>\r\n\t<td colspan='3'><hr></td>\r\n</tr>\r\n    <tr>\r\n\t\t<td width='25%'
+        valign='top' align='left' style='font-size:1em; font-weight:strong;'>\r\n\t\t<b>Business</b>\r\n\t\t</td>\r\n\t\t<td
+        \ width='1%' valign='top' >:</td>\r\n\t\t<td width='69%' valign='top' align='left'
+        style='font-size:1em;'>--<br />\r\n\t\t</td>\r\n\t</tr>\r\n<tr><td colspan='3'
+        align='right'></td></tr><tr id='tr_print'>\r\n<td colspan='3' width='40%'
+        valign='top' align='center' style='font-size:1em; font-weight:strong;'>\r\n<input
+        id='printbtn' class='button' type='button' value='Print' onclick='window.print();'
+        >\r\n</td>\r\n</tr>\r\n</table>\r\n</center>\r\n</center>\r\n\r\n<p>&nbsp;\r\n<p>&nbsp;</td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n\r\n<tr><td></td></tr>\r\n<tr><td></td></tr>\r\n<tr><td></td></tr>\r\n<tr><td></td></tr>\r\n</table>\r\n</center>\r\n</div>"
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - max-age=86400
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '1666'
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sat, 10 Aug 2024 07:45:45 GMT
+      Expect-CT:
+      - max-age=3600, enforce
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin
+      Server:
+      - ''
+      Strict-Transport-Security:
+      - '"max-age=15768000; includeSubDomains"'
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content_security_policy:
+      - script-src 'self'; object-src 'self'; img-src 'self'
+      x-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

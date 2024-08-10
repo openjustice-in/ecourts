@@ -3,6 +3,8 @@ from datetime import datetime
 from typing import Optional, Dict
 from parsers.utils import parse_date
 
+class UnexpandableHearing(Exception):
+    pass
 
 @dataclass
 class Hearing:
@@ -42,7 +44,7 @@ class Hearing:
     # state_code, dist_code, court_code(If present)
     def expandParams(self):
         return {
-            "court_code": self.court_no,
-            "dist_code": self.srno,
+            "court_no": self.court_no,
             "businessDate": self.date.strftime("%d-%m-%Y"),
+            "srno": self.srno,
         }

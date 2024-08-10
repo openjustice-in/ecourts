@@ -106,7 +106,8 @@ class Captcha:
         output, _ = process.communicate()
         result = output.decode("utf-8").strip()
         if len(result) == 5:
-            os.remove(output_path)
+            # rename the file to /tmp/result.png
+            os.rename(output_path, f"/tmp/{result}.png")
             return result
         else:
             raise CaptchaError("Couldn't solve captcha")

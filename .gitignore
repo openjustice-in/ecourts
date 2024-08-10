@@ -1,4 +1,5 @@
 ecourts.db
+tmp/
 TASK.md
 coverage.lcov
 src/_version.py

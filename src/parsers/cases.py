@@ -1,6 +1,7 @@
 from entities import Case
 from entities import Court
 from entities.party import Party
+from captcha import CaptchaError
 
 # TODO: The dict mappings should be dynamic
 # based on the route called.
@@ -15,8 +16,10 @@ def parse_cases(raw_data: str) -> list[Case]:
     """
 
     starting_str = raw_data[0:15].upper()
-    if "ERROR" in starting_str or "INVALID CAPTCHA" in starting_str:
+    if "ERROR" in starting_str:
         raise ValueError("Got invalid result")
+    if "INVALID CAPTCHA" in starting_str:
+        raise CaptchaError("Invalid captcha")
     if len(raw_data) == 0:
         return []
         # Some of the fields are not used and unknown
@@ -34,7 +37,7 @@ def parse_cases(raw_data: str) -> list[Case]:
             continue
 
         case_type,r_year,r_no = record_fields[1].split("/")
-        petitioner,respondent = [x.strip() for x in record_fields[2].split("Versus")]
+        petitioner,respondent = [x.replace("<br/>", "").strip() for x in record_fields[2].split("Versus")]
         cnr = record_fields[3].strip()
         case_obj = Case(
             case_type = case_type,

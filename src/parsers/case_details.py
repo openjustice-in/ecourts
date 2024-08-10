@@ -234,7 +234,7 @@ class CaseDetails:
             ),
             nature_of_disposal=case_status.get("Nature of Disposal", None),
             coram=case_status["Coram"],
-            bench=case_status["Bench"],
+            bench=case_status.get("Bench", None),
             state=case_status["State"],
             district=case_status.get("District", None),
             judicial=case_status["Judicial"],

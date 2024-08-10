@@ -71,8 +71,6 @@ class Court:
         """
         Post-initialization processing to validate the court.
         """
-        if self.court_code == "1":
-            self.court_code = None
         """
         Raise an error if the court is not valid
         """
@@ -106,8 +104,8 @@ class Court:
             dict: A dictionary containing the query parameters.
         """
         r = {"state_code": self.state_code, "dist_code": self.district_code}
-        if self.court_code:
-            r["court_code"] = self.court_code
+        
+        r["court_code"] = self.court_code or "1"
         return r
 
     def json(self):

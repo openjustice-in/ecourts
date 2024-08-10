@@ -30,7 +30,7 @@ class Case:
     petitioners: Optional[list[Party]] = None
     respondents: Optional[list[Party]] = None
     orders: Optional[list[Order]] = None
-    case_no: Optional[str] = None
+    case_number: Optional[str] = None
     hearings: Optional[list[Hearing]] = None
     category: Optional[str] = None
     sub_category: Optional[str] = None
@@ -58,16 +58,16 @@ class Case:
         if len(self.cnr_number) !=16:
             raise ValueError("Invalid CNR Number")
 
-        if self.case_no:
-            assert 1990 < int(self.case_no[-4:])
-            assert int(self.case_no[-4:]) < 2030
+        if self.case_number:
+            assert 1990 < int(self.case_number[-4:])
+            assert int(self.case_number[-4:]) < 2030
 
 
     def expandParams(self):
-        if not (self.token and self.case_no):
-            raise ValueError("Token/case_no not set in Case entity")
-        params = {
+        if not (self.token and self.case_number):
+            raise ValueError("Token/case_number not set in Case entity")
+        return {
             "cino": self.cnr_number,
             "token": self.token,
-            "case_no": self.case_no
+            "case_no": self.case_number
         }

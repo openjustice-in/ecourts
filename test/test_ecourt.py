@@ -1,7 +1,9 @@
 import pytest
-from entities import Court, CaseType, Order, Case
+from entities import Court, CaseType, Order, Case,Party
+from entities.hearing import UnexpandableHearing
 from ecourt import ECourt
 import datetime
+import yaml
 
 
 @pytest.mark.vcr()
@@ -160,9 +162,42 @@ def test_api_calls():
 @pytest.mark.vcr()
 def test_case_history():
     scraper = ECourt(Court(state_code="3"))
-    scraper.getCaseHistory(case=Case(
-        case_type="CRL.P",
-        registration_number="5658/2024",
-        cnr_number="KAHC010337682024",
-        token="14b7927a52c474a5c85379fe180635c8957638b3440506b816c755af53b91990",
-        case_no="211200056582024"))
+    scraper.getCaseHistory(
+        case=Case(
+            case_type="CRL.P",
+            registration_number="5658/2024",
+            cnr_number="KAHC010337682024",
+            token="14b7927a52c474a5c85379fe180635c8957638b3440506b816c755af53b91990",
+            case_number="211200056582024",
+        )
+    )
+
+
+@pytest.mark.vcr()
+def test_case_expander():
+    scraper = ECourt(Court(state_code="6"))
+    cases = scraper.CaseType("49", "Pending", "2018")
+    fcase = next(cases)
+
+    assert fcase.case_type == "AB"
+    assert fcase.registration_number == "3142/2018"
+    assert fcase.cnr_number == "GAHC010225502018"
+    assert fcase.petitioners[0].name == "ANURAG TANKHA"
+    assert fcase.respondents[0].name == "THE STATE OF ASSAM"
+    assert fcase.case_number == "204900031422018"
+
+    assert fcase.expandParams()['cino'] == "GAHC010225502018"
+    assert fcase.expandParams()['case_no'] == "204900031422018"
+    assert len(fcase.expandParams()['token']) == 64
+
+    fcase2 = scraper.expand_case(fcase)
+    with open("test/fixtures/cases/GAHC010225502018.yml", 'w') as f:
+        yaml.dump(fcase2, f)
+
+    for hearing in fcase2.hearings:
+        try:
+            scraper.expandHearing(hearing, fcase2)
+            assert len(hearing.details) > 0
+        except UnexpandableHearing as e:
+            pass
+

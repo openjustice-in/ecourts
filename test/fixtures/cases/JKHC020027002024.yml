@@ -1,6 +1,5 @@
 !!python/object:entities.case.Case
 bench: null
-case_no: null
 case_number: '201700000822024'
 case_status: null
 case_type: HCP
