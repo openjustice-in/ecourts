@@ -60,6 +60,9 @@ class CaseDetails:
         case_status_div = soup.find("h2", string=re.compile("Case Status"))
         case_status = {}
 
+        if case_status_div == None:
+            breakpoint()
+
         for row in case_status_div.nextSibling.select("label"):
             if row.name == "label":
                 [key, value] = row.find_all("strong")
@@ -82,7 +85,11 @@ class CaseDetails:
         return parties
 
     def extract_hearing(self, soup: BeautifulSoup) -> list[Hearing]:
-        history_table = soup.find("table", id="historyheading").find_next("table")
+        f = soup.find("table", id="historyheading")
+        if f:
+            history_table = f.find_next("table")
+        else:
+            return []
         history = []
         if history_table:
             for row in history_table.find_all("tr")[1:]:
@@ -137,11 +144,27 @@ class CaseDetails:
 
     def extract_orders(self, soup: BeautifulSoup) -> list[Order]:
         orders = []
+        if soup.find("table", id="orderheading") == None:
+            return []
+        headertext = soup.find("table", id="orderheading").find_next("table").select_one("tr").text
+
+        # We have picked up the objection table instead
+        # since there are no orders
+        if "OBJECTION" in headertext.upper():
+            return []
         for row in (
             soup.find("table", id="orderheading").find_next("table").find_all("tr")[1:]
         ):
             (_, caseno, judge, date, details) = row.find_all("td")
-            url = details.select_one("a")["href"]
+            
+
+            link = details.select_one("a")
+            url = None
+            if link:
+                url = link["href"]
+            else:
+                print(soup)
+                breakpoint()
 
             query = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
             orders.append(
@@ -189,6 +212,9 @@ class CaseDetails:
         return objections
 
     def __init__(self, html_content: str):
+        if "session expired" in html_content:
+            raise ValueError("Session expired")
+
         soup = BeautifulSoup(html_content, "html.parser")
 
         for br in soup.find_all("br"):
@@ -227,11 +253,11 @@ class CaseDetails:
                 case_status.get("Stage of Case", None),
             ),
             nature_of_disposal=case_status.get("Nature of Disposal", None),
-            coram=case_status["Coram"],
+            coram=case_status.get("Coram", None),
             bench=case_status.get("Bench", None),
-            state=case_status["State"],
+            state=case_status.get("State", None),
             district=case_status.get("District", None),
-            judicial=case_status["Judicial"],
+            judicial=case_status.get("Judicial", None),
             not_before_me=case_status["Not Before Me"],
             petitioners=petitioners,
             respondents=respondents,

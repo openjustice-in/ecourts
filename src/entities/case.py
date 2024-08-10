@@ -60,8 +60,16 @@ class Case:
             self.objections = []
         # The canonical representation of a CNR is without hyphens
         self.cnr_number = self.cnr_number.replace("-", "")
+        if self.nature_of_disposal == "--":
+            self.nature_of_disposal = None
         if len(self.cnr_number) !=16:
             raise ValueError("Invalid CNR Number")
+        if self.orders == None:
+            self.orders = []
+        if self.hearings == None:
+            self.hearings = []
+        if self.objections == None:
+            self.objections = []
 
         if self.case_number:
             assert 1990 < int(self.case_number[-4:])
@@ -88,7 +96,7 @@ class Case:
 
     def json(self) -> dict:
         """
-        Generate a JSON representation of the court.
+        Generate a JSON representation of the Case.
 
         Returns:
             dict: A dictionary containing the JSON representation.

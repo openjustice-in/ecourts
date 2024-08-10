@@ -11,61 +11,404 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
+    uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_casetype.php?state_cd=6&dist_cd=1&court_code=1
+  response:
+    body:
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n\n\uFEFF<script
+        type=\"text/javascript\">\r\nfunction clearCaptchaText()\r\n{\r\n\r\nvar ty=document.getElementsByClassName('captchaClass');\r\nty[0].value='';\r\n}\r\nfunction
+        funConnError()\r\n{\r\n\tdocument.getElementById('showList').innerHTML=\"\";\r\n\tdocument.getElementById('showList').style.display='none';\r\n\tdocument.getElementById('errSpan').style.display=\"\";\r\n\tvar
+        val='CONNECTION FAILED';\r\n\tdocument.getElementById('txtmsg').value=val;\r\n\tdocument.getElementById(\"txtmsg\").title
+        =val;\r\n\tdocument.getElementById('txtmsg').focus();\r\n}\r\n\r\n\r\nfunction
+        funUsrError()\r\n{\r\n\tdocument.getElementById('showList').innerHTML=\"\";\r\n\tdocument.getElementById('showList').style.display='none';\r\n\tdocument.getElementById('errSpan').style.display=\"\";\t\r\n\tvar
+        val='THERE IS AN ERROR';\r\n\r\n\tdocument.getElementById('txtmsg').value=val;\r\n\tdocument.getElementById(\"txtmsg\").title
+        =val;\r\n\tdocument.getElementById('txtmsg').focus();\r\n}\r\n\r\nfunction
+        funUsrErrorParam(input)\r\n{\r\n\r\n\tdocument.getElementById('showList').innerHTML=\"\";\r\n\tdocument.getElementById('showList').style.display='none';\r\n\tdocument.getElementById('errSpan').style.display=\"\";\t\r\n\tvar
+        val='THERE IS AN '+input;\r\n\tdocument.getElementById('txtmsg').value=val;\r\n\r\n\tdocument.getElementById(\"txtmsg\").title
+        =val;\r\n\tdocument.getElementById('txtmsg').focus();\r\n}\r\n\r\nfunction
+        funServerSideValidateErr()\r\n{\r\n\tdocument.getElementById('showList').innerHTML=\"\";\r\n\tdocument.getElementById('showList').style.display='none';\r\n\tdocument.getElementById('errSpan').style.display=\"\";\t\r\n\tvar
+        val='Invalid Input';\r\n\tdocument.getElementById('txtmsg').value=val;\r\n\tdocument.getElementById(\"txtmsg\").title
+        =val;\r\n\tdocument.getElementById('txtmsg').focus();\r\n}\r\n\r\nfunction
+        escapeHtml(str)\r\n{\r\nstr=str.replace(/&|<script|script>/g,'');\r\nreturn
+        str;\r\n}\r\n\r\n\r\n\r\n\r\nfunction trim(inputString) {\r\n\tif (typeof
+        inputString != \"string\") { return inputString; }\r\n\tvar retValue = inputString;\r\n\tvar
+        ch = retValue.substring(0, 1);\r\n\twhile (ch == \" \")\r\n\t{\r\n\t\tretValue
+        = retValue.substring(1, retValue.length);\r\n\t\tch = retValue.substring(0,
+        1);\r\n\t}\r\n\tch = retValue.substring(retValue.length-1, retValue.length);\r\n\twhile
+        (ch == \" \")\r\n\t{\r\n\t\tretValue = retValue.substring(0, retValue.length-1);\r\n\t\tch
+        = retValue.substring(retValue.length-1, retValue.length);\r\n\t}\r\n\twhile
+        (retValue.indexOf(\"  \") != -1)\r\n\t{\r\n\t\tretValue = retValue.substring(0,
+        retValue.indexOf(\"  \")) +\r\n\t\tretValue.substring(retValue.indexOf(\"
+        \ \")+1, retValue.length);\r\n\t}\r\n\treturn retValue;\r\n}\r\n\r\n\r\n\r\nfunction
+        checkInteger(str)\r\n{\r\n\tvar len = str.length;\r\n\tfor(var i=0; i < len;
+        i++)\r\n\t{\r\n\t\tif(str.charAt(i) == \".\")\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t}\r\n}\r\nfunction
+        applycsswhite1()\r\n\t{\r\n\t $(\"body\").css(\"color\", \"black\");\r\n\t$(\"h4\").css(\"color\",
+        \"#4B8BCD\");\r\n    $(\".headingtxt\").css(\"color\", \" #4B8BCD\");\r\n\t$(\"tr\").css(\"background\",
+        \"#fff\");\r\n\t$(\".button\").css(\"background\", \"#1A5984\");\r\n\t$(\".title\").css(\"color\",
+        \"#4B8BCD\");\r\n\t$(\"a\").css(\"color\", \"#4B8BCD\");\r\n\t$(\".Lower_court_table\").css(\"background\",
+        \"#fdf7f4\");\r\n\t$(\".Acts_table\").css(\"background\", \"#fdf6e9\");\r\n\t$(\".Respondent_Advocate_table\").css(\"background\",
+        \"#f5f1fc\");\r\n\t$(\".Petitioner_Advocate_table\").css(\"background\", \"#f3fafe\");\r\n\t$(\".case_details_table\").css(\"background\",
+        \"#f9fdf1\");\r\n\t$(\".FIR_details_table\").css(\"background\", \"#fae3df\");\r\n\t$(\".order_table\").css(\"background\",
+        \"#f5f1fc\");\r\n\t$(\".Lower_court_table\").css(\"border\", \"1px solid #000\");\r\n\t$(\".Acts_table\").css(\"border\",
+        \"1px solid #000\");\r\n\t$(\".Respondent_Advocate_table\").css(\"border\",
+        \"1px solid #000\");\r\n\t$(\".Petitioner_Advocate_table\").css(\"border\",
+        \"1px solid #000\");\r\n\t$(\".case_details_table\").css(\"border-bottom\",
+        \"1px solid #000\");\r\n\t$(\".FIR_details_table\").css(\"border\", \"1px
+        solid #000\");\r\n\t}\r\nfunction applycssblack1()\r\n\t{\r\n\t$(\"body\").css(\"color\",
+        \"white \");\t\r\n\t$(\"body\").css(\"background\", \"#3D3A3A \");\r\n\t$(\"h4\").css(\"color\",
+        \"white\");\t\r\n    $(\".headingtxt\").css(\"color\", \"white\");\r\n\t$(\"a:hover\").css(\"color\",
+        \"white\");\r\n\t$(\"tr\").css(\"background\", \"#3D3A3A\");\r\n    $(\".button\").css(\"background\",
+        \"black\");\r\n\t$(\".title\").css(\"color\", \"white\");\r\n\t$(\"a\").css(\"color\",
+        \"yellow\");\r\n\t$(\"table.bordered th\").css(\"color\", \"#000\");\r\n\t$(\".Lower_court_table\").css(\"background\",
+        \"#3D3A3A\");\r\n\t$(\".Acts_table\").css(\"background\", \"#3D3A3A\");\r\n\t$(\".Respondent_Advocate_table\").css(\"background\",
+        \"#3D3A3A\");\r\n\t$(\".Petitioner_Advocate_table\").css(\"background\", \"#3D3A3A\");\r\n\t$(\".case_details_table\").css(\"background\",
+        \"#3D3A3A\");\r\n\t$(\".FIR_details_table\").css(\"background\", \"#3D3A3A\");\r\n\t$(\".Lower_court_table\").css(\"border\",
+        \"1px solid #fff\");\r\n\t$(\".Acts_table\").css(\"border\", \"1px solid #fff\");\r\n\t$(\".Respondent_Advocate_table\").css(\"border\",
+        \"1px solid #fff\");\r\n\t$(\".Petitioner_Advocate_table\").css(\"border\",
+        \"1px solid #fff\");\r\n\t$(\".case_details_table\").css(\"border-bottom\",
+        \"1px solid #fff\");\r\n\t$(\".FIR_details_table\").css(\"border\", \"1px
+        solid #fff\");\r\n\t$(\".order_table\").css(\"background\", \"#3D3A3A\");\r\n\t}\r\n\r\n\r\n\r\n\r\n</script>\r\n\r\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\r\n<head>\r\n<meta
+        http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\r\n<title>Case
+        Status: Search by Case Type</title>\r\n<link rel=\"stylesheet\" href=\"../css/style.css\"
+        type=\"text/css\" />\r\n\r\n<style type=\"text/css\">\r\na \r\n{\r\n\tcolor:red;\r\n\ttext-decoration:none;\r\n}\r\na:hover
+        \r\n{\r\ncolor: #ff0000;\r\ntext-decoration:underline;\r\n}\r\na:focus \r\n{\r\ncolor:
+        #ff0000;\r\ntext-decoration:underline;\r\n}\r\n\r\n\r\nbody\r\n\t{\r\n\tmax-width:700px;\r\n\tmargin-top:0px;\r\n\t}\r\n\r\nh1{\r\n\t\t\t\t
+        \   background: #eee;\r\n    width: 700px;\r\n    padding: 5px 0px;\r\n    box-shadow:
+        0px 5px 2px rgba(0,0,0,0.2);\r\n    margin: 0;\r\n    color: #555;\r\n    text-align:
+        center;\r\n    font-size: 1.5em;\r\n\t\t\t}\r\n\t\t\t#mainDiv{\r\n\t\t\t\tbackground:#f7f7f7;\r\n\tborder:1px
+        solid #ccc;\r\n\tpadding:10px 0;\r\n\tbox-shadow: 0px 5px 5px rgba(0,0,0,0.2);\r\n\tmargin-top:10px;\r\n\tborder-radius:0
+        0 3px 3px;\r\n    -webkit-border-radius: 0 0 3px 3px;\r\n\tmargin-top:23px;\r\n\t\t\t}\r\n\r\n</style>\r\n\r\n\r\n<script
+        type=\"text/javascript\">var csrfMagicToken = \"sid:c540373b6377266690f4167519f9086be020d00a,1723292858\";var
+        csrfMagicName = \"__csrf_magic\";</script><script src=\"csrf-magic.js\" type=\"text/javascript\"></script></head>\r\n\r\n<body
+        onload=\"fillCaseType();\">\r\n<div class=\"common_header\">\n<table width=\"90%\"
+        border=\"0\" style=\"margin:0 auto;\"><tbody><tr><td width=\"20%\" align=\"center\"><img
+        src=\"../images/ecourts-logo.png\"></td><td width=\"80%\"><span class=\"head1\">E-COURTS</span><br><span
+        class=\"head2\">High Courts of India</span></td></tr></tbody></table></div><div>
+        <h1>The Gauhati High Court- Principal Seat at Guwahati </h1> </div>\r\n<div
+        id=\"sizecontroldiv\" class=\"controlstyle\">\r\n<a href=\"#smaller\" title=\"smaller\"></a>\r\n<a
+        href=\"#fontsize0\" title=\"fontsizezero\"></a>\r\n<a href=\"#bigger\" title=\"bigger\"></a>\r\n</div>\r\n\r\n\r\n<form
+        name=\"frm\" method=\"post\" action=\"s_casetype.php\"><input type='hidden'
+        name='__csrf_magic' value=\"sid:c540373b6377266690f4167519f9086be020d00a,1723292858\"
+        />\r\n\r\n<div id='back_top' style=\"display:none;\"><center><a href='#' onclick='funBack();'>Back</a></center></div>\r\n<div
+        id='back_business' style=\"display:none;\"><center><a href='#' onclick='funBackBusiness();'>Back
+        </a></center></div>\r\n<div id='back_auth' style=\"display:none;\"><center><a
+        href='#' onclick='funShowAuth();'>Back </a></center></div>\r\n<div id='fourthpage'></div>\r\n\r\n<div
+        id='thirdpage'></div>\r\n\r\n<div id='secondpage'></div>\r\n<div id='back_bottom'
+        style=\"display:none;\"><center><a href='#' onclick='funBack();'>Back</a></center></div>\r\n\t\t<div
+        class=\"rows\">\r\n\t\t<span id='spaTitle' class=\"\ttitle\">\r\n\t\t<h4 class='h3class'>Case
+        Status:Search by Case Type</h4>\r\n\t\t</span>\r\n\t\t</div>\r\n<div id='firstpage'>\r\n\r\n\t<div
+        id='mainDiv' >\r\n\r\n\t\t<div class=\"rows\"> \r\n\t\t<span class=\"firstcolumn\"><span
+        class='redStar'> * </span><label for=\"case_type\">Case Type</label> </span>\r\n\t\t<span
+        \ class=\"thirdcolumn\"><label for=\"case_type\" style='font-size:0.0000001px;
+        color:#fff;'>Select Case Type Compulsory Field</label>&nbsp;</span>\r\n\t\t<span
+        class=\"secondcolumn\">\r\n\t\t<select name=\"case_type\" id=\"case_type\"
+        \ style=\"width: 250px;height:21px;\"  >\r\n\t\t<option value=\"\">Select
+        Case Type</option>\r\n\t\t</select>\r\n\t\t</span>\r\n\t\t</div>\r\n\r\n\t\t<br/>\r\n\r\n\t\t<div
+        class=\"rows\">\r\n\t\t<span class=\"firstcolumn\">Year</span>\r\n\t\t<span
+        \ class=\"thirdcolumn\">&nbsp;</span>\r\n\t\t<span class=\"secondcolumn\">\r\n\t\t<input
+        type=\"text\" size=\"4\" maxlength=\"4\" id=\"search_year\" name=\"search_year\"
+        onkeypress=\"return isnumeric(event)\" value=\"\"  style=\"width: 60px;\"
+        title=\"Please Enter Numeric value in Year\" />\r\n\t\t</span>\r\n\t\t</div>\r\n\r\n\t\t<br/>\t\r\n\r\n\r\n\t\t<div
+        class=\"rows\">\r\n\t\t<span class=\"firstcolumn\"></span>\r\n\t\t<span  class=\"thirdcolumn\">&nbsp;</span>\r\n\t\t<span
+        class=\"secondcolumn\">\r\n\t\t<input type=\"radio\" id='radP' name=\"f\"
+        value='Pending' checked=\"checked\" />\r\n\t\t<label for=\"radP\">Pending</label>
+        \ \r\n\t\t<input type=\"radio\" id='radD' name=\"f\" value='Disposed' />\r\n\t\t<label
+        for=\"radD\">Disposed</label>  \t\r\n\t\t</span>\t\t\t\r\n\t\t</div>\r\n\r\n\t\t<br/>\r\n<div
+        class=\"rows\" >\r\n<span id='captcha_container_2' class='captcha_box'>\n<div><div
+        style=\"display:inline-block;float:left;\"><span class=\"firstcolumn\"><label
+        \ id=\"captcha_label\" class=\"radioLabel\" tabindex=\"0\">Captcha</label></span><span
+        class=\"thirdcolumn\">&nbsp;</span><span class=\"secondcolumn\"><img style=\"padding-right:
+        0px;border:1px solid #ccc;\" id=\"captcha_image\" src=\"/ecourtindiaHC/securimage/securimage_show.php?d75fc04409d0c9aec5c16e53e9468327\"
+        alt=\"CAPTCHA Image\"   tabindex=\"0\" width=\"120\"  /><label style=\"font-size:0.0000000001px;
+        color:#000;display:inline;\">Captcha</label><div id=\"captcha_image_audio_div\"
+        style=\"display:inline\">\n<audio id=\"captcha_image_audio\" preload=\"none\"
+        style=\"display: none\">\n<source id=\"captcha_image_source_wav\" src=\"/ecourtindiaHC/securimage/securimage_play.php?id=66b75cba95119\"
+        type=\"audio/wav\">\n<object type=\"application/x-shockwave-flash\" data=\"/ecourtindiaHC/securimage/securimage_play.swf?bgcol=%23ffffff&amp;icon_file=%2FecourtindiaHC%2Fsecurimage%2Fimages%2Fspeaker-btn.png&amp;audio_file=%2FecourtindiaHC%2Fsecurimage%2Fsecurimage_play.php%3F\"
+        height=\"32\" width=\"32\"><param name=\"movie\" value=\"/ecourtindiaHC/securimage/securimage_play.swf?bgcol=%23ffffff&amp;icon_file=%2FecourtindiaHC%2Fsecurimage%2Fimages%2Fspeaker-btn.png&amp;audio_file=%2FecourtindiaHC%2Fsecurimage%2Fsecurimage_play.php%3F\"
+        /></object></audio>\n</div>\n<div id=\"captcha_image_audio_controls\"  style=\"display:inline-block;\">\n<a
+        tabindex=\"0\" class=\"captcha_play_button\" href=\"/ecourtindiaHC/securimage/securimage_play.php?id=66b75cba95122\"
+        onclick=\"return false\">\n<img class=\"captcha_play_image\" height=\"32\"
+        width=\"32\" src=\"/ecourtindiaHC/securimage/images/speaker-btn.png\" alt=\"Play
+        CAPTCHA Audio\" style=\"border: 0px\">\n<img class=\"captcha_loading_image
+        rotating\" height=\"32\" width=\"32\" src=\"/ecourtindiaHC/securimage/images/loading.png\"
+        alt=\"Loading audio\" style=\"display: none\">\n</a>\n<noscript>Enable Javascript
+        for audio controls</noscript>\n</div>\n<script type=\"text/javascript\" src=\"/ecourtindiaHC/securimage/securimage.js\"></script>\n<script
+        type=\"text/javascript\">captcha_image_audioObj = new SecurimageAudio({ audioElement:
+        'captcha_image_audio', controlsElement: 'captcha_image_audio_controls' });</script>\n<a
+        tabindex=\"0\" style=\"border: 0\" href=\"#\" title=\"Refresh Image\" onclick=\"if
+        (typeof window.captcha_image_audioObj !== 'undefined') captcha_image_audioObj.refresh();
+        document.getElementById('captcha_image').src = '/ecourtindiaHC/securimage/securimage_show.php?'
+        + Math.random(); this.blur(); return false\"><img height=\"32\" width=\"32\"
+        src=\"/ecourtindiaHC/securimage/images/refresh-btn.png\" alt=\"Refresh Image\"
+        onclick=\"clearCaptchaText();\" style=\"border: 0px;\" /></a></span></div></div><div
+        class=\"\" style=\"clear:left;\"><span class=\"firstcolumn\"><label   for=\"\"
+        tabindex=\"0\" class=\"radioLabel lblCpatcha\" ><span class=\"redStar\">*</span></label></span>
+        <span class=\"thirdcolumn\">&nbsp;</span><span class=\"secondcolumn\"><input
+        maxlength=\"6\" type=\"text\" name=\"captcha\" id=\"captcha\" class=\"captchaClass\"
+        \ tabindex=\"0\"/></span></div>\n</span>\n\r\n</div>\r\n<br/>\r\n\r\n\r\n\t\t<div
+        class=\"rows\">\r\n\t\t<span class=\"firstcolumn\"></span>\r\n\t\t<span  class=\"thirdcolumn\">&nbsp;</span>\r\n\t\t<span
+        class=\"secondcolumn\">\r\n\t\t<input type=\"button\" name=\"submit1\" value=\"Go\"
+        class=\"button\" onclick=\"validate();\" />\r\n\t\t<input type=\"button\"
+        name=\"reset\" value=\"Reset\" class=\"button\" onclick=\"funonReset();\"
+        \ />&nbsp;\r\n\t\t</span>\r\n\t\t</div>\r\n\r\n\t\t<br/>\t\r\n<div>\r\n<br/>S3</div>\t\t\r\n\r\n\t</div>\r\n\r\n\t<div
+        id='errSpan' class=\"rows\" style='display:none;'>\r\n\t<br/>\r\n\t<span class=\"secondcolumn\"
+        style='width:100%;text-align:center;' >\r\n\t<input id='txtmsg' type='text'
+        style='background-color:#FFF; color:red;font-family:arial; font-weight:bold;
+        font-size:1em ;text-align:center;border:0;width:300px;' readonly='readonly'
+        \     />\r\n\t</span>\r\n\t</div>\r\n\r\n\r\n\r\n\r\n\t<div  id='divWait'
+        style='color:red;display:none;text-align:center; height:65px;' >\r\n\t<label
+        for='waitmsg' style='display:none;'>Please Wait</label><input type='text'
+        id='waitmsg' style='background-color:#FFF; color:red;font-family:arial; font-weight:bold;
+        font-size:1em ;text-align:center;border:0;' value='Please Wait' readonly='readonly'
+        />\r\n\t<br />\r\n\t<img style='align:center;' src='../images/loading.gif'
+        alt='loading data' />\r\n\t</div>\r\n\r\n\r\n<div>\r\n\r\n<div id='showList'
+        style='display:none;clear:both;' >\r\n\r\n<div id='showList2'></div>\r\n\r\n\t<table
+        id='thead' style='display:none;' border='0' width='90%' align='center' cellspacing='0%'
+        cellpadding='12%' class='bordered'>\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t<th  scope='col'>Sr
+        No</th>\r\n\t\t<th scope='col'  width=\\\"50%\\\" style=\\\"text-align:left;\\\">Case
+        Type/Case Number/Case Year</th>\r\n\t\t<th scope='col'   width=\\\"70%\\\"
+        style=\\\"text-align:left;\\\">Petitioner Name<br/>Versus <br/>Respondent
+        Name</th>\r\n\t\t<th  scope='col' >View</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody
+        id='showList1' ></tbody>\r\n\t</table>\r\n\r\n</div>\r\n\r\n<br/>\t\r\n\r\n\r\n\r\n</div>\r\n</div>\r\n</div>\r\n</form>\r\n<p
+        id=\"back-top\"><a href=\"#top\"><span></span>&nbsp;</a></p>\r\n<script type=\"text/javascript\"
+        src=\"../js/jquery1.min.js\"></script>\r\n<script type=\"text/javascript\">\r\n$(document).ready(function()\r\n{\r\n\tnewcss();autocomoff();\r\n});\r\n$(document).ready(function(){\r\n\r\n\t//
+        hide #back-top first\r\n\t$(\"#back-top\").hide();\r\n\t\r\n\t// fade in #back-top\r\n\t$(function
+        () {\r\n\t\t$(window).scroll(function () {\r\n\t\t\tif ($(this).scrollTop()
+        > 100) {\r\n\t\t\t\t$('#back-top').fadeIn();\r\n\t\t\t} else {\r\n\t\t\t\t$('#back-top').fadeOut();\r\n\t\t\t}\r\n\t\t});\r\n\r\n\t\t//
+        scroll body to 0px on click\r\n\t\t$('#back-top a').click(function () {\r\n\t\t\t$('body,html').animate({\r\n\t\t\t\tscrollTop:
+        0\r\n\t\t\t}, 800);\r\n\t\t\treturn false;\r\n\t\t});\r\n\t});\r\n\r\n});\r\n\r\n$(function()
+        {\r\n  $(\"#case_type\").focus();\r\n});\r\n\r\n</script>\r\n<script language=\"JavaScript\"
+        src=\"../includes/validation.php\" type=\"text/javascript\"></script>\r\n<script
+        language=\"javascript\" type=\"text/javascript\">\r\n//<![CDATA[\r\n// WRITE
+        YOUR CODE HERE\r\n\r\nfunction autocomoff()\r\n{\r\ndocument.getElementById(
+        \"search_year\" ).setAttribute( \"autocomplete\",\"off\" );  \r\n}\r\n\r\n\r\n\r\n//]]>\r\n</script>\r\n<style
+        type=\"text/css\">\r\n\r\n.controlstyle { \r\n\tdisplay:none;\r\n}\r\n\r\n</style>\r\n\r\n<script
+        type=\"text/javascript\" src=\"../js/jquery.js\"></script>\r\n<script type=\"text/javascript\"
+        src=\"../includes/javascript/xmlhttp.js\"></script>\r\n<script type=\"text/javascript\"
+        src=\"../includes/javascript/combofunctions.js\"></script>\r\n<script type=\"text/javascript\"
+        src=\"../js/fluidtextresizer.js\"></script>\r\n\r\n<script type=\"text/javascript\"
+        language=\"javascript\">\r\n\r\nvar qry_file_name='s_casetype_qry.php';\r\n\r\n\r\nvar
+        state_code=\"6\";\r\nvar dist_code=\"1\";\r\nstate_code = state_code.replace(/\\s/g,'');
+        \ \r\ndist_code = dist_code.replace(/\\s/g,'');  \r\nvar court_code=\"1\";\r\ncourt_code
+        = court_code.replace(/\\s/g,'');\r\n\r\n\r\n//<![CDATA[\r\nvar mytextsizer=new
+        fluidtextresizer({\r\n\tcontrolsdiv: \"sizecontroldiv\", //id of special div
+        containing your resize controls. Enter \"\" if not defined\r\n\ttargets: [\"body\"],
+        //target elements to resize text within: [\"selector1\", \"selector2\", etc]\r\n\tlevels:
+        1, //number of levels users can magnify (or shrink) text\r\n\tpersist: \"session\",
+        //enter \"session\" or \"none\"\r\n\tanimate: 200 //animation duration of
+        text resize. Enter 0 to disable\r\n});\r\njQuery(function($){\r\n\t$(parent.document).find('a').click(function(){\r\n\t\tif(/^#(smaller|bigger|fontsize-?\\d)$/.test(this.hash)){\r\n\t\t\t$('a[href='
+        + this.hash + ']').trigger('click');\r\n\t\t} else if (/^\\s*javascript\\s*:\\s*mytextsizer\\./.test(this)){\r\n\t\t\tvar
+        fontFunction = new Function(this);\r\n\t\t\tfontFunction();\r\n\t\t}\r\n\t});\r\n});\r\n\r\n\r\n\r\nfunction
+        toggle()\r\n{\r\n\r\n\tdocument.getElementById('captcha').value='';\r\n\r\n\tdocument.getElementById('showList').style.display='none';\r\n\tdocument.getElementById('errSpan').style.display='none';\r\n\r\n\tdocument.getElementById('radP').checked=true;\r\n\tdocument.getElementById('radD').checked=false;\r\n\r\n\tdocument.getElementById('search_year').value='';\r\n\tdocument.getElementById('case_type').value=0;\r\n}\r\n\r\nfunction
+        funCourtEstChange()\r\n{\r\n\tdocument.getElementById('showList').style.display='none';\r\n\tdocument.getElementById('errSpan').style.display='none';\r\n\r\n\tdocument.getElementById('radP').checked=true;\r\n\tdocument.getElementById('radD').checked=false;\r\n\r\n\tdocument.getElementById('search_year').value='';\r\n\tdocument.getElementById('case_type').value=0;\r\n\r\n\tfillCaseType();\r\n}\r\n\r\n\r\nfunction
+        fillCaseType()\r\n{\r\n\t\r\n\r\n\tif(state_code==0 || dist_code==0 )\r\n\t{\t\t\r\n\t\tfun_clear_combo(document.getElementById('case_type'));\r\n\t\tdocument.getElementById('case_type').value=0;\r\n\t}\r\n\telse\r\n\t{\r\n\t\tvar
+        send_str=\"&state_code=\"+state_code;\r\n\t\tsend_str+=\"&dist_code=\"+dist_code;\r\n\t\tsend_str+=\"&court_code=\"+court_code;\r\n\t\tvar
+        data_list=xmlHTTP_send_post(qry_file_name,\"action_code=fillCaseType\"+send_str);\r\n\t\t//alert(\"data
+        list=\"+data_list)\r\n\r\n\t\tif(data_list.substring(0,5).toUpperCase()=='ERROR')\r\n\t\t{\t\r\n\t\t\tfun_clear_combo(document.getElementById('case_type'));\r\n\t\t\tdocument.getElementById('showList').style.display='none';\t\r\n\t\t\tdocument.getElementById('case_type').value=0;\r\n\t\t\tfunUsrErrorParam(data_list);\t\t\t\r\n\t\t}\r\n\t\telse
+        \r\n\t\t{\t\t\t\r\n\t\t\tdocument.getElementById('errSpan').style.display='none';\r\n\t\t\tfun_fill_combo(data_list,document.getElementById('case_type'));\t\t\t\r\n\t\t}\r\n\t}\r\n}\r\n\r\n\r\nfunction
+        funonReset()\r\n{\t\r\n\tdocument.getElementById('showList').style.display='none';\r\n\tdocument.getElementById('errSpan').style.display='none';\r\n\tdocument.getElementById('case_type').value=0;\t\t\r\n\tdocument.getElementById('search_year').value='';\r\n\tdocument.getElementById('radD').checked=false;\r\n\tdocument.getElementById('radP').checked=true;\r\n\trefreshCaptcha();\r\n\tdocument.getElementById('case_type').focus();\r\n}\r\n\r\nfunction
+        validate()\r\n{\r\n\t\tif(state_code== 0)\r\n\t\t{\r\n\t\t\talert(\"Please
+        Select State \");\r\n\t\t\tparent.document.getElementById('sess_state_code').focus();\r\n\t\t\treturn
+        false;\r\n\t\t}\r\n\r\n\t\tif(dist_code == 0)\r\n\t\t{\r\n\t\t\talert(\"Please
+        Select District Name\");\r\n\t\t\tparent.document.getElementById('sess_dist_code').focus();\r\n\t\t\treturn
+        false;\r\n\t\t}\r\n\t\t\r\n\t\r\n\r\n\t\tif(document.getElementById('case_type').value
+        == 0)\r\n\t\t{\r\n\t\t\talert(\"Please Select Case Type\");\r\n\t\t\tdocument.getElementById('case_type').focus();\r\n\t\t\treturn
+        false;\r\n\t\t}\r\n\r\n\r\n\t\tvar d = new Date();\r\n\t\tvar curr_year=d.getFullYear();\r\n\r\n\t\tvar
+        searchyear=document.getElementById('search_year').value;\r\n\r\n\t\tif(searchyear!=\"\")\r\n\t\t{\r\n\t\t\tif(searchyear.length
+        <4 || searchyear.length >4 )\r\n\t\t\t{\r\n\t\t\t\talert(\"Please Enter Year
+        in 4 digit\");\r\n\t\t\t\tdocument.getElementById('search_year').value=\"\";\r\n\t\t\t\tdocument.getElementById('search_year').focus();\r\n\t\t\t\treturn
+        false;\r\n\t\t\t}\r\n\r\n\t\t\tif(searchyear<1801|| searchyear>curr_year)\r\n\t\t\t{\r\n\t\t\t\talert(\"Please
+        Enter Year between 1901 to  \"+curr_year);\r\n\t\t\t\tdocument.getElementById('search_year').value=\"\";\r\n\t\t\t\tdocument.getElementById('search_year').focus();\r\n\t\t\t\treturn
+        false;\r\n\t\t\t}\r\n\t\t\tif(document.getElementById('search_year').value
+        > curr_year)\r\n\t\t\t{\r\n\t\t\t\talert(\"Year Should Not Greater than Current
+        Year\");\r\n\t\t\t\tdocument.getElementById('search_year').value=\"\";\r\n\t\t\t\tdocument.getElementById('search_year').focus();\r\n\t\t\t\treturn
+        false;\r\n\t\t\t}\r\n\r\n\t\t\tif(isNaN(document.getElementById('search_year').value)
+        == true)\r\n\t\t\t{\r\n\t\t\t\talert(\"Please Enter Numeric Value\");\r\n\t\t\t\tdocument.getElementById('search_year').value=\"\";\r\n\t\t\t\tdocument.getElementById('search_year').focus();\r\n\t\t\t\treturn
+        false;\r\n\t\t\t}\r\n\r\n\t\t\tif(checkInteger(document.getElementById('search_year').value)==
+        false)\r\n\t\t\t{\r\n\t\t\t\talert(\" Please Enter Numeric Value\");\r\n\t\t\t\tdocument.getElementById('search_year').value=\"\";\r\n\t\t\t\tdocument.getElementById('search_year').focus();\r\n\t\t\t\treturn
+        false;\r\n\t\t\t}\r\n\t\t}\r\n\t\t\r\nif(document.getElementById('captcha').value
+        == \"\")\r\n\t{\r\n\t\talert(\"Please Enter Captcha Text\" );\t\t\r\n\t\tdocument.getElementById('captcha').focus();\r\n\t\treturn
+        false;\r\n\t}\t\r\n\t\tdocument.getElementById('errSpan').style.display='none';\r\n\tdocument.getElementById('showList').style.display=\"none\";\r\n\t\tdocument.getElementById('divWait').style.display='block';\r\n\tdocument.getElementById('waitmsg').focus();\r\n\t\r\n\t
+        setTimeout(function(){ showRecords(); }, 1000);\r\n}\r\n\r\nfunction showRecords()\r\n{\r\n\tvar
+        case_type=document.getElementById('case_type').value;\r\n\tvar search_year=document.getElementById('search_year').value;\r\n\r\n\tdocument.getElementById('errSpan').style.display='none';\r\n\r\n\tdocument.getElementById('showList').style.display='none';\r\n\t\t\r\n\tif(document.getElementById('radP').checked==true)\r\n\t{\r\n\t\tvar
+        f='Pending';\r\n\t}\r\n\tif(document.getElementById('radD').checked==true)\r\n\t{\r\n\t\tvar
+        f='Disposed';\r\n\t}\r\n\r\n\r\n    var send_str=\"&state_code=\"+state_code;\r\n\t
+        send_str +=\"&dist_code=\"+dist_code;\r\n\tsend_str+=\"&f=\"+f;\r\n\tsend_str+=\"&case_type=\"+case_type;\r\n\tsend_str+=\"&search_year=\"+search_year;\r\n
+        \  \t\tsend_str+=\"&captcha=\"+document.getElementById('captcha').value;\r\n\tsend_str
+        +=\"&court_code=\"+court_code;\r\n\r\n\t\tvar data_list= xmlHTTP_send_post(qry_file_name,\"action_code=showRecords\"+send_str);\r\n\t\t//alert(data_list)\r\n\t\tdata_list=escapeHtml(data_list);\r\n\r\n\t\t\t\t\t\t\trefreshCaptcha();\r\n\r\n\r\n\t\t\tif(data_list.match(\"ERROR\"))\r\n\t\t\t{\r\n\t\t\t\tdata_list
+        = data_list.replace(/\\s/g,'');  \r\n\t\t\t}\t\r\n\t\t\t\r\n\t\t\tif(data_list=='CONN_ERROR')\r\n\t\t\t{\r\n\t\t\t\tdocument.getElementById('radP').checked=true;\r\n\t\t\t\tdocument.getElementById('radD').checked=false;\r\n\r\n\t\t\t\tdocument.getElementById('showList').style.display='none';\r\n\r\n\t\t\t\tfunConnError();\r\n\t\t\t\tdocument.getElementById('divWait').style.display='none';\t\r\n\t\t\t\t\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\telse
+        if(data_list.substring(0,5).toUpperCase()=='ERROR')\r\n\t\t\t{\r\n\t\t\t\tdocument.getElementById('radP').checked=true;\r\n\t\t\t\tdocument.getElementById('radD').checked=false;\r\n\r\n\t\t\t\tdocument.getElementById('showList').style.display='none';\r\n\r\n\t\t\t\tfunUsrErrorParam(data_list);\r\n\t\t\t\tdocument.getElementById('divWait').style.display='none';\t\r\n\t\t\t}\r\n\t\t\t\telse
+        if(data_list=='Invalid Captcha')\r\n\t\t\t\t{\r\n\t\t\t\t\tdocument.getElementById('showList').style.display=\"none\";\t\t\t\t\r\n\t\t\t\t\t\tdocument.getElementById('divWait').style.display='none';\r\n\t\t\t\t\t\tdocument.getElementById('errSpan').style.display=\"block\";\r\n\t\t\t\t\t\tvar
+        val=\"Invalid Captcha\";\r\n\t\t\t\t\t\tdocument.getElementById('txtmsg').value=val;\r\n\t\t\t\t\t\tdocument.getElementById(\"txtmsg\").title
+        =val;\r\n\t\t\t\t\t\tdocument.getElementById('txtmsg').focus();\r\n\t\t\t\t\t\tdocument.getElementById('captcha').value='';\r\n\t\t\t\t}\r\n\t\t\telse
+        if(data_list=='')\r\n\t\t\t{\t\t\t\r\n\t\t\t\tdocument.getElementById('showList').style.display=\"none\";\t\t\r\n\t\t\t\tdocument.getElementById('divWait').style.display='none';\t\t\t\r\n\t\t\t\tdocument.getElementById('divWait').style.display='none';\r\n\t\t\t\tdocument.getElementById('errSpan').style.display=\"block\";\r\n\t\t\t\tvar
+        val=\"Record Not Found\";\r\n\t\t\t\tdocument.getElementById('txtmsg').value=val;\r\n\t\t\t\tdocument.getElementById(\"txtmsg\").title
+        =val;\r\n\t\t\t\tdocument.getElementById('txtmsg').focus();\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t{\t\r\n\t\t\t\tdocument.getElementById('errSpan').style.display=\"none\";\r\n\t\t\t\tdisplayRecords(data_list);\r\n\t\t\t\tdocument.getElementById('showList').style.display='';\r\n\t\t\t\tdocument.getElementById('divWait').style.display='none';\r\n\t\t\t\tdocument.getElementById('totmsg').focus();\r\n\t\t\t}\r\n\r\n}\r\n\r\nfunction
+        displayRecords(data_listP)\r\n{\r\n\t\r\n\tvar data_listP_arr=new Array();\r\n\tvar
+        data_listP_a=new Array();\r\n\tvar a='';\r\n\tvar j=0;\r\n\tdata_listP_arr=data_listP.split('##');\r\n\t//estArr=data_listP_arr[0].split('@#');\r\n\t//estabTotalArr=estArr[1].split('~');\r\n\t//estabTotal=estabTotalArr[0];\r\n\r\n\tvar
+        setData='';\r\n\tvar setData1='';\r\n\tvar temp='';\r\n\tvar total_rec=data_listP_arr.length-1;\r\n\r\n\tif(total_rec==0)\r\n\t{\r\n\tsetData1+=\"<tr><td><div
+        style='text-align:center;width:100%;color:#ff0000;font-weight:bold;'><h2 class='h2class'>Record
+        Not Found&nbsp;&nbsp;</h2></div></td></tr>\";\r\n\tdocument.getElementById('thead').style.display=\"none\";\r\n\trefreshCaptcha();\r\n\t}\r\n\t\r\n\tif(total_rec>0)\r\n\t{\r\n\r\n\t\t\r\n\tsetData1+=\"<tr><td><div
+        style='text-align:center;width:100%;color:#ff0000;font-weight:bold;'><h2 class='h2class'>Total
+        Number of Cases&nbsp;:&nbsp;\"+total_rec+\"</h2></div></td></tr>\";\r\n\r\n\t\tdocument.getElementById('thead').style.display=\"\";\r\n\t}\r\n\r\n\tfor(var
+        k=0;k<total_rec;k++)\r\n\t{\r\n\r\n\t\ta=data_listP_arr[parseInt(k)];\r\n\t\tj=parseInt(k)+1;\r\n\t\tdata_listP_a=a.split('~');\r\n\r\n\t\r\n\r\n\r\n\t\tsetData+='<tr><td
+        valign=\\\"top\\\">'+j+'</td>';\r\n\t\tsetData+=\"<td width='25%' valign=\\\"top\\\">\"+data_listP_a[1]+\"</td>\";\r\n\t\tsetData+=\"<td><h2
+        class='h2class'>\"+data_listP_a[2]+\"</h2></td>\";\r\n\t\tsetData+=\"<td width='10%'
+        \ valign=\\\"top\\\";><a href='#' onclick=\\\"viewHistory('\"+data_listP_a[0]+\"','\"+data_listP_a[3]+\"','\"+data_listP_a[4]+\"','\"+data_listP_a[7]+\"')\\\"
+        >View</a><span style='font-size:0.00000000001px; color:#fff;'>details for
+        case number \"+data_listP_a[1]+\"</span></td>\";\r\n\t\t\r\n\t}\r\n\tdocument.getElementById('showList1').innerHTML=setData;\r\n\tdocument.getElementById('showList2').innerHTML=setData1;\r\n\tdocument.getElementById('showList').style.display='';\r\n}\r\n\r\nfunction
+        viewHistory(case_no,cino,sel_court_code,token)\r\n{\r\n\tdocument.getElementById('firstpage').style.display='none';\r\n\r\n\tvar
+        send_str=\"&state_code=\"+state_code;\r\n\t send_str +=\"&dist_code=\"+dist_code;\r\n\tsend_str+=\"&cino=\"+cino;\r\n\tsend_str+=\"&token=\"+token;\r\n\tsend_str+=\"&case_no=\"+case_no;\r\n\tsend_str+=\"&appFlag=\"+\"\";\r\n\tsend_str
+        +=\"&court_code=\"+court_code;\r\n\r\n\t//alert('send_str='+send_str)\r\n\tvar
+        data_list= xmlHTTP_send_post('o_civil_case_history.php',send_str);\r\n\tdocument.getElementById('back_top').style.display='';\r\n\tdocument.getElementById('back_bottom').style.display='';\r\n\tdocument.getElementById('secondpage').innerHTML=data_list;\r\n\r\n\tdocument.getElementById('firstpage').style.display='none';\r\n\tnewcss();\r\n}\r\n\r\n\r\nfunction
+        funBack()\r\n{\r\n\tdocument.getElementById('firstpage').style.display='';\r\n\tdocument.getElementById('back_top').style.display='none';\r\n\tdocument.getElementById('back_bottom').style.display='none';\r\n\tdocument.getElementById('secondpage').innerHTML='';\r\n\tdocument.getElementById('captcha').value='';\r\n\trefreshCaptcha();\r\n}\r\nfunction
+        refreshCaptcha()\r\n{\r\n\tvar captchaObj=document.getElementsByName('captcha');\r\n\tcaptchaObj[0].value='';\r\n\tcaptchaObj[0].focus();\r\n\tif
+        (typeof window.captcha_image_audioObj !== 'undefined') captcha_image_audioObj.refresh();
+        document.getElementById('captcha_image').src = '../securimage/securimage_show.php?'
+        + Math.random(); this.blur(); \r\n}\r\n\r\nfunction playAudioInline(sesscode)\r\n{\r\n\t\r\n\r\nvar
+        myarray=sesscode.split('');\r\nvar audio1 = document.getElementById('audio1');\r\nvar
+        audio2 = document.getElementById('audio2');\r\nvar audio3 = document.getElementById('audio3');\r\nvar
+        audio4 = document.getElementById('audio4');\r\n\r\nfor(i=0;i<myarray.length;i++)\r\n{\r\n\r\n\r\n\t
+        audio1.src='audio/'+myarray[0]+'.mp3';\r\n\t audio1.load();      \r\n\t  audio2.pause();\r\n\t
+        \ audio3.pause();\r\n\t  audio4.pause();\r\n\t   audio1.play();\r\n\t \r\n\t\r\n\taudio1.onended
+        = function() {\r\n\t\t\r\n\taudio2.src='audio/'+myarray[1]+'.mp3';\r\n\r\n\t
+        audio2.load();      \r\n\t audio1.pause();\r\n\t audio3.pause();\r\n\t audio4.pause();\r\n\t
+        audio2.play();\r\n\t\r\n\t}\r\n\t\r\n\t\r\n\t\taudio2.addEventListener(\"ended\",
+        function() {\r\n\taudio3.src='audio/'+myarray[2]+'.mp3';\r\n\t audio3.load();
+        \t  \r\n\t audio1.pause();\r\n\t audio2.pause();\r\n\t audio4.pause();\r\n\t
+        \ audio3.play();\r\n\t\t\r\n\t\t});\r\n\t\r\n\r\n\taudio3.addEventListener(\"ended\",
+        function() {\r\n\taudio4.src='audio/'+myarray[3]+'.mp3';\r\n\taudio4.load();
+        \r\n\taudio1.pause();\r\n\taudio2.pause();\r\n\taudio3.pause();\r\n     audio4.play();\r\n});\r\n\t\r\n\t\r\n\r\n}\r\n\r\n}\r\n\r\nfunction
+        play()\r\n{\r\n\r\nvar data_list= xmlHTTP_send_post('audiocaptcha.php');\r\nplayAudioInline(data_list)\r\n}\r\n\r\n//function
+        viewBusiness(dist_code,n_dt,case_number,state_code,businessStatus,todays_date1,court_no)\r\nfunction
+        viewBusiness(court_code,dist_code,n_dt,case_number,state_code,businessStatus,todays_date1,court_no,srno)\r\n\r\n{\r\n\t\r\n\tvar
+        send_str=\"&dist_code=\"+dist_code;\r\n\tsend_str+=\"&nextdate1=\"+n_dt;\r\n\tsend_str+=\"&case_number1=\"+case_number;\r\n\tsend_str
+        +=\"&state_code=\"+state_code;\r\n\tsend_str+=\"&disposal_flag=\"+businessStatus;\r\n\tsend_str+=\"&businessDate=\"+todays_date1;\r\n\tsend_str+=\"&court_no=\"+court_no;\r\n\tsend_str+=\"&appFlag=\"+\"\";\r\n\tsend_str
+        +=\"&court_code=\"+court_code;\t\r\n\tsend_str+=\"&srno=\"+srno;\r\n\r\n\tvar
+        data_list= xmlHTTP_send_post('s_show_business.php',send_str);\r\n\t\r\n\tdocument.getElementById('thirdpage').innerHTML=data_list;\r\n\t\r\n\tdocument.getElementById('secondpage').style.display='none';\r\n\tdocument.getElementById('back_bottom').style.display='none';\r\n\tdocument.getElementById('back_top').style.display='none';\r\n\tdocument.getElementById('back_business').style.display='';\r\n\tnewcss();\r\n\r\n}\r\n\r\nfunction
+        viewAuth(dist_code,state_code,case_number)\r\n{\r\n\tvar app_cs_no=document.getElementById('spanappView').text;\r\n\r\n\t\r\n\tvar
+        send_str=\"dist_code=\"+dist_code;\r\n\tsend_str+=\"&case_number1=\"+case_number;\r\n\tsend_str+=\"&state_code=\"+state_code;\r\n\tsend_str+=\"&app_cs_no=\"+app_cs_no;\r\n\tsend_str+=\"&appFlag=\"+\"\";\r\n\r\n\t\r\n\tvar
+        data_list= xmlHTTP_send_post('s_show_app.php',send_str);\r\n\t\r\n\tdocument.getElementById('fourthpage').innerHTML=data_list;\r\n\r\n\tdocument.getElementById('secondpage').style.display='none';\r\n\tdocument.getElementById('back_bottom').style.display='none';\r\n\tdocument.getElementById('back_top').style.display='none';\r\n\tdocument.getElementById('back_business').style.display='none';\r\n\tdocument.getElementById('back_auth').style.display='';\r\n\tnewcss();\r\n\r\n}\r\n\r\n\r\nfunction
+        funShowAuth()\r\n{\r\n\tdocument.getElementById('secondpage').style.display='';\r\n\tdocument.getElementById('back_top').style.display='';\r\n\tdocument.getElementById('back_bottom').style.display='';\r\n\tdocument.getElementById('fourthpage').innerHTML='';\r\n\tdocument.getElementById('back_business').style.display='none';\r\n\tdocument.getElementById('back_auth').style.display='none';\r\n}\r\n\r\n\r\nfunction
+        funBackBusiness()\r\n{\r\n\tdocument.getElementById('secondpage').style.display='';\r\n\tdocument.getElementById('back_top').style.display='';\r\n\tdocument.getElementById('back_bottom').style.display='';\r\n\tdocument.getElementById('thirdpage').innerHTML='';\r\n\tdocument.getElementById('back_business').style.display='none';\r\n}\r\n\r\n\r\nfunction
+        newcss()\r\n{\r\n\tif (parent.document.getElementById(\"txt_css\").value=='black')\r\n\t{\r\n\t\tparent.applycssblack();\r\n\t}\r\n\telse
+        if (parent.document.getElementById(\"txt_css\").value=='white')\r\n\t{\r\n\t\tparent.applycsswhite();\r\n\t}\r\n}\r\n\r\n
+        //]]>\r\n</script>\r\n<script type=\"text/javascript\">CsrfMagic.end();</script></body>\r\n</html>\r\n"
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - max-age=86400
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '30949'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Sat, 10 Aug 2024 12:27:38 GMT
+      Expect-CT:
+      - max-age=3600, enforce
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin
+      Server:
+      - ''
+      Set-Cookie:
+      - PHPSESSID=50c7n32ga3fkegkc5qejj52k9q; path=/; domain=.hcservices.ecourts.gov.in;
+        secure; HttpOnly; SameSite=Strict
+      - JSESSION=66568181; Path=/hcservices; SameSite=Strict; HttpOnly; Secure
+      - JSESSION=11419569; Path=/ecourtindiaHC; SameSite=Strict; HttpOnly; Secure
+      Strict-Transport-Security:
+      - '"max-age=15768000; includeSubDomains"'
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content_security_policy:
+      - script-src 'self'; object-src 'self'; img-src 'self'
+      x-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Cookie:
+      - JSESSION=11419569; PHPSESSID=50c7n32ga3fkegkc5qejj52k9q
+      user-agent:
+      - Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0
+    method: GET
     uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/securimage/securimage_show.php
   response:
     body:
       string: !!binary |
         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
-        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
+        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
+        nscAAAAASUVORK5CYII=
     headers:
       Cache-Control:
       - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
@@ -75,7 +418,7 @@ interactions:
       Content-Type:
       - image/png
       Date:
-      - Sat, 10 Aug 2024 09:38:12 GMT
+      - Sat, 10 Aug 2024 12:27:38 GMT
       Expect-CT:
       - max-age=3600, enforce
       Expires:
@@ -90,11 +433,6 @@ interactions:
       - strict-origin
       Server:
       - ''
-      Set-Cookie:
-      - PHPSESSID=e9pkv3hugc37k3di9ttj68rg89; path=/; domain=.hcservices.ecourts.gov.in;
-        secure; HttpOnly; SameSite=Strict
-      - JSESSION=68260809; Path=/hcservices; SameSite=Strict; HttpOnly; Secure
-      - JSESSION=59420318; Path=/ecourtindiaHC; SameSite=Strict; HttpOnly; Secure
       Strict-Transport-Security:
       - '"max-age=15768000; includeSubDomains"'
       Transfer-Encoding:
@@ -111,7 +449,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: action_code=showRecords&state_code=6&dist_code=1&court_code=1&__csrf_magic=sid%3Ae2b2b2ae5e125f3174066a01e182acd472a256ea%2C1723269931&captcha=ztuvw&f=Pending&case_type=49&search_year=2018
+    body: action_code=showRecords&state_code=6&dist_code=1&court_code=1&__csrf_magic=sid%3Ae2b2b2ae5e125f3174066a01e182acd472a256ea%2C1723269931&captcha=spr2a&f=Pending&case_type=49&search_year=2018
     headers:
       Accept:
       - '*/*'
@@ -124,23 +462,23 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - JSESSION=59420318; PHPSESSID=e9pkv3hugc37k3di9ttj68rg89
-      User-Agent:
-      - python-requests/2.32.3
+      - JSESSION=11419569; PHPSESSID=50c7n32ga3fkegkc5qejj52k9q
+      user-agent:
+      - Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0
     method: POST
     uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_casetype_qry.php
   response:
     body:
       string: "\uFEFF204900031422018~AB/3142/2018~ANURAG TANKHA<br/>Versus<br/>THE
-        STATE OF ASSAM~GAHC010225502018~1~5~Principal Seat at Guwahati~dc5ee4797b8c4011739bc067996ae523c95f7c74d996601411440c052fb89bee##204900027272018~AB/2727/2018~BANWARI
+        STATE OF ASSAM~GAHC010225502018~1~5~Principal Seat at Guwahati~2ec8e7bfcb505fe212bcb19ba657b37260a0e126ea6eead8833cc7bf23b65a86##204900027272018~AB/2727/2018~BANWARI
         LAL PAREEK<br/>Versus<br/>THE STATE OF ASSAM~GAHC010195742018~1~5~Principal
-        Seat at Guwahati~dc5ee4797b8c4011739bc067996ae523c95f7c74d996601411440c052fb89bee##204900024182018~AB/2418/2018~SHRI
+        Seat at Guwahati~2ec8e7bfcb505fe212bcb19ba657b37260a0e126ea6eead8833cc7bf23b65a86##204900024182018~AB/2418/2018~SHRI
         AMARDEEP PAUL<br/>Versus<br/>THE STATE OF ASSAM~GAHC010172842018~1~5~Principal
-        Seat at Guwahati~dc5ee4797b8c4011739bc067996ae523c95f7c74d996601411440c052fb89bee##204900010242018~AB/1024/2018~NARAYAN
+        Seat at Guwahati~2ec8e7bfcb505fe212bcb19ba657b37260a0e126ea6eead8833cc7bf23b65a86##204900010242018~AB/1024/2018~NARAYAN
         PATANGIA<br/>Versus<br/>THE STATE OF ASSAM~GAHC010074112018~1~5~Principal
-        Seat at Guwahati~dc5ee4797b8c4011739bc067996ae523c95f7c74d996601411440c052fb89bee##204900009102018~AB/910/2018~SANTOSH
+        Seat at Guwahati~2ec8e7bfcb505fe212bcb19ba657b37260a0e126ea6eead8833cc7bf23b65a86##204900009102018~AB/910/2018~SANTOSH
         KR. CHOUDHURY<br/>Versus<br/>THE STATE OF ASSAM~GAHC010066092018~1~5~Principal
-        Seat at Guwahati~dc5ee4797b8c4011739bc067996ae523c95f7c74d996601411440c052fb89bee##"
+        Seat at Guwahati~2ec8e7bfcb505fe212bcb19ba657b37260a0e126ea6eead8833cc7bf23b65a86##"
     headers:
       Cache-Control:
       - no-store, no-cache, must-revalidate
@@ -152,7 +490,7 @@ interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Sat, 10 Aug 2024 09:38:13 GMT
+      - Sat, 10 Aug 2024 12:27:39 GMT
       Expect-CT:
       - max-age=3600, enforce
       Expires:
@@ -166,7 +504,7 @@ interactions:
       Server:
       - ''
       Set-Cookie:
-      - PHPSESSID=e9pkv3hugc37k3di9ttj68rg89; path=/; domain=.hcservices.ecourts.gov.in;
+      - PHPSESSID=50c7n32ga3fkegkc5qejj52k9q; path=/; domain=.hcservices.ecourts.gov.in;
         secure; HttpOnly; SameSite=Strict
       Strict-Transport-Security:
       - '"max-age=15768000; includeSubDomains"'
@@ -182,7 +520,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: state_code=6&dist_code=1&court_code=1&cino=GAHC010225502018&token=dc5ee4797b8c4011739bc067996ae523c95f7c74d996601411440c052fb89bee&case_no=204900031422018
+    body: state_code=6&dist_code=1&court_code=1&cino=GAHC010225502018&token=2ec8e7bfcb505fe212bcb19ba657b37260a0e126ea6eead8833cc7bf23b65a86&case_no=204900031422018
     headers:
       Accept:
       - '*/*'
@@ -195,9 +533,9 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - JSESSION=59420318; PHPSESSID=e9pkv3hugc37k3di9ttj68rg89
-      User-Agent:
-      - python-requests/2.32.3
+      - JSESSION=11419569; PHPSESSID=50c7n32ga3fkegkc5qejj52k9q
+      user-agent:
+      - Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0
     method: POST
     uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/o_civil_case_history.php
   response:
@@ -459,7 +797,7 @@ interactions:
       Content-Type:
       - text/html; charset=UTF-8
       Date:
-      - Sat, 10 Aug 2024 09:38:13 GMT
+      - Sat, 10 Aug 2024 12:27:39 GMT
       Expect-CT:
       - max-age=3600, enforce
       Expires:
@@ -473,7 +811,7 @@ interactions:
       Server:
       - ''
       Set-Cookie:
-      - PHPSESSID=e9pkv3hugc37k3di9ttj68rg89; path=/; domain=.hcservices.ecourts.gov.in;
+      - PHPSESSID=50c7n32ga3fkegkc5qejj52k9q; path=/; domain=.hcservices.ecourts.gov.in;
         secure; HttpOnly; SameSite=Strict
       Strict-Transport-Security:
       - '"max-age=15768000; includeSubDomains"'
@@ -502,9 +840,9 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - JSESSION=59420318; PHPSESSID=e9pkv3hugc37k3di9ttj68rg89
-      User-Agent:
-      - python-requests/2.32.3
+      - JSESSION=11419569; PHPSESSID=50c7n32ga3fkegkc5qejj52k9q
+      user-agent:
+      - Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0
     method: POST
     uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_show_business.php
   response:
@@ -538,7 +876,7 @@ interactions:
       Content-Type:
       - text/html; charset=UTF-8
       Date:
-      - Sat, 10 Aug 2024 09:38:15 GMT
+      - Sat, 10 Aug 2024 12:27:41 GMT
       Expect-CT:
       - max-age=3600, enforce
       Expires:
@@ -578,9 +916,9 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - JSESSION=59420318; PHPSESSID=e9pkv3hugc37k3di9ttj68rg89
-      User-Agent:
-      - python-requests/2.32.3
+      - JSESSION=11419569; PHPSESSID=50c7n32ga3fkegkc5qejj52k9q
+      user-agent:
+      - Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0
     method: POST
     uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_show_business.php
   response:
@@ -614,7 +952,7 @@ interactions:
       Content-Type:
       - text/html; charset=UTF-8
       Date:
-      - Sat, 10 Aug 2024 09:38:15 GMT
+      - Sat, 10 Aug 2024 12:27:42 GMT
       Expect-CT:
       - max-age=3600, enforce
       Expires:
@@ -654,9 +992,9 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - JSESSION=59420318; PHPSESSID=e9pkv3hugc37k3di9ttj68rg89
-      User-Agent:
-      - python-requests/2.32.3
+      - JSESSION=11419569; PHPSESSID=50c7n32ga3fkegkc5qejj52k9q
+      user-agent:
+      - Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0
     method: POST
     uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_show_business.php
   response:
@@ -690,7 +1028,7 @@ interactions:
       Content-Type:
       - text/html; charset=UTF-8
       Date:
-      - Sat, 10 Aug 2024 09:38:16 GMT
+      - Sat, 10 Aug 2024 12:27:42 GMT
       Expect-CT:
       - max-age=3600, enforce
       Expires:
@@ -730,9 +1068,9 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - JSESSION=59420318; PHPSESSID=e9pkv3hugc37k3di9ttj68rg89
-      User-Agent:
-      - python-requests/2.32.3
+      - JSESSION=11419569; PHPSESSID=50c7n32ga3fkegkc5qejj52k9q
+      user-agent:
+      - Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0
     method: POST
     uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_show_business.php
   response:
@@ -766,7 +1104,7 @@ interactions:
       Content-Type:
       - text/html; charset=UTF-8
       Date:
-      - Sat, 10 Aug 2024 09:38:16 GMT
+      - Sat, 10 Aug 2024 12:27:43 GMT
       Expect-CT:
       - max-age=3600, enforce
       Expires:
@@ -806,9 +1144,9 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - JSESSION=59420318; PHPSESSID=e9pkv3hugc37k3di9ttj68rg89
-      User-Agent:
-      - python-requests/2.32.3
+      - JSESSION=11419569; PHPSESSID=50c7n32ga3fkegkc5qejj52k9q
+      user-agent:
+      - Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0
     method: POST
     uri: https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/s_show_business.php
   response:
@@ -842,7 +1180,7 @@ interactions:
       Content-Type:
       - text/html; charset=UTF-8
       Date:
-      - Sat, 10 Aug 2024 09:38:17 GMT
+      - Sat, 10 Aug 2024 12:27:43 GMT
       Expect-CT:
       - max-age=3600, enforce
       Expires:
@@ -878,7 +1216,7 @@ interactions:
       Connection:
       - keep-alive
       Cookie:
-      - JSESSION=59420318; PHPSESSID=e9pkv3hugc37k3di9ttj68rg89
+      - JSESSION=11419569; PHPSESSID=50c7n32ga3fkegkc5qejj52k9q
       User-Agent:
       - python-requests/2.32.3
     method: GET
@@ -2213,7 +2551,7 @@ interactions:
       Content-Type:
       - application/pdf
       Date:
-      - Sat, 10 Aug 2024 09:38:17 GMT
+      - Sat, 10 Aug 2024 12:27:43 GMT
       Expect-CT:
       - max-age=3600, enforce
       Expires:

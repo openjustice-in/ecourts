@@ -1,4 +1,6 @@
 ecourts.db
+orders/
+captcha.png
 tmp/
 TASK.md
 coverage.lcov

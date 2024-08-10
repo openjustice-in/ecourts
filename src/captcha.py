@@ -20,7 +20,7 @@ class Captcha:
     )
     SUFFIX = ".png"
 
-    def __init__(self, session=None, retry=3):
+    def __init__(self, session=None, retry=100):
         self.session = session
         self.retry = retry
 
@@ -28,14 +28,19 @@ class Captcha:
         if self.session == None:
             raise ValueError("Session object is required")
         while self.retry > 0:
-            captcha = self.session.get(self.URL)
+            captcha = self.session.get(self.URL, headers={
+                "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
+            })
 
-            captcha.raise_for_status()
+            if captcha.status_code != 200:
+                continue
             with tempfile.NamedTemporaryFile(suffix=self.SUFFIX, delete=False) as f:
                 f.write(captcha.content)
                 f.close()
                 try:
-                    return self.decaptcha(f.name)
+                    res = self.decaptcha(f.name)
+                    self.retry = 100
+                    return res
                 except CaptchaError:
                     if self.retry > 0:
                         self.retry -= 1

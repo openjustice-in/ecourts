@@ -1,0 +1,60 @@
+!!python/object:entities.case.Case
+bench: Single Bench
+case_number: null
+case_status: CASE DISPOSED
+case_type: HCP
+category: SB HABEAS CORPUS PETITION ( 107 )
+cnr_number: JKHC020091782015
+coram: 1153HON'BLE MR. JUSTICE RAMALINGAM SUDHAKAR
+decision_date: 2016-04-22
+district: null
+filing_date: 2015-10-29
+filing_number: 17594/2015
+fir: null
+first_hearing_date: 2016-04-22
+hearings:
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1153'
+  date: 2016-04-22
+  details: null
+  judge: HON'BLE MR. JUSTICE RAMALINGAM SUDHAKAR
+  next_date: null
+  purpose: Disposed
+  srno: 0
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '0'
+  date: null
+  details: null
+  judge: HON'BLE MR. JUSTICE RAMALINGAM SUDHAKAR
+  next_date: 2016-04-22
+  purpose: FOR ADMISSION After Notice
+  srno: 1
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Order Number
+  court_no: '0'
+  date: null
+  details: null
+  judge: Order on
+  next_date: null
+  purpose: Order Details
+  srno: 1
+judicial: HABEUS CORPUS PETITION (HCP)
+nature_of_disposal: --
+not_before_me: null
+objections: []
+orders: []
+petitioners:
+- !!python/object:entities.party.Party
+  advocate: Advocate- A H KAZMI
+  name: HAKAM SHAH
+registration_date: 2015-10-29
+registration_number: 27/2015
+respondents:
+- !!python/object:entities.party.Party
+  advocate: null
+  name: STATE TH.HOME DEPTT.AND ORS.
+state: null
+sub_category: null
+token: null

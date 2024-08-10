@@ -17,7 +17,6 @@ class Storage:
     def __init__(self, filename="ecourts.db"):
         self.filename = filename
         self.conn = sqlite3.connect(self.filename)
-        self.conn.row_factory = sqlite3.Row
         self.cursor = self.conn.cursor()
         self.cursor.execute("CREATE TABLE IF NOT EXISTS case_types (value JSON)")
         self.cursor.execute(
@@ -87,6 +86,7 @@ class Storage:
                 "SELECT * FROM cases WHERE json_extract(value, '$.cnr_number') = ?", (case.cnr_number,)
             ).fetchone()
             if search_result:
+                # TODO: Smart merge somehow to avoid overwriting existing extra fields
                 self.cursor.execute(
                     "UPDATE cases SET value = ? WHERE json_extract(value, '$.cnr_number') = ?", (json.dumps(case.json() | extra_fields, default=str), case.cnr_number)
                 )
@@ -95,3 +95,7 @@ class Storage:
                     "INSERT INTO cases VALUES (?, ?, ?)", (court.state_code, court.court_code or "1", json.dumps(case.json() | extra_fields, default=str))
                 )
         self.conn.commit()
+
+    def getCases(self):
+        for (state_code, court_code, value) in self.conn.execute("SELECT state_code, court_code, value FROM cases"):
+            yield json.loads(value) | {"state_code": state_code, "court_code": court_code}

@@ -3,6 +3,7 @@ import requests
 from captcha import Captcha, CaptchaError
 from collections.abc import Iterator
 from tempfile import mkstemp
+import time
 from urllib.parse import urlencode
 from entities import Court, CaseType,Case, Hearing, Order, ActType
 from entities.hearing import UnexpandableHearing
@@ -25,9 +26,6 @@ class ECourt:
         self.court = court
         self.captcha = Captcha(self.session)
 
-    def enableDebug(self):
-        self.captcha.debug = True
-
     def url(self, path, queryParams={}):
         if len(queryParams) > 0:
             return self.BASE_URL + path + "?" + urlencode(queryParams)
@@ -49,26 +47,38 @@ class ECourt:
                 if csrf:
                     params |= self.CSRF_MAGIC_PARAMS
 
-                retries = 5
+                retries = 15
 
                 while retries > 0:
-                    extra_params = func(self, *args, **kwargs) or {}
-                    if len(extra_params) == 0:
-                        params |= kwargs
-                    else:
-                        params |= extra_params
                     try:
-                        response = self.session.post(self.url(path), data=params, allow_redirects=False)
+                        extra_params = func(self, *args, **kwargs) or {}
+                        if len(extra_params) == 0:
+                            params |= kwargs
+                        else:
+                            params |= extra_params
+                        if 'captcha' in params and params['captcha'] == None:
+                            breakpoint()
+                        response = self.session.post(self.url(path), data=params, allow_redirects=False, timeout=(5, 10))
+
+                        # , headers={
+                        #     "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
+                        # })
                         self.validate_response(response)
                         if response.status_code == 302 and response.headers['location'].startswith("errormsg"):
                             raise ValueError("Error: " + response.headers['location'])
+                        response.raise_for_status()
                         retries = 0
-                    except (CaptchaError,ValueError) as e:
+                    except (CaptchaError,ValueError, requests.exceptions.Timeout, requests.exceptions.ConnectionError) as e:
+                        time.sleep(1)
                         retries -= 1
                         if retries == 0:
-                            raise Exception("Attemped 5 Retries, still failed")
+                            raise Exception("Attemped 10 Retries, still failed")
+                    except (requests.exceptions.HTTPError) as e:
+                        time.sleep(5)
+                        retries -= 1
+                        if retries == 0:
+                            raise Exception("Attemped 10 Retries, still failed")
                 
-                response.raise_for_status()
                 response.encoding = "utf-8-sig"
                 return response.text
 
@@ -101,7 +111,8 @@ class ECourt:
         params = {
             "case_number1": case.case_number,
         } | hearing.expandParams()
-        hearing.details = self._get_hearing_details(**params)
+        from parsers.hearing_details import parse_hearing_details
+        hearing.details = parse_hearing_details(self._get_hearing_details(**params))
 
     def downloadOrder(self, order: Order, court_case: Case, filename: str):
         # display_pdf.php?filename, caseno=AB/3142/2018 | cCode=1 | appFlag= | cino=GAHC010225502018 |state_code=6
@@ -138,6 +149,9 @@ class ECourt:
         return r
 
     def CaseType(self, case_type:str, status:str, year: int = None):
+        url = self.url(f"/cases/s_casetype.php?state_cd={self.court.state_code}&dist_cd=1&court_code={self.court.court_code or "1"}")
+        # Setup initial cookies
+        self.session.get(url)
         result = self._search_cases_by_case_type(case_type, status, year)
         return parse_cases(result)
     
@@ -165,6 +179,19 @@ class ECourt:
     @apimethod(path="/cases/o_civil_case_history.php", court=True, action=None, csrf=False)
     def getCaseHistory(self, case: Case, **kwargs):
         return case.expandParams()
+
+    # TODO: Store the case_type if available inside the case itself
+    @apimethod(path="/cases/case_no_qry.php", action="showRecords", court=True)
+    def searchSingleCase(self, registration_number: str, case_type: str):
+        return {
+            "captcha": self.captcha.solve(),
+            "case_type": case_type,
+            "case_no": registration_number.split("/")[0],
+            "rgyear": registration_number.split("/")[1],
+            "caseNoType": "new",
+            "displayOldCaseNo": "NO"
+        }
+
 
     def expand_case(self, case: Case):
         from parsers.case_details import CaseDetails
