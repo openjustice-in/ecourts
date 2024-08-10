@@ -2,7 +2,6 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Optional
 from parsers.utils import parse_date
-from entities.court import Court
 from entities.hearing import Hearing
 from entities.party import Party
 from entities.order import Order

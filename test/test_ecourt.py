@@ -2,6 +2,7 @@ import pytest
 from entities import Court, CaseType, Order, Case,Party
 from entities.hearing import UnexpandableHearing
 from ecourt import ECourt
+import os
 import datetime
 import yaml
 
@@ -180,3 +181,6 @@ def test_case_expander():
         except UnexpandableHearing as e:
             pass
 
+    order = fcase2.orders[0]
+    scraper.downloadOrder(order, fcase2, "/tmp/GAHC010225502018-01.pdf")
+    assert os.path.getsize("/tmp/GAHC010225502018-01.pdf") == 75073

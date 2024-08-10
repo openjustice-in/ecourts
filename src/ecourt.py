@@ -3,7 +3,7 @@ import requests
 from captcha import Captcha, CaptchaError
 from tempfile import mkstemp
 from urllib.parse import urlencode
-from entities import Court, CaseType,Case, Hearing
+from entities import Court, CaseType,Case, Hearing, Order
 from entities.hearing import UnexpandableHearing
 import datetime
 import csv
@@ -27,7 +27,9 @@ class ECourt:
     def enableDebug(self):
         self.captcha.debug = True
 
-    def url(self, path):
+    def url(self, path, queryParams={}):
+        if len(queryParams) > 0:
+            return self.BASE_URL + path + "?" + urlencode(queryParams)
         return self.BASE_URL + path
 
     def validate_response(self, r):
@@ -99,6 +101,25 @@ class ECourt:
             "case_number1": case.case_number,
         } | hearing.expandParams()
         hearing.details = self._get_hearing_details(**params)
+
+    def downloadOrder(self, order: Order, court_case: Case, filename: str):
+        # display_pdf.php?filename, caseno=AB/3142/2018 | cCode=1 | appFlag= | cino=GAHC010225502018 |state_code=6
+        assert order.filename != None
+        assert court_case.case_type != None
+        assert court_case.registration_number != None
+        assert court_case.cnr_number != None
+        queryParams = {
+            "filename": order.filename,
+            "caseno": f"{court_case.case_type}/{court_case.registration_number}",
+            "cCode": self.court.court_code or "1",
+            "state_code": self.court.state_code,
+            "cino": court_case.cnr_number,
+        }
+        url = self.url("/cases/display_pdf.php", queryParams)
+        print(url)
+        r = self.session.get(url)
+        with open(filename, "wb") as f:
+            f.write(r.content)
 
     # Search for cases by Case Type | 🚧WIP | Case Type, Year†, Pending/Disposed
     @apimethod(
