@@ -51,15 +51,6 @@ objections:
   scrutiny_date: 2024-06-24
 orders:
 - !!python/object:entities.order.Order
-  appFlag: null
-  case_number: BA/64/2024
-  cino: GAHC040007922024
-  court: !!python/object:entities.court.Court
-    court_code: null
-    district_code: '4'
-    name: null
-    state_code: '6'
-    state_name: null
   date: 2024-06-25
   filename: bzPoyUlszYLCUcCpirIpqLPkTLgaTkEH+t8f0EzOfYNA5sdZ6N4WquS8CofJwYCV
   judge: HONBLE MR. JUSTICE BUDI HABUNG
@@ -80,3 +71,4 @@ respondents:
   name: Miss Tana Moryom
 state: Arunachal Pradesh
 sub_category: null
+token: null

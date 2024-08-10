@@ -330,127 +330,46 @@ objections:
   scrutiny_date: 2018-12-29
 orders:
 - !!python/object:entities.order.Order
-  appFlag: null
-  case_number: HCP/58/2018
-  cino: JKHC020113752018
-  court: !!python/object:entities.court.Court
-    court_code: null
-    district_code: '1'
-    name: null
-    state_code: '12'
-    state_name: null
   date: 2019-02-26
   filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4WZk9SNDiELN0d3zciW0Jd2
   judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
   judgement: null
 - !!python/object:entities.order.Order
-  appFlag: null
-  case_number: HCP/58/2018
-  cino: JKHC020113752018
-  court: !!python/object:entities.court.Court
-    court_code: null
-    district_code: '1'
-    name: null
-    state_code: '12'
-    state_name: null
   date: 2019-04-03
   filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4VfQwf0orUZaOPgJQdtRngq
   judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
   judgement: null
 - !!python/object:entities.order.Order
-  appFlag: null
-  case_number: HCP/58/2018
-  cino: JKHC020113752018
-  court: !!python/object:entities.court.Court
-    court_code: null
-    district_code: '1'
-    name: null
-    state_code: '12'
-    state_name: null
   date: 2019-07-08
   filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4W9zkSacwsce/3OpGJvB0lg
   judge: HON'BLE MR. JUSTICE ALI MOHAMMAD MAGREY
   judgement: null
 - !!python/object:entities.order.Order
-  appFlag: null
-  case_number: HCP/58/2018
-  cino: JKHC020113752018
-  court: !!python/object:entities.court.Court
-    court_code: null
-    district_code: '1'
-    name: null
-    state_code: '12'
-    state_name: null
   date: 2019-07-08
   filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4V4B7CAX6YboIYTxzyrEv0a
   judge: HON'BLE MR. JUSTICE ALI MOHAMMAD MAGREY
   judgement: null
 - !!python/object:entities.order.Order
-  appFlag: null
-  case_number: HCP/58/2018
-  cino: JKHC020113752018
-  court: !!python/object:entities.court.Court
-    court_code: null
-    district_code: '1'
-    name: null
-    state_code: '12'
-    state_name: null
   date: 2019-09-11
   filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4UBDlNqL/zLUzTp/PjCG3fg
   judge: HON'BLE  MR. JUSTICE RAJESH BINDAL
   judgement: null
 - !!python/object:entities.order.Order
-  appFlag: null
-  case_number: HCP/58/2018
-  cino: JKHC020113752018
-  court: !!python/object:entities.court.Court
-    court_code: null
-    district_code: '1'
-    name: null
-    state_code: '12'
-    state_name: null
   date: 2019-10-14
   filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4VVwZkC6SFsMLeD82pm02mP
   judge: HON'BLE MR. JUSTICE DHIRAJ SINGH THAKUR
   judgement: null
 - !!python/object:entities.order.Order
-  appFlag: null
-  case_number: HCP/58/2018
-  cino: JKHC020113752018
-  court: !!python/object:entities.court.Court
-    court_code: null
-    district_code: '1'
-    name: null
-    state_code: '12'
-    state_name: null
   date: 2020-02-28
   filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4VKAoANwWy5ZhRhsffy1Wdy
   judge: HON'BLE MR. JUSTICE SANJEEV KUMAR
   judgement: null
 - !!python/object:entities.order.Order
-  appFlag: null
-  case_number: HCP/58/2018
-  cino: JKHC020113752018
-  court: !!python/object:entities.court.Court
-    court_code: null
-    district_code: '1'
-    name: null
-    state_code: '12'
-    state_name: null
   date: 2020-10-19
   filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4WYPfx2WudNMAu4SDcElc+g
   judge: HON'BLE MR.  JUSTICE SANJAY DHAR
   judgement: null
 - !!python/object:entities.order.Order
-  appFlag: null
-  case_number: HCP/58/2018
-  cino: JKHC020113752018
-  court: !!python/object:entities.court.Court
-    court_code: null
-    district_code: '1'
-    name: null
-    state_code: '12'
-    state_name: null
   date: 2020-12-24
   filename: rC8SUFuyEFsvB5V61cXUrLSLzKEH6Vx/wvYTxzlyF4Uu7tOArEmvxZv7juS7VWPW
   judge: HON'BLE MR.  JUSTICE SANJAY DHAR
@@ -467,3 +386,4 @@ respondents:
   name: STATE TH.HOME DEPTT.AND ORS.
 state: JAMMUKASHMIR
 sub_category: OTHER MATTERS ( 99 )
+token: null
