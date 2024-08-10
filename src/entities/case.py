@@ -71,7 +71,7 @@ class Case:
             "case_no": self.case_number
         }
 
-    def json(self):
+    def json(self) -> dict:
         """
         Generate a JSON representation of the court.
 

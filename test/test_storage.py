@@ -4,8 +4,14 @@ from storage import Storage
 from entities import Court, CaseType
 import sqlite3
 import csv
+import glob
+import yaml
 import json
 
+
+@pytest.fixture(params=glob.glob("test/fixtures/case_details/*.yml"))
+def case_details(request):
+    yield yaml.unsafe_load(open(request.param, "r"))
 
 def test_storage_init():
     storage = Storage("/tmp/ecourts.db")
@@ -14,9 +20,10 @@ def test_storage_init():
     tables = storage.conn.execute(
         "SELECT name FROM sqlite_master WHERE type='table';"
     ).fetchall()
-    assert len(tables) == 2
+    assert len(tables) == 3
     assert "case_types" in tables[0]
     assert "courts" in tables[1]
+    assert "cases" in tables[2]
 
     os.unlink("/tmp/ecourts.db")
 
@@ -87,3 +94,16 @@ def test_case_types():
     for record in storage.getCaseTypes():
         assert record in case_types
     os.unlink("/tmp/ecourts.db")
+
+def test_case_storage(case_details):
+    storage = Storage("/tmp/ecourts.db")
+    court=Court(state_code="1")
+    storage.addCases(court, [case_details])
+    records = storage.conn.execute("SELECT * FROM cases").fetchall()
+    # assert len(records) == 1
+    data = json.loads(records[0]["value"])
+    assert data['case_type'] == case_details.case_type
+    assert data['cnr_number'] == case_details.cnr_number
+    # assert data['petitioners'] == case_details['petitioners']
+    os.unlink("/tmp/ecourts.db")
+
