@@ -58,6 +58,10 @@ class Case:
         if len(self.cnr_number) !=16:
             raise ValueError("Invalid CNR Number")
 
+        if self.case_no:
+            assert 1990 < int(self.case_no[-4:])
+            assert int(self.case_no[-4:]) < 2030
+
 
     def expandParams(self):
         if not (self.token and self.case_no):

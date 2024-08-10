@@ -1,6 +1,6 @@
 import pytest
 import glob
-from entities import Case, Party, Business, Hearing, Order, Objection, Court
+from entities import Case, Party, Hearing, Order, Objection, Court
 from parsers import parse_hearing_details
 from parsers.cases import parse_cases
 from parsers.case_details import CaseDetails
