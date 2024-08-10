@@ -7,7 +7,7 @@ import urllib.parse
 import sys
 import re
 from parsers.utils import parse_js_call, clean_html
-from entities import Case, Party, Hearing, Business, Order, Objection, Court, FIR
+from entities import Case, Party, Hearing, Order, Objection, Court, FIR
 
 
 class CaseDetails:

@@ -1,7 +1,7 @@
 import pytest
 import glob
 import datetime
-from entities import Business, Court, Order
+from entities import Hearing, Court, Order
 import os
 import wat
 
@@ -21,21 +21,15 @@ def test_courts_generator():
     }
 
 
-def test_business():
-    b = Business(
-        court=Court(
-            state_code="12",
-            court_code="2",
-        ),
-        next_date="",
-        case_number="201700000582018",
-        disposal_flag="Disposed",
-        business_date="24-12-2020",
-        court_number="1712",
+def test_hearing():
+    b = Hearing(
+        next_date="24-12-2020",
+        date="24-12-2020 (R)",
+        court_no="1712",
         srno="0",
     )
-    assert b.business_date == datetime.date(2020, 12, 24)
-    assert b.next_date == None
+    assert b.date == datetime.date(2020, 12, 24)
+    assert b.next_date == datetime.date(2020, 12, 24)
     assert b.srno == 0
 
 

@@ -54,7 +54,6 @@ and an ECourt is the primary class that deals with the website.
 
 Other entities involved are more legal in nature:
 
-- [Business](https://captnemo.in/ecourts/src/entities/business.html#src.entities.business.Business)
 - [Case](https://captnemo.in/ecourts/src/entities/case.html#src.entities.case.Case)
 - [CaseType](https://captnemo.in/ecourts/src/entities/case_type.html)
 - [FIR](https://captnemo.in/ecourts/src/entities/fir.html)
@@ -71,7 +70,6 @@ Other entities involved are more legal in nature:
 - General guidance is available via `ecourts --help` or `ecourts cmd --help`.
 - Python documentation is available at [captnemo.in/ecourts/src](https://captnemo.in/ecourts/src/).
 - Coverage reports are published at [Coveralls](https://coveralls.io/github/captn3m0/ecourts).
-
 
 ## Guiding Principles
 
