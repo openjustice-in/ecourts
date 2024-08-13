@@ -71,6 +71,15 @@ class Case:
             "case_no": self.case_number
         }
 
+    def __getattribute__(self, name):
+        if name == 'name':
+            if len(self.petitioners) > 0 and len(self.respondents) > 0:
+                return self.petitioners[0].name + " vs " + self.respondents[0].name
+            else:
+                return None
+        else:
+            return super().__getattribute__(name)
+
     def json(self) -> dict:
         """
         Generate a JSON representation of the court.

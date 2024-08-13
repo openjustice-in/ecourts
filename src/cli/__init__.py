@@ -1,4 +1,5 @@
 import click
+import csv
 from entities import Court
 from ecourt import ECourt
 from sys import stdout
@@ -76,6 +77,8 @@ def ecourts(ctx):
     "--status", type=click.Choice(["Pending", "Disposed"]), help="Case status"
 )
 @click.option("--police-station-id", help="Police station ID")
+@click.option("--act-type", help="ACT Type (number)")
+@click.option("--save", help="Save cases to database", is_flag=True)
 @click.pass_context
 def get_cases(
     ctx,
@@ -89,6 +92,8 @@ def get_cases(
     filing_number,
     status,
     police_station_id,
+    act_type,
+    save
 ):
     court: Court = ctx.obj["court"]
     ecourt = ECourt(court)
@@ -101,16 +106,32 @@ def get_cases(
         ecourt.search_by_party_name(party_name, year, status)
     elif filing_number and year:
         ecourt.search_by_filing_number(filing_number, year)
-    elif case_type:
-        if status == "Both":
-            raise click.BadParameter(
-                "Case Status can either be Pending or Disposed for searching by case-type"
-            )
-        ecourt.search_by_case_type(case_type, year, status)
+    elif act_type and status !="Both":
+        cases = list(ecourt.ActType(act_type, status))
+    elif case_type and status!="Both":
+        cases = list(ecourt.search_by_case_type(case_type, year, status))
     else:
         click.echo(
             "Invalid combination of arguments. Please provide a valid set of options."
         )
+
+    idx = 0
+    for case in cases:
+        res = {}
+        fields = ['case_type', 'registration_number', 'cnr_number', 'name']
+        for field in fields:
+            value = getattr(case, field)
+            if value:
+                res[field]  = value
+
+        writer = csv.DictWriter(stdout, fieldnames=fields)
+        if idx == 0:
+            writer.writeheader()
+        writer.writerow(res)
+        idx+=1
+
+    if save:
+        Storage().addCases(court, cases)
 
 
 @ecourts.command()

@@ -140,6 +140,27 @@ class ECourt:
     def CaseType(self, case_type:str, status:str, year: int = None):
         result = self._search_cases_by_case_type(case_type, status, year)
         return parse_cases(result)
+    
+    # Search for cases by Act Type
+    @apimethod(
+        path="/cases/s_actwise_qry.php", action="showRecords", court=True, csrf=True
+    )
+    def _search_cases_by_act_type(self, act_type: str, status: str, **kwargs):
+        """
+        Search a specific ecourt for cases by act type under
+        which they were registered. Requires a act type
+        """
+        assert status in ["Pending", "Disposed"]
+
+        return {
+            "captcha": self.captcha.solve(),
+            "f": status,
+            "actcode": act_type
+        }
+
+    def ActType(self, act_type:str, status:str):
+        result = self._search_cases_by_act_type(act_type, status)
+        return parse_cases(result)
 
     @apimethod(path="/cases/o_civil_case_history.php", court=True, action=None, csrf=False)
     def getCaseHistory(self, case: Case, **kwargs):
