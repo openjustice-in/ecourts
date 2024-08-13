@@ -1,9 +1,10 @@
-# ecourts-scraper [![Coverage Status](https://coveralls.io/repos/github/captn3m0/ecourts/badge.svg?branch=main)](https://coveralls.io/github/captn3m0/ecourts?branch=main) [![PyPI - Latest Version](https://img.shields.io/pypi/v/ecourts)](https://pypi.org/project/ecourts/) [![GitHub Tag](https://img.shields.io/github/v/tag/captn3m0/ecourts?filter=v*)](https://github.com/captn3m0/ecourts/releases/latest) [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/captn3m0/ecourts/test.yml?branch=main)](https://github.com/captn3m0/ecourts/actions/workflows/test.yml) [![docs](https://img.shields.io/badge/docs-Guide-9b59b6)](https://captnemo.in/ecourts/) [![docs](https://img.shields.io/badge/docs-API_Reference-9b59b6)](https://captnemo.in/ecourts/src/)
+# ecourts [![Coverage Status](https://coveralls.io/repos/github/captn3m0/ecourts/badge.svg?branch=main)](https://coveralls.io/github/captn3m0/ecourts?branch=main) [![PyPI - Latest Version](https://img.shields.io/pypi/v/ecourts)](https://pypi.org/project/ecourts/) [![GitHub Tag](https://img.shields.io/github/v/tag/captn3m0/ecourts?filter=v*)](https://github.com/captn3m0/ecourts/releases/latest) [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/captn3m0/ecourts/test.yml?branch=main)](https://github.com/captn3m0/ecourts/actions/workflows/test.yml) [![docs](https://img.shields.io/badge/docs-Guide-9b59b6)](https://captnemo.in/ecourts/) [![docs](https://img.shields.io/badge/docs-API_Reference-9b59b6)](https://captnemo.in/ecourts/src/)
 
 
-This is a Python package to help scrape information from the ECourts Service. This is primarily
-meant for journalists, and data researchers who need bulk access to the ECourts website to get
-orders, judgements, or lists of cases that match their criteria.
+This is a information retrieval toolkit to fetch case information from the
+ECourts Service. This is primarily meant for journalists, and law
+researchers who need bulk access to the ECourts website to get orders,
+judgements, or lists of cases that match their criteria.
 
 The final goal is to cover all services under the `ecourts.gov.in` domain, but it currently
 supports a few services covered at https://hcservices.ecourts.gov.in/ecourtindiaHC/.
@@ -17,7 +18,7 @@ Search for cases by FIR Number | 🚧WIP | Police Station, FIR Number†, Year�
 Search for cases by Party Name | 🔜Planned | Petitioner/Respondent Name, Year†, Case Status (Pending/Disposed/Both)†
 Search for cases by Advocate Name | 🚫No
 Search for cases by Filing Number | 🚧WIP | Filing Number, Year
-Search for cases by Act | 🚫No | NA
+Search for cases by Act | ✅Yes | Act Type, Status
 Search for cases by Case Type | 🚧WIP | Case Type, Year†, Pending/Disposed
 Search for Case Orders/Judgement by Case Number | 🚧WIP | Case Type, Case Number, Year
 Search for Case Orders/Judgement by Filling Number | 🚧WIP | Filing Number, Year
@@ -47,6 +48,13 @@ get the case type identifiers for a particular court. If the
 be fetched for all known courts. A list of all known courts is available
 at [courts.csv](courts.csv) published as part of the source code.
 
+## Act Types
+
+Similar to Case Types, Act idenfiers are different between courts. You can use
+
+`ecourts get-act-type --state-code SC [--court-code CC]` 
+to get the act type identifiers for a particular court.
+
 ## Types
 
 The primary two classes that most users will deal with are Court, and ECourt. A court is one of the high court benches covered at https://hcservices.ecourts.gov.in/ecourtindiaHC/,
@@ -56,6 +64,7 @@ Other entities involved are more legal in nature:
 
 - [Case](https://captnemo.in/ecourts/src/entities/case.html#src.entities.case.Case)
 - [CaseType](https://captnemo.in/ecourts/src/entities/case_type.html)
+- [ActType](https://captnemo.in/ecourts/src/entities/act_type.html)
 - [FIR](https://captnemo.in/ecourts/src/entities/fir.html)
 - [Hearing](https://captnemo.in/ecourts/src/entities/hearing.html)
 - [Objection](https://captnemo.in/ecourts/src/entities/objection.html)
@@ -82,7 +91,7 @@ Other entities involved are more legal in nature:
 ## LICENSE
 
 Licensed under `GPL3-or-later`. If you run this code, you are responsible
-for the legal implications of the same. The scraper is intentionally
+for the legal implications of the same. The tool is intentionally
 single-threaded, and does not offer any parallelism. This is to avoid
 overloading the ecourts website servers, which are already
 quite slow. Please note sections 15-16 of the LICENSE, which are summarized here:

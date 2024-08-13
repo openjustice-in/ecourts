@@ -9,8 +9,8 @@ import yaml
 
 @pytest.mark.vcr()
 def test_api_calls():
-    scraper = ECourt(Court(state_code="12", district_code="1"))
-    options = list(scraper.getCaseTypes())
+    ecourt = ECourt(Court(state_code="12", district_code="1"))
+    options = list(ecourt.getCaseTypes())
     assert len(options) == 233
     assert options[-1] == CaseType(
         code=328,
@@ -28,7 +28,7 @@ def test_api_calls():
         state_code="12", district_code="1", court_code=None, state_name=None, name=None
     )
 
-    orders = list(scraper.getOrdersOnDate(d))
+    orders = list(ecourt.getOrdersOnDate(d))
     kw = {"judge": "", "date": d}
     assert orders[0:10] == [
         Order(
@@ -83,66 +83,66 @@ def test_api_calls():
         ),
     ]
 
-    scraper.court.state_code = "16"
-    scraper.court.court_code = None
-    assert list(scraper.getCaseTypes())[0:10] == [
+    ecourt.court.state_code = "16"
+    ecourt.court.court_code = None
+    assert list(ecourt.getCaseTypes())[0:10] == [
         CaseType(
             code=1,
             description="AA - ARBRITATION APPL.",
-            court=scraper.court,
+            court=ecourt.court,
         ),
         CaseType(
             code=2,
             description="ABWA - APPL.UND.BENGAL WAKFS ACT",
-            court=scraper.court,
+            court=ecourt.court,
         ),
         CaseType(
             code=3,
             description="AC - AWARD CASES",
-            court=scraper.court,
+            court=ecourt.court,
         ),
         CaseType(
             code=4,
             description="ACA - APPL.UNDER CHARTERED ACCOUNTANTS ACT, 1949",
-            court=scraper.court,
+            court=ecourt.court,
         ),
         CaseType(
             code=5,
             description="ACO - PET. IN COMP. APPL.",
-            court=scraper.court,
+            court=ecourt.court,
         ),
         CaseType(
             code=6,
             description="ACR - APPL.UND.CHARITABLE AND RELIGIOUS TRUST ACT",
-            court=scraper.court,
+            court=ecourt.court,
         ),
         CaseType(
             code=7,
             description="ACRP - APPL.UND.SEC.151 OF THE CR.P.C.",
-            court=scraper.court,
+            court=ecourt.court,
         ),
         CaseType(
             code=8,
             description="ACWA - APPL.UND.SEC 21 COST AND WORKS ACCOUNTACTS ACT, 1959",
-            court=scraper.court,
+            court=ecourt.court,
         ),
         CaseType(
             code=134,
             description="AD-COM - APPEAL FROM DECREES (COMMERCIAL)",
-            court=scraper.court,
+            court=ecourt.court,
         ),
         CaseType(
             code=9,
             description="AED - APPL. U/S. 64 OF ESTATE DUTY ACT, 1953",
-            court=scraper.court,
+            court=ecourt.court,
         ),
     ]
 
 
 @pytest.mark.vcr()
 def test_case_history():
-    scraper = ECourt(Court(state_code="3"))
-    scraper.getCaseHistory(
+    ecourt = ECourt(Court(state_code="3"))
+    ecourt.getCaseHistory(
         case=Case(
             case_type="CRL.P",
             registration_number="5658/2024",
@@ -155,9 +155,9 @@ def test_case_history():
 @pytest.mark.vcr()
 def test_get_act_type():
     court = Court(state_code="3")
-    scraper = ECourt(court)
+    ecourt = ECourt(court)
     v = []
-    for act in  scraper.getActTypes():
+    for act in  ecourt.getActTypes():
         assert act.court == court
         v.append((act.code, act.description))
 
@@ -183,8 +183,8 @@ def test_get_act_type():
 
 @pytest.mark.vcr()
 def test_case_expander():
-    scraper = ECourt(Court(state_code="6"))
-    cases = scraper.CaseType("49", "Pending", "2018")
+    ecourt = ECourt(Court(state_code="6"))
+    cases = ecourt.CaseType("49", "Pending", "2018")
     fcase = next(cases)
 
     assert fcase.case_type == "AB"
@@ -198,17 +198,17 @@ def test_case_expander():
     assert fcase.expandParams()['case_no'] == "204900031422018"
     assert len(fcase.expandParams()['token']) == 64
 
-    fcase2 = scraper.expand_case(fcase)
+    fcase2 = ecourt.expand_case(fcase)
     with open("test/fixtures/cases/GAHC010225502018.yml", 'w') as f:
         yaml.dump(fcase2, f)
 
     for hearing in fcase2.hearings:
         try:
-            scraper.expandHearing(hearing, fcase2)
+            ecourt.expandHearing(hearing, fcase2)
             assert len(hearing.details) > 0
         except UnexpandableHearing as e:
             pass
 
     order = fcase2.orders[0]
-    scraper.downloadOrder(order, fcase2, "/tmp/GAHC010225502018-01.pdf")
+    ecourt.downloadOrder(order, fcase2, "/tmp/GAHC010225502018-01.pdf")
     assert os.path.getsize("/tmp/GAHC010225502018-01.pdf") == 75073

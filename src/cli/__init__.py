@@ -181,8 +181,8 @@ def get_case_types(ctx, state_code, court_code, save):
         courts = [Court(state_code=state_code, court_code=court_code)]
 
     for court in courts:
-        scraper = ECourt(court)
-        types = scraper.getCaseTypes()
+        ecourt = ECourt(court)
+        types = ecourt.getCaseTypes()
         if save:
             Storage().addCaseTypes(types)
 
@@ -199,8 +199,8 @@ def get_act_types(ctx, state_code, court_code, save):
         courts = [Court(state_code=state_code, court_code=court_code)]
 
     for court in courts:
-        scraper = ECourt(court)
-        types = scraper.getActTypes()
+        ecourt = ECourt(court)
+        types = ecourt.getActTypes()
         if save:
             Storage().addActTypes(types)
 
