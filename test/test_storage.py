@@ -20,10 +20,11 @@ def test_storage_init():
     tables = storage.conn.execute(
         "SELECT name FROM sqlite_master WHERE type='table';"
     ).fetchall()
-    assert len(tables) == 3
+    assert len(tables) == 4
     assert "case_types" in tables[0]
-    assert "courts" in tables[1]
-    assert "cases" in tables[2]
+    assert "act_types" in tables[1]
+    assert "courts" in tables[2]
+    assert "cases" in tables[3]
 
     os.unlink("/tmp/ecourts.db")
 
