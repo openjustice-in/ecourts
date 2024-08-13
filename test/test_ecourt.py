@@ -152,6 +152,34 @@ def test_case_history():
         )
     )
 
+@pytest.mark.vcr()
+def test_get_act_type():
+    court = Court(state_code="3")
+    scraper = ECourt(court)
+    v = []
+    for act in  scraper.getActTypes():
+        assert act.court == court
+        v.append((act.code, act.description))
+
+    assert v[0:14] == [
+        (172, 'Admirality (Jurisdiction and Settlement of Maritime Claims) Act'),
+        (156, 'Air (Prevention and Control of Pollution) Rules (Maharashtra)'),
+        (106, 'ARBITRATION AND CONCILIATION ACT'),
+        (170, 'Central Excises Act'),
+        (184, 'Central Goods and Service Tax Act'),
+        (102, 'CODE OF CIVIL PROCEDURE'),
+        (103, 'CODE OF CRIMINAL PROCEDURE'),
+        (134, 'Commercial Courts, Commercial Division and Commercial Appellate Division of High Courts Act, 201'),
+        (104, 'COMPANIES ACT'),
+        (105, 'Companies (Court) Rules'),
+        (101, 'Constitution of India'),
+        (181, 'DISASTER MANAGEMENT ACT'),
+        (135, 'Employee&'),
+        (39, 's Compensation Act')
+    ]
+
+
+
 
 @pytest.mark.vcr()
 def test_case_expander():

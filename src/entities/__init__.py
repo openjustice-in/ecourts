@@ -5,4 +5,5 @@ from entities.party import Party
 from entities.order import Order
 from entities.objection import Objection
 from entities.case_type import CaseType
+from entities.act_type import ActType
 from entities.fir import FIR

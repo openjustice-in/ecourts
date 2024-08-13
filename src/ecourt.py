@@ -1,9 +1,10 @@
 import os
 import requests
 from captcha import Captcha, CaptchaError
+from collections.abc import Iterator
 from tempfile import mkstemp
 from urllib.parse import urlencode
-from entities import Court, CaseType,Case, Hearing, Order
+from entities import Court, CaseType,Case, Hearing, Order, ActType
 from entities.hearing import UnexpandableHearing
 import datetime
 import csv
@@ -116,7 +117,6 @@ class ECourt:
             "cino": court_case.cnr_number,
         }
         url = self.url("/cases/display_pdf.php", queryParams)
-        print(url)
         r = self.session.get(url)
         with open(filename, "wb") as f:
             f.write(r.content)
@@ -157,7 +157,7 @@ class ECourt:
         d = date.strftime("%d-%m-%Y")
         return parse_orders(self._get_orders(from_date=d, to_date=d))
 
-    def getCaseTypes(self):
+    def getCaseTypes(self) -> Iterator[CaseType]:
         for option in parse_options(self._get_case_type())[1:]:
             yield CaseType(code=int(option[0]), description=option[1], court=self.court)
 
@@ -166,6 +166,18 @@ class ECourt:
     )
     def _get_case_type(self, *args, **kwargs):
         pass
+    
+    @apimethod(
+        path="/cases/s_actwise_qry.php", csrf=False, court=True, action="fillActType"
+    )  
+    def _get_act_type(self, query: str, **kwargs):
+        return {
+            "search_act": query
+        }
+
+    def getActTypes(self, query="") -> Iterator[ActType]:
+        for option in parse_options(self._get_act_type(query))[1:]:
+            yield ActType(code=int(option[0]), description=option[1], court=self.court)
 
     @apimethod(
         path="/cases/highcourt_causelist_qry.php",

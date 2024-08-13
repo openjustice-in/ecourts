@@ -166,5 +166,23 @@ def get_case_types(ctx, state_code, court_code, save):
             Storage().addCaseTypes(types)
 
 
+@ecourts.command()
+@click.option("--state-code", help="State code of the Court")
+@click.option("--court-code", help="Court code of the Court")
+@click.option("--save", help="Save data in database", is_flag=True)
+@click.pass_context
+def get_act_types(ctx, state_code, court_code, save):
+    if state_code == None and court_code == None:
+        courts = Court.enumerate()
+    else:
+        courts = [Court(state_code=state_code, court_code=court_code)]
+
+    for court in courts:
+        scraper = ECourt(court)
+        types = scraper.getActTypes()
+        if save:
+            Storage().addActTypes(types)
+
+
 if __name__ == "__main__":
     ecourts()
