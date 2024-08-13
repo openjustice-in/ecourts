@@ -107,8 +107,16 @@ def get_cases(
     elif filing_number and year:
         ecourt.search_by_filing_number(filing_number, year)
     elif act_type and status !="Both":
+        extra_fields = {
+            "status": status,
+            "act_type": act_type
+        }
         cases = list(ecourt.ActType(act_type, status))
     elif case_type and status!="Both":
+        extra_fields = {
+            "status": status,
+            "case_type": case_type
+        }
         cases = list(ecourt.search_by_case_type(case_type, year, status))
     else:
         click.echo(
@@ -118,7 +126,7 @@ def get_cases(
     idx = 0
     for case in cases:
         res = {}
-        fields = ['case_type', 'registration_number', 'cnr_number', 'name']
+        fields = ['registration_number', 'cnr_number', 'name']
         for field in fields:
             value = getattr(case, field)
             if value:
@@ -131,7 +139,7 @@ def get_cases(
         idx+=1
 
     if save:
-        Storage().addCases(court, cases)
+        Storage().addCases(court, cases, extra_fields)
 
 
 @ecourts.command()

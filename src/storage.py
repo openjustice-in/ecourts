@@ -78,9 +78,20 @@ class Storage:
         self.conn.commit()
 
     #TODO: Move storage to under ecourts.storage so we get court information from there
-    def addCases(self, court: Court, records: list[Case]):
-        for record in records:
-            self.cursor.execute(
-                "INSERT OR IGNORE INTO cases VALUES (?, ?, ?)", (court.state_code, court.court_code or "1", json.dumps(record.json(), default=str))
-            )
+    def addCases(self, court: Court, cases: list[Case], extra_fields: dict={}):
+        for case in cases:
+            # search for the record using CNR
+            # if found, update the record
+            # if not found, insert the record
+            search_result = self.cursor.execute(
+                "SELECT * FROM cases WHERE json_extract(value, '$.cnr_number') = ?", (case.cnr_number,)
+            ).fetchone()
+            if search_result:
+                self.cursor.execute(
+                    "UPDATE cases SET value = ? WHERE json_extract(value, '$.cnr_number') = ?", (json.dumps(case.json() | extra_fields, default=str), case.cnr_number)
+                )
+            else:
+                self.cursor.execute(
+                    "INSERT INTO cases VALUES (?, ?, ?)", (court.state_code, court.court_code or "1", json.dumps(case.json() | extra_fields, default=str))
+                )
         self.conn.commit()

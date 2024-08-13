@@ -52,6 +52,12 @@ class Case:
             self.decision_date = parse_date(self.decision_date)
         if isinstance(self.filing_date, str):
             self.filing_date = parse_date(self.filing_date)
+        if self.orders == None:
+            self.orders = []
+        if self.hearings == None:
+            self.hearings = []
+        if self.objections == None:
+            self.objections = []
         # The canonical representation of a CNR is without hyphens
         self.cnr_number = self.cnr_number.replace("-", "")
         if len(self.cnr_number) !=16:
