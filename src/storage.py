@@ -84,12 +84,15 @@ class Storage:
             # if found, update the record
             # if not found, insert the record
             search_result = cursor.execute(
-                "SELECT * FROM cases WHERE json_extract(value, '$.cnr_number') = ?", (case.cnr_number,)
+                "SELECT value FROM cases WHERE json_extract(value, '$.cnr_number') = ?", (case.cnr_number,)
             ).fetchone()
             if search_result:
-                # TODO: Smart merge somehow to avoid overwriting existing extra fields
+                existing_row = json.loads(search_result[0])
+                patch = {}
+                for k in ['status', 'year', 'act_type', 'case_type']:
+                    patch[k] = extra_fields.get(k, existing_row.get(k))
                 cursor.execute(
-                    "UPDATE cases SET value = ? WHERE json_extract(value, '$.cnr_number') = ?", (json.dumps(case.json() | extra_fields, default=str), case.cnr_number)
+                    "UPDATE cases SET value = ? WHERE json_extract(value, '$.cnr_number') = ?", (json.dumps(case.json() | patch, default=str), case.cnr_number)
                 )
             else:
                 cursor.execute(
