@@ -212,6 +212,13 @@ def get_act_types(ctx, state_code, court_code, save):
         if save:
             Storage().addActTypes(types)
 
+@ecourts.command()
+def stats():
+    """Print statistics about the database."""
+    stats = Storage().stats()
+    for k, v in stats.items():
+        click.echo(f"{k}: {v}")
+
 
 if __name__ == "__main__":
     ecourts()

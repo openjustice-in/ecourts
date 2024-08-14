@@ -103,3 +103,14 @@ class Storage:
     def getCases(self):
         for (state_code, court_code, value) in self.conn.execute("SELECT state_code, court_code, value FROM cases ORDER BY RANDOM()"):
             yield json.loads(value) | {"state_code": state_code, "court_code": court_code}
+
+
+    def stats(self) -> dict[str, int]:
+        """
+        Returns a dict of tableName -> count
+        """
+        tables = ["case_types", "act_types", "courts", "cases"]
+        stats = {}
+        for table in tables:
+            stats[table] = self.conn.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
+        return stats
