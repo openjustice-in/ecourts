@@ -85,6 +85,7 @@ class CaseDetails:
         return parties
 
     def extract_hearing(self, soup: BeautifulSoup) -> list[Hearing]:
+        print(soup)
         f = soup.find("table", id="historyheading")
         if f:
             history_table = f.find_next("table")
@@ -117,6 +118,8 @@ class CaseDetails:
                         ]
                     )
                     res = parse_js_call(cells[2].select_one("a")["onclick"], signature)
+                    print(res)
+                    breakpoint()
                     # We don't need court details since they should be in the parent entity
                     # # breakpoint()
                     # court = Court(

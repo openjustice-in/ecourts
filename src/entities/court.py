@@ -74,7 +74,10 @@ class Court:
         """
         Raise an error if the court is not valid
         """
-        if (self.state_code, self.court_code) not in Court.__ALL_COURTS__:
+        lcc = self.court_code
+        if self.court_code == "1":
+            lcc = None
+        if (self.state_code,  lcc) not in Court.__ALL_COURTS__:
             if self.court_code:
                 raise ValueError(
                     f"Invalid court: state_code={self.state_code}, court_code={self.court_code}"
