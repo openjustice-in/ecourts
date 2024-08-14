@@ -91,9 +91,8 @@ class Storage:
                 patch = {}
                 for k in ['status', 'year', 'act_type', 'case_type']:
                     patch[k] = extra_fields.get(k, existing_row.get(k))
-                cursor.execute(
-                    "UPDATE cases SET value = ? WHERE json_extract(value, '$.cnr_number') = ?", (json.dumps(case.json() | patch, default=str), case.cnr_number)
-                )
+                d = json.dumps(case.json() | patch, default=str)
+                self.conn.execute("UPDATE cases SET value = ? WHERE json_extract(value, '$.cnr_number') = ?", (d, case.cnr_number))
             else:
                 cursor.execute(
                     "INSERT INTO cases VALUES (?, ?, ?)", (court.state_code, court.court_code or "1", json.dumps(case.json() | extra_fields, default=str))

@@ -8,10 +8,18 @@ from storage import Storage
 import click
 from datetime import datetime
 from functools import wraps
+from parsers.cases import parse_cases
 
+
+CASE_TYPE_LOOKUP= {
+    ("HCP", "12", "2"): "171",
+    ("HCP", "12", "1"): "17",
+    ("WP(Crl)", "12", "2"): "328",
+    ("WP(Crl)", "12", "1"): "328",
+}
 
 def validate_year(ctx, _, value):
-    if value and len(value) != 4:
+    if value <1990 or value > 2025:
         raise click.BadParameter("Year must be in YYYY format")
     return value
 
@@ -30,14 +38,14 @@ def setup_state_code(ctx, _, value):
 
 
 def setup_court_code(ctx, _, value):
-    ctx.obj["court"] = Court(ctx.obj["state_code"], value)
+    ctx.obj["court"] = Court(state_code=ctx.obj["state_code"], court_code=value)
 
 
 def common_options(f):
     @click.option("--case-number", help="Case number")
     @click.option("--party-name", help="Party name")
     @click.option("--case-type", type=int, help="Case type")
-    @click.option("--year", callback=validate_year, help="Year in YYYY format")
+    @click.option("--year", callback=validate_year, type=int, help="Year in YYYY format")
     @click.option(
         "--state-code",
         callback=setup_state_code,
@@ -115,9 +123,9 @@ def get_cases(
     elif case_type and status!="Both":
         extra_fields = {
             "status": status,
-            "case_type": case_type
+            "case_type_int": case_type
         }
-        cases = list(ecourt.search_by_case_type(case_type, year, status))
+        cases = ecourt.CaseType(case_type, status, year)
     else:
         click.echo(
             "Invalid combination of arguments. Please provide a valid set of options."
@@ -211,6 +219,43 @@ def get_act_types(ctx, state_code, court_code, save):
         types = ecourt.getActTypes()
         if save:
             Storage().addActTypes(types)
+
+@ecourts.command()
+@click.option("--cnr", help="Case CNR", required=False, type=str)
+@click.option("--download-orders", help="Download Orderss", required=False, is_flag=True, default=False)
+def enrich_cases(cnr, download_orders):
+    s = Storage()
+    for case_data in s.getCases():
+        if cnr:
+            if case_data['cnr_number'] != cnr:
+                continue
+        # cnr given = automatically force an update
+        if case_data['case_status'] != None and cnr == None:
+            continue
+
+        ecourt = ECourt(Court(state_code=case_data['state_code'], court_code=case_data['court_code']))
+
+        registration_number = case_data['registration_number']
+        k = (case_data['case_type'], case_data['state_code'], case_data['court_code'])
+        case_type = CASE_TYPE_LOOKUP.get(k)
+        
+        cases = list(parse_cases(ecourt.searchSingleCase(registration_number, case_type)))
+        if len(cases) != 1:
+            print("Error in parsing case" + case_data['cnr_number'])
+        else:
+            single_case = cases[0]
+            new_case = ecourt.expand_case(single_case)
+            if new_case.registration_number != single_case.registration_number or registration_number != single_case.registration_number:
+                print("Case Details Mismatch" + case_data['cnr_number'])
+            s.addCases(ecourt.court, [new_case])
+
+            if download_orders:
+                if new_case.orders:
+                    for order in new_case.orders:
+                        fn = urllib.parse.quote_plus(order.filename)
+                        if os.path.exists(f"orders/{fn}.pdf"):
+                            continue
+                        ecourt.downloadOrder(order, new_case, f"orders/{fn}.pdf")
 
 @ecourts.command()
 def stats():

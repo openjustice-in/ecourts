@@ -57,7 +57,8 @@ class ECourt:
                         else:
                             params |= extra_params
                         if 'captcha' in params and params['captcha'] == None:
-                            breakpoint()
+                            print("Ran out captch retries")
+                            sys.exit(1)
                         response = self.session.post(self.url(path), data=params, allow_redirects=False, timeout=(5, 10))
 
                         # , headers={
@@ -134,7 +135,7 @@ class ECourt:
 
     # Search for cases by Case Type | 🚧WIP | Case Type, Year†, Pending/Disposed
     @apimethod(
-        path="/cases/s_casetype_qry.php", action="showRecords", court=True, csrf=True
+        path="/cases/s_casetype_qry.php", action="showRecords", court=True
     )
     def _search_cases_by_case_type(self, case_type, status, search_year, **kwargs):
         assert status in ["Pending", "Disposed"]
@@ -142,7 +143,7 @@ class ECourt:
         r = {
             "captcha": self.captcha.solve(),
             "f": status,
-            "case_type": case_type
+            "case_type": str(case_type)
         }
         if search_year:
             r["search_year"] = search_year
@@ -150,7 +151,6 @@ class ECourt:
 
     def CaseType(self, case_type:str, status:str, year: int = None):
         url = self.url(f"/cases/s_casetype.php?state_cd={self.court.state_code}&dist_cd=1&court_code={self.court.court_code or "1"}")
-        # Setup initial cookies
         self.session.get(url)
         result = self._search_cases_by_case_type(case_type, status, year)
         return parse_cases(result)
