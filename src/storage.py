@@ -94,8 +94,9 @@ class Storage:
                 d = json.dumps(case.json() | patch, default=str)
                 self.conn.execute("UPDATE cases SET value = ? WHERE json_extract(value, '$.cnr_number') = ?", (d, case.cnr_number))
             else:
+                d = json.dumps(case.json() | extra_fields, default=str)
                 cursor.execute(
-                    "INSERT INTO cases VALUES (?, ?, ?)", (court.state_code, court.court_code or "1", json.dumps(case.json() | extra_fields, default=str))
+                    "INSERT INTO cases VALUES (?, ?, ?)", (court.state_code, court.court_code or "1", d)
                 )
         self.conn.commit()
 

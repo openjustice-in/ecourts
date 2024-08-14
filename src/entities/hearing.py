@@ -37,8 +37,10 @@ class Hearing:
             self.date = parse_date(self.date[0:10])
         if isinstance(self.next_date, str):
             self.next_date = parse_date(self.next_date[0:10])
-        if isinstance(self.srno, str):
+        if isinstance(self.srno, str) and len(self.srno) > 0:
             self.srno = int(self.srno)
+        else:
+            self.srno = None
 
     # Additional params required
     # caseNumber1: CASE_No

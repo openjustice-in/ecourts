@@ -59,7 +59,10 @@ class ECourt:
                         if 'captcha' in params and params['captcha'] == None:
                             print("Ran out captch retries")
                             sys.exit(1)
+
+                        # print(params)
                         response = self.session.post(self.url(path), data=params, allow_redirects=False, timeout=(5, 10))
+                        # print(response.text)
 
                         # , headers={
                         #     "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
@@ -164,15 +167,14 @@ class ECourt:
         Search a specific ecourt for cases by act type under
         which they were registered. Requires a act type
         """
-        assert status in ["Pending", "Disposed"]
 
         return {
             "captcha": self.captcha.solve(),
-            "f": status,
-            "actcode": act_type
+            "actcode": act_type,
+            "f": status
         }
 
-    def ActType(self, act_type:str, status:str):
+    def ActType(self, act_type:str, status: str):
         result = self._search_cases_by_act_type(act_type, status)
         return parse_cases(result)
 

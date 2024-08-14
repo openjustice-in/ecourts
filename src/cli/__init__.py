@@ -1,5 +1,6 @@
 import click
 import csv
+import sys
 from entities import Court
 from ecourt import ECourt
 from sys import stdout
@@ -19,7 +20,7 @@ CASE_TYPE_LOOKUP= {
 }
 
 def validate_year(ctx, _, value):
-    if value <1990 or value > 2025:
+    if value and (value <1990 or value > 2025):
         raise click.BadParameter("Year must be in YYYY format")
     return value
 
@@ -114,22 +115,25 @@ def get_cases(
         ecourt.search_by_party_name(party_name, year, status)
     elif filing_number and year:
         ecourt.search_by_filing_number(filing_number, year)
-    elif act_type and status !="Both":
+    elif act_type != None and status != None:
+        assert status != "Both"
         extra_fields = {
             "status": status,
             "act_type": act_type
         }
         cases = list(ecourt.ActType(act_type, status))
-    elif case_type and status!="Both":
+    elif case_type!=None and status!=None:
+        assert status != "Both"
         extra_fields = {
             "status": status,
             "case_type_int": case_type
         }
-        cases = ecourt.CaseType(case_type, status, year)
+        cases = list(ecourt.CaseType(case_type, status, year))
     else:
         click.echo(
             "Invalid combination of arguments. Please provide a valid set of options."
         )
+        sys.exit(1)
 
     idx = 0
     for case in cases:
@@ -147,6 +151,9 @@ def get_cases(
         idx+=1
 
     if save:
+        print(court)
+        print(cases)
+        print(extra_fields)
         Storage().addCases(court, cases, extra_fields)
 
 
@@ -232,21 +239,22 @@ def enrich_cases(cnr, download_orders):
         # cnr given = automatically force an update
         if case_data['case_status'] != None and cnr == None:
             continue
+        if 'case_type_int' not in case_data:
+            case_data['case_type_int'] = CASE_TYPE_LOOKUP[(case_data['case_type'], case_data['state_code'], case_data['court_code'])]        
 
         ecourt = ECourt(Court(state_code=case_data['state_code'], court_code=case_data['court_code']))
 
         registration_number = case_data['registration_number']
-        k = (case_data['case_type'], case_data['state_code'], case_data['court_code'])
-        case_type = CASE_TYPE_LOOKUP.get(k)
-        
-        cases = list(parse_cases(ecourt.searchSingleCase(registration_number, case_type)))
+        # Search using case_type_int for now, we can move to number search, but that is heuristic really.
+        cases = list(parse_cases(ecourt.searchSingleCase(registration_number, case_data['case_type_int'])))
         if len(cases) != 1:
-            print("Error in parsing case" + case_data['cnr_number'])
+            print("Error in parsing case " + case_data['cnr_number'] + " Got " + str(len(cases)) + " cases while searching")
         else:
             single_case = cases[0]
             new_case = ecourt.expand_case(single_case)
             if new_case.registration_number != single_case.registration_number or registration_number != single_case.registration_number:
                 print("Case Details Mismatch" + case_data['cnr_number'])
+            print(f"{new_case.cnr_number},{new_case.filing_number},{new_case.registration_number} {len(new_case.hearings)} Hearings, {len(new_case.orders)} Orders")
             s.addCases(ecourt.court, [new_case])
 
             if download_orders:
