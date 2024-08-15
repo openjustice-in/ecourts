@@ -26,6 +26,7 @@ def test_storage_init():
     assert "courts" in tables[2]
     assert "cases" in tables[3]
 
+    storage.close()
     os.unlink("/tmp/ecourts.db")
 
 
@@ -36,8 +37,9 @@ def test_courts_add():
     records = storage.conn.execute("SELECT * FROM courts").fetchall()
     assert len(records) == 39
     for record in records:
-        court = Court(**json.loads(record["value"]))
+        court = Court(**json.loads(record[0]))
         assert court in courts
+    storage.close()
     os.unlink("/tmp/ecourts.db")
 
 
@@ -94,17 +96,20 @@ def test_case_types():
     storage.addCaseTypes(case_types)
     for record in storage.getCaseTypes():
         assert record in case_types
+    storage.close()
     os.unlink("/tmp/ecourts.db")
 
 def test_case_storage(case_details):
+    if os.path.exists("/tmp/ecourts.db"):
+        os.unlink("/tmp/ecourts.db")
     storage = Storage("/tmp/ecourts.db")
     court=Court(state_code="1")
     storage.addCases(court, [case_details])
-    records = storage.conn.execute("SELECT * FROM cases").fetchall()
-    # assert len(records) == 1
-    data = json.loads(records[0]["value"])
+    records = storage.conn.execute("SELECT value FROM cases").fetchall()
+    assert(len(records) == 1)
+    data = json.loads(records[0][0])
     assert data['case_type'] == case_details.case_type
     assert data['cnr_number'] == case_details.cnr_number
-    # assert data['petitioners'] == case_details['petitioners']
+    storage.close()
     os.unlink("/tmp/ecourts.db")
 
