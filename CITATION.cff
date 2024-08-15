@@ -1,0 +1,18 @@
+---
+message: If you use this dataset, please cite it as below.
+cff-version: 1.2.0
+title: ecourts
+abstract: ecourts is a information retrieval tool for Indian High Courts.
+version: 0.0.6
+date-released: '2024-08-15'
+authors:
+- name: Abhay Rana
+keywords:
+- ecourts
+- legal-research
+- india
+- judiciary
+- law
+- information-retrieval
+type: software
+...

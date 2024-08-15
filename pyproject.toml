@@ -1,5 +1,11 @@
 [project]
 name = "ecourts"
+description = "ecourts is a information retrieval tool for Indian High Courts."
+authors = [
+    {name = "Abhay Rana"}
+]
+keywords = ["ecourts", "legal-research", "india", "judiciary", "law", "information-retrieval"]
+
 dependencies = [
     "requests~=2.31",
     "beautifulsoup4~=4.10",
@@ -8,7 +14,6 @@ dependencies = [
 ]
 
 requires-python = ">=3.9"
-description = "ecourts is a information retrieval tool for Indian High Courts."
 dynamic = ["version", "readme"]
 
 [tool.setuptools.dynamic]
