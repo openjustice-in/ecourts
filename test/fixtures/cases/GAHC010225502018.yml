@@ -1,0 +1,109 @@
+!!python/object:entities.case.Case
+bench: null
+case_number: '204900031422018'
+case_status: BAIL HEARING
+case_type: AB
+category: 10267  Anticipatory bail Application ( 309 )
+cnr_number: GAHC010225502018
+coram: 1762HONOURABLE MR. JUSTICE HITESH KUMAR SARMA
+decision_date: null
+district: Kokrajhar
+filing_date: 2018-10-03
+filing_number: 8394/2018
+fir: null
+first_hearing_date: null
+hearings:
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Supplementary
+  court_no: '1763'
+  date: 2018-10-05
+  details: null
+  judge: HONOURABLE MR. JUSTICE MIR ALFAZ ALI
+  next_date: 2018-11-22
+  purpose: MOTION
+  srno: 1
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Daily
+  court_no: '1755'
+  date: 2018-11-22
+  details: null
+  judge: HONOURABLE MR. JUSTICE MANASH RANJAN PATHAK
+  next_date: 2018-12-04
+  purpose: BAIL HEARING
+  srno: 2
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Daily
+  court_no: '1785'
+  date: 2018-12-04
+  details: null
+  judge: HONOURABLE MR. JUSTICE AJIT BORTHAKUR
+  next_date: 2018-12-21
+  purpose: BAIL HEARING
+  srno: 3
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Daily
+  court_no: '1762'
+  date: 2018-12-21
+  details: null
+  judge: HONOURABLE MR. JUSTICE HITESH KUMAR SARMA
+  next_date: 2019-01-23
+  purpose: BAIL HEARING
+  srno: 4
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: Daily
+  court_no: '1762'
+  date: 2019-01-23
+  details: null
+  judge: HONOURABLE MR. JUSTICE HITESH KUMAR SARMA
+  next_date: null
+  purpose: BAIL HEARING
+  srno: 5
+judicial: Criminal Section
+nature_of_disposal: null
+not_before_me: null
+objections:
+- !!python/object:entities.objection.Objection
+  compliance_date: null
+  objection: All Objections are Complied
+  receipt_date: null
+  scrutiny_date: 2018-10-04
+orders:
+- !!python/object:entities.order.Order
+  date: 2018-10-05
+  filename: rC8SUFuyEFsvB5V61cXUrJAi4VCwiMRtS3QGdB2jJyw9vVVNzlB62GdjNMQbI0bz
+  judge: HONOURABLE MR. JUSTICE MIR ALFAZ ALI
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2018-11-22
+  filename: rC8SUFuyEFsvB5V61cXUrJAi4VCwiMRtS3QGdB2jJyzU+nPrP8rCiQ4/UqtQBfpw
+  judge: HONOURABLE MR. JUSTICE MANASH RANJAN PATHAK
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2018-12-04
+  filename: rC8SUFuyEFsvB5V61cXUrJAi4VCwiMRtS3QGdB2jJywcqyCUmmNgpSmesWmoNYe6
+  judge: ''
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2018-12-21
+  filename: rC8SUFuyEFsvB5V61cXUrJAi4VCwiMRtS3QGdB2jJyx8ncrvohxzLIF6E1zxEKVF
+  judge: HONOURABLE MR. JUSTICE HITESH KUMAR SARMA
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2019-01-23
+  filename: rC8SUFuyEFsvB5V61cXUrJAi4VCwiMRtS3QGdB2jJyzNay6UKBPXyEcCjY5B6buL
+  judge: ''
+  judgement: null
+petitioners:
+- !!python/object:entities.party.Party
+  advocate: MR. A M BORA,MS. C CHOUDHURY,MS. C CHOUDHURY ,MR. D GOGOI,MR. D K BAIDYA,MS.
+    C CHOUDHURY
+  name: ANURAG TANKHA
+registration_date: 2018-10-04
+registration_number: 3142/2018
+respondents:
+- !!python/object:entities.party.Party
+  advocate: PP, ASSAM
+  name: THE STATE OF ASSAM
+state: Assam
+sub_category: null
+token: null
