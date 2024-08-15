@@ -153,7 +153,8 @@ class ECourt:
         return r
 
     def CaseType(self, case_type:str, status:str, year: int = None):
-        url = self.url(f"/cases/s_casetype.php?state_cd={self.court.state_code}&dist_cd=1&court_code={self.court.court_code or "1"}")
+        cc = self.court.court_code or "1"
+        url = self.url(f"/cases/s_casetype.php?state_cd={self.court.state_code}&dist_cd=1&court_code={cc}")
         self.session.get(url)
         result = self._search_cases_by_case_type(case_type, status, year)
         return parse_cases(result)
