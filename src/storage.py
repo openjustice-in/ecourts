@@ -1,5 +1,6 @@
 from entities import CaseType, Court, Case,ActType, CaseType
 import sqlite3
+from typing import Optional
 import json
 from collections.abc import Iterator
 
@@ -37,6 +38,15 @@ class Storage:
 
     def close(self):
         self.conn.close()
+
+    def findCaseType(self, court: Court, case_type: str) -> Optional[CaseType]:
+        for ct in self.getCaseTypes():
+            if case_type == ct.description:
+                return case_type
+            if ct.description.startswith(case_type + " - "):
+                return case_type
+
+        raise ValueError(f"Case Type not found for {court} {case_type}")
 
     def addCaseTypes(self, records: list[CaseType]):
         for record in records:

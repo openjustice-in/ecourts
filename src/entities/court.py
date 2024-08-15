@@ -124,6 +124,19 @@ class Court:
             "court_code": self.court_code,
         }
 
+
+    def __eq__(self, other):
+        """
+        Compare two courts for equality.
+
+        Args:
+            other (Court): The other court to compare against.
+
+        Returns:
+            bool: True if the courts are equal, False otherwise.
+        """
+        return self.state_code == other.state_code and self.district_code == other.district_code and (self.court_code or "1") == (other.court_code or "1")
+
     def __iter__(self):
         for key in ["state_code", "district_code", "court_code"]:
             yield key, getattr(self, key)

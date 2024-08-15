@@ -11,15 +11,6 @@ import click
 from functools import wraps
 from parsers.cases import parse_cases
 
-
-CASE_TYPE_LOOKUP = {
-    ("HCP", "12", "2"): "171",
-    ("HCP", "12", "1"): "17",
-    ("WP(Crl)", "12", "2"): "328",
-    ("WP(Crl)", "12", "1"): "328",
-}
-
-
 def validate_year(ctx, _, value):
     if value and (value < 1990 or value > 2025):
         raise click.BadParameter("Year must be in YYYY format")
@@ -274,11 +265,16 @@ def enrich_cases(cnr, download_orders):
         # cnr given = automatically force an update
         if case_data['case_status'] != None and cnr == None:
             continue
+        
+        court = Court(state_code=case_data['state_code'], court_code=case_data['court_code'])
+
         if 'case_type_int' not in case_data:
-            case_data['case_type_int'] = CASE_TYPE_LOOKUP[(case_data['case_type'], case_data['state_code'], case_data['court_code'])]
+            case_data['case_type_int'] = s.findCaseType(court, case_data['case_type'])
+            if case_data['case_type_int'] == None:
+                print("Case Type not found for " + case_data['cnr_number'])
+                continue
 
-        ecourt = ECourt(Court(state_code=case_data['state_code'], court_code=case_data['court_code']))
-
+        ecourt = ECourt(court)
         registration_number = case_data['registration_number']
         # Search using case_type_int for now, we can move to number search, but that is heuristic really.
         cases = list(parse_cases(ecourt.searchSingleCase(registration_number, case_data['case_type_int'])))

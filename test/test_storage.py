@@ -96,6 +96,12 @@ def test_case_types():
     storage.addCaseTypes(case_types)
     for record in storage.getCaseTypes():
         assert record in case_types
+    x = storage.findCaseType(Court(state_code="1"), "APPCP")
+    assert x == CaseType(
+        code=326,
+        description="APPCP - Application in Cr. Cont. Petn.",
+        court=Court(state_code="1"),
+    )
     storage.close()
     os.unlink("/tmp/ecourts.db")
 
