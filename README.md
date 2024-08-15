@@ -1,8 +1,5 @@
 # ecourts [![Coverage Status](https://coveralls.io/repos/github/captn3m0/ecourts/badge.svg?branch=main)](https://coveralls.io/github/captn3m0/ecourts?branch=main) [![PyPI - Latest Version](https://img.shields.io/pypi/v/ecourts)](https://pypi.org/project/ecourts/) [![GitHub Tag](https://img.shields.io/github/v/tag/captn3m0/ecourts?filter=v*)](https://github.com/captn3m0/ecourts/releases/latest) [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/captn3m0/ecourts/test.yml?branch=main)](https://github.com/captn3m0/ecourts/actions/workflows/test.yml) [![docs](https://img.shields.io/badge/docs-Guide-9b59b6)](https://captnemo.in/ecourts/) [![docs](https://img.shields.io/badge/docs-API_Reference-9b59b6)](https://captnemo.in/ecourts/src/) [[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13324986.svg)](https://doi.org/10.5281/zenodo.13324986)](https://zenodo.org/records/13324986)
 
-
-
-
 This is a information retrieval toolkit to fetch case information from the
 ECourts Service. This is primarily meant for journalists, and law
 researchers who need bulk access to the ECourts website to get orders,
@@ -90,14 +87,19 @@ Other entities involved are more legal in nature:
 - Be nice to the ecourts website. Retry failed requests, but do not hammer the site.
   In case of 5xx errors, wait for a while before retrying.
 
-## Citation
+## Citation [[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13324986.svg)](https://doi.org/10.5281/zenodo.13324986)](https://zenodo.org/records/13324986)
 
 If you use this for any research purposes, please use the following
-citation information. In `BiBTeX` format:
+citation information. 
+
+`DOI: https://doi.org/10.5281/zenodo.13324986`
+
+In `BiBTeX` format:
 
 ```bibtex
 @software{Abhay_Rana_ecourts_2024,
 author = {{Abhay Rana}},
+doi = {10.5281/zenodo.13324986},
 month = aug,
 title = {{ecourts}},
 version = {0.0.6},
@@ -108,9 +110,13 @@ year = {2024}
 In APA format:
 
 ```
-Rana, A. ecourts [Computer software]. https://github.com/captn3m0/ecourts
+Rana, A. ecourts [Computer software]. https://doi.org/10.5281/zenodo.13324986
 ```
 
+You can check other citation formats on the [Zenodo Website](https://zenodo.org/records/13324986)
+or on GitHub by clicking "Cite this repository". Since this is a dynamic software - it 
+depends on the ecourts website, please cite the Zenodo ID `13324986` as it will always
+point to the latest version of the software.
 
 ## LICENSE
 

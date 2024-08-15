@@ -11,6 +11,9 @@ authors:
     orcid: 'https://orcid.org/0000-0002-7993-1363'
 repository-code: 'https://github.com/captn3m0/ecourts'
 url: 'https://captnemo.in/ecourts'
+identifiers:
+  - type: DOI
+    value: 10.5281/zenodo.13324986
 repository: 'https://git.captnemo.in/nemo/ecourts'
 repository-artifact: 'https://pypi.org/project/ecourts/'
 abstract: >-
