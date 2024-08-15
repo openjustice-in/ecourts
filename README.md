@@ -88,6 +88,28 @@ Other entities involved are more legal in nature:
 - Be nice to the ecourts website. Retry failed requests, but do not hammer the site.
   In case of 5xx errors, wait for a while before retrying.
 
+## Citation
+
+If you use this for any research purposes, please use the following
+citation information. In `BiBTeX` format:
+
+```bibtex
+@software{Abhay_Rana_ecourts_2024,
+author = {{Abhay Rana}},
+month = aug,
+title = {{ecourts}},
+version = {0.0.6},
+year = {2024}
+}
+```
+
+In APA format:
+
+```
+Rana, A. ecourts [Computer software]. https://github.com/captn3m0/ecourts
+```
+
+
 ## LICENSE
 
 Licensed under `GPL3-or-later`. If you run this code, you are responsible
