@@ -22,24 +22,6 @@ hearings:
   next_date: null
   purpose: MOTION
   srno: 1
-- !!python/object:entities.hearing.Hearing
-  cause_list_type: Order Number
-  court_no: '1434'
-  date: null
-  details: null
-  judge: Order on
-  next_date: null
-  purpose: Order Details
-  srno: 1
-- !!python/object:entities.hearing.Hearing
-  cause_list_type: null
-  court_no: '1434'
-  date: null
-  details: null
-  judge: BA/64/2024
-  next_date: 2024-06-25
-  purpose: View
-  srno: 1
 judicial: Criminal Section
 nature_of_disposal: null
 not_before_me: null

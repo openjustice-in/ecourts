@@ -31,17 +31,8 @@ hearings:
   next_date: 2016-04-22
   purpose: FOR ADMISSION After Notice
   srno: 1
-- !!python/object:entities.hearing.Hearing
-  cause_list_type: Order Number
-  court_no: '0'
-  date: null
-  details: null
-  judge: Order on
-  next_date: null
-  purpose: Order Details
-  srno: 1
 judicial: HABEUS CORPUS PETITION (HCP)
-nature_of_disposal: --
+nature_of_disposal: null
 not_before_me: null
 objections: []
 orders: []

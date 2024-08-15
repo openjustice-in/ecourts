@@ -12,12 +12,12 @@ filing_date: null
 filing_number: null
 fir: null
 first_hearing_date: null
-hearings: null
+hearings: []
 judicial: null
 nature_of_disposal: null
 not_before_me: null
-objections: null
-orders: null
+objections: []
+orders: []
 petitioners:
 - !!python/object:entities.party.Party
   advocate: null

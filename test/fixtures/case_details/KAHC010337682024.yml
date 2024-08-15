@@ -45,15 +45,6 @@ hearings:
   next_date: null
   purpose: ORDERS
   srno: 2
-- !!python/object:entities.hearing.Hearing
-  cause_list_type: Order Number
-  court_no: '1492'
-  date: null
-  details: null
-  judge: Order on
-  next_date: null
-  purpose: Order Details
-  srno: 2
 judicial: Judicial Section
 nature_of_disposal: null
 not_before_me: Unknown
