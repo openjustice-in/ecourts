@@ -29,7 +29,7 @@ jobs:
         run: pdoc --html --output-dir docs src
 
       - name: Converts README.md to HTML
-        uses: jaywcjlove/markdown-to-html-cli@395545594ec37e80b121bb838c2b49f93d16373a # main
+        uses: jaywcjlove/markdown-to-html-cli@45cdc7b96a1d5e62d353234c38e379b368a38f29 # main
         with:
           source: README.md
           output: docs/index.html
