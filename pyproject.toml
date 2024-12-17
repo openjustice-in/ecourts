@@ -7,10 +7,12 @@ authors = [
 keywords = ["ecourts", "legal-research", "india", "judiciary", "law", "information-retrieval"]
 
 dependencies = [
-    "requests~=2.31",
-    "beautifulsoup4~=4.10",
-    "opencv-python~=4.10.0",    
-    "click~=8.1"
+    "requests~=2.32",
+    "beautifulsoup4~=4.12",
+    "opencv-python~=4.10.0",
+    "click~=8.1",
+    "tabulate~=0.9",
+    "tqdm~=4.67",
 ]
 
 requires-python = ">=3.9"
