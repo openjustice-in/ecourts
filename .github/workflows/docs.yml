@@ -26,14 +26,7 @@ jobs:
         run: python -m pip install .[docs]
 
       - name: Build Docs
-        run: pdoc --html --output-dir docs src
-
-      - name: Converts README.md to HTML
-        uses: jaywcjlove/markdown-to-html-cli@45cdc7b96a1d5e62d353234c38e379b368a38f29 # main
-        with:
-          source: README.md
-          output: docs/index.html
-          github-corners: https://github.com/captn3m0/ecourts
+        run: pdoc --no-mermaid --logo /icon.png --no-math  -e ecourts=https://github.com/openjustice-in/ecourts/blob/main/ecourts/ --output-dir docs --footer-text "Open Justice India" ecourts
 
       - name: Setup Pages
         id: pages

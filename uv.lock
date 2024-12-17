@@ -218,7 +218,7 @@ toml = [
 
 [[package]]
 name = "ecourts"
-version = "0.0.9.dev2+gea7d1f4.d20241217"
+version = "0.0.9.dev4+g5553299.d20241217"
 source = { editable = "." }
 dependencies = [
     { name = "beautifulsoup4" },

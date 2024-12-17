@@ -21,6 +21,10 @@ dynamic = ["version", "readme"]
 [tool.setuptools.dynamic]
 readme = {file = ["README.md"], content-type = "text/markdown"}
 
+[tool.setuptools.packages.find]
+where = ["ecourts"]
+namespaces = false
+
 [project.optional-dependencies]
 # Building Docs
 docs = [
@@ -42,13 +46,13 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools]
 [tool.setuptools_scm]
 # This is automatically generated
-version_file = "src/_version.py"
+version_file = "ecourts/_version.py"
 
 [tool.pytest.ini_options]
 # Coverage reports
-addopts = "--cov=src --cov-report lcov --cov-report html"
+addopts = "--cov=ecourts --cov-report lcov --cov-report html"
 pythonpath = [
-  "src"
+  "ecourts"
 ]
 testpaths = [
   "test"
@@ -58,10 +62,10 @@ testpaths = [
 ecourts = "cli:ecourts"
 
 [tool.pdoc]
-modules = ["src"]
+modules = ["ecourts"]
 
 [tool.coverage.run]
-source = ["src"]
+source = ["ecourts"]
 
 [tool.coverage.html]
 directory = "docs/coverage"
