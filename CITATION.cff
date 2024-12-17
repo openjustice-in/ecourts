@@ -9,12 +9,11 @@ authors:
     family-names: Rana
     email: ecourts@captnemo.in
     orcid: 'https://orcid.org/0000-0002-7993-1363'
-repository-code: 'https://github.com/captn3m0/ecourts'
-url: 'https://captnemo.in/ecourts'
+repository-code: 'https://github.com/openjustice-in/ecourts'
+url: 'https://openjustice-in.github.io/ecourts/'
 identifiers:
   - type: DOI
     value: 10.5281/zenodo.13324986
-repository: 'https://git.captnemo.in/nemo/ecourts'
 repository-artifact: 'https://pypi.org/project/ecourts/'
 abstract: >-
   ecourts is a information retrieval tool for Indian High

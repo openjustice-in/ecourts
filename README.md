@@ -1,4 +1,4 @@
-# ecourts [![Coverage Status](https://coveralls.io/repos/github/captn3m0/ecourts/badge.svg?branch=main)](https://coveralls.io/github/captn3m0/ecourts?branch=main) [![PyPI - Latest Version](https://img.shields.io/pypi/v/ecourts)](https://pypi.org/project/ecourts/) [![GitHub Tag](https://img.shields.io/github/v/tag/captn3m0/ecourts?filter=v*)](https://github.com/captn3m0/ecourts/releases/latest) [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/captn3m0/ecourts/test.yml?branch=main)](https://github.com/captn3m0/ecourts/actions/workflows/test.yml) [![docs](https://img.shields.io/badge/docs-Guide-9b59b6)](https://captnemo.in/ecourts/) [![docs](https://img.shields.io/badge/docs-API_Reference-9b59b6)](https://captnemo.in/ecourts/src/) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13324986.svg)](https://doi.org/10.5281/zenodo.13324986)
+# ecourts [![Coverage Status](https://coveralls.io/repos/github/captn3m0/ecourts/badge.svg?branch=main)](https://coveralls.io/github/captn3m0/ecourts?branch=main) [![PyPI - Latest Version](https://img.shields.io/pypi/v/ecourts)](https://pypi.org/project/ecourts/) [![GitHub Tag](https://img.shields.io/github/v/tag/captn3m0/ecourts?filter=v*)](https://github.com/captn3m0/ecourts/releases/latest) [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/captn3m0/ecourts/test.yml?branch=main)](https://github.com/captn3m0/ecourts/actions/workflows/test.yml) [![docs](https://img.shields.io/badge/docs-Guide-9b59b6)](https://openjustice-in.github.io/ecourts/) [![docs](https://img.shields.io/badge/docs-API_Reference-9b59b6)](https://openjustice-in.github.io/ecourts/src/) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13324986.svg)](https://doi.org/10.5281/zenodo.13324986)
 
 This is a information retrieval toolkit to fetch case information from the
 ECourts Service. This is primarily meant for journalists, and law
@@ -61,22 +61,22 @@ and an ECourt is the primary class that deals with the website.
 
 Other entities involved are more legal in nature:
 
-- [Case](https://captnemo.in/ecourts/src/entities/case.html#src.entities.case.Case)
-- [CaseType](https://captnemo.in/ecourts/src/entities/case_type.html)
-- [ActType](https://captnemo.in/ecourts/src/entities/act_type.html)
-- [FIR](https://captnemo.in/ecourts/src/entities/fir.html)
-- [Hearing](https://captnemo.in/ecourts/src/entities/hearing.html)
-- [Objection](https://captnemo.in/ecourts/src/entities/objection.html)
-- [Order](https://captnemo.in/ecourts/src/entities/order.html) - An order or judgement in a case.
-- [Party](https://captnemo.in/ecourts/src/entities/party.html) - Either a petitioner or a responded to a case.
-- [Court](https://captnemo.in/ecourts/src/entities/court.html)
-- [ECourt](https://captnemo.in/ecourts/src/ecourt.html) APIs are also documented.
+- [Case](https://openjustice-in.github.io/ecourts/src/entities/case.html#src.entities.case.Case)
+- [CaseType](https://openjustice-in.github.io/ecourts/src/entities/case_type.html)
+- [ActType](https://openjustice-in.github.io/ecourts/src/entities/act_type.html)
+- [FIR](https://openjustice-in.github.io/ecourts/src/entities/fir.html)
+- [Hearing](https://openjustice-in.github.io/ecourts/src/entities/hearing.html)
+- [Objection](https://openjustice-in.github.io/ecourts/src/entities/objection.html)
+- [Order](https://openjustice-in.github.io/ecourts/src/entities/order.html) - An order or judgement in a case.
+- [Party](https://openjustice-in.github.io/ecourts/src/entities/party.html) - Either a petitioner or a responded to a case.
+- [Court](https://openjustice-in.github.io/ecourts/src/entities/court.html)
+- [ECourt](https://openjustice-in.github.io/ecourts/src/ecourt.html) APIs are also documented.
 
 ## Documentation
 
-- Canonical link for the project is <https://captnemo.in/ecourts/>.
+- Canonical link for the project is <https://openjustice-in.github.io/ecourts/>.
 - General guidance is available via `ecourts --help` or `ecourts cmd --help`.
-- Python documentation is available at [captnemo.in/ecourts/src](https://captnemo.in/ecourts/src/).
+- Python documentation is available at [openjustice-in.github.io/ecourts/src](https://openjustice-in.github.io/ecourts/src/).
 - Coverage reports are published at [Coveralls](https://coveralls.io/github/captn3m0/ecourts).
 
 ## Guiding Principles
