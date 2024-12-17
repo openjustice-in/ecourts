@@ -24,7 +24,7 @@ readme = {file = ["README.md"], content-type = "text/markdown"}
 [project.optional-dependencies]
 # Building Docs
 docs = [
-  "pdoc3~=0.11"
+  "pdoc~=15.0"
 ]
 # Running Tests
 test = [
