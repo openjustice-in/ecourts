@@ -1,7 +1,7 @@
 import pytest
 import glob
 import datetime
-from entities import Hearing, Court, Order
+from entities import Hearing, Court, Order, CauseList
 import os
 import wat
 
@@ -44,3 +44,20 @@ def test_order():
         date=d,
         judgement=False,
     )
+
+
+def test_cause_list():
+    c = CauseList(
+        date="2024-10-11",
+        filename="bzPoyUlszYLCUcCpirIpqD4zP7uYkWTX8C00g6kf5Iussic1N%2FNtcHJ6pTca1m7D",
+        bench="bench",
+        type="VIDEO conferencing",
+        eliminated="",
+        bench_id="1001",
+        causelist_id="2000"
+    )
+    assert c.date == datetime.date(2024, 10, 11)
+    assert c.filename == "bzPoyUlszYLCUcCpirIpqD4zP7uYkWTX8C00g6kf5Iussic1N%2FNtcHJ6pTca1m7D"
+    assert c.eliminated == False
+    assert c.video_conferencing == True
+    assert c.url() == "https://hcservices.ecourts.gov.in/ecourtindiaHC/cases/display_causelist.php?filename=bzPoyUlszYLCUcCpirIpqD4zP7uYkWTX8C00g6kf5Iussic1N%2FNtcHJ6pTca1m7D"

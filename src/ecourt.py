@@ -5,13 +5,18 @@ from collections.abc import Iterator
 from tempfile import mkstemp
 import time
 from urllib.parse import urlencode
-from entities import Court, CaseType,Case, Hearing, Order, ActType
+from entities import Court, CaseType, Case, Hearing, Order, ActType, CauseList
 from entities.hearing import UnexpandableHearing
 import datetime
 import csv
 from parsers.orders import parse_orders
 from parsers.options import parse_options
 from parsers.cases import parse_cases
+from parsers.cause_lists import parse_cause_lists
+
+
+class RetryException(Exception):
+    pass
 
 
 class ECourt:
@@ -25,6 +30,13 @@ class ECourt:
         self.session = requests.Session()
         self.court = court
         self.captcha = Captcha(self.session)
+        self.max_attempts = 15
+
+    def set_max_attempts(self, attempts):
+        self.max_attempts = attempts
+
+    def attempts(self):
+        return self.max_attempts
 
     def url(self, path, queryParams={}):
         if len(queryParams) > 0:
@@ -47,9 +59,9 @@ class ECourt:
                 if csrf:
                     params |= self.CSRF_MAGIC_PARAMS
 
-                retries = 15
+                attempts = self.attempts()
 
-                while retries > 0:
+                while attempts > 0:
                     try:
                         extra_params = func(self, *args, **kwargs) or {}
                         if len(extra_params) == 0:
@@ -57,32 +69,26 @@ class ECourt:
                         else:
                             params |= extra_params
                         if 'captcha' in params and params['captcha'] == None:
-                            print("Ran out captch retries")
+                            print("Ran out captcha attempts")
                             sys.exit(1)
 
-                        # print(params)
                         response = self.session.post(self.url(path), data=params, allow_redirects=False, timeout=(5, 10))
-                        # print(response.text)
-
-                        # , headers={
-                        #     "user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
-                        # })
                         self.validate_response(response)
                         if response.status_code == 302 and response.headers['location'].startswith("errormsg"):
                             raise ValueError("Error: " + response.headers['location'])
                         response.raise_for_status()
-                        retries = 0
-                    except (CaptchaError,ValueError, requests.exceptions.Timeout, requests.exceptions.ConnectionError) as e:
+                        attempts = 0
+                    except (CaptchaError, ValueError, requests.exceptions.Timeout, requests.exceptions.ConnectionError) as e:
                         time.sleep(1)
-                        retries -= 1
-                        if retries == 0:
-                            raise Exception("Attemped 10 Retries, still failed")
+                        attempts -= 1
+                        if attempts == 0:
+                            raise RetryException(f"Ran out of {self.attempts()} attempts, still failed")
                     except (requests.exceptions.HTTPError) as e:
-                        time.sleep(5)
-                        retries -= 1
-                        if retries == 0:
-                            raise Exception("Attemped 10 Retries, still failed")
-                
+                        time.sleep(1)
+                        attempts -= 1
+                        if attempts == 0:
+                            raise RetryException(f"Ran out of {self.attempts()} attempts, still failed")
+
                 response.encoding = "utf-8-sig"
                 return response.text
 
@@ -152,13 +158,13 @@ class ECourt:
             r["search_year"] = search_year
         return r
 
-    def CaseType(self, case_type:str, status:str, year: int = None):
+    def CaseType(self, case_type: str, status: str, year: int = None):
         cc = self.court.court_code or "1"
         url = self.url(f"/cases/s_casetype.php?state_cd={self.court.state_code}&dist_cd=1&court_code={cc}")
         self.session.get(url)
         result = self._search_cases_by_case_type(case_type, status, year)
         return parse_cases(result)
-    
+
     # Search for cases by Act Type
     @apimethod(
         path="/cases/s_actwise_qry.php", action="showRecords", court=True, csrf=True
@@ -175,7 +181,7 @@ class ECourt:
             "f": status
         }
 
-    def ActType(self, act_type:str, status: str):
+    def ActType(self, act_type: str, status: str):
         result = self._search_cases_by_act_type(act_type, status)
         return parse_cases(result)
 
@@ -194,7 +200,6 @@ class ECourt:
             "caseNoType": "new",
             "displayOldCaseNo": "NO"
         }
-
 
     def expand_case(self, case: Case):
         from parsers.case_details import CaseDetails
@@ -217,10 +222,10 @@ class ECourt:
     )
     def _get_case_type(self, *args, **kwargs):
         pass
-    
+
     @apimethod(
         path="/cases/s_actwise_qry.php", csrf=False, court=True, action="fillActType"
-    )  
+    )
     def _get_act_type(self, query: str, **kwargs):
         return {
             "search_act": query
@@ -230,13 +235,17 @@ class ECourt:
         for option in parse_options(self._get_act_type(query))[1:]:
             yield ActType(code=int(option[0]), description=option[1], court=self.court)
 
+    def getCauseLists(self, date: datetime.date) -> Iterator[CauseList]:
+        raw_res = self._get_cause_lists(date)
+        return parse_cause_lists(raw_res)
+
     @apimethod(
         path="/cases/highcourt_causelist_qry.php",
         court=True,
         action="pulishedCauselist",
         csrf=False
     )
-    def get_cause_list(self, date: datetime.date, **kwargs):
+    def _get_cause_lists(self, date: datetime.date, **kwargs):
         dt_str = date.strftime("%d-%m-%Y")
         return {
             "causelist_dt": dt_str,

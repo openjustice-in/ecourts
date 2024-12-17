@@ -1,0 +1,558 @@
+- !!python/object:entities.cause_list.CauseList
+  bench: CHIEF JUSTICE, K. V. ARAVIND
+  bench_id: '2001'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: YWPl4F3Urg%2FF24MDRkydjRr%2BuCmf098xBjbjYbgZQTI%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: CHIEF JUSTICE, K. V. ARAVIND
+  bench_id: '2001'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: YWPl4F3Urg%2FF24MDRkydjTW%2B8cBsstmwuT6fCPGPC2g%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: V KAMESWAR RAO, C M JOSHI
+  bench_id: '2009'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: 8CNyxmyj%2B3OEOyMDcdqZdio2TRF12%2BEhlzNPxNGcHqE%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: V KAMESWAR RAO, S RACHAIAH
+  bench_id: '2039'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: '%2BZ6uTnlZkFoy%2F3fhaNMhUkYMSv%2FmuwuyLFN1lebrMPc%3D'
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: ANU SIVARAMAN, UMESH M ADIGA
+  bench_id: '2040'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: y91vtRvhKIn8OrfnrANR4HqBBqCsGoN4CUBSDTDqfkU%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: ANU SIVARAMAN, UMESH M ADIGA
+  bench_id: '2040'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: y91vtRvhKIn8OrfnrANR4L55dPZTZSB8fdnTHuBs4mc%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: K.SOMASHEKAR, RAJESH RAI K
+  bench_id: '1878'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: A4czLtOUxkw90ziDDskUTYnqvAPrccB84fHloAjeScU%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: K.SOMASHEKAR, RAJESH RAI K
+  bench_id: '1878'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: A4czLtOUxkw90ziDDskUTb77I%2FYjApJND1VmAK%2Fgv8w%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: K.SOMASHEKAR, RAJESH RAI K
+  bench_id: '1878'
+  causelist_id: '1003'
+  date: 2024-12-10
+  eliminated: false
+  filename: A4czLtOUxkw90ziDDskUTc6KGJy20SYTmuzXzKl0oTk%3D
+  type: Cause List No. 3
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: CENTRAL PROJECT CO-ORDINATOR
+  bench_id: '927'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: 9Ahwmj4rjbG8Wwj553yd1Ka%2F9gvrA9NvgjElsHbVAF0%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: KRISHNA S DIXIT, C M JOSHI
+  bench_id: '2041'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: Wu4lgRwtPkaNJr0tj%2FwBp3NzKz8hpHcpwVvvflLOrD0%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: S.G.PANDIT, RAMACHANDRA D. HUDDAR
+  bench_id: '2042'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: frB53yC3OvQ7BksoVqMrdQRTA1ojyy%2FrGfWTRaJOoZo%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: B M SHYAM PRASAD
+  bench_id: '1285'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: C4OH2wM%2FwjWxl74QlEn%2BfoNy149MeiqwL76meaEl05k%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: S SUNIL DUTT YADAV
+  bench_id: '1286'
+  causelist_id: '1004'
+  date: 2024-12-10
+  eliminated: false
+  filename: VABYYda%2BE0DEjLuLAb1pKrbFq9Q3MTbwdisIY%2B50x4c%3D
+  type: Cause List No. 4
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: S SUNIL DUTT YADAV
+  bench_id: '1286'
+  causelist_id: '1003'
+  date: 2024-12-10
+  eliminated: false
+  filename: VABYYda%2BE0DEjLuLAb1pKv3d4h5uenCGrZ9jrCCR%2FoE%3D
+  type: Cause List No. 3
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: S SUNIL DUTT YADAV
+  bench_id: '1286'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: VABYYda%2BE0DEjLuLAb1pKl4aiwFhibmCeSApfCMmL%2Bs%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: S SUNIL DUTT YADAV
+  bench_id: '1286'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: VABYYda%2BE0DEjLuLAb1pKrEVQiLGbiNk20xfgRdxiVk%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: MOHAMMAD NAWAZ
+  bench_id: '1317'
+  causelist_id: '1019'
+  date: 2024-12-10
+  eliminated: false
+  filename: bsNiKF%2FOCdLZlmW5I7NBIPvzQuV0Xcft0lSW3yMjsH8%3D
+  type: VIDEO CONFERENCING
+  video_conferencing: true
+- !!python/object:entities.cause_list.CauseList
+  bench: H.P.SANDESH
+  bench_id: '1353'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: 68uZNwrE7ngtX3YMjeiAo%2BeuLEJOmmZqxayb8u5EPpI%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: K.NATARAJAN
+  bench_id: '1354'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: OrHDskVyPeNP9WL7UFwNI%2FVriPC4VJdLG2Z7Tb%2BZoSA%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: K.NATARAJAN
+  bench_id: '1354'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: OrHDskVyPeNP9WL7UFwNI7fr0iBb57tVWJbEtrwOtZ8%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: ASHOK S.KINAGI
+  bench_id: '1455'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: mXajuasoTqp8VolHjI7ZjWaYH9cgn4c1uh8I%2F3TlaL8%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: ASHOK S.KINAGI
+  bench_id: '1455'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: mXajuasoTqp8VolHjI7ZjaFYob9NWPTKMJw0IUmQfbo%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: SURAJ GOVINDARAJ
+  bench_id: '1456'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: 65uMqHOiRVonN4%2FysR6ZRnc77ymzQON9T8RXjbG1Yyc%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: SURAJ GOVINDARAJ
+  bench_id: '1456'
+  causelist_id: '1004'
+  date: 2024-12-10
+  eliminated: false
+  filename: 65uMqHOiRVonN4%2FysR6ZRvbowWoOGBejjn4SaeK5VhA%3D
+  type: Cause List No. 4
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: SURAJ GOVINDARAJ
+  bench_id: '1456'
+  causelist_id: '1003'
+  date: 2024-12-10
+  eliminated: false
+  filename: 65uMqHOiRVonN4%2FysR6ZRjZtYCQ%2Fmy0ZGhnCMlA%2FxRA%3D
+  type: Cause List No. 3
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: SURAJ GOVINDARAJ
+  bench_id: '1456'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: 65uMqHOiRVonN4%2FysR6ZRpxkAksItBI0GM4Z52ByNKw%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: SACHIN SHANKAR MAGADUM
+  bench_id: '1457'
+  causelist_id: '1019'
+  date: 2024-12-10
+  eliminated: false
+  filename: yrDz%2FybSvvtA6Nr5dGLDc8xHQodTKzJg0w7Jld94FDk%3D
+  type: VIDEO CONFERENCING
+  video_conferencing: true
+- !!python/object:entities.cause_list.CauseList
+  bench: N S SANJAY GOWDA
+  bench_id: '1478'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: 2joQ9xI6wiV%2Fumc%2Bb2be%2B2lR81DtNqh9YtFfe5BhIB8%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: JYOTI MULIMANI
+  bench_id: '1479'
+  causelist_id: '1003'
+  date: 2024-12-10
+  eliminated: false
+  filename: U67fQrmMhv6L4iTYV1wESo7nP3awss9ptsq8d7OWqFw%3D
+  type: Cause List No. 3
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: JYOTI MULIMANI
+  bench_id: '1479'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: U67fQrmMhv6L4iTYV1wESt3FMZn7jdIYJLKUAa93k%2BA%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: JYOTI MULIMANI
+  bench_id: '1479'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: U67fQrmMhv6L4iTYV1wESpOEH3hu%2FczLzopQTTxMaxQ%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: R. NATARAJ
+  bench_id: '1480'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: 1h%2Bp7AFdVcYJFIhRW7HNDrDbBLz%2FZG0BdLxfLvG6AdU%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: R. NATARAJ
+  bench_id: '1480'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: 1h%2Bp7AFdVcYJFIhRW7HNDnaa2U5CvQ9zDoNgFyVyvnE%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: R. NATARAJ
+  bench_id: '1480'
+  causelist_id: '1003'
+  date: 2024-12-10
+  eliminated: false
+  filename: 1h%2Bp7AFdVcYJFIhRW7HNDn5v%2FcEettQAVhbg%2Bck7%2Fa0%3D
+  type: Cause List No. 3
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: HEMANT CHANDANGOUDAR
+  bench_id: '1481'
+  causelist_id: '1003'
+  date: 2024-12-10
+  eliminated: false
+  filename: zUW0PebAGUuXnb9XIPHb1pyX22M0JC08smKOzqlHn2o%3D
+  type: Cause List No. 3
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: HEMANT CHANDANGOUDAR
+  bench_id: '1481'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: zUW0PebAGUuXnb9XIPHb1u0QebtmWNVBBD%2BBYomFfoQ%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: HEMANT CHANDANGOUDAR
+  bench_id: '1481'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: zUW0PebAGUuXnb9XIPHb1l4sh4En71f3fp4NWmZIGWo%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: M.NAGAPRASANNA
+  bench_id: '1492'
+  causelist_id: '1005'
+  date: 2024-12-10
+  eliminated: false
+  filename: s7jjI%2F%2FC8dsVWeKfOAXa9VX%2Fm7wCiwgwO4Ea4%2FhxvwY%3D
+  type: Cause List No. 5
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: M.NAGAPRASANNA
+  bench_id: '1492'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: s7jjI%2F%2FC8dsVWeKfOAXa9Wj%2BcPlF0BdrToAyWRhMNTo%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: M.NAGAPRASANNA
+  bench_id: '1492'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: s7jjI%2F%2FC8dsVWeKfOAXa9fvXeLsJpIiZWG3e21akNHs%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: M.NAGAPRASANNA
+  bench_id: '1492'
+  causelist_id: '1003'
+  date: 2024-12-10
+  eliminated: false
+  filename: s7jjI%2F%2FC8dsVWeKfOAXa9e8gyjAB5y4ONTVw04qSOt8%3D
+  type: Cause List No. 3
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: M.NAGAPRASANNA
+  bench_id: '1492'
+  causelist_id: '1004'
+  date: 2024-12-10
+  eliminated: false
+  filename: s7jjI%2F%2FC8dsVWeKfOAXa9Sped5ypTDhRqdzR4T67LCU%3D
+  type: Cause List No. 4
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: M.I.ARUN
+  bench_id: '1508'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: sFcs%2Ba6eajtV7haGW%2B0DOG6xNhWep4Pm4uJjh6gkQdI%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: E.S.INDIRESH
+  bench_id: '1507'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: kH%2FZjJPwLUhKZwe9seVK%2FBKc8KbYew6dam9CwpWCZss%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: E.S.INDIRESH
+  bench_id: '1507'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: kH%2FZjJPwLUhKZwe9seVK%2FKwF7ja9nv9CT1BjSdlAY9U%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: S VISHWAJITH SHETTY
+  bench_id: '1568'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: BBKpHrTNraBVm%2B8T8AfDy30djlrOwDlA7X5BqtVQJg4%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: S VISHWAJITH SHETTY
+  bench_id: '1568'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: BBKpHrTNraBVm%2B8T8AfDy2FLWbEdkF85FAs6U8AvNT4%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: SHIVASHANKAR AMARANNAVAR
+  bench_id: '1600'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: YiUxtKXOZECJC75yCR7NAGOMxIDgNROeRFvBvOmd8RE%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: M G UMA
+  bench_id: '1603'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: mrQwYKJi6R86VJ8978oXzfAzr2EgVfQlJtXcw7PqH4c%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: M G UMA
+  bench_id: '1603'
+  causelist_id: '1004'
+  date: 2024-12-10
+  eliminated: false
+  filename: mrQwYKJi6R86VJ8978oXzbByX8PC8axTdWhcdP7MVvs%3D
+  type: Cause List No. 4
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: M G UMA
+  bench_id: '1603'
+  causelist_id: '1003'
+  date: 2024-12-10
+  eliminated: false
+  filename: mrQwYKJi6R86VJ8978oXzV7I0m0zt8l6qctOjtYc%2B2A%3D
+  type: Cause List No. 3
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: M G UMA
+  bench_id: '1603'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: mrQwYKJi6R86VJ8978oXzQc5h61OCx04SHjZa0sAGM0%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: V SRISHANANDA
+  bench_id: '1581'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: dauy7f8X7%2F1g17xCJM7cjRK33xYyyVP0p3uWBSlp84o%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: HANCHATE SANJEEVKUMAR
+  bench_id: '1555'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: nuMIaxfaM8GZWx%2FiJPAcVyoD4JF25Y4b2UGb9DL9%2FNM%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: HANCHATE SANJEEVKUMAR
+  bench_id: '1555'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: nuMIaxfaM8GZWx%2FiJPAcVxt4WRtdIRV6xP%2B%2BOKZQ0Gk%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: J.M.KHAZI
+  bench_id: '1646'
+  causelist_id: '1019'
+  date: 2024-12-10
+  eliminated: false
+  filename: 97V8%2BzB2tcBLaj%2FrKmvvHAwLeYNJ25%2Fm0swL0BE2XDg%3D
+  type: VIDEO CONFERENCING
+  video_conferencing: true
+- !!python/object:entities.cause_list.CauseList
+  bench: THE REGISTRAR (JUDICIAL)
+  bench_id: '51'
+  causelist_id: '1002'
+  date: 2024-12-10
+  eliminated: false
+  filename: auufz3MjVqp%2FVLqjz7F24Ta3Bqfo26%2FP2ZU6TZNwsLQ%3D
+  type: Cause List No. 2
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: THE REGISTRAR (JUDICIAL)
+  bench_id: '51'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: auufz3MjVqp%2FVLqjz7F24YavwI85AqdznUcS4OZw3YM%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: THE REGISTRAR (JUDICIAL)
+  bench_id: '51'
+  causelist_id: '1003'
+  date: 2024-12-10
+  eliminated: false
+  filename: auufz3MjVqp%2FVLqjz7F24X2uOlQ6lfRjozlfxaARxc4%3D
+  type: Cause List No. 3
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: VIJAYKUMAR A. PATIL
+  bench_id: '1856'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: UMRGsH%2FbTiPEcFMA4BJPRl%2BIwlugcfjoTTSiGB7bNbM%3D
+  type: Cause List No. 1
+  video_conferencing: false
+- !!python/object:entities.cause_list.CauseList
+  bench: REGISTRAR (PROTOCOL AND HOSPITALITY)
+  bench_id: '1678'
+  causelist_id: '1001'
+  date: 2024-12-10
+  eliminated: false
+  filename: q6pdpGqPZZU6n%2FGhUvohQ1OQwHlkR6UJwxJkg91o4lM%3D
+  type: Cause List No. 1
+  video_conferencing: false

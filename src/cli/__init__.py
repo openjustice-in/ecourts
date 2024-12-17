@@ -2,25 +2,26 @@ import click
 import csv
 import sys
 from entities import Court
-from ecourt import ECourt
+from ecourt import ECourt, RetryException
 from sys import stdout
 from datetime import datetime
 from storage import Storage
+from tabulate import tabulate
 import click
-from datetime import datetime
 from functools import wraps
 from parsers.cases import parse_cases
 
 
-CASE_TYPE_LOOKUP= {
+CASE_TYPE_LOOKUP = {
     ("HCP", "12", "2"): "171",
     ("HCP", "12", "1"): "17",
     ("WP(Crl)", "12", "2"): "328",
     ("WP(Crl)", "12", "1"): "328",
 }
 
+
 def validate_year(ctx, _, value):
-    if value and (value <1990 or value > 2025):
+    if value and (value < 1990 or value > 2025):
         raise click.BadParameter("Year must be in YYYY format")
     return value
 
@@ -122,7 +123,7 @@ def get_cases(
             "act_type": act_type
         }
         cases = list(ecourt.ActType(act_type, status))
-    elif case_type!=None and status!=None:
+    elif case_type != None and status != None:
         assert status != "Both"
         extra_fields = {
             "status": status,
@@ -142,13 +143,13 @@ def get_cases(
         for field in fields:
             value = getattr(case, field)
             if value:
-                res[field]  = value
+                res[field] = value
 
         writer = csv.DictWriter(stdout, fieldnames=fields)
         if idx == 0:
             writer.writeheader()
         writer.writerow(res)
-        idx+=1
+        idx += 1
 
     if save:
         print(court)
@@ -227,6 +228,40 @@ def get_act_types(ctx, state_code, court_code, save):
         if save:
             Storage().addActTypes(types)
 
+
+@ecourts.command()
+@click.option("--state-code", help="State code of the Court")
+@click.option("--court-code", help="Court code of the Court")
+@click.option("--date", help="Cause List Date", type=click.DateTime(formats=["%Y-%m-%d"]),
+              default=str(datetime.today().date()))
+@click.option("--save", help="Save data in database", is_flag=True)
+@click.option("--max-attempts", help="Maximum attempts to make per court, in case of any errors", type=int, default=15)
+@click.pass_context
+def get_cause_lists(ctx, state_code, court_code, date: click.DateTime, save, max_attempts):
+
+    if state_code == None and court_code == None:
+        courts = list(Court.enumerate())
+    else:
+        courts = [Court(state_code=state_code, court_code=court_code)]
+
+    for court in courts:
+        ecourt = ECourt(court)
+        ecourt.set_max_attempts(max_attempts)
+        try:
+            data = list(ecourt.getCauseLists(date.date()))
+            if len(data) > 0:
+                print(tabulate([
+                    {"State": court.state_code, "Court": court.court_code} | cl.printable_dict()
+                    for cl in data
+                ], headers={"bench": "Bench", "type": "Type"}, tablefmt="presto"))
+        except RetryException:
+            if len(courts) > 1:
+                print(f"Error in court {court}. Ignoring")
+                continue
+            else:
+                raise
+
+
 @ecourts.command()
 @click.option("--cnr", help="Case CNR", required=False, type=str)
 @click.option("--download-orders", help="Download Orderss", required=False, is_flag=True, default=False)
@@ -240,7 +275,7 @@ def enrich_cases(cnr, download_orders):
         if case_data['case_status'] != None and cnr == None:
             continue
         if 'case_type_int' not in case_data:
-            case_data['case_type_int'] = CASE_TYPE_LOOKUP[(case_data['case_type'], case_data['state_code'], case_data['court_code'])]        
+            case_data['case_type_int'] = CASE_TYPE_LOOKUP[(case_data['case_type'], case_data['state_code'], case_data['court_code'])]
 
         ecourt = ECourt(Court(state_code=case_data['state_code'], court_code=case_data['court_code']))
 
@@ -264,6 +299,7 @@ def enrich_cases(cnr, download_orders):
                         if os.path.exists(f"orders/{fn}.pdf"):
                             continue
                         ecourt.downloadOrder(order, new_case, f"orders/{fn}.pdf")
+
 
 @ecourts.command()
 def stats():

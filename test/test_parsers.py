@@ -1,7 +1,7 @@
 import pytest
 import glob
-from entities import Case, Party, Hearing, Order, Objection, Court
-from parsers import parse_hearing_details
+from entities import Case, Party, Hearing, Order, Objection, Court, CauseList
+from parsers import parse_hearing_details, parse_cause_lists
 from parsers.cases import parse_cases
 from parsers.case_details import CaseDetails
 import datetime
@@ -31,6 +31,15 @@ def hearing(request):
     if os.path.exists(f"{case_no}.yml"):
         expected = yaml.unsafe_load(open(f"{case_no}.yml", "r"))
     yield [open(request.param, "r").read(), case_no, expected]
+
+
+@pytest.fixture(params=glob.glob("test/fixtures/cause_lists/*.txt"))
+def cause_lists(request):
+    id_ = os.path.splitext(request.param)[0]
+    expected = None
+    if os.path.exists(f"{id_}.yml"):
+        expected = yaml.unsafe_load(open(f"{id_}.yml", "r"))
+    yield [open(request.param, "r").read(), id_, expected]
 
 
 def test_case_details_parser(case_details):
@@ -82,6 +91,18 @@ def test_hearing_details_parser(hearing):
     data = parse_hearing_details(html)
     if not expected:
         with open(f"{case_no_file}.yml", "w") as f:
+            yaml.dump(data, f)
+    else:
+        assert data == expected
+
+
+def test_cause_lists_parser(cause_lists):
+    res = cause_lists[0]
+    uuid = cause_lists[1]
+    expected = cause_lists[2]
+    data = list(parse_cause_lists(res))
+    if not expected:
+        with open(f"{uuid}.yml", "w") as f:
             yaml.dump(data, f)
     else:
         assert data == expected
