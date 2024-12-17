@@ -42,9 +42,9 @@ class Storage:
     def findCaseType(self, court: Court, case_type: str) -> Optional[CaseType]:
         for ct in self.getCaseTypes():
             if case_type == ct.description:
-                return case_type
+                return ct
             if ct.description.startswith(case_type + " - "):
-                return case_type
+                return ct
 
         raise ValueError(f"Case Type not found for {court} {case_type}")
 

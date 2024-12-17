@@ -44,7 +44,7 @@ def test_courts_add():
 
 
 def test_case_types():
-    storage = Storage("/tmp/ecourts.db")
+    storage = Storage("/tmp/ecourts-case_types.db")
     case_types = [
         CaseType(
             code=332,
@@ -103,7 +103,7 @@ def test_case_types():
         court=Court(state_code="1"),
     )
     storage.close()
-    os.unlink("/tmp/ecourts.db")
+    os.unlink("/tmp/ecourts-case_types.db")
 
 def test_case_storage(case_details):
     if os.path.exists("/tmp/ecourts.db"):
