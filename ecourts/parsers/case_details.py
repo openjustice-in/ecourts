@@ -63,7 +63,7 @@ class CaseDetails:
         if case_status_div == None:
             breakpoint()
 
-        for row in case_status_div.nextSibling.select("label"):
+        for row in case_status_div.next_sibling.select("label"):
             if row.name == "label":
                 [key, value] = row.find_all("strong")
                 case_status[key.text.strip()] = value.text.split(":")[1].strip()
