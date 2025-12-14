@@ -8,14 +8,14 @@ keywords = ["ecourts", "legal-research", "india", "judiciary", "law", "informati
 
 dependencies = [
     "requests~=2.32",
-    "beautifulsoup4~=4.12",
+    "beautifulsoup4~=4.14",
     "opencv-python>=4.10,<4.13",
-    "click~=8.1",
+    "click~=8.3",
     "tabulate~=0.9",
     "tqdm~=4.67",
 ]
 
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dynamic = ["version", "readme"]
 
 [tool.setuptools.dynamic]
@@ -32,11 +32,11 @@ docs = [
 ]
 # Running Tests
 test = [
-  "pytest~=8.3",
-  "pytest-cov>=5,<8",
+  "pytest~=9.0",
+  "pytest-cov>=7,<9",
   "PyYAML~=6.0",
   "pytest-recording~=0.13",
-  "wat-inspector~=0.3"
+  "wat-inspector~=0.4"
 ]
 
 [build-system]
