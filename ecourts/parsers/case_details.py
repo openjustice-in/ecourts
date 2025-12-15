@@ -12,38 +12,57 @@ from entities import Case, Party, Hearing, Order, Objection, Court, FIR
 
 class CaseDetails:
 
-    def extract_span_label_dict(self, soup: BeautifulSoup, labelSelector: str) -> dict:
+    def extract_span_label_dict(self, soup: BeautifulSoup) -> dict[str, str]:
+        """
+        Extracts key-value pairs from case_details_table spans, 
+        using primary next_sibling method and a text-splitting fallback.
+        """
+        # Define the known valid key checks (moved inside the function)
+        KNOWN_VALID_KEY_CHECKS: List[str] = [
+            "Number", "Key", "Station", "District", "Year", "State", "Type", "Date"
+        ]
+        
         details = {}
-        for label in soup.select(labelSelector):
+        
+        # Find all labels in case_details_table spans
+        for label in soup.select('.case_details_table label'):
             key = label.text.strip()
-            value = ""
-            KNOWN_VALID_KEY_CHECKS = [
-                "Number",
-                "Key",
-                "Station",
-                "District",
-                "Year",
-                "State",
-                "Type",
-                "Date",
-            ]
-            validKey = False
-            for k in KNOWN_VALID_KEY_CHECKS:
-                if k in key:
-                    validKey = True
-            if not validKey:
+            
+            # Validate key contains at least one known check string
+            if not any(check in key for check in KNOWN_VALID_KEY_CHECKS):
                 continue
-            if label.next_sibling and label.next_sibling.name == "label":
-                value = label.next_sibling.text.replace(":", "")
+            
+            value = ""
+            
+            # Method 1: Check for next named sibling label
+            next_named_sibling = None
+            for sibling in label.next_siblings:
+                if sibling.name:
+                    next_named_sibling = sibling
+                    break
+            
+            if next_named_sibling and next_named_sibling.name == "label":
+                value = next_named_sibling.text.replace(":", "").strip()
+            # Method 2: Split parent text by ":"
             elif ":" in label.parent.text:
-                value = label.parent.text.split(":")[1]
+                parts = label.parent.text.split(":", 1)
+                if len(parts) > 1:
+                    value = parts[1].strip()
+            # Method 3: Check parent's next siblings
             else:
-                value = label.parent.next_sibling.text.split(":")[1]
-            details[key] = value.strip().replace("\xa0", "")
+                for sibling in label.parent.next_siblings:
+                    if hasattr(sibling, 'text') and ":" in sibling.text:
+                        parts = sibling.text.split(":", 1)
+                        if len(parts) > 1:
+                            value = parts[1].strip()
+                            break
+            
+            # Clean up value
+            details[key] = value.replace("\xa0", "").strip()
+        
         return details
-
     def extract_case_details(self, soup: BeautifulSoup) -> dict:
-        return self.extract_span_label_dict(soup, "span.case_details_table label")
+        return self.extract_span_label_dict(soup)
 
     def extract_fir_details(self, soup: BeautifulSoup) -> dict:
         d = soup.select_one("span.FIR_details_table")
@@ -63,7 +82,12 @@ class CaseDetails:
         if case_status_div == None:
             breakpoint()
 
-        for row in case_status_div.next_sibling.select("label"):
+        next_sibling = None
+        for next_sibling in case_status_div.next_siblings:
+            if next_sibling.name:
+                break
+
+        for row in next_sibling.select("label"):
             if row.name == "label":
                 [key, value] = row.find_all("strong")
                 case_status[key.text.strip()] = value.text.split(":")[1].strip()
@@ -72,9 +96,10 @@ class CaseDetails:
     def extract_parties(self, soup: BeautifulSoup, spanClass: str) -> list[Party]:
         table = soup.find("span", class_=spanClass)
         if not table:
+            raise ValueError("NO TABLES")
             return []
         s = table.text.replace("\xa0", "").strip()
-        regex = r"\d\)\s+(?P<party>.*)(\s+Advocate( )?-( )?(?P<advocate>.*))?"
+        regex = r"\d\)\s+(?P<party>[^\n]+)(?:(?:\s|\n)+Advocate\s*-\s*(?P<advocate>[^\n]+))?"
         matches = re.finditer(regex, s, re.MULTILINE)
         parties = []
         for matchNum, match in enumerate(matches, start=1):
@@ -146,18 +171,15 @@ class CaseDetails:
 
     def extract_orders(self, soup: BeautifulSoup) -> list[Order]:
         orders = []
-        if soup.find("table", id="orderheading") == None:
-            return []
-        headertext = soup.find("table", id="orderheading").find_next("table").select_one("tr").text
-
-        # We have picked up the objection table instead
-        # since there are no orders
-        if "OBJECTION" in headertext.upper():
-            return []
-        for row in (
-            soup.find("table", id="orderheading").find_next("table").find_all("tr")[1:]
-        ):
-            (_, caseno, judge, date, details) = row.find_all("td")
+        ordertable = soup.find("table", class_="order_table")
+        if ordertable == None:
+            import pytest
+            pytest.set_trace()
+        for row in ordertable.find_all("tr")[1:]:
+            try:
+                (_, caseno, judge, date, details) = row.find_all("td")
+            except ValueError:
+                print(row.find_all("td"))
             
 
             link = details.select_one("a")
@@ -217,7 +239,7 @@ class CaseDetails:
         if "session expired" in html_content:
             raise ValueError("Session expired")
 
-        soup = BeautifulSoup(html_content, "html.parser")
+        soup = BeautifulSoup(html_content, "html5lib")
 
         for br in soup.find_all("br"):
             br.replace_with("\n")

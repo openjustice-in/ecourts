@@ -59,7 +59,13 @@ petitioners:
   name: ANTONY  VINAY KUMAR B
 registration_date: 2024-06-18
 registration_number: 5658/2024
-respondents: []
+respondents:
+- !!python/object:entities.party.Party
+  advocate: null
+  name: STATE OF KARNATAKA
+- !!python/object:entities.party.Party
+  advocate: null
+  name: SUDARSHAN H V
 state: KARNATAKA
 sub_category: 482-U/S 482 ( 8 )
 token: null

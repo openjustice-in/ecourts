@@ -1,0 +1,556 @@
+!!python/object:entities.case.Case
+bench: Single
+case_number: null
+case_status: CASE DISPOSED
+case_type: SPEX
+category: ORDINARY CIVIL ( 30 )
+cnr_number: HCBM060000522019
+coram: 1053HON'BLE SHRI JUSTICE N. J. JAMADAR
+decision_date: 2023-02-24
+district: OUTSIDE MAHARASHTRA
+filing_date: 2019-07-31
+filing_number: 2/2019
+fir: null
+first_hearing_date: 2019-11-08
+hearings:
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1053'
+  date: 2023-02-24
+  details: null
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  next_date: null
+  purpose: Disposed
+  srno: 0
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1034'
+  date: null
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2019-11-08
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 1
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1034'
+  date: 2019-11-08
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2019-12-13
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 2
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1034'
+  date: 2019-12-13
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2020-01-17
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 3
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1034'
+  date: 2020-01-17
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2020-01-31
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 4
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1034'
+  date: 2020-01-31
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2020-02-07
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 5
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1034'
+  date: 2020-02-07
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2020-03-06
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 6
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: null
+  court_no: '1034'
+  date: 2020-03-06
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2020-04-24
+  purpose: FOR DIRECTION [SPECIAL COURT MATTERS]
+  srno: 7
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2021-06-11
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2021-06-25
+  purpose: FOR DIRECTION [SPECIAL COURT MATTERS]
+  srno: 8
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2021-06-25
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2021-07-02
+  purpose: MISC APPLICATIONS FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT MATTERS]
+  srno: 9
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2021-07-02
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2021-07-16
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 10
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2021-07-16
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2021-07-23
+  purpose: MISC APPLICATIONS FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT MATTERS]
+  srno: 11
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2021-07-23
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2021-08-06
+  purpose: MISC APPLICATIONS FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT MATTERS]
+  srno: 12
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2021-08-06
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2021-08-13
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 13
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2021-08-13
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2021-08-20
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 14
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2021-08-20
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2021-12-03
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 15
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2021-12-04
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2021-12-10
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 16
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2021-12-10
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2021-12-17
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 17
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2021-12-17
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2022-01-07
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 18
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2022-01-07
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2022-01-14
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 19
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2022-01-14
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2022-01-21
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 20
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2022-01-28
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2022-02-04
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 21
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2022-02-04
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2022-02-18
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 22
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2022-02-18
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2022-02-25
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 23
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2022-02-25
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2022-02-26
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 24
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2022-02-26
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2022-03-04
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 25
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2022-03-04
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2022-03-25
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 26
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2022-03-25
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2022-04-01
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 27
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2022-04-01
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2022-04-22
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 28
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2022-04-22
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2022-04-29
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 29
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1051'
+  date: 2022-06-10
+  details: null
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  next_date: 2022-06-17
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 30
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1053'
+  date: 2022-07-22
+  details: null
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  next_date: 2022-08-19
+  purpose: MISC APPLICATIONS FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT MATTERS]
+  srno: 31
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1053'
+  date: 2022-08-19
+  details: null
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  next_date: 2022-09-23
+  purpose: MISC APPLICATIONS FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT MATTERS]
+  srno: 32
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1053'
+  date: 2022-09-23
+  details: null
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  next_date: 2022-10-21
+  purpose: MISC. APPLICATION FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT]
+  srno: 33
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1053'
+  date: 2022-10-21
+  details: null
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  next_date: 2022-11-18
+  purpose: MISC APPLICATIONS FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT MATTERS]
+  srno: 34
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1053'
+  date: 2022-11-18
+  details: null
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  next_date: 2022-12-16
+  purpose: MISC APPLICATIONS FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT MATTERS]
+  srno: 35
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1053'
+  date: 2022-12-16
+  details: null
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  next_date: 2023-01-13
+  purpose: MISC APPLICATIONS FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT MATTERS]
+  srno: 36
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1053'
+  date: 2023-01-13
+  details: null
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  next_date: 2023-02-03
+  purpose: MISC APPLICATIONS FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT MATTERS]
+  srno: 37
+- !!python/object:entities.hearing.Hearing
+  cause_list_type: REGULAR
+  court_no: '1053'
+  date: 2023-02-03
+  details: null
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  next_date: 2023-02-24
+  purpose: MISC APPLICATIONS FOR HEARING AND FINAL DISPOSAL[SPECIAL COURT MATTERS]
+  srno: 38
+judicial: Civil
+nature_of_disposal: Contested--DISPOSED OFF
+not_before_me: null
+objections: []
+orders:
+- !!python/object:entities.order.Order
+  date: 2019-11-08
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK9C+SVO9Nn4KSAk7aIeWSNW
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2019-12-13
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK/S/kZ+DHNPE3jRQlWSs70Z
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2020-01-17
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK+0ejRjBfsrnvS2PlkyNtE4
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2020-01-31
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK9pLPIqcEKqzfbi6PXXFdfA
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2020-02-07
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK8Y5uTijL5KecxGVsgn3teG
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2020-03-06
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK8GdRb7Jlm+qz99tcXdrid9
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2021-06-11
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK9f+rPDTo5oMMo2SuPZIGyR
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2021-07-02
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK+UvfuK1o9Terr+nFVR3ZCI
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2021-07-16
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK9tpT0uuEbmqtXmjY2xqylX
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2021-07-23
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK/2VtEFUExSByTGNog5T9vm
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2021-08-06
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK9P2XXTotLJ4B5Ia0L64uza
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2021-12-04
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK94IMTPEcM/oqpI7lBVbcaC
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-01-28
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK/LCpVhWGTIyUjS3odTlN64
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-02-04
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK8YTOHq7+vkardUtlIEFgRF
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-02-18
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK823mCl5jVO89CSosEBysg4
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-03-04
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK+eigFhL7RNrFTfeAu0OBsz
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-04-01
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK+Fc9WY/UlSldNpfE2at4dx
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-06-10
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK96XaFITlfOi024aE8SOF5E
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-01-14
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK8LUlW0Ax7CEVO70DcvLPGy
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-03-25
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK91OeIiQF7fQZcdWvCUB0lw
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-02-26
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK+uRoxcBFb4HqU1zDYsZygD
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-02-25
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK9a7qJF9E9ZhWEHvpgWaXsw
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-07-22
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK/bXpCOf6selnq5l+ZLf25v
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-08-19
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK9oIiC+tseCtdWgEs4HUWZ+
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-09-23
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK8BpEsLyARbGOiuB88Zv9a9
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-10-21
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK8owdiB41IM9bJPGjPSPB4w
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-11-18
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK87Zhy3LzDYA7NelDIX0xdx
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2022-12-16
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK9I30/ZYrZql8mDBWo6DnLN
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2023-01-13
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK/UTkfsAlw+GZ/n9oFtbkrt
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2023-02-03
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK/Eg2S+NmSMeKSNRYSaqdMb
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2023-02-24
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK9twAGbhZC362PFNWt/X0Vf
+  judge: HON'BLE SHRI JUSTICE N. J. JAMADAR
+  judgement: null
+- !!python/object:entities.order.Order
+  date: 2021-06-25
+  filename: /E3WiyNUWFIaR1oBGE62WiXOu6Mq5RRDcH2HamAJdK/2SjGkhUglKnawPglOsUf+
+  judge: HON'BLE SHRI JUSTICE A. K. MENON
+  judgement: null
+petitioners:
+- !!python/object:entities.party.Party
+  advocate: MANILAL KHER AMBALAL & CO.
+  name: TOURISIM FINANCE CORPORATION OF INDIA LTD
+registration_date: 2019-09-30
+registration_number: 2/2019
+respondents:
+- !!python/object:entities.party.Party
+  advocate: -,  LEENA ADHVARYU AND ASSOCIATES FOR R NO 2,Ramesh Ramamurthy
+  name: FAIRGROWTH INVESTMENTS LTD
+- !!python/object:entities.party.Party
+  advocate: shilpa bhate
+  name: THE CUSTODIAN
+- !!python/object:entities.party.Party
+  advocate: null
+  name: THE INCOME TAX OFFICER
+- !!python/object:entities.party.Party
+  advocate: NANU HORMASJEE & CO.
+  name: ITC LTD
+- !!python/object:entities.party.Party
+  advocate: null
+  name: SUPERINTENDENT OF POLICE
+state: MAHARASHTRA
+sub_category: null
+token: null

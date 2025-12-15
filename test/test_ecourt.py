@@ -199,8 +199,12 @@ def test_case_expander():
     assert len(fcase.expandParams()['token']) == 64
 
     fcase2 = ecourt.expand_case(fcase)
-    with open("test/fixtures/cases/GAHC010225502018.yml", 'w') as f:
-        yaml.dump(fcase2, f)
+    if not os.path.exists("test/fixtures/cases/GAHC010225502018.yml"):
+        with open("test/fixtures/cases/GAHC010225502018.yml", 'w') as f:
+            yaml.dump(fcase2, f)
+
+    assert fcase2.registration_number == "3142/2018"
+    assert fcase2.filing_number == "8394/2018"
 
     hearings_details = []
     for hearing in fcase2.hearings:

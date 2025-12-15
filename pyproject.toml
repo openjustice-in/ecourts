@@ -13,6 +13,7 @@ dependencies = [
     "click~=8.3",
     "tabulate~=0.9",
     "tqdm~=4.67",
+    "html5lib>=1.1",
 ]
 
 requires-python = ">=3.10"
