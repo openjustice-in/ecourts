@@ -201,6 +201,19 @@ def get_case_types(ctx, state_code, court_code, save):
         if save:
             Storage().addCaseTypes(types)
 
+@ecourts.command()
+@click.argument("query")
+@click.pass_context
+def find_case_types(ctx, query: str):
+    query = query.lower()
+    print(query)
+    s = Storage()
+    types = [ct for ct in s.getCaseTypes() if query in ct.description.lower()]
+    print(tabulate([
+        {"State": cl.court.state_code, "Court": cl.court.court_code, "Code": cl.code, "Description": cl.description}
+        for cl in types
+    ], headers={"code": "Code", "description": "Description"}, tablefmt="presto"))
+
 
 @ecourts.command()
 @click.option("--state-code", help="State code of the Court")
@@ -255,7 +268,7 @@ def get_cause_lists(ctx, state_code, court_code, date: click.DateTime, save, max
 
 @ecourts.command()
 @click.option("--cnr", help="Case CNR", required=False, type=str)
-@click.option("--download-orders", help="Download Orderss", required=False, is_flag=True, default=False)
+@click.option("--download-orders", help="Download Orders", required=False, is_flag=True, default=False)
 def enrich_cases(cnr, download_orders):
     s = Storage()
     for case_data in s.getCases():
