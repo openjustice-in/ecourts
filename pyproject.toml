@@ -29,7 +29,7 @@ namespaces = false
 [project.optional-dependencies]
 # Building Docs
 docs = [
-  "pdoc~=15.0"
+  "pdoc>=15,<17"
 ]
 # Running Tests
 test = [
