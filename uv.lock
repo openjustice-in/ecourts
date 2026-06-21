@@ -773,15 +773,15 @@ wheels = [
 
 [[package]]
 name = "vcrpy"
-version = "8.1.0"
+version = "8.2.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pyyaml" },
     { name = "wrapt" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/23/74/4200cb68d59e86849992eb6512d969cd561051f034e017428e040b113974/vcrpy-8.1.0.tar.gz", hash = "sha256:e585ca3cd9bb751e402728a00394847561250588eebc047b4d3c8948d5487733", size = 85930, upload-time = "2025-12-08T16:46:13.049Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/08/db/08183b845b0040bb877dad2bd7e4e0976fc232bb3476d7ee369c6c4f8b5a/vcrpy-8.2.1.tar.gz", hash = "sha256:d73a6e4eb6dae8148e659764b7a00e68cc51ba29ba9e6a85e1f0790ad96b97df", size = 90511, upload-time = "2026-06-16T13:20:52.906Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/09/77/892bcd82445ac949816205b51ab80deb86a492a315f2e290ed4eab35021c/vcrpy-8.1.0-py3-none-any.whl", hash = "sha256:fc4fb6e954c6d082ba6d329c6f3d1228f5b1b1d2836f9022c301b587cfad7378", size = 42748, upload-time = "2025-12-08T16:46:12.08Z" },
+    { url = "https://files.pythonhosted.org/packages/f8/7c/0e812ab83f5289404c674f3461ba783250b967d34b5ab034d361236ec042/vcrpy-8.2.1-py3-none-any.whl", hash = "sha256:7ce58c9e2792b246f79d6f4b3e9660676cc6f853be17e1547305b4437ab1ff85", size = 44925, upload-time = "2026-06-16T13:20:51.734Z" },
 ]
 
 [[package]]
