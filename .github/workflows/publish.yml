@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v4
-      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v5
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v5
 
       - name: Install dependencies
         run: python3 -m pip install .
