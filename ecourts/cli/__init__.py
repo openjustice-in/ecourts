@@ -10,6 +10,60 @@ from tabulate import tabulate
 import click
 from functools import wraps
 from parsers.cases import parse_cases
+from parsers.orders import parse_orders
+
+
+def orders_order_date(state_code, court_code, from_date, to_date):
+    """Search orders by date range."""
+    court = Court(state_code=state_code, court_code=court_code)
+    ecourt = ECourt(court)
+
+    # Parse dates from YYYY-MM-DD format
+    from_dt = datetime.strptime(from_date, "%Y-%m-%d").date()
+    to_dt = datetime.strptime(to_date, "%Y-%m-%d").date()
+
+    # Format dates as DD-MM-YYYY for the API
+    from_str = from_dt.strftime("%d-%m-%Y")
+    to_str = to_dt.strftime("%d-%m-%Y")
+
+    try:
+        orders = list(parse_orders(ecourt._get_orders(from_date=from_str, to_date=to_str)))
+        if not orders:
+            click.echo("No orders found for the given date range.")
+            return
+
+        fields = ["date", "filename", "judgement"]
+        writer = csv.DictWriter(stdout, fieldnames=fields)
+        writer.writeheader()
+        for order in orders:
+            writer.writerow({
+                "date": order.date,
+                "filename": order.filename,
+                "judgement": order.judgement,
+            })
+    except RetryException as e:
+        click.echo(f"Error: {e}", err=True)
+        sys.exit(1)
+
+
+def orders_case_number(state_code, court_code, case_type, case_number, year):
+    """Search orders by case number (not yet supported by API)."""
+    click.echo("Searching orders by case number is not yet supported.", err=True)
+    sys.exit(1)
+
+
+def orders_filling_number(state_code, court_code, filing_number, year):
+    """Search orders by filing number (not yet supported by API)."""
+    click.echo("Searching orders by filing number is not yet supported.", err=True)
+    sys.exit(1)
+
+
+def orders_party_name(state_code, court_code, party_name, year):
+    """Search orders by party name (not yet supported by API)."""
+    click.echo("Searching orders by party name is not yet supported.", err=True)
+    sys.exit(1)
+
+
 
 def validate_year(ctx, _, value):
     if value and (value < 1990 or value > 2025):
